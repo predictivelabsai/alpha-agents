@@ -237,6 +237,30 @@ Vercel is the easiest way to deploy NextJS applications:
 
 #### Option 3: Render.com
 
+Render.com offers two deployment options for NextJS applications:
+
+##### Option 3A: Web Service (Recommended - Full NextJS Features)
+
+Deploy as a Web Service to maintain all NextJS functionality including server-side rendering:
+
+1. **Create a new Web Service on Render**:
+   - Visit [render.com](https://render.com)
+   - Connect your GitHub repository
+   - Choose "Web Service"
+
+2. **Configure build settings**:
+   - **Root Directory**: `web-ui`
+   - **Language**: `Node`
+   - **Build Command**: `yarn; yarn build`
+   - **Start Command**: `yarn start`
+
+3. **Environment Variables** (if needed):
+   - Add any required environment variables in the Render dashboard
+
+##### Option 3B: Static Site (Static Export Only)
+
+Deploy as a Static Site for faster loading but limited to static features:
+
 1. **Configure NextJS for static export** in `next.config.ts`:
    ```typescript
    /** @type {import('next').NextConfig} */
@@ -261,7 +285,7 @@ Vercel is the easiest way to deploy NextJS applications:
    - **Build Command**: `yarn; yarn build`
    - **Publish Directory**: `out`
 
-**Note**: Render.com requires NextJS to be configured for static export to work as a Static Site. Alternatively, you can deploy as a Web Service for full NextJS features.
+**Note**: Web Service option provides full NextJS features including API routes and server-side rendering, while Static Site is faster but limited to client-side functionality.
 
 #### Option 4: GitHub Pages
 
