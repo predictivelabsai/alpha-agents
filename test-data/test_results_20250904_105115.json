@@ -1,0 +1,196 @@
+{
+  "unit_tests": {
+    "tests_run": 44,
+    "failures": 0,
+    "errors": 8,
+    "success_rate": 0.8181818181818182,
+    "details": {
+      "failures": [],
+      "errors": [
+        "(<test_fundamental_agent.TestFundamentalAgent testMethod=test_concerns_identification>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_fundamental_agent.py\", line 174, in test_concerns_identification\\n    concerns = self.agent._identify_concerns(\\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nTypeError: FundamentalAgent._identify_concerns() takes 3 positional arguments but 4 were given\\n')",
+        "(<test_fundamental_agent.TestFundamentalAgent testMethod=test_earnings_quality_analysis>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_fundamental_agent.py\", line 111, in test_earnings_quality_analysis\\n    quality = self.agent._analyze_earnings_quality(self.tech_stock, None)\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\'FundamentalAgent\\' object has no attribute \\'_analyze_earnings_quality\\'\\n')",
+        "(<test_fundamental_agent.TestFundamentalAgent testMethod=test_financial_strength_analysis>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_fundamental_agent.py\", line 100, in test_financial_strength_analysis\\n    metrics = self.agent._analyze_financial_strength(self.tech_stock, None)\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\'FundamentalAgent\\' object has no attribute \\'_analyze_financial_strength\\'\\n')",
+        "(<test_fundamental_agent.TestFundamentalAgent testMethod=test_growth_prospects_analysis>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_fundamental_agent.py\", line 122, in test_growth_prospects_analysis\\n    growth = self.agent._analyze_growth_prospects(self.tech_stock, None)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\'FundamentalAgent\\' object has no attribute \\'_analyze_growth_prospects\\'\\n')",
+        "(<test_fundamental_agent.TestFundamentalAgent testMethod=test_key_factors_extraction>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_fundamental_agent.py\", line 162, in test_key_factors_extraction\\n    factors = self.agent._extract_key_factors(\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nTypeError: FundamentalAgent._extract_key_factors() takes 3 positional arguments but 4 were given\\n')",
+        "(<test_fundamental_agent.TestFundamentalAgent testMethod=test_risk_assessment>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_fundamental_agent.py\", line 150, in test_risk_assessment\\n    risk = self.agent._assess_fundamental_risk(\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\'FundamentalAgent\\' object has no attribute \\'_assess_fundamental_risk\\'\\n')",
+        "(<test_fundamental_agent.TestFundamentalAgent testMethod=test_target_price_calculation>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_fundamental_agent.py\", line 137, in test_target_price_calculation\\n    target_price = self.agent._calculate_fundamental_target_price(\\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\'FundamentalAgent\\' object has no attribute \\'_calculate_fundamental_target_price\\'\\n')",
+        "(<test_rationale_agent.TestRationaleAgent testMethod=test_key_factors_extraction>, 'Traceback (most recent call last):\\n  File \"/home/ubuntu/alpha-agents/tests/unit/test_rationale_agent.py\", line 255, in test_key_factors_extraction\\n    factors = self.agent._extract_key_factors(\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/ubuntu/alpha-agents/tests/../src/agents/rationale_agent.py\", line 623, in _extract_key_factors\\n    if moat_analysis[\\'barriers_to_entry\\'] > 0.7:\\n       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^\\nKeyError: \\'barriers_to_entry\\'\\n')"
+      ]
+    }
+  },
+  "individual_agents": {
+    "fundamental": {
+      "total_stocks": 8,
+      "successful_analyses": 8,
+      "success_rate": 1.0,
+      "avg_confidence": 0.59375,
+      "recommendation_distribution": {
+        "buy": 0,
+        "hold": 8,
+        "sell": 0,
+        "avoid": 0
+      },
+      "avg_analysis_time": 0.0
+    },
+    "sentiment": {
+      "total_stocks": 8,
+      "successful_analyses": 8,
+      "success_rate": 1.0,
+      "avg_confidence": 0.625,
+      "recommendation_distribution": {
+        "buy": 4,
+        "hold": 4,
+        "sell": 0,
+        "avoid": 0
+      },
+      "avg_analysis_time": 0.0
+    },
+    "valuation": {
+      "total_stocks": 8,
+      "successful_analyses": 8,
+      "success_rate": 1.0,
+      "avg_confidence": 0.6375,
+      "recommendation_distribution": {
+        "buy": 3,
+        "hold": 5,
+        "sell": 0,
+        "avoid": 0
+      },
+      "avg_analysis_time": 0.0
+    },
+    "rationale": {
+      "total_stocks": 8,
+      "successful_analyses": 8,
+      "success_rate": 1.0,
+      "avg_confidence": 0.675,
+      "recommendation_distribution": {
+        "buy": 3,
+        "hold": 5,
+        "sell": 0,
+        "avoid": 0
+      },
+      "avg_analysis_time": 0.0
+    },
+    "secular_trend": {
+      "total_stocks": 8,
+      "successful_analyses": 8,
+      "success_rate": 1.0,
+      "avg_confidence": 0.7625,
+      "recommendation_distribution": {
+        "buy": 6,
+        "hold": 2,
+        "sell": 0,
+        "avoid": 0
+      },
+      "avg_analysis_time": 0.0
+    }
+  },
+  "multi_agent_system": {
+    "agents_count": 5,
+    "agent_names": [
+      "fundamental",
+      "sentiment",
+      "valuation",
+      "rationale",
+      "secular_trend"
+    ],
+    "risk_tolerance": "moderate",
+    "max_debate_rounds": 1,
+    "workflow_created": true,
+    "portfolio_analysis": [
+      {
+        "stock_symbol": "AAPL",
+        "agent_analyses": {
+          "fundamental": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "sentiment": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "valuation": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "rationale": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "secular_trend": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          }
+        },
+        "consensus_possible": true
+      },
+      {
+        "stock_symbol": "MSFT",
+        "agent_analyses": {
+          "fundamental": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "sentiment": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "valuation": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "rationale": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "secular_trend": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          }
+        },
+        "consensus_possible": true
+      },
+      {
+        "stock_symbol": "NVDA",
+        "agent_analyses": {
+          "fundamental": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "sentiment": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "valuation": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "rationale": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          },
+          "secular_trend": {
+            "recommendation": "hold",
+            "confidence": 0.3,
+            "risk": "HIGH"
+          }
+        },
+        "consensus_possible": true
+      }
+    ]
+  }
+}
