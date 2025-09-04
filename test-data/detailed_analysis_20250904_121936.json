@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "timestamp": "20250904_121936",
+    "test_type": "detailed_agent_analysis",
+    "stocks_analyzed": 5,
+    "agents_tested": 5,
+    "total_analyses": 5
+  },
+  "detailed_results": [
+    {
+      "stock_info": {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "sector": "Technology",
+        "price": 175.0,
+        "market_cap": 2750.0
+      },
+      "agent_analyses": {},
+      "timestamp": "2025-09-04T12:19:36.227186"
+    },
+    {
+      "stock_info": {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "sector": "Technology",
+        "price": 350.0,
+        "market_cap": 2600.0
+      },
+      "agent_analyses": {},
+      "timestamp": "2025-09-04T12:19:36.591743"
+    },
+    {
+      "stock_info": {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp.",
+        "sector": "Technology",
+        "price": 450.0,
+        "market_cap": 1100.0
+      },
+      "agent_analyses": {},
+      "timestamp": "2025-09-04T12:19:36.596429"
+    },
+    {
+      "stock_info": {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "sector": "Automotive",
+        "price": 250.0,
+        "market_cap": 800.0
+      },
+      "agent_analyses": {},
+      "timestamp": "2025-09-04T12:19:36.602227"
+    },
+    {
+      "stock_info": {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "sector": "Financial",
+        "price": 145.0,
+        "market_cap": 425.0
+      },
+      "agent_analyses": {},
+      "timestamp": "2025-09-04T12:19:36.606482"
+    }
+  ],
+  "agent_outputs": {},
+  "methodology_summary": {
+    "multi_agent_framework": {
+      "architecture": "LangGraph-based collaborative system",
+      "agent_count": 5,
+      "collaboration_method": "Sequential analysis with consensus building",
+      "decision_aggregation": "Weighted confidence scoring"
+    },
+    "individual_agents": {
+      "Fundamental": {
+        "approach": "Financial Statement Analysis",
+        "key_metrics": [
+          "Revenue Growth",
+          "Profit Margins",
+          "ROE",
+          "Debt Ratios",
+          "Cash Flow"
+        ],
+        "data_sources": [
+          "10-K Reports",
+          "10-Q Reports",
+          "Earnings Statements"
+        ],
+        "analysis_framework": "DCF Valuation + Ratio Analysis",
+        "decision_criteria": "Intrinsic Value vs Market Price"
+      },
+      "Sentiment": {
+        "approach": "Market Psychology Analysis",
+        "key_metrics": [
+          "News Sentiment",
+          "Analyst Ratings",
+          "Social Media Buzz",
+          "Momentum"
+        ],
+        "data_sources": [
+          "Financial News",
+          "Analyst Reports",
+          "Social Media"
+        ],
+        "analysis_framework": "Sentiment Scoring + Momentum Analysis",
+        "decision_criteria": "Positive Sentiment Momentum"
+      },
+      "Valuation": {
+        "approach": "Technical & Price Analysis",
+        "key_metrics": [
+          "P/E Ratio",
+          "PEG Ratio",
+          "Price Momentum",
+          "Volume Analysis"
+        ],
+        "data_sources": [
+          "Market Data",
+          "Trading Volumes",
+          "Price History"
+        ],
+        "analysis_framework": "Relative Valuation + Technical Analysis",
+        "decision_criteria": "Attractive Entry Points"
+      },
+      "Rationale": {
+        "approach": "Business Quality Assessment",
+        "key_metrics": [
+          "Sales Growth",
+          "Profitability",
+          "Competitive Moat",
+          "Efficiency",
+          "Debt Structure"
+        ],
+        "data_sources": [
+          "Financial Reports",
+          "Industry Analysis",
+          "Competitive Analysis"
+        ],
+        "analysis_framework": "7-Step Great Business Framework",
+        "decision_criteria": "Long-term Business Quality"
+      },
+      "Secular_Trend": {
+        "approach": "Technology Trend Analysis",
+        "key_metrics": [
+          "Market Size",
+          "Growth Rate",
+          "Trend Positioning",
+          "Innovation Leadership"
+        ],
+        "data_sources": [
+          "Industry Reports",
+          "Technology Analysis",
+          "Market Research"
+        ],
+        "analysis_framework": "5 Secular Trend Categories",
+        "decision_criteria": "Technology Trend Alignment"
+      }
+    },
+    "quality_assurance": {
+      "fallback_mode": "Deterministic analysis when LLM unavailable",
+      "confidence_scoring": "0.0-1.0 scale with methodology-specific factors",
+      "risk_assessment": "Categorical risk levels (LOW/MEDIUM/HIGH)",
+      "validation": "Cross-agent consensus verification"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "overall_metrics": {
+    "total_analyses": 25,
+    "success_rate": 100.0,
+    "average_confidence": 0.0,
+    "recommendation_distribution": {
+      "BUY": 0,
+      "HOLD": 0,
+      "SELL": 0
+    }
+  },
+  "agent_performance": {}
+}

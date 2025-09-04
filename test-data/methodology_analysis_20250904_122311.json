@@ -1,0 +1,1290 @@
+{
+  "metadata": {
+    "timestamp": "20250904_122311",
+    "report_type": "methodology_analysis",
+    "stocks_analyzed": 5,
+    "agents_documented": 5
+  },
+  "methodology_framework": {
+    "system_architecture": "Multi-Agent Collaborative System",
+    "base_framework": "LangGraph State Machine",
+    "decision_process": "Sequential Analysis + Consensus Building",
+    "quality_assurance": "Confidence Scoring + Risk Assessment"
+  },
+  "agent_methodologies": {
+    "Fundamental": {
+      "name": "Fundamental Analysis Agent",
+      "approach": "Financial Statement Analysis & DCF Valuation",
+      "key_metrics": [
+        "Revenue Growth Rate",
+        "Profit Margins (Gross, Operating, Net)",
+        "Return on Equity (ROE)",
+        "Debt-to-Equity Ratio",
+        "Free Cash Flow",
+        "Price-to-Earnings Ratio",
+        "Book Value per Share"
+      ],
+      "data_sources": [
+        "10-K Annual Reports",
+        "10-Q Quarterly Reports",
+        "Earnings Statements",
+        "Balance Sheets",
+        "Cash Flow Statements"
+      ],
+      "analysis_framework": "Discounted Cash Flow (DCF) + Ratio Analysis",
+      "decision_criteria": "Intrinsic Value vs Market Price Comparison",
+      "strengths": [
+        "Long-term value assessment",
+        "Company financial health evaluation",
+        "Objective quantitative analysis"
+      ],
+      "limitations": [
+        "May miss short-term market dynamics",
+        "Relies on historical data",
+        "Complex for growth companies"
+      ]
+    },
+    "Sentiment": {
+      "name": "Market Sentiment Analysis Agent",
+      "approach": "News & Social Media Sentiment Processing",
+      "key_metrics": [
+        "News Sentiment Score",
+        "Analyst Rating Changes",
+        "Social Media Buzz",
+        "Market Momentum Indicators",
+        "Institutional Investor Activity"
+      ],
+      "data_sources": [
+        "Financial News Articles",
+        "Analyst Reports",
+        "Social Media Platforms",
+        "Market Data Feeds",
+        "Earnings Call Transcripts"
+      ],
+      "analysis_framework": "Natural Language Processing + Sentiment Scoring",
+      "decision_criteria": "Positive Sentiment Momentum & Market Psychology",
+      "strengths": [
+        "Captures market psychology",
+        "Real-time sentiment tracking",
+        "Identifies momentum shifts"
+      ],
+      "limitations": [
+        "Can be influenced by noise",
+        "Short-term focused",
+        "Susceptible to market manipulation"
+      ]
+    },
+    "Valuation": {
+      "name": "Technical & Price Valuation Agent",
+      "approach": "Technical Analysis & Relative Valuation",
+      "key_metrics": [
+        "Price-to-Earnings (P/E) Ratio",
+        "Price-to-Book (P/B) Ratio",
+        "PEG Ratio",
+        "Price Momentum",
+        "Trading Volume Analysis",
+        "Support/Resistance Levels"
+      ],
+      "data_sources": [
+        "Real-time Market Data",
+        "Historical Price Data",
+        "Trading Volume Data",
+        "Peer Company Valuations",
+        "Industry Benchmarks"
+      ],
+      "analysis_framework": "Relative Valuation + Technical Indicators",
+      "decision_criteria": "Attractive Entry Points & Valuation Multiples",
+      "strengths": [
+        "Market timing insights",
+        "Peer comparison analysis",
+        "Entry/exit point identification"
+      ],
+      "limitations": [
+        "May miss fundamental changes",
+        "Sensitive to market volatility",
+        "Requires market efficiency assumption"
+      ]
+    },
+    "Rationale": {
+      "name": "Business Quality Assessment Agent",
+      "approach": "7-Step Great Business Framework",
+      "key_metrics": [
+        "Consistent Sales Growth",
+        "Profit Margin Trends",
+        "Competitive Moat Strength",
+        "Return on Invested Capital (ROIC)",
+        "Debt Structure Analysis",
+        "Management Quality",
+        "Market Position"
+      ],
+      "data_sources": [
+        "Financial Reports",
+        "Industry Analysis",
+        "Competitive Intelligence",
+        "Management Communications",
+        "Market Research Reports"
+      ],
+      "analysis_framework": "7-Step Business Quality Evaluation",
+      "framework_steps": [
+        "1. Consistently increasing sales, net income, and cash flow",
+        "2. Positive growth rates (5Y EPS growth analysis)",
+        "3. Sustainable competitive advantage (Economic Moat)",
+        "4. Profitable and operational efficiency (ROE/ROIC analysis)",
+        "5. Conservative debt structure",
+        "6. Business maturity and sector positioning",
+        "7. Risk-adjusted target pricing"
+      ],
+      "decision_criteria": "Long-term Business Quality & Sustainability",
+      "strengths": [
+        "Comprehensive business evaluation",
+        "Long-term perspective",
+        "Quality-focused approach"
+      ],
+      "limitations": [
+        "May undervalue growth potential",
+        "Complex evaluation process",
+        "Subjective moat assessment"
+      ]
+    },
+    "Secular_Trend": {
+      "name": "Technology Trends Analysis Agent",
+      "approach": "Secular Technology Trend Positioning",
+      "key_metrics": [
+        "Market Size & Growth Rate",
+        "Technology Adoption Curve",
+        "Innovation Leadership",
+        "Trend Positioning Score",
+        "Competitive Advantage in Trends"
+      ],
+      "data_sources": [
+        "Industry Research Reports",
+        "Technology Analysis",
+        "Market Forecasts",
+        "Patent Filings",
+        "R&D Investment Data"
+      ],
+      "analysis_framework": "5 Secular Trend Categories Analysis",
+      "trend_categories": [
+        "1. Agentic AI & Autonomous Enterprise Software ($12T market)",
+        "2. Cloud Re-Acceleration & Sovereign/Edge Infrastructure ($110B market)",
+        "3. AI-Native Semiconductors & Advanced Packaging (50% growth rate)",
+        "4. Cybersecurity for the Agentic Era (25% growth rate)",
+        "5. Electrification & AI-Defined Vehicles ($800B market)"
+      ],
+      "decision_criteria": "Technology Trend Alignment & Market Opportunity",
+      "strengths": [
+        "Forward-looking analysis",
+        "Identifies growth opportunities",
+        "Technology trend expertise"
+      ],
+      "limitations": [
+        "Prediction uncertainty",
+        "Technology risk",
+        "Market timing challenges"
+      ]
+    }
+  },
+  "test_results": [
+    {
+      "stock_info": {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "sector": "Technology",
+        "price": 175.0,
+        "market_cap": 2750.0
+      },
+      "agent_analyses": {
+        "Fundamental": {
+          "recommendation": "hold",
+          "confidence": 0.5,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        Fundamental Analysis Summary:\n        - Overall Health Score: 0.42\n        - Financial Strength: Weak\n        - Valuation: Fair\n        - P/E Score: 0.50\n        - Market Cap: $2.8K\n        \n        Recommendation based on fundamental metrics and financial health assessment.\n        ",
+          "methodology": {
+            "name": "Fundamental Analysis Agent",
+            "approach": "Financial Statement Analysis & DCF Valuation",
+            "key_metrics": [
+              "Revenue Growth Rate",
+              "Profit Margins (Gross, Operating, Net)",
+              "Return on Equity (ROE)",
+              "Debt-to-Equity Ratio",
+              "Free Cash Flow",
+              "Price-to-Earnings Ratio",
+              "Book Value per Share"
+            ],
+            "data_sources": [
+              "10-K Annual Reports",
+              "10-Q Quarterly Reports",
+              "Earnings Statements",
+              "Balance Sheets",
+              "Cash Flow Statements"
+            ],
+            "analysis_framework": "Discounted Cash Flow (DCF) + Ratio Analysis",
+            "decision_criteria": "Intrinsic Value vs Market Price Comparison",
+            "strengths": [
+              "Long-term value assessment",
+              "Company financial health evaluation",
+              "Objective quantitative analysis"
+            ],
+            "limitations": [
+              "May miss short-term market dynamics",
+              "Relies on historical data",
+              "Complex for growth companies"
+            ]
+          }
+        },
+        "Sentiment": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": 175.0,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Sentiment Analysis Summary:\n        - Overall Sentiment Score: 0.57\n        - News Sentiment: 0.60 (low volume)\n        - Analyst Consensus: hold (3 analysts)\n        - Volume Sentiment: 0.50\n        \n        Recommendation based on market sentiment, news analysis, and analyst consensus.\n        ",
+          "methodology": {
+            "name": "Market Sentiment Analysis Agent",
+            "approach": "News & Social Media Sentiment Processing",
+            "key_metrics": [
+              "News Sentiment Score",
+              "Analyst Rating Changes",
+              "Social Media Buzz",
+              "Market Momentum Indicators",
+              "Institutional Investor Activity"
+            ],
+            "data_sources": [
+              "Financial News Articles",
+              "Analyst Reports",
+              "Social Media Platforms",
+              "Market Data Feeds",
+              "Earnings Call Transcripts"
+            ],
+            "analysis_framework": "Natural Language Processing + Sentiment Scoring",
+            "decision_criteria": "Positive Sentiment Momentum & Market Psychology",
+            "strengths": [
+              "Captures market psychology",
+              "Real-time sentiment tracking",
+              "Identifies momentum shifts"
+            ],
+            "limitations": [
+              "Can be influenced by noise",
+              "Short-term focused",
+              "Susceptible to market manipulation"
+            ]
+          }
+        },
+        "Valuation": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": null,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Valuation Analysis Summary:\n        - Overall Valuation Score: 0.46\n        - P/E Valuation: unknown\n        - Technical Rating: neutral\n        - Relative Valuation Score: 0.47\n        - Vs Sector: neutral\n        - Vs Market: neutral\n        \n        Recommendation based on valuation metrics, technical indicators, and relative analysis.\n        ",
+          "methodology": {
+            "name": "Technical & Price Valuation Agent",
+            "approach": "Technical Analysis & Relative Valuation",
+            "key_metrics": [
+              "Price-to-Earnings (P/E) Ratio",
+              "Price-to-Book (P/B) Ratio",
+              "PEG Ratio",
+              "Price Momentum",
+              "Trading Volume Analysis",
+              "Support/Resistance Levels"
+            ],
+            "data_sources": [
+              "Real-time Market Data",
+              "Historical Price Data",
+              "Trading Volume Data",
+              "Peer Company Valuations",
+              "Industry Benchmarks"
+            ],
+            "analysis_framework": "Relative Valuation + Technical Indicators",
+            "decision_criteria": "Attractive Entry Points & Valuation Multiples",
+            "strengths": [
+              "Market timing insights",
+              "Peer comparison analysis",
+              "Entry/exit point identification"
+            ],
+            "limitations": [
+              "May miss fundamental changes",
+              "Sensitive to market volatility",
+              "Requires market efficiency assumption"
+            ]
+          }
+        },
+        "Rationale": {
+          "recommendation": "hold",
+          "confidence": 0.55,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        7-Step Great Business Analysis Summary:\n        - Overall Business Quality Score: 0.59\n        - Business Maturity: 0.4\n        - Growth Quality: 0.50\n        - Competitive Moat: wide (0.74)\n        - Operational Efficiency: 0.60\n        - Financial Strength: weak (0.30)\n        \n        Recommendation based on comprehensive business quality assessment using the 7-step framework.\n        ",
+          "methodology": {
+            "name": "Business Quality Assessment Agent",
+            "approach": "7-Step Great Business Framework",
+            "key_metrics": [
+              "Consistent Sales Growth",
+              "Profit Margin Trends",
+              "Competitive Moat Strength",
+              "Return on Invested Capital (ROIC)",
+              "Debt Structure Analysis",
+              "Management Quality",
+              "Market Position"
+            ],
+            "data_sources": [
+              "Financial Reports",
+              "Industry Analysis",
+              "Competitive Intelligence",
+              "Management Communications",
+              "Market Research Reports"
+            ],
+            "analysis_framework": "7-Step Business Quality Evaluation",
+            "framework_steps": [
+              "1. Consistently increasing sales, net income, and cash flow",
+              "2. Positive growth rates (5Y EPS growth analysis)",
+              "3. Sustainable competitive advantage (Economic Moat)",
+              "4. Profitable and operational efficiency (ROE/ROIC analysis)",
+              "5. Conservative debt structure",
+              "6. Business maturity and sector positioning",
+              "7. Risk-adjusted target pricing"
+            ],
+            "decision_criteria": "Long-term Business Quality & Sustainability",
+            "strengths": [
+              "Comprehensive business evaluation",
+              "Long-term perspective",
+              "Quality-focused approach"
+            ],
+            "limitations": [
+              "May undervalue growth potential",
+              "Complex evaluation process",
+              "Subjective moat assessment"
+            ]
+          }
+        },
+        "Secular_Trend": {
+          "recommendation": "hold",
+          "confidence": 0.65,
+          "target_price": null,
+          "risk_assessment": "HIGH",
+          "reasoning": "\n        Secular Technology Trends Analysis (2025-2030):\n        - Overall Trend Score: 0.70\n        - Relevant Trends: Agentic AI & Autonomous Enterprise Software, Cloud Re-Acceleration & Sovereign/Edge Infrastructure, AI-Native Semiconductors & Advanced Packaging\n        - Market Timing: moderate\n        - Total Addressable Market: $12610.0B\n        - Expected Growth Rate: 40.2%\n        - Competitive Position: 0.84\n        - Execution Capability: 0.56\n        \n        Recommendation based on positioning within major secular technology trends.\n        ",
+          "methodology": {
+            "name": "Technology Trends Analysis Agent",
+            "approach": "Secular Technology Trend Positioning",
+            "key_metrics": [
+              "Market Size & Growth Rate",
+              "Technology Adoption Curve",
+              "Innovation Leadership",
+              "Trend Positioning Score",
+              "Competitive Advantage in Trends"
+            ],
+            "data_sources": [
+              "Industry Research Reports",
+              "Technology Analysis",
+              "Market Forecasts",
+              "Patent Filings",
+              "R&D Investment Data"
+            ],
+            "analysis_framework": "5 Secular Trend Categories Analysis",
+            "trend_categories": [
+              "1. Agentic AI & Autonomous Enterprise Software ($12T market)",
+              "2. Cloud Re-Acceleration & Sovereign/Edge Infrastructure ($110B market)",
+              "3. AI-Native Semiconductors & Advanced Packaging (50% growth rate)",
+              "4. Cybersecurity for the Agentic Era (25% growth rate)",
+              "5. Electrification & AI-Defined Vehicles ($800B market)"
+            ],
+            "decision_criteria": "Technology Trend Alignment & Market Opportunity",
+            "strengths": [
+              "Forward-looking analysis",
+              "Identifies growth opportunities",
+              "Technology trend expertise"
+            ],
+            "limitations": [
+              "Prediction uncertainty",
+              "Technology risk",
+              "Market timing challenges"
+            ]
+          }
+        }
+      },
+      "timestamp": "2025-09-04T12:23:11.639212"
+    },
+    {
+      "stock_info": {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "sector": "Technology",
+        "price": 350.0,
+        "market_cap": 2600.0
+      },
+      "agent_analyses": {
+        "Fundamental": {
+          "recommendation": "hold",
+          "confidence": 0.5,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        Fundamental Analysis Summary:\n        - Overall Health Score: 0.42\n        - Financial Strength: Weak\n        - Valuation: Fair\n        - P/E Score: 0.50\n        - Market Cap: $2.6K\n        \n        Recommendation based on fundamental metrics and financial health assessment.\n        ",
+          "methodology": {
+            "name": "Fundamental Analysis Agent",
+            "approach": "Financial Statement Analysis & DCF Valuation",
+            "key_metrics": [
+              "Revenue Growth Rate",
+              "Profit Margins (Gross, Operating, Net)",
+              "Return on Equity (ROE)",
+              "Debt-to-Equity Ratio",
+              "Free Cash Flow",
+              "Price-to-Earnings Ratio",
+              "Book Value per Share"
+            ],
+            "data_sources": [
+              "10-K Annual Reports",
+              "10-Q Quarterly Reports",
+              "Earnings Statements",
+              "Balance Sheets",
+              "Cash Flow Statements"
+            ],
+            "analysis_framework": "Discounted Cash Flow (DCF) + Ratio Analysis",
+            "decision_criteria": "Intrinsic Value vs Market Price Comparison",
+            "strengths": [
+              "Long-term value assessment",
+              "Company financial health evaluation",
+              "Objective quantitative analysis"
+            ],
+            "limitations": [
+              "May miss short-term market dynamics",
+              "Relies on historical data",
+              "Complex for growth companies"
+            ]
+          }
+        },
+        "Sentiment": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": 350.0,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Sentiment Analysis Summary:\n        - Overall Sentiment Score: 0.57\n        - News Sentiment: 0.60 (low volume)\n        - Analyst Consensus: hold (3 analysts)\n        - Volume Sentiment: 0.50\n        \n        Recommendation based on market sentiment, news analysis, and analyst consensus.\n        ",
+          "methodology": {
+            "name": "Market Sentiment Analysis Agent",
+            "approach": "News & Social Media Sentiment Processing",
+            "key_metrics": [
+              "News Sentiment Score",
+              "Analyst Rating Changes",
+              "Social Media Buzz",
+              "Market Momentum Indicators",
+              "Institutional Investor Activity"
+            ],
+            "data_sources": [
+              "Financial News Articles",
+              "Analyst Reports",
+              "Social Media Platforms",
+              "Market Data Feeds",
+              "Earnings Call Transcripts"
+            ],
+            "analysis_framework": "Natural Language Processing + Sentiment Scoring",
+            "decision_criteria": "Positive Sentiment Momentum & Market Psychology",
+            "strengths": [
+              "Captures market psychology",
+              "Real-time sentiment tracking",
+              "Identifies momentum shifts"
+            ],
+            "limitations": [
+              "Can be influenced by noise",
+              "Short-term focused",
+              "Susceptible to market manipulation"
+            ]
+          }
+        },
+        "Valuation": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": null,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Valuation Analysis Summary:\n        - Overall Valuation Score: 0.46\n        - P/E Valuation: unknown\n        - Technical Rating: neutral\n        - Relative Valuation Score: 0.47\n        - Vs Sector: neutral\n        - Vs Market: neutral\n        \n        Recommendation based on valuation metrics, technical indicators, and relative analysis.\n        ",
+          "methodology": {
+            "name": "Technical & Price Valuation Agent",
+            "approach": "Technical Analysis & Relative Valuation",
+            "key_metrics": [
+              "Price-to-Earnings (P/E) Ratio",
+              "Price-to-Book (P/B) Ratio",
+              "PEG Ratio",
+              "Price Momentum",
+              "Trading Volume Analysis",
+              "Support/Resistance Levels"
+            ],
+            "data_sources": [
+              "Real-time Market Data",
+              "Historical Price Data",
+              "Trading Volume Data",
+              "Peer Company Valuations",
+              "Industry Benchmarks"
+            ],
+            "analysis_framework": "Relative Valuation + Technical Indicators",
+            "decision_criteria": "Attractive Entry Points & Valuation Multiples",
+            "strengths": [
+              "Market timing insights",
+              "Peer comparison analysis",
+              "Entry/exit point identification"
+            ],
+            "limitations": [
+              "May miss fundamental changes",
+              "Sensitive to market volatility",
+              "Requires market efficiency assumption"
+            ]
+          }
+        },
+        "Rationale": {
+          "recommendation": "hold",
+          "confidence": 0.55,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        7-Step Great Business Analysis Summary:\n        - Overall Business Quality Score: 0.59\n        - Business Maturity: 0.4\n        - Growth Quality: 0.50\n        - Competitive Moat: wide (0.74)\n        - Operational Efficiency: 0.60\n        - Financial Strength: weak (0.30)\n        \n        Recommendation based on comprehensive business quality assessment using the 7-step framework.\n        ",
+          "methodology": {
+            "name": "Business Quality Assessment Agent",
+            "approach": "7-Step Great Business Framework",
+            "key_metrics": [
+              "Consistent Sales Growth",
+              "Profit Margin Trends",
+              "Competitive Moat Strength",
+              "Return on Invested Capital (ROIC)",
+              "Debt Structure Analysis",
+              "Management Quality",
+              "Market Position"
+            ],
+            "data_sources": [
+              "Financial Reports",
+              "Industry Analysis",
+              "Competitive Intelligence",
+              "Management Communications",
+              "Market Research Reports"
+            ],
+            "analysis_framework": "7-Step Business Quality Evaluation",
+            "framework_steps": [
+              "1. Consistently increasing sales, net income, and cash flow",
+              "2. Positive growth rates (5Y EPS growth analysis)",
+              "3. Sustainable competitive advantage (Economic Moat)",
+              "4. Profitable and operational efficiency (ROE/ROIC analysis)",
+              "5. Conservative debt structure",
+              "6. Business maturity and sector positioning",
+              "7. Risk-adjusted target pricing"
+            ],
+            "decision_criteria": "Long-term Business Quality & Sustainability",
+            "strengths": [
+              "Comprehensive business evaluation",
+              "Long-term perspective",
+              "Quality-focused approach"
+            ],
+            "limitations": [
+              "May undervalue growth potential",
+              "Complex evaluation process",
+              "Subjective moat assessment"
+            ]
+          }
+        },
+        "Secular_Trend": {
+          "recommendation": "buy",
+          "confidence": 0.75,
+          "target_price": null,
+          "risk_assessment": "HIGH",
+          "reasoning": "\n        Secular Technology Trends Analysis (2025-2030):\n        - Overall Trend Score: 0.73\n        - Relevant Trends: Agentic AI & Autonomous Enterprise Software, Cloud Re-Acceleration & Sovereign/Edge Infrastructure, AI-Native Semiconductors & Advanced Packaging\n        - Market Timing: moderate\n        - Total Addressable Market: $12610.0B\n        - Expected Growth Rate: 40.2%\n        - Competitive Position: 0.84\n        - Execution Capability: 0.56\n        \n        Recommendation based on positioning within major secular technology trends.\n        ",
+          "methodology": {
+            "name": "Technology Trends Analysis Agent",
+            "approach": "Secular Technology Trend Positioning",
+            "key_metrics": [
+              "Market Size & Growth Rate",
+              "Technology Adoption Curve",
+              "Innovation Leadership",
+              "Trend Positioning Score",
+              "Competitive Advantage in Trends"
+            ],
+            "data_sources": [
+              "Industry Research Reports",
+              "Technology Analysis",
+              "Market Forecasts",
+              "Patent Filings",
+              "R&D Investment Data"
+            ],
+            "analysis_framework": "5 Secular Trend Categories Analysis",
+            "trend_categories": [
+              "1. Agentic AI & Autonomous Enterprise Software ($12T market)",
+              "2. Cloud Re-Acceleration & Sovereign/Edge Infrastructure ($110B market)",
+              "3. AI-Native Semiconductors & Advanced Packaging (50% growth rate)",
+              "4. Cybersecurity for the Agentic Era (25% growth rate)",
+              "5. Electrification & AI-Defined Vehicles ($800B market)"
+            ],
+            "decision_criteria": "Technology Trend Alignment & Market Opportunity",
+            "strengths": [
+              "Forward-looking analysis",
+              "Identifies growth opportunities",
+              "Technology trend expertise"
+            ],
+            "limitations": [
+              "Prediction uncertainty",
+              "Technology risk",
+              "Market timing challenges"
+            ]
+          }
+        }
+      },
+      "timestamp": "2025-09-04T12:23:11.639587"
+    },
+    {
+      "stock_info": {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corp.",
+        "sector": "Technology",
+        "price": 450.0,
+        "market_cap": 1100.0
+      },
+      "agent_analyses": {
+        "Fundamental": {
+          "recommendation": "hold",
+          "confidence": 0.5,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        Fundamental Analysis Summary:\n        - Overall Health Score: 0.42\n        - Financial Strength: Weak\n        - Valuation: Fair\n        - P/E Score: 0.50\n        - Market Cap: $1.1K\n        \n        Recommendation based on fundamental metrics and financial health assessment.\n        ",
+          "methodology": {
+            "name": "Fundamental Analysis Agent",
+            "approach": "Financial Statement Analysis & DCF Valuation",
+            "key_metrics": [
+              "Revenue Growth Rate",
+              "Profit Margins (Gross, Operating, Net)",
+              "Return on Equity (ROE)",
+              "Debt-to-Equity Ratio",
+              "Free Cash Flow",
+              "Price-to-Earnings Ratio",
+              "Book Value per Share"
+            ],
+            "data_sources": [
+              "10-K Annual Reports",
+              "10-Q Quarterly Reports",
+              "Earnings Statements",
+              "Balance Sheets",
+              "Cash Flow Statements"
+            ],
+            "analysis_framework": "Discounted Cash Flow (DCF) + Ratio Analysis",
+            "decision_criteria": "Intrinsic Value vs Market Price Comparison",
+            "strengths": [
+              "Long-term value assessment",
+              "Company financial health evaluation",
+              "Objective quantitative analysis"
+            ],
+            "limitations": [
+              "May miss short-term market dynamics",
+              "Relies on historical data",
+              "Complex for growth companies"
+            ]
+          }
+        },
+        "Sentiment": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": 450.0,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Sentiment Analysis Summary:\n        - Overall Sentiment Score: 0.57\n        - News Sentiment: 0.60 (low volume)\n        - Analyst Consensus: hold (3 analysts)\n        - Volume Sentiment: 0.50\n        \n        Recommendation based on market sentiment, news analysis, and analyst consensus.\n        ",
+          "methodology": {
+            "name": "Market Sentiment Analysis Agent",
+            "approach": "News & Social Media Sentiment Processing",
+            "key_metrics": [
+              "News Sentiment Score",
+              "Analyst Rating Changes",
+              "Social Media Buzz",
+              "Market Momentum Indicators",
+              "Institutional Investor Activity"
+            ],
+            "data_sources": [
+              "Financial News Articles",
+              "Analyst Reports",
+              "Social Media Platforms",
+              "Market Data Feeds",
+              "Earnings Call Transcripts"
+            ],
+            "analysis_framework": "Natural Language Processing + Sentiment Scoring",
+            "decision_criteria": "Positive Sentiment Momentum & Market Psychology",
+            "strengths": [
+              "Captures market psychology",
+              "Real-time sentiment tracking",
+              "Identifies momentum shifts"
+            ],
+            "limitations": [
+              "Can be influenced by noise",
+              "Short-term focused",
+              "Susceptible to market manipulation"
+            ]
+          }
+        },
+        "Valuation": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": null,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Valuation Analysis Summary:\n        - Overall Valuation Score: 0.46\n        - P/E Valuation: unknown\n        - Technical Rating: neutral\n        - Relative Valuation Score: 0.47\n        - Vs Sector: neutral\n        - Vs Market: neutral\n        \n        Recommendation based on valuation metrics, technical indicators, and relative analysis.\n        ",
+          "methodology": {
+            "name": "Technical & Price Valuation Agent",
+            "approach": "Technical Analysis & Relative Valuation",
+            "key_metrics": [
+              "Price-to-Earnings (P/E) Ratio",
+              "Price-to-Book (P/B) Ratio",
+              "PEG Ratio",
+              "Price Momentum",
+              "Trading Volume Analysis",
+              "Support/Resistance Levels"
+            ],
+            "data_sources": [
+              "Real-time Market Data",
+              "Historical Price Data",
+              "Trading Volume Data",
+              "Peer Company Valuations",
+              "Industry Benchmarks"
+            ],
+            "analysis_framework": "Relative Valuation + Technical Indicators",
+            "decision_criteria": "Attractive Entry Points & Valuation Multiples",
+            "strengths": [
+              "Market timing insights",
+              "Peer comparison analysis",
+              "Entry/exit point identification"
+            ],
+            "limitations": [
+              "May miss fundamental changes",
+              "Sensitive to market volatility",
+              "Requires market efficiency assumption"
+            ]
+          }
+        },
+        "Rationale": {
+          "recommendation": "hold",
+          "confidence": 0.55,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        7-Step Great Business Analysis Summary:\n        - Overall Business Quality Score: 0.59\n        - Business Maturity: 0.4\n        - Growth Quality: 0.50\n        - Competitive Moat: wide (0.74)\n        - Operational Efficiency: 0.60\n        - Financial Strength: weak (0.30)\n        \n        Recommendation based on comprehensive business quality assessment using the 7-step framework.\n        ",
+          "methodology": {
+            "name": "Business Quality Assessment Agent",
+            "approach": "7-Step Great Business Framework",
+            "key_metrics": [
+              "Consistent Sales Growth",
+              "Profit Margin Trends",
+              "Competitive Moat Strength",
+              "Return on Invested Capital (ROIC)",
+              "Debt Structure Analysis",
+              "Management Quality",
+              "Market Position"
+            ],
+            "data_sources": [
+              "Financial Reports",
+              "Industry Analysis",
+              "Competitive Intelligence",
+              "Management Communications",
+              "Market Research Reports"
+            ],
+            "analysis_framework": "7-Step Business Quality Evaluation",
+            "framework_steps": [
+              "1. Consistently increasing sales, net income, and cash flow",
+              "2. Positive growth rates (5Y EPS growth analysis)",
+              "3. Sustainable competitive advantage (Economic Moat)",
+              "4. Profitable and operational efficiency (ROE/ROIC analysis)",
+              "5. Conservative debt structure",
+              "6. Business maturity and sector positioning",
+              "7. Risk-adjusted target pricing"
+            ],
+            "decision_criteria": "Long-term Business Quality & Sustainability",
+            "strengths": [
+              "Comprehensive business evaluation",
+              "Long-term perspective",
+              "Quality-focused approach"
+            ],
+            "limitations": [
+              "May undervalue growth potential",
+              "Complex evaluation process",
+              "Subjective moat assessment"
+            ]
+          }
+        },
+        "Secular_Trend": {
+          "recommendation": "buy",
+          "confidence": 0.75,
+          "target_price": null,
+          "risk_assessment": "HIGH",
+          "reasoning": "\n        Secular Technology Trends Analysis (2025-2030):\n        - Overall Trend Score: 0.74\n        - Relevant Trends: AI-Native Semiconductors & Advanced Packaging, Cloud Re-Acceleration & Sovereign/Edge Infrastructure, Agentic AI & Autonomous Enterprise Software\n        - Market Timing: moderate\n        - Total Addressable Market: $12610.0B\n        - Expected Growth Rate: 40.2%\n        - Competitive Position: 0.88\n        - Execution Capability: 0.56\n        \n        Recommendation based on positioning within major secular technology trends.\n        ",
+          "methodology": {
+            "name": "Technology Trends Analysis Agent",
+            "approach": "Secular Technology Trend Positioning",
+            "key_metrics": [
+              "Market Size & Growth Rate",
+              "Technology Adoption Curve",
+              "Innovation Leadership",
+              "Trend Positioning Score",
+              "Competitive Advantage in Trends"
+            ],
+            "data_sources": [
+              "Industry Research Reports",
+              "Technology Analysis",
+              "Market Forecasts",
+              "Patent Filings",
+              "R&D Investment Data"
+            ],
+            "analysis_framework": "5 Secular Trend Categories Analysis",
+            "trend_categories": [
+              "1. Agentic AI & Autonomous Enterprise Software ($12T market)",
+              "2. Cloud Re-Acceleration & Sovereign/Edge Infrastructure ($110B market)",
+              "3. AI-Native Semiconductors & Advanced Packaging (50% growth rate)",
+              "4. Cybersecurity for the Agentic Era (25% growth rate)",
+              "5. Electrification & AI-Defined Vehicles ($800B market)"
+            ],
+            "decision_criteria": "Technology Trend Alignment & Market Opportunity",
+            "strengths": [
+              "Forward-looking analysis",
+              "Identifies growth opportunities",
+              "Technology trend expertise"
+            ],
+            "limitations": [
+              "Prediction uncertainty",
+              "Technology risk",
+              "Market timing challenges"
+            ]
+          }
+        }
+      },
+      "timestamp": "2025-09-04T12:23:11.639849"
+    },
+    {
+      "stock_info": {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "sector": "Automotive",
+        "price": 250.0,
+        "market_cap": 800.0
+      },
+      "agent_analyses": {
+        "Fundamental": {
+          "recommendation": "hold",
+          "confidence": 0.5,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        Fundamental Analysis Summary:\n        - Overall Health Score: 0.42\n        - Financial Strength: Weak\n        - Valuation: Fair\n        - P/E Score: 0.50\n        - Market Cap: $800.00\n        \n        Recommendation based on fundamental metrics and financial health assessment.\n        ",
+          "methodology": {
+            "name": "Fundamental Analysis Agent",
+            "approach": "Financial Statement Analysis & DCF Valuation",
+            "key_metrics": [
+              "Revenue Growth Rate",
+              "Profit Margins (Gross, Operating, Net)",
+              "Return on Equity (ROE)",
+              "Debt-to-Equity Ratio",
+              "Free Cash Flow",
+              "Price-to-Earnings Ratio",
+              "Book Value per Share"
+            ],
+            "data_sources": [
+              "10-K Annual Reports",
+              "10-Q Quarterly Reports",
+              "Earnings Statements",
+              "Balance Sheets",
+              "Cash Flow Statements"
+            ],
+            "analysis_framework": "Discounted Cash Flow (DCF) + Ratio Analysis",
+            "decision_criteria": "Intrinsic Value vs Market Price Comparison",
+            "strengths": [
+              "Long-term value assessment",
+              "Company financial health evaluation",
+              "Objective quantitative analysis"
+            ],
+            "limitations": [
+              "May miss short-term market dynamics",
+              "Relies on historical data",
+              "Complex for growth companies"
+            ]
+          }
+        },
+        "Sentiment": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": 250.0,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Sentiment Analysis Summary:\n        - Overall Sentiment Score: 0.50\n        - News Sentiment: 0.50 (low volume)\n        - Analyst Consensus: hold (3 analysts)\n        - Volume Sentiment: 0.50\n        \n        Recommendation based on market sentiment, news analysis, and analyst consensus.\n        ",
+          "methodology": {
+            "name": "Market Sentiment Analysis Agent",
+            "approach": "News & Social Media Sentiment Processing",
+            "key_metrics": [
+              "News Sentiment Score",
+              "Analyst Rating Changes",
+              "Social Media Buzz",
+              "Market Momentum Indicators",
+              "Institutional Investor Activity"
+            ],
+            "data_sources": [
+              "Financial News Articles",
+              "Analyst Reports",
+              "Social Media Platforms",
+              "Market Data Feeds",
+              "Earnings Call Transcripts"
+            ],
+            "analysis_framework": "Natural Language Processing + Sentiment Scoring",
+            "decision_criteria": "Positive Sentiment Momentum & Market Psychology",
+            "strengths": [
+              "Captures market psychology",
+              "Real-time sentiment tracking",
+              "Identifies momentum shifts"
+            ],
+            "limitations": [
+              "Can be influenced by noise",
+              "Short-term focused",
+              "Susceptible to market manipulation"
+            ]
+          }
+        },
+        "Valuation": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": null,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Valuation Analysis Summary:\n        - Overall Valuation Score: 0.46\n        - P/E Valuation: unknown\n        - Technical Rating: neutral\n        - Relative Valuation Score: 0.47\n        - Vs Sector: neutral\n        - Vs Market: neutral\n        \n        Recommendation based on valuation metrics, technical indicators, and relative analysis.\n        ",
+          "methodology": {
+            "name": "Technical & Price Valuation Agent",
+            "approach": "Technical Analysis & Relative Valuation",
+            "key_metrics": [
+              "Price-to-Earnings (P/E) Ratio",
+              "Price-to-Book (P/B) Ratio",
+              "PEG Ratio",
+              "Price Momentum",
+              "Trading Volume Analysis",
+              "Support/Resistance Levels"
+            ],
+            "data_sources": [
+              "Real-time Market Data",
+              "Historical Price Data",
+              "Trading Volume Data",
+              "Peer Company Valuations",
+              "Industry Benchmarks"
+            ],
+            "analysis_framework": "Relative Valuation + Technical Indicators",
+            "decision_criteria": "Attractive Entry Points & Valuation Multiples",
+            "strengths": [
+              "Market timing insights",
+              "Peer comparison analysis",
+              "Entry/exit point identification"
+            ],
+            "limitations": [
+              "May miss fundamental changes",
+              "Sensitive to market volatility",
+              "Requires market efficiency assumption"
+            ]
+          }
+        },
+        "Rationale": {
+          "recommendation": "hold",
+          "confidence": 0.55,
+          "target_price": null,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        7-Step Great Business Analysis Summary:\n        - Overall Business Quality Score: 0.46\n        - Business Maturity: 0.4\n        - Growth Quality: 0.50\n        - Competitive Moat: narrow (0.44)\n        - Operational Efficiency: 0.40\n        - Financial Strength: strong (0.70)\n        \n        Recommendation based on comprehensive business quality assessment using the 7-step framework.\n        ",
+          "methodology": {
+            "name": "Business Quality Assessment Agent",
+            "approach": "7-Step Great Business Framework",
+            "key_metrics": [
+              "Consistent Sales Growth",
+              "Profit Margin Trends",
+              "Competitive Moat Strength",
+              "Return on Invested Capital (ROIC)",
+              "Debt Structure Analysis",
+              "Management Quality",
+              "Market Position"
+            ],
+            "data_sources": [
+              "Financial Reports",
+              "Industry Analysis",
+              "Competitive Intelligence",
+              "Management Communications",
+              "Market Research Reports"
+            ],
+            "analysis_framework": "7-Step Business Quality Evaluation",
+            "framework_steps": [
+              "1. Consistently increasing sales, net income, and cash flow",
+              "2. Positive growth rates (5Y EPS growth analysis)",
+              "3. Sustainable competitive advantage (Economic Moat)",
+              "4. Profitable and operational efficiency (ROE/ROIC analysis)",
+              "5. Conservative debt structure",
+              "6. Business maturity and sector positioning",
+              "7. Risk-adjusted target pricing"
+            ],
+            "decision_criteria": "Long-term Business Quality & Sustainability",
+            "strengths": [
+              "Comprehensive business evaluation",
+              "Long-term perspective",
+              "Quality-focused approach"
+            ],
+            "limitations": [
+              "May undervalue growth potential",
+              "Complex evaluation process",
+              "Subjective moat assessment"
+            ]
+          }
+        },
+        "Secular_Trend": {
+          "recommendation": "hold",
+          "confidence": 0.65,
+          "target_price": null,
+          "risk_assessment": "HIGH",
+          "reasoning": "\n        Secular Technology Trends Analysis (2025-2030):\n        - Overall Trend Score: 0.64\n        - Relevant Trends: Electrification & AI-Defined Vehicles\n        - Market Timing: moderate\n        - Total Addressable Market: $800.0B\n        - Expected Growth Rate: 30.0%\n        - Competitive Position: 0.71\n        - Execution Capability: 0.47\n        \n        Recommendation based on positioning within major secular technology trends.\n        ",
+          "methodology": {
+            "name": "Technology Trends Analysis Agent",
+            "approach": "Secular Technology Trend Positioning",
+            "key_metrics": [
+              "Market Size & Growth Rate",
+              "Technology Adoption Curve",
+              "Innovation Leadership",
+              "Trend Positioning Score",
+              "Competitive Advantage in Trends"
+            ],
+            "data_sources": [
+              "Industry Research Reports",
+              "Technology Analysis",
+              "Market Forecasts",
+              "Patent Filings",
+              "R&D Investment Data"
+            ],
+            "analysis_framework": "5 Secular Trend Categories Analysis",
+            "trend_categories": [
+              "1. Agentic AI & Autonomous Enterprise Software ($12T market)",
+              "2. Cloud Re-Acceleration & Sovereign/Edge Infrastructure ($110B market)",
+              "3. AI-Native Semiconductors & Advanced Packaging (50% growth rate)",
+              "4. Cybersecurity for the Agentic Era (25% growth rate)",
+              "5. Electrification & AI-Defined Vehicles ($800B market)"
+            ],
+            "decision_criteria": "Technology Trend Alignment & Market Opportunity",
+            "strengths": [
+              "Forward-looking analysis",
+              "Identifies growth opportunities",
+              "Technology trend expertise"
+            ],
+            "limitations": [
+              "Prediction uncertainty",
+              "Technology risk",
+              "Market timing challenges"
+            ]
+          }
+        }
+      },
+      "timestamp": "2025-09-04T12:23:11.640049"
+    },
+    {
+      "stock_info": {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase",
+        "sector": "Financial",
+        "price": 145.0,
+        "market_cap": 425.0
+      },
+      "agent_analyses": {
+        "Fundamental": {
+          "recommendation": "hold",
+          "confidence": 0.5,
+          "target_price": null,
+          "risk_assessment": "MODERATE",
+          "reasoning": "\n        Fundamental Analysis Summary:\n        - Overall Health Score: 0.42\n        - Financial Strength: Weak\n        - Valuation: Fair\n        - P/E Score: 0.50\n        - Market Cap: $425.00\n        \n        Recommendation based on fundamental metrics and financial health assessment.\n        ",
+          "methodology": {
+            "name": "Fundamental Analysis Agent",
+            "approach": "Financial Statement Analysis & DCF Valuation",
+            "key_metrics": [
+              "Revenue Growth Rate",
+              "Profit Margins (Gross, Operating, Net)",
+              "Return on Equity (ROE)",
+              "Debt-to-Equity Ratio",
+              "Free Cash Flow",
+              "Price-to-Earnings Ratio",
+              "Book Value per Share"
+            ],
+            "data_sources": [
+              "10-K Annual Reports",
+              "10-Q Quarterly Reports",
+              "Earnings Statements",
+              "Balance Sheets",
+              "Cash Flow Statements"
+            ],
+            "analysis_framework": "Discounted Cash Flow (DCF) + Ratio Analysis",
+            "decision_criteria": "Intrinsic Value vs Market Price Comparison",
+            "strengths": [
+              "Long-term value assessment",
+              "Company financial health evaluation",
+              "Objective quantitative analysis"
+            ],
+            "limitations": [
+              "May miss short-term market dynamics",
+              "Relies on historical data",
+              "Complex for growth companies"
+            ]
+          }
+        },
+        "Sentiment": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": 145.0,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Sentiment Analysis Summary:\n        - Overall Sentiment Score: 0.50\n        - News Sentiment: 0.50 (low volume)\n        - Analyst Consensus: hold (3 analysts)\n        - Volume Sentiment: 0.50\n        \n        Recommendation based on market sentiment, news analysis, and analyst consensus.\n        ",
+          "methodology": {
+            "name": "Market Sentiment Analysis Agent",
+            "approach": "News & Social Media Sentiment Processing",
+            "key_metrics": [
+              "News Sentiment Score",
+              "Analyst Rating Changes",
+              "Social Media Buzz",
+              "Market Momentum Indicators",
+              "Institutional Investor Activity"
+            ],
+            "data_sources": [
+              "Financial News Articles",
+              "Analyst Reports",
+              "Social Media Platforms",
+              "Market Data Feeds",
+              "Earnings Call Transcripts"
+            ],
+            "analysis_framework": "Natural Language Processing + Sentiment Scoring",
+            "decision_criteria": "Positive Sentiment Momentum & Market Psychology",
+            "strengths": [
+              "Captures market psychology",
+              "Real-time sentiment tracking",
+              "Identifies momentum shifts"
+            ],
+            "limitations": [
+              "Can be influenced by noise",
+              "Short-term focused",
+              "Susceptible to market manipulation"
+            ]
+          }
+        },
+        "Valuation": {
+          "recommendation": "hold",
+          "confidence": 0.6,
+          "target_price": null,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        Valuation Analysis Summary:\n        - Overall Valuation Score: 0.46\n        - P/E Valuation: unknown\n        - Technical Rating: neutral\n        - Relative Valuation Score: 0.47\n        - Vs Sector: neutral\n        - Vs Market: neutral\n        \n        Recommendation based on valuation metrics, technical indicators, and relative analysis.\n        ",
+          "methodology": {
+            "name": "Technical & Price Valuation Agent",
+            "approach": "Technical Analysis & Relative Valuation",
+            "key_metrics": [
+              "Price-to-Earnings (P/E) Ratio",
+              "Price-to-Book (P/B) Ratio",
+              "PEG Ratio",
+              "Price Momentum",
+              "Trading Volume Analysis",
+              "Support/Resistance Levels"
+            ],
+            "data_sources": [
+              "Real-time Market Data",
+              "Historical Price Data",
+              "Trading Volume Data",
+              "Peer Company Valuations",
+              "Industry Benchmarks"
+            ],
+            "analysis_framework": "Relative Valuation + Technical Indicators",
+            "decision_criteria": "Attractive Entry Points & Valuation Multiples",
+            "strengths": [
+              "Market timing insights",
+              "Peer comparison analysis",
+              "Entry/exit point identification"
+            ],
+            "limitations": [
+              "May miss fundamental changes",
+              "Sensitive to market volatility",
+              "Requires market efficiency assumption"
+            ]
+          }
+        },
+        "Rationale": {
+          "recommendation": "hold",
+          "confidence": 0.55,
+          "target_price": null,
+          "risk_assessment": "LOW",
+          "reasoning": "\n        7-Step Great Business Analysis Summary:\n        - Overall Business Quality Score: 0.52\n        - Business Maturity: 0.4\n        - Growth Quality: 0.50\n        - Competitive Moat: narrow (0.60)\n        - Operational Efficiency: 0.45\n        - Financial Strength: strong (0.70)\n        \n        Recommendation based on comprehensive business quality assessment using the 7-step framework.\n        ",
+          "methodology": {
+            "name": "Business Quality Assessment Agent",
+            "approach": "7-Step Great Business Framework",
+            "key_metrics": [
+              "Consistent Sales Growth",
+              "Profit Margin Trends",
+              "Competitive Moat Strength",
+              "Return on Invested Capital (ROIC)",
+              "Debt Structure Analysis",
+              "Management Quality",
+              "Market Position"
+            ],
+            "data_sources": [
+              "Financial Reports",
+              "Industry Analysis",
+              "Competitive Intelligence",
+              "Management Communications",
+              "Market Research Reports"
+            ],
+            "analysis_framework": "7-Step Business Quality Evaluation",
+            "framework_steps": [
+              "1. Consistently increasing sales, net income, and cash flow",
+              "2. Positive growth rates (5Y EPS growth analysis)",
+              "3. Sustainable competitive advantage (Economic Moat)",
+              "4. Profitable and operational efficiency (ROE/ROIC analysis)",
+              "5. Conservative debt structure",
+              "6. Business maturity and sector positioning",
+              "7. Risk-adjusted target pricing"
+            ],
+            "decision_criteria": "Long-term Business Quality & Sustainability",
+            "strengths": [
+              "Comprehensive business evaluation",
+              "Long-term perspective",
+              "Quality-focused approach"
+            ],
+            "limitations": [
+              "May undervalue growth potential",
+              "Complex evaluation process",
+              "Subjective moat assessment"
+            ]
+          }
+        },
+        "Secular_Trend": {
+          "recommendation": "hold",
+          "confidence": 0.55,
+          "target_price": null,
+          "risk_assessment": "HIGH",
+          "reasoning": "\n        Secular Technology Trends Analysis (2025-2030):\n        - Overall Trend Score: 0.48\n        - Relevant Trends: \n        - Market Timing: moderate\n        - Total Addressable Market: $0.00\n        - Expected Growth Rate: 0.0%\n        - Competitive Position: 0.46\n        - Execution Capability: 0.47\n        \n        Recommendation based on positioning within major secular technology trends.\n        ",
+          "methodology": {
+            "name": "Technology Trends Analysis Agent",
+            "approach": "Secular Technology Trend Positioning",
+            "key_metrics": [
+              "Market Size & Growth Rate",
+              "Technology Adoption Curve",
+              "Innovation Leadership",
+              "Trend Positioning Score",
+              "Competitive Advantage in Trends"
+            ],
+            "data_sources": [
+              "Industry Research Reports",
+              "Technology Analysis",
+              "Market Forecasts",
+              "Patent Filings",
+              "R&D Investment Data"
+            ],
+            "analysis_framework": "5 Secular Trend Categories Analysis",
+            "trend_categories": [
+              "1. Agentic AI & Autonomous Enterprise Software ($12T market)",
+              "2. Cloud Re-Acceleration & Sovereign/Edge Infrastructure ($110B market)",
+              "3. AI-Native Semiconductors & Advanced Packaging (50% growth rate)",
+              "4. Cybersecurity for the Agentic Era (25% growth rate)",
+              "5. Electrification & AI-Defined Vehicles ($800B market)"
+            ],
+            "decision_criteria": "Technology Trend Alignment & Market Opportunity",
+            "strengths": [
+              "Forward-looking analysis",
+              "Identifies growth opportunities",
+              "Technology trend expertise"
+            ],
+            "limitations": [
+              "Prediction uncertainty",
+              "Technology risk",
+              "Market timing challenges"
+            ]
+          }
+        }
+      },
+      "timestamp": "2025-09-04T12:23:11.640227"
+    }
+  ],
+  "performance_summary": {
+    "total_analyses": 25,
+    "recommendation_distribution": {
+      "buy": 2,
+      "hold": 23,
+      "sell": 0
+    },
+    "average_confidence": 0.584,
+    "agent_count": 5,
+    "stocks_analyzed": 5
+  }
+}
