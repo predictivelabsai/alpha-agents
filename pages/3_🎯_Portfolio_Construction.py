@@ -90,7 +90,7 @@ def main():
     
     # Initialize components
     db = init_database()
-    mas = init_multi_agent_sy    # Page header
+    mas = init_multi_agent_system()    # Page header
     st.markdown("""
     <div style="background: linear-gradient(90deg, #28a745, #20c997); padding: 2rem; border-radius: 10px; color: white; text-align: center; margin-bottom: 2rem;">
         <h1>🎯 Portfolio Construction</h1>

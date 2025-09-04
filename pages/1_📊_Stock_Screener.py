@@ -242,6 +242,7 @@ def main():
                         symbol=symbol,
                         company_name=stock_data['company_name'],
                         sector=stock_data['sector'],
+                        market_cap=stock_data.get('market_cap', 0),
                         current_price=stock_data['current_price']
                     )
                     
