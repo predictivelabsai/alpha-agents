@@ -26,7 +26,7 @@ export default function Home() {
                 <a href="#team" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Team</a>
                 <a href="#contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Contact</a>
                 <Link 
-                  href="https://kangro-capital.onrender.com/"
+                  href="https://lohusalucap.predictivelabs.ai/"
                   className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
                 >
                   Login
@@ -58,7 +58,7 @@ export default function Home() {
           </p>
           <div className="space-x-4">
             <Link 
-              href="https://kangro-capital.onrender.com/"
+              href="https://lohusalucap.predictivelabs.ai/"
               className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition-colors inline-block"
             >
               Access Platform
