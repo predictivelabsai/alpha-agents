@@ -1,8 +1,8 @@
-# Alpha Agents: Multi-Agent Equity Portfolio Construction Methodology
+# Lohusalu Capital Management: Multi-Agent Equity Portfolio Construction Methodology
 
 ## Executive Summary
 
-The Alpha Agents system implements a sophisticated multi-agent framework for equity portfolio construction, based on cutting-edge research in AI-driven financial analysis. The system employs five specialized agents that collaborate through a LangGraph-based state machine to provide comprehensive stock analysis and portfolio recommendations.
+The Lohusalu Capital Management system implements a sophisticated multi-agent framework for equity portfolio construction, based on cutting-edge research in AI-driven financial analysis. The system employs five specialized agents that collaborate through a LangGraph-based state machine to provide comprehensive stock analysis and portfolio recommendations.
 
 ## System Architecture
 

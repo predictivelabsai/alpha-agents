@@ -1,9 +1,9 @@
 """
-# Alpha Agents - Multi-Agent Equity Portfolio Construction System
+# Lohusalu Capital Management - Multi-Agent Equity Portfolio System
 
 ![Alpha Agents Banner](https://i.imgur.com/your-banner-image.png)  <!-- Replace with a real banner image -->
 
-**Alpha Agents** is an advanced multi-agent system for equity portfolio construction, based on cutting-edge research in artificial intelligence and financial analysis. This Streamlit application demonstrates how specialized AI agents can collaborate, debate, and reach consensus to make sophisticated investment decisions.
+**Lohusalu Capital Management** is an advanced multi-agent system for equity portfolio construction, based on cutting-edge research in artificial intelligence and financial analysis. This Streamlit application demonstrates how specialized AI agents can collaborate, debate, and reach consensus to make sophisticated investment decisions.
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.29-orange.svg)](https://streamlit.io/)
@@ -25,7 +25,7 @@
 
 ## 🏗️ System Architecture
 
-The Alpha Agents system is built on a modern, modular architecture:
+The Lohusalu Capital Management system is built on a modern, modular architecture:
 
 - **Multi-Agent Framework**: LangGraph-based workflow orchestration for structured debate and consensus.
 - **AI Engine**: OpenAI GPT models for agent intelligence and reasoning.

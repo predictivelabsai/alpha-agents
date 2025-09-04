@@ -16,7 +16,7 @@ export default function Home() {
                 height={40}
                 className="mr-3"
               />
-              <span className="text-xl font-bold text-gray-900">Lohusalu Capital</span>
+              <span className="text-xl font-bold text-gray-900">Lohusalu Capital Management</span>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -50,8 +50,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Intelligent Capital Management
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Lohusalu Capital Management
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
             Leveraging advanced AI and multi-agent systems for superior equity portfolio construction
@@ -77,7 +77,7 @@ export default function Home() {
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Lohusalu Capital</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Lohusalu Capital Management</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are a forward-thinking investment management firm that combines traditional financial expertise 
               with cutting-edge artificial intelligence to deliver exceptional results for our clients.
@@ -131,7 +131,7 @@ export default function Home() {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Investment Strategy</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Lohusalu Capital employs a revolutionary multi-agent approach to equity analysis, 
+                Lohusalu Capital Management employs a revolutionary multi-agent approach to equity analysis, 
                 combining the expertise of five specialized AI agents to provide comprehensive 
                 investment recommendations.
               </p>
@@ -323,7 +323,7 @@ export default function Home() {
                   height={32}
                   className="mr-2"
                 />
-                <span className="text-lg font-bold">Lohusalu Capital</span>
+                <span className="text-lg font-bold">Lohusalu Capital Management</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Intelligent capital management powered by advanced AI technology.
@@ -358,7 +358,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2025 Lohusalu Capital. All rights reserved.</p>
+            <p>&copy; 2025 Lohusalu Capital Management. All rights reserved.</p>
           </div>
         </div>
       </footer>

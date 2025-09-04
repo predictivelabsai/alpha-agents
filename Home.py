@@ -23,7 +23,7 @@ load_dotenv()
 
 # Page configuration
 st.set_page_config(
-    page_title="Alpha Agents - Equity Portfolio AI",
+    page_title="Lohusalu Capital Management - Equity Portfolio AI",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -89,7 +89,7 @@ def main():
     mas = init_multi_agent_system()
     
     # Sidebar status
-    st.sidebar.title("📈 Alpha Agents")
+    st.sidebar.title("🏛️ Lohusalu Capital Management")
     st.sidebar.markdown("*Multi-Agent Equity Portfolio System*")
     st.sidebar.markdown("---")
     
@@ -116,11 +116,11 @@ def main():
     """)
     
     # Main content
-    st.markdown('<h1 class="main-header">📈 Alpha Agents Equity Portfolio System</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🏛️ Lohusalu Capital Management</h1>', unsafe_allow_html=True)
     
     st.markdown("""
-    Welcome to the **Alpha Agents** multi-agent system for equity portfolio construction. 
-    This application demonstrates advanced AI techniques for stock selection and portfolio 
+    Welcome to **Lohusalu Capital Management's** advanced multi-agent system for equity portfolio construction. 
+    This application demonstrates cutting-edge AI techniques for stock selection and portfolio 
     optimization using specialized agents that collaborate and debate to make informed investment decisions.
     """)
     
@@ -338,8 +338,8 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; color: #666; padding: 2rem;">
-        <p><strong>Alpha Agents</strong> - Advanced Multi-Agent System for Equity Portfolio Construction</p>
-        <p>Based on cutting-edge research in AI-driven financial analysis</p>
+        <p><strong>Lohusalu Capital Management</strong> - Advanced Multi-Agent System for Equity Portfolio Construction</p>
+        <p>Intelligent capital management powered by advanced AI technology</p>
     </div>
     """, unsafe_allow_html=True)
 
