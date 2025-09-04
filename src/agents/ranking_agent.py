@@ -28,7 +28,7 @@ class RankingAgent(BaseAgent):
     """
     
     def __init__(self, openai_api_key: str, risk_tolerance: RiskTolerance = RiskTolerance.MODERATE):
-        super().__init__(openai_api_key, risk_tolerance)
+        super().__init__(risk_tolerance)
         self.agent_type = "Ranking Agent"
         self.specialization = "Multi-agent synthesis and final recommendations"
         
@@ -42,6 +42,38 @@ class RankingAgent(BaseAgent):
         except Exception as e:
             logging.warning(f"Failed to initialize OpenAI client: {e}")
             self.llm = None
+    
+    def analyze(self, stock: Stock, market_data: Optional[Dict] = None) -> 'AgentAnalysis':
+        """
+        Required abstract method implementation - delegates to analyze_stock for compatibility
+        """
+        # For compatibility, create empty agent analyses dict
+        agent_analyses = {}
+        result = self.analyze_stock(stock, agent_analyses)
+        
+        # Convert to AgentAnalysis format
+        from .base_agent import AgentAnalysis, InvestmentDecision
+        
+        recommendation_map = {
+            'STRONG_BUY': InvestmentDecision.BUY,
+            'BUY': InvestmentDecision.BUY,
+            'HOLD': InvestmentDecision.HOLD,
+            'SELL': InvestmentDecision.SELL,
+            'STRONG_SELL': InvestmentDecision.SELL
+        }
+        
+        return AgentAnalysis(
+            agent_name=self.agent_type,
+            stock_symbol=stock.symbol,
+            recommendation=recommendation_map.get(result.get('recommendation', 'HOLD'), InvestmentDecision.HOLD),
+            confidence_score=result.get('confidence_score', 0.5),
+            target_price=result.get('target_price'),
+            risk_assessment=result.get('risk_assessment', 'MODERATE'),
+            key_factors=result.get('key_catalysts', []),
+            concerns=result.get('key_risks', []),
+            reasoning=result.get('investment_thesis', 'Multi-agent synthesis analysis'),
+            analysis_timestamp=datetime.now().isoformat()
+        )
     
     def analyze_stock(self, stock: Stock, agent_analyses: Dict[str, Dict]) -> Dict[str, Any]:
         """
