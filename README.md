@@ -163,6 +163,155 @@ Test results and generated data are stored in the `test-data/` directory.
 
 ---
 
+## 🌐 Deploying the NextJS Landing Page
+
+The project includes a professional NextJS landing page for Lohusalu Capital Management located in the `web-ui/` directory. Here's how to deploy it to various platforms:
+
+### 📁 Landing Page Structure
+
+```
+web-ui/
+├── src/
+│   └── app/
+│       ├── page.tsx          # Main landing page
+│       ├── layout.tsx        # App layout
+│       └── globals.css       # Global styles
+├── public/
+│   ├── logo.png             # Company logo
+│   ├── hero-skyline.jpg     # Hero background image
+│   ├── buildings-perspective.jpg
+│   └── modern-towers.jpg
+├── package.json
+└── next.config.ts
+```
+
+### 🚀 Deployment Options
+
+#### Option 1: Vercel (Recommended)
+
+Vercel is the easiest way to deploy NextJS applications:
+
+1. **Fork/Clone the repository**:
+   ```bash
+   git clone https://github.com/predictivelabsai/alpha-agents.git
+   cd alpha-agents/web-ui
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Test locally**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Deploy to Vercel**:
+   - Visit [vercel.com](https://vercel.com)
+   - Connect your GitHub account
+   - Import the repository
+   - Set the **Root Directory** to `web-ui`
+   - Deploy automatically
+
+5. **Custom Domain** (Optional):
+   - Add your custom domain in Vercel dashboard
+   - Update DNS settings as instructed
+
+#### Option 2: Netlify
+
+1. **Build the application**:
+   ```bash
+   cd web-ui
+   npm install
+   npm run build
+   ```
+
+2. **Deploy to Netlify**:
+   - Visit [netlify.com](https://netlify.com)
+   - Drag and drop the `web-ui/out` folder (after running `npm run build`)
+   - Or connect your GitHub repository
+   - Set **Base directory** to `web-ui`
+   - Set **Build command** to `npm run build`
+   - Set **Publish directory** to `web-ui/out`
+
+#### Option 3: Render.com
+
+1. **Create a new Static Site on Render**:
+   - Visit [render.com](https://render.com)
+   - Connect your GitHub repository
+   - Choose "Static Site"
+
+2. **Configure build settings**:
+   - **Root Directory**: `web-ui`
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `out`
+
+#### Option 4: GitHub Pages
+
+1. **Enable static export** in `next.config.ts`:
+   ```typescript
+   /** @type {import('next').NextConfig} */
+   const nextConfig = {
+     output: 'export',
+     trailingSlash: true,
+     images: {
+       unoptimized: true
+     }
+   }
+   
+   module.exports = nextConfig
+   ```
+
+2. **Build and export**:
+   ```bash
+   cd web-ui
+   npm run build
+   ```
+
+3. **Deploy to GitHub Pages**:
+   - Push the `out` folder to a `gh-pages` branch
+   - Enable GitHub Pages in repository settings
+
+### 🔧 Environment Configuration
+
+The landing page includes:
+- **Professional Design**: Based on Pershing Square Holdings structure
+- **Responsive Layout**: Mobile and desktop optimized
+- **High-Quality Images**: Professional skyscraper photography
+- **Login Integration**: Direct link to the Streamlit application
+- **SEO Optimized**: Meta tags and structured content
+
+### 🎨 Customization
+
+To customize the landing page:
+
+1. **Update Company Information**:
+   - Edit `src/app/page.tsx`
+   - Modify contact details, team information, and performance metrics
+
+2. **Replace Images**:
+   - Add new images to `public/` directory
+   - Update image references in `page.tsx`
+
+3. **Styling Changes**:
+   - Modify `src/app/globals.css`
+   - Update Tailwind classes in components
+
+4. **Logo Updates**:
+   - Replace `public/logo.png` with your company logo
+   - Ensure proper dimensions (recommended: 200x200px)
+
+### 📊 Performance Optimization
+
+The landing page is optimized for:
+- **Fast Loading**: Optimized images and minimal JavaScript
+- **SEO**: Proper meta tags and semantic HTML
+- **Mobile First**: Responsive design for all devices
+- **Accessibility**: WCAG compliant components
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, please open an issue or submit a pull request.
