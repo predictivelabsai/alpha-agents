@@ -1,0 +1,41 @@
+agent,analysis_time_seconds,company_name,concerns_count,confidence_score,current_price,key_factors_count,market_cap,reasoning_length,recommendation,risk_assessment,sector,stock_symbol,target_price,timestamp
+fundamental,0.0,Apple Inc.,0,0.65,150.0,3,2500000000000.0,304,hold,LOW,Technology,AAPL,108.0,2025-09-04T12:03:32.354087
+fundamental,0.0,Microsoft Corporation,0,0.65,300.0,3,2200000000000.0,304,hold,LOW,Technology,MSFT,192.86,2025-09-04T12:03:32.354133
+fundamental,0.0,NVIDIA Corporation,1,0.5,450.0,2,1100000000000.0,306,hold,MODERATE,Technology,NVDA,124.62,2025-09-04T12:03:32.354163
+fundamental,0.0,Tesla Inc.,3,0.5,200.0,1,650000000000.0,301,hold,HIGH,Consumer Discretionary,TSLA,80.0,2025-09-04T12:03:32.354202
+fundamental,0.0,JPMorgan Chase & Co.,0,0.65,140.0,3,420000000000.0,304,hold,LOW,Financial,JPM,210.0,2025-09-04T12:03:32.354232
+fundamental,0.0,Johnson & Johnson,0,0.65,160.0,3,430000000000.0,297,hold,LOW,Healthcare,JNJ,192.0,2025-09-04T12:03:32.354258
+fundamental,0.0,Exxon Mobil Corporation,0,0.65,110.0,3,460000000000.0,304,hold,LOW,Energy,XOM,141.43,2025-09-04T12:03:32.354288
+fundamental,0.0,Amazon.com Inc.,2,0.5,130.0,1,1350000000000.0,302,hold,MODERATE,Consumer Discretionary,AMZN,46.8,2025-09-04T12:03:32.354316
+sentiment,0.0,Apple Inc.,0,0.65,150.0,4,2500000000000.0,307,buy,LOW,Technology,AAPL,172.5,2025-09-04T12:03:32.354383
+sentiment,0.0,Microsoft Corporation,0,0.65,300.0,4,2200000000000.0,307,buy,LOW,Technology,MSFT,345.0,2025-09-04T12:03:32.354412
+sentiment,0.0,NVIDIA Corporation,0,0.65,450.0,4,1100000000000.0,307,buy,LOW,Technology,NVDA,517.5,2025-09-04T12:03:32.354437
+sentiment,0.0,Tesla Inc.,0,0.6,200.0,4,650000000000.0,307,hold,LOW,Consumer Discretionary,TSLA,230.0,2025-09-04T12:03:32.354458
+sentiment,0.0,JPMorgan Chase & Co.,0,0.6,140.0,4,420000000000.0,307,hold,LOW,Financial,JPM,161.0,2025-09-04T12:03:32.354480
+sentiment,0.0,Johnson & Johnson,0,0.65,160.0,4,430000000000.0,307,buy,LOW,Healthcare,JNJ,184.0,2025-09-04T12:03:32.354502
+sentiment,0.0,Exxon Mobil Corporation,0,0.6,110.0,4,460000000000.0,307,hold,LOW,Energy,XOM,126.5,2025-09-04T12:03:32.354525
+sentiment,0.0,Amazon.com Inc.,0,0.6,130.0,4,1350000000000.0,307,hold,LOW,Consumer Discretionary,AMZN,149.5,2025-09-04T12:03:32.354561
+valuation,0.0,Apple Inc.,1,0.6,150.0,3,2500000000000.0,361,hold,LOW,Technology,AAPL,150.0,2025-09-04T12:03:32.354627
+valuation,0.0,Microsoft Corporation,1,0.6,300.0,3,2200000000000.0,361,hold,LOW,Technology,MSFT,267.86,2025-09-04T12:03:32.354658
+valuation,0.0,NVIDIA Corporation,4,0.6,450.0,2,1100000000000.0,367,hold,MODERATE,Technology,NVDA,173.08,2025-09-04T12:03:32.354686
+valuation,0.0,Tesla Inc.,4,0.6,200.0,1,650000000000.0,367,hold,MODERATE,Consumer Discretionary,TSLA,80.0,2025-09-04T12:03:32.354715
+valuation,0.0,JPMorgan Chase & Co.,0,0.7,140.0,4,420000000000.0,363,buy,LOW,Financial,JPM,140.0,2025-09-04T12:03:32.354743
+valuation,0.0,Johnson & Johnson,0,0.7,160.0,5,430000000000.0,364,buy,LOW,Healthcare,JNJ,234.67,2025-09-04T12:03:32.354770
+valuation,0.0,Exxon Mobil Corporation,1,0.7,110.0,4,460000000000.0,363,buy,LOW,Energy,XOM,110.0,2025-09-04T12:03:32.354797
+valuation,0.0,Amazon.com Inc.,4,0.6,130.0,1,1350000000000.0,367,hold,MODERATE,Consumer Discretionary,AMZN,46.8,2025-09-04T12:03:32.354838
+rationale,0.0,Apple Inc.,0,0.75,150.0,5,2500000000000.0,402,buy,LOW,Technology,AAPL,174.42,2025-09-04T12:03:32.354902
+rationale,0.0,Microsoft Corporation,0,0.75,300.0,5,2200000000000.0,402,buy,LOW,Technology,MSFT,306.0,2025-09-04T12:03:32.354942
+rationale,0.0,NVIDIA Corporation,0,0.75,450.0,5,1100000000000.0,402,buy,LOW,Technology,NVDA,194.4,2025-09-04T12:03:32.354985
+rationale,0.0,Tesla Inc.,0,0.65,200.0,1,650000000000.0,404,hold,LOW,Consumer Discretionary,TSLA,83.2,2025-09-04T12:03:32.355048
+rationale,0.0,JPMorgan Chase & Co.,0,0.65,140.0,1,420000000000.0,404,hold,LOW,Financial,JPM,145.43,2025-09-04T12:03:32.355089
+rationale,0.0,Johnson & Johnson,0,0.65,160.0,4,430000000000.0,402,hold,LOW,Healthcare,JNJ,234.15,2025-09-04T12:03:32.355123
+rationale,0.0,Exxon Mobil Corporation,0,0.55,110.0,0,460000000000.0,404,hold,LOW,Energy,XOM,107.8,2025-09-04T12:03:32.355156
+rationale,0.0,Amazon.com Inc.,0,0.65,130.0,1,1350000000000.0,404,hold,LOW,Consumer Discretionary,AMZN,48.67,2025-09-04T12:03:32.355185
+secular_trend,0.0,Apple Inc.,0,0.85,150.0,5,2500000000000.0,563,buy,LOW,Technology,AAPL,315.17,2025-09-04T12:03:32.355265
+secular_trend,0.0,Microsoft Corporation,0,0.85,300.0,5,2200000000000.0,563,buy,LOW,Technology,MSFT,562.8,2025-09-04T12:03:32.355314
+secular_trend,0.0,NVIDIA Corporation,0,0.85,450.0,5,1100000000000.0,563,buy,LOW,Technology,NVDA,363.66,2025-09-04T12:03:32.355366
+secular_trend,0.0,Tesla Inc.,1,0.75,200.0,4,650000000000.0,453,buy,MODERATE,Consumer Discretionary,TSLA,139.73,2025-09-04T12:03:32.355417
+secular_trend,0.0,JPMorgan Chase & Co.,1,0.55,140.0,1,420000000000.0,409,hold,LOW,Financial,JPM,256.67,2025-09-04T12:03:32.355453
+secular_trend,0.0,Johnson & Johnson,1,0.85,160.0,4,430000000000.0,461,buy,LOW,Healthcare,JNJ,294.91,2025-09-04T12:03:32.355491
+secular_trend,0.0,Exxon Mobil Corporation,1,0.65,110.0,2,460000000000.0,449,hold,MODERATE,Energy,XOM,170.47,2025-09-04T12:03:32.355528
+secular_trend,0.0,Amazon.com Inc.,0,0.75,130.0,5,1350000000000.0,508,buy,LOW,Consumer Discretionary,AMZN,79.87,2025-09-04T12:03:32.355568

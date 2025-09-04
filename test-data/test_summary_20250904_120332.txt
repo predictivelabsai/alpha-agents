@@ -1,0 +1,48 @@
+Alpha Agents System Test Summary
+========================================
+
+Test Run: 2025-09-04 12:03:32
+Duration: 0.57 seconds
+
+Unit Tests:
+  Tests Run: 44
+  Success Rate: 81.8%
+  Failures: 0
+  Errors: 8
+
+Individual Agent Performance:
+  Fundamental Agent:
+    Success Rate: 100.0%
+    Avg Confidence: 0.59
+    Avg Analysis Time: 0.000s
+    Recommendations: Buy(0) Hold(8) Sell(0) Avoid(0)
+
+  Sentiment Agent:
+    Success Rate: 100.0%
+    Avg Confidence: 0.62
+    Avg Analysis Time: 0.000s
+    Recommendations: Buy(4) Hold(4) Sell(0) Avoid(0)
+
+  Valuation Agent:
+    Success Rate: 100.0%
+    Avg Confidence: 0.64
+    Avg Analysis Time: 0.000s
+    Recommendations: Buy(3) Hold(5) Sell(0) Avoid(0)
+
+  Rationale Agent:
+    Success Rate: 100.0%
+    Avg Confidence: 0.68
+    Avg Analysis Time: 0.000s
+    Recommendations: Buy(3) Hold(5) Sell(0) Avoid(0)
+
+  Secular_Trend Agent:
+    Success Rate: 100.0%
+    Avg Confidence: 0.76
+    Avg Analysis Time: 0.000s
+    Recommendations: Buy(6) Hold(2) Sell(0) Avoid(0)
+
+Multi-Agent System:
+  Agents: 5 (fundamental, sentiment, valuation, rationale, secular_trend)
+  Risk Tolerance: moderate
+  Workflow Created: True
+  Consensus Possible: 3/3 stocks
