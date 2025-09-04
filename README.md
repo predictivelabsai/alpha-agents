@@ -237,15 +237,31 @@ Vercel is the easiest way to deploy NextJS applications:
 
 #### Option 3: Render.com
 
-1. **Create a new Static Site on Render**:
+1. **Configure NextJS for static export** in `next.config.ts`:
+   ```typescript
+   /** @type {import('next').NextConfig} */
+   const nextConfig = {
+     output: 'export',
+     trailingSlash: true,
+     images: {
+       unoptimized: true
+     }
+   }
+   
+   module.exports = nextConfig
+   ```
+
+2. **Create a new Static Site on Render**:
    - Visit [render.com](https://render.com)
    - Connect your GitHub repository
    - Choose "Static Site"
 
-2. **Configure build settings**:
+3. **Configure build settings**:
    - **Root Directory**: `web-ui`
-   - **Build Command**: `npm install && npm run build`
+   - **Build Command**: `yarn; yarn build`
    - **Publish Directory**: `out`
+
+**Note**: Render.com requires NextJS to be configured for static export to work as a Static Site. Alternatively, you can deploy as a Web Service for full NextJS features.
 
 #### Option 4: GitHub Pages
 
