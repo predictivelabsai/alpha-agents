@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from agents import Stock, create_multi_agent_portfolio_system, RiskTolerance, InvestmentDecision
 from database import DatabaseManager
+from utils.diagram_generator import diagram_generator
 
 # Load environment variables
 load_dotenv()
@@ -199,6 +200,71 @@ def main():
         </div>
         """, unsafe_allow_html=True)
     
+    # Multi-Agent Collaboration Diagram
+    st.markdown("---")
+    st.subheader("🤖 Multi-Agent Collaboration Architecture")
+    
+    # Create and display the collaboration diagram
+    try:
+        collaboration_fig = diagram_generator.create_collaboration_diagram()
+        st.plotly_chart(collaboration_fig, use_container_width=True)
+        
+        # Workflow diagram
+        st.subheader("📊 Agent Processing Workflow")
+        workflow_fig = diagram_generator.create_agent_workflow_diagram()
+        st.plotly_chart(workflow_fig, use_container_width=True)
+        
+        # Agent descriptions
+        st.subheader("🔍 Agent Specializations")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("""
+            **📊 Fundamental Agent**
+            - Financial statement analysis
+            - DCF valuation models
+            - Earnings quality assessment
+            - Balance sheet strength evaluation
+            
+            **📰 Sentiment Agent**
+            - News sentiment analysis
+            - Market psychology assessment
+            - Social media sentiment tracking
+            - Analyst rating changes
+            
+            **💰 Valuation Agent**
+            - Technical analysis
+            - Price momentum indicators
+            - Relative valuation metrics
+            - Support/resistance levels
+            """)
+        
+        with col2:
+            st.markdown("""
+            **🧠 Rationale Agent**
+            - 7-step business quality framework
+            - Competitive moat analysis
+            - Management effectiveness
+            - Long-term sustainability
+            
+            **🚀 Secular Trend Agent**
+            - Technology trend positioning
+            - Market disruption analysis
+            - Future growth catalysts
+            - Innovation assessment
+            
+            **🏆 Ranking Agent**
+            - Multi-agent synthesis
+            - Consensus building
+            - Final investment decisions
+            - Risk-adjusted recommendations
+            """)
+        
+    except Exception as e:
+        st.error(f"Error generating collaboration diagram: {e}")
+        st.info("Collaboration diagram temporarily unavailable. Please check system configuration.")
+    
     # Quick stats from test data
     st.markdown("---")
     st.subheader("📊 System Performance")
@@ -233,24 +299,6 @@ def main():
                     buy_recommendations = (df['recommendation'] == 'buy').sum()
                     buy_rate = buy_recommendations / len(df) * 100
                     st.metric("Buy Rate", f"{buy_rate:.1f}%", "📈")
-                
-                # Recent analysis chart
-                st.subheader("📈 Recent Analysis Overview")
-                
-                # Recommendation distribution
-                rec_counts = df['recommendation'].value_counts()
-                fig = px.pie(
-                    values=rec_counts.values,
-                    names=rec_counts.index,
-                    title="Recommendation Distribution",
-                    color_discrete_map={
-                        'buy': '#28a745',
-                        'hold': '#ffc107', 
-                        'sell': '#dc3545',
-                        'avoid': '#6c757d'
-                    }
-                )
-                st.plotly_chart(fig, use_container_width=True)
                 
             except Exception as e:
                 # Fallback to default metrics

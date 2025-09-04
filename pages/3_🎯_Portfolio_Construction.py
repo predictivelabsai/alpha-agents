@@ -1,5 +1,5 @@
 """
-Portfolio Builder Page - Multi-agent portfolio construction
+Portfolio Construction Page - Multi-agent portfolio construction with enhanced features
 """
 
 import streamlit as st
@@ -10,11 +10,15 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from dotenv import load_dotenv
+import json
+import logging
 
 # Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from agents import Stock, create_multi_agent_portfolio_system, RiskTolerance, InvestmentDecision
+from agents.ranking_agent import RankingAgent
+from utils.yfinance_data import yfinance_provider
 from database import DatabaseManager
 
 # Load environment variables
@@ -22,7 +26,7 @@ load_dotenv()
 
 # Page configuration
 st.set_page_config(
-    page_title="Portfolio Builder - Alpha Agents",
+    page_title="Portfolio Construction - Lohusalu Capital Management",
     page_icon="🎯",
     layout="wide"
 )
@@ -86,10 +90,13 @@ def main():
     
     # Initialize components
     db = init_database()
-    mas = init_multi_agent_system()
-    
-    # Page header
-    st.markdown('<h1 class="main-header">🎯 Portfolio Builder</h1>', unsafe_allow_html=True)
+    mas = init_multi_agent_sy    # Page header
+    st.markdown("""
+    <div style="background: linear-gradient(90deg, #28a745, #20c997); padding: 2rem; border-radius: 10px; color: white; text-align: center; margin-bottom: 2rem;">
+        <h1>🎯 Portfolio Construction</h1>
+        <p>Build optimized portfolios using multi-agent analysis and advanced portfolio theory</p>
+    </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("""
     Build optimized portfolios using the multi-agent system. Add stocks to your portfolio 
