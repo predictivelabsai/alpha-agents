@@ -30,8 +30,8 @@ class Stock:
 
 # Page configuration
 st.set_page_config(
-    page_title="Stock Screener - Lohusalu Capital Management",
-    page_icon="📊",
+    page_title="Agentic Screener - Lohusalu Capital Management",
+    page_icon="🤖",
     layout="wide"
 )
 
@@ -64,8 +64,8 @@ def main():
     # Page header
     st.markdown("""
     <div style="background: linear-gradient(90deg, #1f77b4, #17becf); padding: 2rem; border-radius: 10px; color: white; text-align: center; margin-bottom: 2rem;">
-        <h1>📊 Stock Screener</h1>
-        <p>Multi-sector stock screening powered by 6 specialized AI agents</p>
+        <h1>🤖 Agentic Screener</h1>
+        <p>Multi-agent stock screening powered by 6 specialized AI agents</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -174,14 +174,6 @@ def main():
             "Require Profitability",
             value=False,
             help="Only include profitable companies"
-        )
-        
-        # Risk tolerance
-        risk_tolerance = st.selectbox(
-            "Risk Tolerance",
-            options=["Conservative", "Moderate", "Aggressive"],
-            index=2,  # Default to Aggressive for micro-caps
-            help="Risk tolerance affects scoring weights"
         )
     
     with col2:
