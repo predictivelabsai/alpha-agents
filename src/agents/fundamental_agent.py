@@ -1,415 +1,425 @@
 """
-Fundamental Agent for equity portfolio construction.
-Analyzes 10-K/10-Q reports, financial statements, and fundamental metrics.
-Based on the Alpha Agents paper.
+Fundamental Agent - Quantitative Filtering
+Filters stocks based on strict quantitative criteria without recommendations
 """
 
-from typing import Dict, List, Any, Optional
 import json
-import math
+import logging
 from datetime import datetime
-from langchain_core.messages import HumanMessage
-from .base_agent import BaseAgent, Stock, AgentAnalysis, InvestmentDecision, RiskTolerance
+from typing import Dict, List, Optional
+from dataclasses import dataclass, asdict
 
-class FundamentalAgent(BaseAgent):
-    """
-    Fundamental Agent specializes in analyzing financial fundamentals,
-    earnings reports, balance sheets, and company financial health.
-    """
+from langchain_openai import ChatOpenAI
+from langchain.schema import HumanMessage, SystemMessage
+
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+from utils.yfinance_util import YFinanceUtil
+
+
+@dataclass
+class QualifiedCompany:
+    """Data class for companies that meet quantitative criteria"""
+    ticker: str
+    company_name: str
+    sector: str
+    market_cap: float
     
-    def __init__(self, risk_tolerance: RiskTolerance, llm_client=None):
-        super().__init__(risk_tolerance, llm_client)
-        self.agent_name = "fundamental"
+    # Growth metrics
+    revenue_growth_5y: float
+    net_income_growth_5y: float
+    cash_flow_growth_5y: float
+    
+    # Profitability metrics
+    roe_ttm: float
+    roic_ttm: float
+    gross_margin: float
+    profit_margin: float
+    
+    # Debt metrics
+    current_ratio: float
+    debt_to_ebitda: float
+    debt_service_ratio: float
+    
+    # Quality scores
+    growth_score: float
+    profitability_score: float
+    debt_score: float
+    overall_score: float
+    
+    # Optional LLM commentary
+    commentary: str
+    
+    timestamp: str
+
+
+class FundamentalAgent:
+    """Agent for quantitative fundamental filtering"""
+    
+    def __init__(self, api_key: str = None, use_llm: bool = False):
+        self.logger = logging.getLogger(__name__)
+        self.yfinance_util = YFinanceUtil()
+        self.use_llm = use_llm
         
-    def analyze(self, stock: Stock, market_data: Optional[Dict] = None) -> AgentAnalysis:
-        """
-        Analyze stock fundamentals and provide investment recommendation.
-        
-        Args:
-            stock: Stock information to analyze
-            market_data: Optional market context data
-            
-        Returns:
-            AgentAnalysis with fundamental-based recommendation
-        """
+        # Initialize LLM only if requested
+        if use_llm and api_key:
+            try:
+                self.llm = ChatOpenAI(
+                    model="gpt-4",
+                    temperature=0.1,
+                    openai_api_key=api_key
+                )
+            except Exception as e:
+                self.logger.warning(f"Failed to initialize LLM: {e}")
+                self.llm = None
+        else:
+            self.llm = None
+    
+    def screen_sector(self, sector: str, market: str = 'US', max_market_cap: float = None, top_n: int = 20) -> List[QualifiedCompany]:
+        """Screen sector for companies meeting quantitative criteria"""
         try:
-            # Perform fundamental analysis
-            fundamental_metrics = self._calculate_fundamental_metrics(stock)
-            financial_health = self._assess_financial_health(stock, fundamental_metrics)
-            valuation_analysis = self._analyze_valuation(stock, fundamental_metrics)
+            self.logger.info(f"Screening {sector} sector in {market} market (max cap: ${max_market_cap:,.0f})")
             
-            # Generate LLM-enhanced analysis if available
-            if self.llm_client:
-                llm_analysis = self._get_llm_analysis(stock, fundamental_metrics, financial_health, valuation_analysis)
-                recommendation, confidence, reasoning = self._parse_llm_response(llm_analysis)
-            else:
-                recommendation, confidence, reasoning = self._fallback_analysis(fundamental_metrics, financial_health, valuation_analysis)
+            # Get stock universe
+            tickers = self.yfinance_util.get_sector_universe(sector, market, max_market_cap)
             
-            # Adjust for risk tolerance
-            confidence = self.adjust_for_risk_tolerance(confidence)
+            qualified_companies = []
             
-            # Extract key factors and concerns
-            key_factors = self._extract_key_factors(fundamental_metrics, financial_health)
-            concerns = self._identify_concerns(fundamental_metrics, financial_health)
+            for ticker in tickers:
+                try:
+                    # Get financial metrics
+                    metrics = self.yfinance_util.get_fundamental_metrics(ticker)
+                    
+                    if 'error' in metrics:
+                        continue
+                    
+                    # Apply quantitative filters
+                    if self._meets_quantitative_criteria(metrics):
+                        qualified_company = self._create_qualified_company(metrics, sector)
+                        qualified_companies.append(qualified_company)
+                        
+                        self.logger.info(f"✓ {ticker} qualified with score {qualified_company.overall_score:.1f}")
+                    
+                except Exception as e:
+                    self.logger.error(f"Error analyzing {ticker}: {e}")
+                    continue
             
-            return AgentAnalysis(
-                agent_name=self.agent_name,
-                stock_symbol=stock.symbol,
-                recommendation=recommendation,
-                confidence_score=confidence,
-                target_price=self._calculate_target_price(stock, fundamental_metrics),
-                risk_assessment=self._assess_risk_level(fundamental_metrics, financial_health),
-                key_factors=key_factors,
-                concerns=concerns,
-                reasoning=reasoning
-            )
+            # Sort by overall score
+            qualified_companies.sort(key=lambda x: x.overall_score, reverse=True)
+            
+            # Limit results
+            qualified_companies = qualified_companies[:top_n]
+            
+            # Save results
+            self._save_screening_results(qualified_companies, sector, market)
+            
+            self.logger.info(f"Found {len(qualified_companies)} qualified companies in {sector}")
+            
+            return qualified_companies
             
         except Exception as e:
-            self.logger.error(f"Error in fundamental analysis for {stock.symbol}: {e}")
-            return AgentAnalysis(
-                agent_name=self.agent_name,
-                stock_symbol=stock.symbol,
-                recommendation=InvestmentDecision.HOLD,
-                confidence_score=0.3,
-                risk_assessment="HIGH",
-                key_factors=[],
-                concerns=["Analysis error occurred"],
-                reasoning=f"Unable to complete fundamental analysis: {str(e)}"
-            )
+            self.logger.error(f"Error screening sector {sector}: {e}")
+            return []
     
-    def _calculate_fundamental_metrics(self, stock: Stock) -> Dict[str, float]:
-        """Calculate key fundamental metrics."""
-        metrics = {}
-        
-        # P/E Ratio Analysis
-        if stock.pe_ratio:
-            metrics['pe_ratio'] = stock.pe_ratio
-            metrics['pe_score'] = self._score_pe_ratio(stock.pe_ratio, stock.sector)
-        else:
-            metrics['pe_ratio'] = None
-            metrics['pe_score'] = 0.5
-        
-        # Market Cap Analysis
-        metrics['market_cap'] = stock.market_cap
-        metrics['market_cap_score'] = self._score_market_cap(stock.market_cap)
-        
-        # Dividend Analysis
-        if stock.dividend_yield:
-            metrics['dividend_yield'] = stock.dividend_yield
-            metrics['dividend_score'] = self._score_dividend_yield(stock.dividend_yield)
-        else:
-            metrics['dividend_yield'] = 0.0
-            metrics['dividend_score'] = 0.3
-        
-        # Beta Analysis (Risk)
-        if stock.beta:
-            metrics['beta'] = stock.beta
-            metrics['beta_score'] = self._score_beta(stock.beta)
-        else:
-            metrics['beta'] = 1.0
-            metrics['beta_score'] = 0.5
-        
-        return metrics
+    def _meets_quantitative_criteria(self, metrics: Dict) -> bool:
+        """Check if company meets strict quantitative criteria"""
+        try:
+            # 1. Growth Consistency Criteria
+            revenue_growth = metrics.get('revenue_growth_5y', 0)
+            income_growth = metrics.get('net_income_growth_5y', 0)
+            cf_growth = metrics.get('cash_flow_growth_5y', 0)
+            
+            # Must have consistent positive growth
+            if revenue_growth <= 0 or cf_growth <= 0:
+                return False
+            
+            # If net income declining, check operating income (simplified check)
+            if income_growth <= 0:
+                # For now, we'll be strict and require positive net income growth
+                return False
+            
+            # 2. Profitability and Efficiency Criteria
+            roe = metrics.get('roe_ttm', 0)
+            roic = metrics.get('roic_ttm', 0)
+            
+            # ROE and ROIC must be >= 12%
+            if roe < 12 or roic < 12:
+                return False
+            
+            # 3. Conservative Debt Criteria
+            current_ratio = metrics.get('current_ratio', 0)
+            debt_to_ebitda = metrics.get('debt_to_ebitda', float('inf'))
+            debt_service_ratio = metrics.get('debt_service_ratio', 0)
+            
+            # Current ratio > 1.0
+            if current_ratio <= 1.0:
+                return False
+            
+            # Debt to EBITDA < 3.0
+            if debt_to_ebitda >= 3.0:
+                return False
+            
+            # Debt service ratio < 30% (we calculate as percentage)
+            if debt_service_ratio > 0 and debt_service_ratio < 30:
+                return False
+            
+            # 4. Additional Quality Checks
+            gross_margin = metrics.get('gross_margin', 0)
+            profit_margin = metrics.get('profit_margin', 0)
+            
+            # Must have reasonable margins
+            if gross_margin <= 0 or profit_margin <= 0:
+                return False
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Error checking criteria: {e}")
+            return False
     
-    def _score_pe_ratio(self, pe_ratio: float, sector: str) -> float:
-        """Score P/E ratio based on sector benchmarks."""
-        # Sector-specific P/E benchmarks (simplified)
-        sector_benchmarks = {
-            'Technology': 25.0,
-            'Healthcare': 20.0,
-            'Financial': 12.0,
-            'Consumer': 18.0,
-            'Industrial': 16.0,
-            'Energy': 14.0,
-            'Utilities': 15.0,
-            'Materials': 14.0,
-            'Real Estate': 20.0,
-            'Telecommunications': 16.0
-        }
+    def _create_qualified_company(self, metrics: Dict, sector: str) -> QualifiedCompany:
+        """Create QualifiedCompany object from metrics"""
         
-        benchmark = sector_benchmarks.get(sector, 18.0)
+        # Calculate component scores (0-100)
+        growth_score = self._calculate_growth_score(metrics)
+        profitability_score = self._calculate_profitability_score(metrics)
+        debt_score = self._calculate_debt_score(metrics)
         
-        if pe_ratio <= 0:
-            return 0.1  # Negative earnings
-        elif pe_ratio < benchmark * 0.7:
-            return 0.9  # Very attractive
-        elif pe_ratio < benchmark:
-            return 0.7  # Attractive
-        elif pe_ratio < benchmark * 1.3:
-            return 0.5  # Fair
-        elif pe_ratio < benchmark * 1.8:
-            return 0.3  # Expensive
-        else:
-            return 0.1  # Very expensive
+        # Overall score (weighted average)
+        overall_score = (growth_score * 0.4 + profitability_score * 0.4 + debt_score * 0.2)
+        
+        # Generate commentary if LLM available
+        commentary = ""
+        if self.llm:
+            commentary = self._generate_commentary(metrics)
+        
+        qualified_company = QualifiedCompany(
+            ticker=metrics.get('ticker', ''),
+            company_name=metrics.get('company_name', 'N/A'),
+            sector=metrics.get('sector', sector),
+            market_cap=metrics.get('market_cap', 0),
+            
+            # Growth metrics
+            revenue_growth_5y=metrics.get('revenue_growth_5y', 0),
+            net_income_growth_5y=metrics.get('net_income_growth_5y', 0),
+            cash_flow_growth_5y=metrics.get('cash_flow_growth_5y', 0),
+            
+            # Profitability metrics
+            roe_ttm=metrics.get('roe_ttm', 0),
+            roic_ttm=metrics.get('roic_ttm', 0),
+            gross_margin=metrics.get('gross_margin', 0),
+            profit_margin=metrics.get('profit_margin', 0),
+            
+            # Debt metrics
+            current_ratio=metrics.get('current_ratio', 0),
+            debt_to_ebitda=metrics.get('debt_to_ebitda', 0),
+            debt_service_ratio=metrics.get('debt_service_ratio', 0),
+            
+            # Scores
+            growth_score=growth_score,
+            profitability_score=profitability_score,
+            debt_score=debt_score,
+            overall_score=overall_score,
+            
+            commentary=commentary,
+            timestamp=datetime.now().isoformat()
+        )
+        
+        return qualified_company
     
-    def _score_market_cap(self, market_cap: float) -> float:
-        """Score based on market capitalization."""
-        if market_cap >= 200e9:  # Mega cap
-            return 0.8
-        elif market_cap >= 10e9:  # Large cap
-            return 0.7
-        elif market_cap >= 2e9:  # Mid cap
-            return 0.6
-        elif market_cap >= 300e6:  # Small cap
-            return 0.5
-        else:  # Micro cap
-            return 0.3
+    def _calculate_growth_score(self, metrics: Dict) -> float:
+        """Calculate growth quality score (0-100)"""
+        score = 0
+        
+        # Revenue growth (0-40 points)
+        revenue_growth = metrics.get('revenue_growth_5y', 0)
+        if revenue_growth > 20:
+            score += 40
+        elif revenue_growth > 10:
+            score += 30
+        elif revenue_growth > 5:
+            score += 20
+        elif revenue_growth > 0:
+            score += 10
+        
+        # Income growth (0-30 points)
+        income_growth = metrics.get('net_income_growth_5y', 0)
+        if income_growth > 20:
+            score += 30
+        elif income_growth > 10:
+            score += 20
+        elif income_growth > 5:
+            score += 15
+        elif income_growth > 0:
+            score += 10
+        
+        # Cash flow growth (0-30 points)
+        cf_growth = metrics.get('cash_flow_growth_5y', 0)
+        if cf_growth > 20:
+            score += 30
+        elif cf_growth > 10:
+            score += 20
+        elif cf_growth > 5:
+            score += 15
+        elif cf_growth > 0:
+            score += 10
+        
+        return min(score, 100)
     
-    def _score_dividend_yield(self, dividend_yield: float) -> float:
-        """Score dividend yield."""
-        if dividend_yield >= 0.05:  # 5%+
-            return 0.9
-        elif dividend_yield >= 0.03:  # 3-5%
-            return 0.7
-        elif dividend_yield >= 0.01:  # 1-3%
-            return 0.5
-        else:  # <1%
-            return 0.3
+    def _calculate_profitability_score(self, metrics: Dict) -> float:
+        """Calculate profitability quality score (0-100)"""
+        score = 0
+        
+        # ROE (0-40 points)
+        roe = metrics.get('roe_ttm', 0)
+        if roe > 25:
+            score += 40
+        elif roe > 20:
+            score += 35
+        elif roe > 15:
+            score += 30
+        elif roe > 12:
+            score += 20
+        
+        # ROIC (0-40 points)
+        roic = metrics.get('roic_ttm', 0)
+        if roic > 25:
+            score += 40
+        elif roic > 20:
+            score += 35
+        elif roic > 15:
+            score += 30
+        elif roic > 12:
+            score += 20
+        
+        # Margins (0-20 points)
+        gross_margin = metrics.get('gross_margin', 0)
+        profit_margin = metrics.get('profit_margin', 0)
+        
+        if gross_margin > 50 and profit_margin > 20:
+            score += 20
+        elif gross_margin > 30 and profit_margin > 10:
+            score += 15
+        elif gross_margin > 20 and profit_margin > 5:
+            score += 10
+        elif gross_margin > 0 and profit_margin > 0:
+            score += 5
+        
+        return min(score, 100)
     
-    def _score_beta(self, beta: float) -> float:
-        """Score beta (volatility risk)."""
-        if self.risk_tolerance == RiskTolerance.CONSERVATIVE:
-            if beta <= 0.8:
-                return 0.9
-            elif beta <= 1.2:
-                return 0.6
-            else:
-                return 0.3
-        elif self.risk_tolerance == RiskTolerance.AGGRESSIVE:
-            if beta >= 1.5:
-                return 0.8
-            elif beta >= 1.0:
-                return 0.7
-            else:
-                return 0.5
-        else:  # Moderate
-            if 0.8 <= beta <= 1.3:
-                return 0.8
-            else:
-                return 0.5
+    def _calculate_debt_score(self, metrics: Dict) -> float:
+        """Calculate debt health score (0-100)"""
+        score = 0
+        
+        # Current ratio (0-40 points)
+        current_ratio = metrics.get('current_ratio', 0)
+        if current_ratio > 2.0:
+            score += 40
+        elif current_ratio > 1.5:
+            score += 30
+        elif current_ratio > 1.2:
+            score += 20
+        elif current_ratio > 1.0:
+            score += 10
+        
+        # Debt to EBITDA (0-40 points)
+        debt_to_ebitda = metrics.get('debt_to_ebitda', float('inf'))
+        if debt_to_ebitda < 0.5:
+            score += 40
+        elif debt_to_ebitda < 1.0:
+            score += 35
+        elif debt_to_ebitda < 2.0:
+            score += 25
+        elif debt_to_ebitda < 3.0:
+            score += 15
+        
+        # Debt service (0-20 points)
+        debt_service = metrics.get('debt_service_ratio', 0)
+        if debt_service > 100:  # Very strong coverage
+            score += 20
+        elif debt_service > 50:
+            score += 15
+        elif debt_service > 30:
+            score += 10
+        elif debt_service > 0:
+            score += 5
+        
+        return min(score, 100)
     
-    def _assess_financial_health(self, stock: Stock, metrics: Dict[str, float]) -> Dict[str, Any]:
-        """Assess overall financial health."""
-        health_score = 0.0
-        factors = []
-        
-        # P/E Score contribution
-        pe_weight = 0.3
-        health_score += metrics['pe_score'] * pe_weight
-        if metrics['pe_score'] > 0.7:
-            factors.append("Attractive valuation")
-        elif metrics['pe_score'] < 0.3:
-            factors.append("High valuation concern")
-        
-        # Market Cap Score contribution
-        mc_weight = 0.2
-        health_score += metrics['market_cap_score'] * mc_weight
-        if metrics['market_cap'] >= 10e9:
-            factors.append("Large, stable company")
-        
-        # Dividend Score contribution
-        div_weight = 0.2
-        health_score += metrics['dividend_score'] * div_weight
-        if metrics['dividend_yield'] >= 0.03:
-            factors.append("Strong dividend yield")
-        
-        # Beta Score contribution
-        beta_weight = 0.3
-        health_score += metrics['beta_score'] * beta_weight
+    def _generate_commentary(self, metrics: Dict) -> str:
+        """Generate LLM commentary on the qualified company"""
+        try:
+            if not self.llm:
+                return ""
+            
+            prompt = f"""
+Provide brief commentary on this qualified company's financial strength:
+
+Company: {metrics.get('company_name', 'N/A')}
+Sector: {metrics.get('sector', 'N/A')}
+
+Key Metrics:
+- Revenue Growth (5Y): {metrics.get('revenue_growth_5y', 0):.1f}%
+- ROE: {metrics.get('roe_ttm', 0):.1f}%
+- ROIC: {metrics.get('roic_ttm', 0):.1f}%
+- Current Ratio: {metrics.get('current_ratio', 0):.2f}
+- Debt/EBITDA: {metrics.get('debt_to_ebitda', 0):.2f}
+
+Provide 2-3 sentences highlighting the key financial strengths that make this a qualified candidate.
+"""
+            
+            messages = [
+                SystemMessage(content="You are a financial analyst providing brief commentary on qualified companies."),
+                HumanMessage(content=prompt)
+            ]
+            
+            response = self.llm.invoke(messages)
+            return response.content.strip()
+            
+        except Exception as e:
+            self.logger.error(f"Error generating commentary: {e}")
+            return ""
+    
+    def _save_screening_results(self, companies: List[QualifiedCompany], sector: str, market: str):
+        """Save screening results to tracing folder"""
+        try:
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            filename = f"tracing/fundamental_screening_{sector}_{market}_{timestamp}.json"
+            
+            results = {
+                'sector': sector,
+                'market': market,
+                'timestamp': timestamp,
+                'total_qualified': len(companies),
+                'companies': [asdict(company) for company in companies]
+            }
+            
+            with open(filename, 'w') as f:
+                json.dump(results, f, indent=2, default=str)
+                
+            self.logger.info(f"Saved screening results to {filename}")
+            
+        except Exception as e:
+            self.logger.error(f"Error saving screening results: {e}")
+    
+    def get_screening_summary(self, companies: List[QualifiedCompany]) -> Dict:
+        """Get summary statistics for screening results"""
+        if not companies:
+            return {}
         
         return {
-            'overall_score': health_score,
-            'health_factors': factors,
-            'financial_strength': 'Strong' if health_score > 0.7 else 'Moderate' if health_score > 0.5 else 'Weak'
+            'total_qualified': len(companies),
+            'avg_overall_score': sum(c.overall_score for c in companies) / len(companies),
+            'avg_growth_score': sum(c.growth_score for c in companies) / len(companies),
+            'avg_profitability_score': sum(c.profitability_score for c in companies) / len(companies),
+            'avg_debt_score': sum(c.debt_score for c in companies) / len(companies),
+            'top_performers': [c.ticker for c in companies[:5]],
+            'sectors_represented': list(set(c.sector for c in companies)),
+            'market_cap_range': {
+                'min': min(c.market_cap for c in companies),
+                'max': max(c.market_cap for c in companies),
+                'avg': sum(c.market_cap for c in companies) / len(companies)
+            }
         }
-    
-    def _analyze_valuation(self, stock: Stock, metrics: Dict[str, float]) -> Dict[str, Any]:
-        """Analyze stock valuation."""
-        valuation = {
-            'current_price': stock.current_price,
-            'pe_based_fair_value': None,
-            'valuation_rating': 'Fair'
-        }
-        
-        if stock.pe_ratio and stock.pe_ratio > 0:
-            # Simple P/E based fair value estimation
-            sector_avg_pe = 18.0  # Market average
-            estimated_eps = stock.current_price / stock.pe_ratio
-            fair_value = estimated_eps * sector_avg_pe
-            valuation['pe_based_fair_value'] = fair_value
-            
-            price_to_fair = stock.current_price / fair_value
-            if price_to_fair < 0.8:
-                valuation['valuation_rating'] = 'Undervalued'
-            elif price_to_fair > 1.2:
-                valuation['valuation_rating'] = 'Overvalued'
-        
-        return valuation
-    
-    def _get_llm_analysis(self, stock: Stock, metrics: Dict, health: Dict, valuation: Dict) -> str:
-        """Get enhanced analysis from LLM."""
-        analysis_prompt = f"""
-        As a Fundamental Analysis expert, analyze the following stock:
-        
-        Company: {stock.company_name} ({stock.symbol})
-        Sector: {stock.sector}
-        Current Price: ${stock.current_price:.2f}
-        Market Cap: {self.format_currency(stock.market_cap)}
-        
-        Financial Metrics:
-        - P/E Ratio: {stock.pe_ratio or 'N/A'}
-        - Dividend Yield: {stock.dividend_yield*100 if stock.dividend_yield else 0:.2f}%
-        - Beta: {stock.beta or 'N/A'}
-        
-        Analysis Scores:
-        - P/E Score: {metrics['pe_score']:.2f}
-        - Market Cap Score: {metrics['market_cap_score']:.2f}
-        - Dividend Score: {metrics['dividend_score']:.2f}
-        - Beta Score: {metrics['beta_score']:.2f}
-        - Overall Health Score: {health['overall_score']:.2f}
-        
-        Valuation Assessment: {valuation['valuation_rating']}
-        
-        Risk Tolerance: {self.risk_tolerance.value}
-        
-        Based on fundamental analysis, provide:
-        1. Investment recommendation (BUY/SELL/HOLD/AVOID)
-        2. Confidence level (0.0 to 1.0)
-        3. Target price estimate
-        4. Key fundamental strengths
-        5. Main concerns or risks
-        6. Detailed reasoning
-        
-        Focus on financial health, earnings quality, balance sheet strength, and long-term growth prospects.
-        """
-        
-        if self.llm_client:
-            response = self.llm_client.invoke([HumanMessage(content=analysis_prompt)])
-            return response.content
-        else:
-            return self._fallback_analysis(metrics, health, valuation)[2]
-    
-    def _parse_llm_response(self, response: str) -> tuple:
-        """Parse LLM response into recommendation, confidence, and reasoning."""
-        try:
-            # Simple parsing logic
-            response_lower = response.lower()
-            
-            # Extract recommendation
-            if 'buy' in response_lower and 'avoid' not in response_lower:
-                recommendation = InvestmentDecision.BUY
-            elif 'sell' in response_lower:
-                recommendation = InvestmentDecision.SELL
-            elif 'avoid' in response_lower:
-                recommendation = InvestmentDecision.AVOID
-            else:
-                recommendation = InvestmentDecision.HOLD
-            
-            # Extract confidence (look for numbers between 0 and 1)
-            import re
-            confidence_matches = re.findall(r'confidence[:\s]*([0-9]*\.?[0-9]+)', response_lower)
-            if confidence_matches:
-                confidence = float(confidence_matches[0])
-                confidence = max(0.0, min(1.0, confidence))
-            else:
-                confidence = 0.6
-            
-            return recommendation, confidence, response
-            
-        except Exception as e:
-            self.logger.error(f"Error parsing LLM response: {e}")
-            return InvestmentDecision.HOLD, 0.5, response
-    
-    def _fallback_analysis(self, metrics: Dict, health: Dict, valuation: Dict) -> tuple:
-        """Fallback analysis when LLM is not available."""
-        overall_score = health['overall_score']
-        
-        # Determine recommendation based on scores
-        if overall_score >= 0.75:
-            recommendation = InvestmentDecision.BUY
-            confidence = 0.8
-        elif overall_score >= 0.6:
-            recommendation = InvestmentDecision.HOLD
-            confidence = 0.65
-        elif overall_score >= 0.4:
-            recommendation = InvestmentDecision.HOLD
-            confidence = 0.5
-        else:
-            recommendation = InvestmentDecision.AVOID
-            confidence = 0.7
-        
-        reasoning = f"""
-        Fundamental Analysis Summary:
-        - Overall Health Score: {overall_score:.2f}
-        - Financial Strength: {health['financial_strength']}
-        - Valuation: {valuation['valuation_rating']}
-        - P/E Score: {metrics['pe_score']:.2f}
-        - Market Cap: {self.format_currency(metrics['market_cap'])}
-        
-        Recommendation based on fundamental metrics and financial health assessment.
-        """
-        
-        return recommendation, confidence, reasoning
-    
-    def _calculate_target_price(self, stock: Stock, metrics: Dict) -> Optional[float]:
-        """Calculate target price based on fundamental analysis."""
-        if stock.pe_ratio and stock.pe_ratio > 0:
-            # Simple target price based on sector average P/E
-            current_eps = stock.current_price / stock.pe_ratio
-            target_pe = 18.0  # Market average
-            target_price = current_eps * target_pe
-            return round(target_price, 2)
-        return None
-    
-    def _assess_risk_level(self, metrics: Dict, health: Dict) -> str:
-        """Assess risk level based on fundamental metrics."""
-        risk_factors = 0
-        
-        if metrics['pe_score'] < 0.3:
-            risk_factors += 1
-        if metrics['beta'] and metrics['beta'] > 1.5:
-            risk_factors += 1
-        if health['overall_score'] < 0.5:
-            risk_factors += 1
-        if metrics['market_cap'] < 2e9:  # Small cap
-            risk_factors += 1
-        
-        if risk_factors >= 3:
-            return "HIGH"
-        elif risk_factors >= 2:
-            return "MODERATE"
-        else:
-            return "LOW"
-    
-    def _extract_key_factors(self, metrics: Dict, health: Dict) -> List[str]:
-        """Extract key positive factors."""
-        factors = []
-        
-        if metrics['pe_score'] > 0.7:
-            factors.append("Attractive P/E valuation")
-        if metrics['dividend_yield'] and metrics['dividend_yield'] > 0.03:
-            factors.append(f"Strong dividend yield ({metrics['dividend_yield']*100:.1f}%)")
-        if metrics['market_cap'] >= 10e9:
-            factors.append("Large-cap stability")
-        if health['overall_score'] > 0.7:
-            factors.append("Strong fundamental health")
-        
-        return factors[:5]  # Limit to top 5
-    
-    def _identify_concerns(self, metrics: Dict, health: Dict) -> List[str]:
-        """Identify key concerns."""
-        concerns = []
-        
-        if metrics['pe_score'] < 0.3:
-            concerns.append("High valuation multiples")
-        if metrics['beta'] and metrics['beta'] > 1.8:
-            concerns.append("High volatility risk")
-        if metrics['market_cap'] < 1e9:
-            concerns.append("Small-cap liquidity risk")
-        if health['overall_score'] < 0.4:
-            concerns.append("Weak fundamental metrics")
-        if not metrics['dividend_yield'] or metrics['dividend_yield'] < 0.01:
-            concerns.append("No meaningful dividend income")
-        
-        return concerns[:5]  # Limit to top 5
 

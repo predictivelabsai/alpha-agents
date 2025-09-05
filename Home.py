@@ -1,393 +1,292 @@
 """
-Alpha Agents - Equity Portfolio Construction Multi-Agent System
-Home Page - Main entry point for the multi-page Streamlit application
+Lohusalu Capital Management - 3-Agent Equity Portfolio Construction System
+Home page showcasing the new streamlined 3-agent architecture
 """
 
 import streamlit as st
-import sys
-import os
-from datetime import datetime
-import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
-from dotenv import load_dotenv
+from datetime import datetime
 
-# Add src to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-
-from agents import Stock, create_multi_agent_portfolio_system, RiskTolerance, InvestmentDecision
-from database import DatabaseManager
-from utils.diagram_generator import diagram_generator
-
-# Load environment variables
-load_dotenv()
-
-# Page configuration
 st.set_page_config(
-    page_title="Lohusalu Capital Management - Equity Portfolio AI",
-    page_icon="📈",
+    page_title="Lohusalu Capital Management",
+    page_icon="🏛️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
-st.markdown("""
-<style>
-    .main-header {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #1f77b4;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    .agent-card {
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin: 0.5rem 0;
-        border-left: 4px solid #1f77b4;
-    }
-    .metric-card {
-        background-color: #ffffff;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-    .feature-highlight {
-        background-color: #e8f4fd;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        margin: 1rem 0;
-        border-left: 4px solid #1f77b4;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# Initialize components
-@st.cache_resource
-def init_database():
-    return DatabaseManager()
-
-@st.cache_resource
-def init_multi_agent_system():
-    api_key = os.getenv('OPENAI_API_KEY')
-    if not api_key:
-        st.error("OpenAI API key not found. Please check your environment configuration.")
-        return None
-    
-    return create_multi_agent_portfolio_system(
-        openai_api_key=api_key,
-        risk_tolerance="moderate",
-        max_debate_rounds=2
-    )
-
 def main():
-    """Home page main function"""
+    # Header
+    st.title("🏛️ Lohusalu Capital Management")
+    st.markdown("**Multi-Agent Equity Portfolio Construction System**")
     
-    # Initialize components
-    db = init_database()
-    mas = init_multi_agent_system()
-    
-    # Sidebar status
-    st.sidebar.title("🏛️ Lohusalu Capital Management")
-    st.sidebar.markdown("*Multi-Agent Equity Portfolio System*")
-    st.sidebar.markdown("---")
-    
-    # System status
-    st.sidebar.subheader("🔧 System Status")
-    
-    if mas is not None:
-        st.sidebar.success("✅ Multi-Agent System: Online")
-        st.sidebar.info(f"🤖 Agents: {len(mas.agents)} active")
-    else:
-        st.sidebar.error("❌ Multi-Agent System: Offline")
-    
-    st.sidebar.success("✅ Database: Connected")
-    st.sidebar.info(f"📅 Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    
-    # Navigation help
-    st.sidebar.markdown("---")
-    st.sidebar.subheader("🧭 Navigation")
-    st.sidebar.markdown("""
-    **📊 Stock Analysis**: Analyze individual stocks  
-    **📊 Analytics**: View performance visualizations  
-    **🎯 Portfolio Builder**: Build optimized portfolios  
-    **ℹ️ About**: Learn about the system  
-    """)
-    
-    # Main content
-    st.markdown('<h1 class="main-header">🏛️ Lohusalu Capital Management</h1>', unsafe_allow_html=True)
-    
+    # Hero section
     st.markdown("""
-    Welcome to **Lohusalu Capital Management's** advanced multi-agent system for equity portfolio construction. 
-    This application demonstrates cutting-edge AI techniques for stock selection and portfolio 
-    optimization using specialized agents that collaborate and debate to make informed investment decisions.
-    """)
+    <div style="background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%); padding: 2rem; border-radius: 10px; margin: 1rem 0;">
+        <h2 style="color: white; margin: 0;">Intelligent Investment Analysis Through AI Agents</h2>
+        <p style="color: #e0e0e0; margin: 0.5rem 0 0 0;">Combining quantitative rigor with qualitative insights for superior investment decisions</p>
+    </div>
+    """, unsafe_allow_html=True)
     
-    # System overview - All 5 agents
-    st.subheader("🤖 Specialized AI Agents")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        <div class="agent-card">
-            <h3>📊 Fundamental Agent</h3>
-            <p>Analyzes 10-K/10-Q reports, financial statements, earnings quality, and fundamental metrics to assess company financial health and intrinsic value.</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="agent-card">
-            <h3>📰 Sentiment Agent</h3>
-            <p>Processes financial news, analyst ratings, social media sentiment, and market psychology to gauge investor sentiment and momentum.</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="agent-card">
-            <h3>🧠 Rationale Agent</h3>
-            <p>Evaluates business quality using a 7-step framework: sales growth, profitability, competitive moats, operational efficiency, and debt structure.</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="agent-card">
-            <h3>💰 Valuation Agent</h3>
-            <p>Analyzes stock prices, trading volumes, technical indicators, and relative valuation metrics to identify attractive entry points.</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="agent-card">
-            <h3>🚀 Secular Trend Agent</h3>
-            <p>Identifies companies positioned to benefit from major technology trends: Agentic AI, Cloud Infrastructure, AI Semiconductors, Cybersecurity, and Electrification.</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    st.markdown("---")
-    
-    # Key features
-    st.subheader("🚀 Key Features")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        <div class="feature-highlight">
-            <h4>🤖 Multi-Agent Collaboration</h4>
-            <ul>
-                <li>5 specialized agents with domain expertise</li>
-                <li>Collaborative analysis and debate mechanism</li>
-                <li>Consensus-building for investment decisions</li>
-                <li>Transparent reasoning and audit trails</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="feature-highlight">
-            <h4>📈 Portfolio Construction</h4>
-            <ul>
-                <li>Automated stock selection and weighting</li>
-                <li>Risk-adjusted portfolio optimization</li>
-                <li>Diversification analysis and sector allocation</li>
-                <li>Performance monitoring and rebalancing</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Multi-Agent Collaboration Diagram
-    st.markdown("---")
-    st.subheader("🤖 Multi-Agent Collaboration Architecture")
-    
-    # Create and display the collaboration diagram
-    try:
-        collaboration_fig = diagram_generator.create_collaboration_diagram()
-        st.plotly_chart(collaboration_fig, use_container_width=True)
-        
-        # Workflow diagram
-        st.subheader("📊 Agent Processing Workflow")
-        workflow_fig = diagram_generator.create_agent_workflow_diagram()
-        st.plotly_chart(workflow_fig, use_container_width=True)
-        
-        # Agent descriptions
-        st.subheader("🔍 Agent Specializations")
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.markdown("""
-            **📊 Fundamental Agent**
-            - Financial statement analysis
-            - DCF valuation models
-            - Earnings quality assessment
-            - Balance sheet strength evaluation
-            
-            **📰 Sentiment Agent**
-            - News sentiment analysis
-            - Market psychology assessment
-            - Social media sentiment tracking
-            - Analyst rating changes
-            
-            **💰 Valuation Agent**
-            - Technical analysis
-            - Price momentum indicators
-            - Relative valuation metrics
-            - Support/resistance levels
-            """)
-        
-        with col2:
-            st.markdown("""
-            **🧠 Rationale Agent**
-            - 7-step business quality framework
-            - Competitive moat analysis
-            - Management effectiveness
-            - Long-term sustainability
-            
-            **🚀 Secular Trend Agent**
-            - Technology trend positioning
-            - Market disruption analysis
-            - Future growth catalysts
-            - Innovation assessment
-            
-            **🏆 Ranking Agent**
-            - Multi-agent synthesis
-            - Consensus building
-            - Final investment decisions
-            - Risk-adjusted recommendations
-            """)
-        
-    except Exception as e:
-        st.error(f"Error generating collaboration diagram: {e}")
-        st.info("Collaboration diagram temporarily unavailable. Please check system configuration.")
-    
-    # Quick stats from test data
-    st.markdown("---")
-    st.subheader("📊 System Performance")
-    
-    # Try to load recent test data for stats
-    test_data_dir = "test-data"
-    if os.path.exists(test_data_dir):
-        csv_files = [f for f in os.listdir(test_data_dir) if f.startswith('agent_analysis_data_') and f.endswith('.csv')]
-        
-        if csv_files:
-            latest_file = sorted(csv_files)[-1]
-            file_path = os.path.join(test_data_dir, latest_file)
-            
-            try:
-                df = pd.read_csv(file_path)
-                
-                col1, col2, col3, col4 = st.columns(4)
-                
-                with col1:
-                    stocks_analyzed = df['stock_symbol'].nunique()
-                    st.metric("Stocks Analyzed", stocks_analyzed, "✅")
-                
-                with col2:
-                    total_analyses = len(df)
-                    st.metric("Total Analyses", total_analyses, "📊")
-                
-                with col3:
-                    avg_confidence = df['confidence_score'].mean()
-                    st.metric("Avg Confidence", f"{avg_confidence:.2f}", "🎯")
-                
-                with col4:
-                    buy_recommendations = (df['recommendation'] == 'buy').sum()
-                    buy_rate = buy_recommendations / len(df) * 100
-                    st.metric("Buy Rate", f"{buy_rate:.1f}%", "📈")
-                
-            except Exception as e:
-                # Fallback to default metrics
-                col1, col2, col3, col4 = st.columns(4)
-                
-                with col1:
-                    st.metric("Stocks Analyzed", "8", "✅")
-                
-                with col2:
-                    st.metric("Total Analyses", "40", "📊")
-                
-                with col3:
-                    st.metric("Avg Confidence", "0.68", "🎯")
-                
-                with col4:
-                    st.metric("Success Rate", "100%", "🎉")
-        else:
-            # Default metrics when no test data
-            col1, col2, col3, col4 = st.columns(4)
-            
-            with col1:
-                st.metric("Stocks Analyzed", "0", "0")
-            
-            with col2:
-                st.metric("Portfolios Created", "0", "0")
-            
-            with col3:
-                st.metric("Average Confidence", "N/A", "0%")
-            
-            with col4:
-                st.metric("Success Rate", "N/A", "0%")
-    else:
-        # Default metrics when no test data directory
-        col1, col2, col3, col4 = st.columns(4)
-        
-        with col1:
-            st.metric("Stocks Analyzed", "0", "0")
-        
-        with col2:
-            st.metric("Portfolios Created", "0", "0")
-        
-        with col3:
-            st.metric("Average Confidence", "N/A", "0%")
-        
-        with col4:
-            st.metric("Success Rate", "N/A", "0%")
-    
-    # Getting started
-    st.markdown("---")
-    st.subheader("🚀 Getting Started")
+    # System overview
+    st.header("🤖 3-Agent System Architecture")
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
         st.markdown("""
-        **1. 📊 Analyze Stocks**
+        ### 📊 Fundamental Agent
+        **Quantitative Screening**
         
-        Start by analyzing individual stocks using our 5 specialized agents. Get detailed insights, recommendations, and risk assessments.
+        - Growth metrics analysis
+        - Profitability assessment  
+        - Debt health evaluation
+        - Intrinsic value calculation
+        - Strict filtering criteria
+        
+        **Output:** Qualified companies list
         """)
         
-        if st.button("🔍 Start Stock Analysis", key="start_analysis"):
-            st.switch_page("pages/1_📊_Stock_Analysis.py")
+        if st.button("🚀 Start Fundamental Analysis", key="fund_btn"):
+            st.switch_page("pages/1_📊_Fundamental_Agent.py")
     
     with col2:
         st.markdown("""
-        **2. 🎯 Build Portfolio**
+        ### 🔍 Rationale Agent
+        **Qualitative Analysis**
         
-        Create optimized portfolios by adding multiple stocks and letting our agents collaborate on investment decisions.
+        - Competitive moat analysis
+        - Market sentiment evaluation
+        - Secular trends assessment
+        - Heavy web research (Tavily)
+        - Citation-backed insights
+        
+        **Output:** 1-10 qualitative scores
         """)
         
-        if st.button("🏗️ Build Portfolio", key="start_portfolio"):
-            st.switch_page("pages/3_🎯_Portfolio_Builder.py")
+        if st.button("🔍 Perform Qualitative Analysis", key="rat_btn"):
+            st.switch_page("pages/2_🔍_Rationale_Agent.py")
     
     with col3:
         st.markdown("""
-        **3. 📊 View Analytics**
+        ### 🏆 Ranker Agent
+        **Final Scoring & Recommendations**
         
-        Explore comprehensive visualizations and performance metrics to understand agent behavior and system performance.
+        - Combines quantitative + qualitative
+        - 1-10 investment scoring
+        - "Why good investment" reasoning
+        - Position sizing recommendations
+        - Portfolio optimization
+        
+        **Output:** Final investment rankings
         """)
         
-        if st.button("📈 View Analytics", key="start_analytics"):
-            st.switch_page("pages/2_📊_Analytics.py")
+        if st.button("🏆 Generate Final Rankings", key="rank_btn"):
+            st.switch_page("pages/3_🏆_Ranker_Agent.py")
+    
+    # Process flow diagram
+    st.header("🔄 Analysis Workflow")
+    
+    # Create flow diagram
+    fig = go.Figure()
+    
+    # Add nodes
+    nodes = [
+        {"x": 1, "y": 3, "text": "📊<br>Fundamental<br>Agent", "color": "#3498db"},
+        {"x": 3, "y": 3, "text": "🔍<br>Rationale<br>Agent", "color": "#e74c3c"},
+        {"x": 5, "y": 3, "text": "🏆<br>Ranker<br>Agent", "color": "#f39c12"},
+        {"x": 7, "y": 3, "text": "📈<br>Portfolio<br>Recommendations", "color": "#27ae60"}
+    ]
+    
+    # Add arrows
+    arrows = [
+        {"x0": 1.5, "y0": 3, "x1": 2.5, "y1": 3},
+        {"x0": 3.5, "y0": 3, "x1": 4.5, "y1": 3},
+        {"x0": 5.5, "y0": 3, "x1": 6.5, "y1": 3}
+    ]
+    
+    # Plot nodes
+    for node in nodes:
+        fig.add_trace(go.Scatter(
+            x=[node["x"]],
+            y=[node["y"]],
+            mode='markers+text',
+            marker=dict(size=80, color=node["color"]),
+            text=node["text"],
+            textposition="middle center",
+            textfont=dict(color="white", size=12),
+            showlegend=False,
+            hoverinfo='skip'
+        ))
+    
+    # Add arrows
+    for arrow in arrows:
+        fig.add_annotation(
+            x=arrow["x1"],
+            y=arrow["y1"],
+            ax=arrow["x0"],
+            ay=arrow["y0"],
+            xref="x",
+            yref="y",
+            axref="x",
+            ayref="y",
+            arrowhead=2,
+            arrowsize=1,
+            arrowwidth=3,
+            arrowcolor="#34495e"
+        )
+    
+    fig.update_layout(
+        title="3-Agent Analysis Pipeline",
+        xaxis=dict(range=[0, 8], showgrid=False, showticklabels=False),
+        yaxis=dict(range=[2, 4], showgrid=False, showticklabels=False),
+        height=300,
+        showlegend=False,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)'
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
+    
+    # Key features
+    st.header("✨ Key Features")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        ### 🎯 **Quantitative Rigor**
+        - Strict fundamental screening criteria
+        - Growth, profitability, and debt analysis
+        - Intrinsic value assessment
+        - Market cap classification (microcap focus)
+        
+        ### 🔍 **Qualitative Insights**
+        - Competitive moat evaluation
+        - Market sentiment analysis
+        - Secular trend alignment
+        - Web research with citations
+        """)
+    
+    with col2:
+        st.markdown("""
+        ### 🏆 **Investment Intelligence**
+        - 1-10 scoring methodology
+        - Detailed investment reasoning
+        - Risk-adjusted recommendations
+        - Portfolio optimization
+        
+        ### 🌍 **Global Coverage**
+        - US and China markets
+        - Multiple sector coverage
+        - Microcap to large-cap analysis
+        - Real-time data integration
+        """)
+    
+    # Quick start guide
+    st.header("🚀 Quick Start Guide")
+    
+    with st.expander("📖 How to Use the System", expanded=False):
+        st.markdown("""
+        ### Step 1: Fundamental Screening 📊
+        1. Go to **Fundamental Agent** page
+        2. Select market (US/China) and sector
+        3. Set market cap preferences (microcap focus available)
+        4. Adjust screening criteria (growth, profitability, debt)
+        5. Run screening to get qualified companies
+        
+        ### Step 2: Qualitative Analysis 🔍
+        1. Go to **Rationale Agent** page
+        2. Input Tavily API key for web search (optional)
+        3. Select companies from fundamental screening
+        4. Choose analysis depth (Quick/Standard/Deep)
+        5. Run qualitative analysis for moat, sentiment, trends
+        
+        ### Step 3: Final Ranking 🏆
+        1. Go to **Ranker Agent** page
+        2. Input OpenAI API key for detailed analysis (optional)
+        3. Adjust weighting (fundamental vs qualitative)
+        4. Set portfolio preferences
+        5. Generate final rankings and portfolio recommendations
+        
+        ### Step 4: Portfolio Construction 📈
+        - Review final investment scores (1-10 scale)
+        - Read detailed "why good investment" reasoning
+        - Analyze recommended position sizes
+        - Export portfolio allocation and reports
+        """)
+    
+    # System status
+    st.header("📊 System Status")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        # Check session state for pipeline progress
+        fund_status = "✅ Complete" if st.session_state.get('qualified_companies') else "⏳ Pending"
+        st.metric("Fundamental Analysis", fund_status)
+    
+    with col2:
+        rat_status = "✅ Complete" if st.session_state.get('rationale_analyses') else "⏳ Pending"
+        st.metric("Qualitative Analysis", rat_status)
+    
+    with col3:
+        rank_status = "✅ Complete" if st.session_state.get('ranked_companies') else "⏳ Pending"
+        st.metric("Final Rankings", rank_status)
+    
+    with col4:
+        # Calculate completion percentage
+        completed = sum([
+            bool(st.session_state.get('qualified_companies')),
+            bool(st.session_state.get('rationale_analyses')),
+            bool(st.session_state.get('ranked_companies'))
+        ])
+        completion = f"{(completed/3)*100:.0f}%"
+        st.metric("Pipeline Progress", completion)
+    
+    # Recent activity
+    if any([st.session_state.get('qualified_companies'), 
+            st.session_state.get('rationale_analyses'), 
+            st.session_state.get('ranked_companies')]):
+        
+        st.header("📋 Recent Activity")
+        
+        if st.session_state.get('qualified_companies'):
+            companies = st.session_state['qualified_companies']
+            st.success(f"✅ {len(companies)} companies qualified from fundamental screening")
+        
+        if st.session_state.get('rationale_analyses'):
+            analyses = st.session_state['rationale_analyses']
+            st.success(f"✅ {len(analyses)} companies analyzed for qualitative factors")
+        
+        if st.session_state.get('ranked_companies'):
+            rankings = st.session_state['ranked_companies']
+            st.success(f"✅ {len(rankings)} companies ranked with final investment scores")
+            
+            # Show top 3 recommendations
+            st.subheader("🏆 Top Investment Recommendations")
+            
+            for i, company in enumerate(rankings[:3], 1):
+                with st.container():
+                    col1, col2, col3, col4 = st.columns([1, 3, 2, 2])
+                    
+                    with col1:
+                        st.write(f"**#{i}**")
+                    
+                    with col2:
+                        st.write(f"**{company.ticker}** - {company.company_name}")
+                    
+                    with col3:
+                        st.write(f"Score: **{company.final_investment_score:.1f}/10**")
+                    
+                    with col4:
+                        st.write(f"**{company.recommendation}**")
     
     # Footer
     st.markdown("---")
     st.markdown("""
-    <div style="text-align: center; color: #666; padding: 2rem;">
-        <p><strong>Lohusalu Capital Management</strong> - Advanced Multi-Agent System for Equity Portfolio Construction</p>
-        <p>Intelligent capital management powered by advanced AI technology</p>
+    <div style="text-align: center; color: #666; padding: 1rem;">
+        <p><strong>Lohusalu Capital Management</strong> | Multi-Agent Investment Analysis System</p>
+        <p>Powered by AI • Built for Performance • Designed for Results</p>
     </div>
     """, unsafe_allow_html=True)
 
