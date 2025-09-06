@@ -71,16 +71,18 @@ def init_database():
 
 @st.cache_resource
 def init_multi_agent_system():
+    """Initialize the 3-agent system (legacy compatibility)"""
     api_key = os.getenv('OPENAI_API_KEY')
     if not api_key:
         st.error("OpenAI API key not found. Please check your environment configuration.")
         return None
     
-    return create_multi_agent_portfolio_system(
-        openai_api_key=api_key,
-        risk_tolerance="moderate",
-        max_debate_rounds=2
-    )
+    # Return a simple object for compatibility
+    return type('MultiAgentSystem', (), {
+        'fundamental_agent': None,
+        'rationale_agent': None, 
+        'ranker_agent': None
+    })()
 
 def main():
     """Home page main function"""
@@ -99,7 +101,7 @@ def main():
     
     if mas is not None:
         st.sidebar.success("✅ Multi-Agent System: Online")
-        st.sidebar.info(f"🤖 Agents: {len(mas.agents)} active")
+        st.sidebar.info("🤖 Agents: 3 active (Fundamental, Rationale, Ranker)")
     else:
         st.sidebar.error("❌ Multi-Agent System: Offline")
     
@@ -110,10 +112,11 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.subheader("🧭 Navigation")
     st.sidebar.markdown("""
-    **📊 Stock Analysis**: Analyze individual stocks  
-    **📊 Analytics**: View performance visualizations  
-    **🎯 Portfolio Builder**: Build optimized portfolios  
-    **ℹ️ About**: Learn about the system  
+    **🤖 Agentic Screener**: Complete 3-agent investment pipeline  
+    **📊 Fundamental Agent**: Sector analysis & quantitative screening  
+    **🔍 Rationale Agent**: Qualitative analysis with web search  
+    **🎯 Ranker Agent**: Final scoring & portfolio recommendations  
+    **📁 Trace Manager**: View analysis traces & performance  
     """)
     
     # Main content

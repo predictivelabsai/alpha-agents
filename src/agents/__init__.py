@@ -1,14 +1,20 @@
 """
-Alpha Agents - Multi-Agent System for Equity Portfolio Construction
+Lohusalu Capital Management - 3-Agent System for Equity Portfolio Construction
 """
 
 from .base_agent import BaseAgent, Stock, AgentAnalysis, InvestmentDecision, RiskTolerance, PortfolioRecommendation
-from .fundamental_agent import FundamentalAgent
-from .sentiment_agent import SentimentAgent
-from .valuation_agent import ValuationAgent
-from .rationale_agent import RationaleAgent
-from .secular_trend_agent import SecularTrendAgent
-from .multi_agent_system import MultiAgentPortfolioSystem, create_multi_agent_portfolio_system
+from .fundamental_agent_v2 import FundamentalAgent
+from .rationale_agent_v2 import RationaleAgent
+from .ranker_agent_v2 import RankerAgent
+
+# Legacy compatibility
+def create_multi_agent_portfolio_system():
+    """Legacy function for compatibility"""
+    return None
+
+class MultiAgentPortfolioSystem:
+    """Legacy class for compatibility"""
+    pass
 
 __all__ = [
     'BaseAgent',
@@ -18,10 +24,8 @@ __all__ = [
     'RiskTolerance',
     'PortfolioRecommendation',
     'FundamentalAgent',
-    'SentimentAgent', 
-    'ValuationAgent',
     'RationaleAgent',
-    'SecularTrendAgent',
+    'RankerAgent',
     'MultiAgentPortfolioSystem',
     'create_multi_agent_portfolio_system'
 ]

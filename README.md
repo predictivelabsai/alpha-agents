@@ -1,382 +1,145 @@
-"""
-# Lohusalu Capital Management - Multi-Agent Equity Portfolio System
+# Lohusalu Capital Management - Agentic Equity Portfolio Construction
 
-![Alpha Agents Banner](https://i.imgur.com/your-banner-image.png)  <!-- Replace with a real banner image -->
+**Lohusalu Capital Management** is a sophisticated, multi-agent equity portfolio construction system designed to streamline the investment research process. This system leverages a powerful 3-agent architecture, combining quantitative screening, qualitative analysis, and intelligent ranking to identify high-potential investment opportunities.
 
-**Lohusalu Capital Management** is an advanced multi-agent system for equity portfolio construction, based on cutting-edge research in artificial intelligence and financial analysis. This Streamlit application demonstrates how specialized AI agents can collaborate, debate, and reach consensus to make sophisticated investment decisions.
-
-[![Python Version](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.29-orange.svg)](https://streamlit.io/)
-[![LangChain](https://img.shields.io/badge/LangChain-0.1-green.svg)](https://www.langchain.com/)
-[![Plotly](https://img.shields.io/badge/Plotly-5.18-blue.svg)](https://plotly.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
----
+![Lohusalu Capital Management](https://i.imgur.com/example.png)  <!-- Replace with actual screenshot -->
 
 ## 🚀 Key Features
 
-- **🤖 Multi-Agent Collaboration**: 5 specialized AI agents with domain expertise in fundamental analysis, sentiment analysis, valuation, business quality, and secular trends.
-- **📈 Portfolio Construction**: Automated stock selection, risk-adjusted optimization, and diversification analysis.
-- **📊 Advanced Analytics**: Interactive visualizations including heatmaps, performance charts, and portfolio optimization analysis.
-- **🧪 Comprehensive Testing**: Extensive test suite with performance metrics, data generation, and validation of agent decision-making.
-- **🌐 Web Interface**: User-friendly multi-page Streamlit application for easy interaction and analysis.
+- **3-Agent Architecture**: A robust pipeline featuring a Fundamental Agent, Rationale Agent, and Ranker Agent.
+- **Quantitative & Qualitative Analysis**: Combines deep financial metric screening with qualitative analysis of moats, sentiment, and trends.
+- **Multi-Model Support**: Seamlessly switch between top-tier LLMs (OpenAI, Google, Anthropic, Mistral) for analysis.
+- **Comprehensive JSON Tracing**: In-depth tracing of each agent's reasoning and analysis, with a dedicated Trace Manager.
+- **Interactive Streamlit UI**: A multi-page application for running agents, viewing results, and managing traces.
+- **Dynamic Stock Discovery**: Agents dynamically discover and analyze stocks, with no hardcoded tickers.
 
----
+## 🤖 3-Agent Pipeline Architecture
 
-## 🏗️ System Architecture
+The core of Lohusalu Capital Management is its 3-agent pipeline, designed to mimic the workflow of a professional investment team:
 
-The Lohusalu Capital Management system is built on a modern, modular architecture:
+### 1. **📊 Fundamental Agent**
+- **Sector Analysis**: Identifies trending sectors and assigns investment weights.
+- **Quantitative Screening**: Screens stocks against a comprehensive set of financial metrics (growth, profitability, valuation, etc.).
+- **Intrinsic Value Calculation**: Performs DCF-based valuation to determine upside potential.
 
-- **Multi-Agent Framework**: LangGraph-based workflow orchestration for structured debate and consensus.
-- **AI Engine**: OpenAI GPT models for agent intelligence and reasoning.
-- **Web Interface**: Streamlit for the interactive multi-page application.
-- **Data Visualization**: Plotly for advanced, interactive charts and heatmaps.
-- **Database**: SQLite for persistent storage of analyses and portfolios.
+### 2. **🔍 Rationale Agent**
+- **Qualitative Analysis**: Conducts in-depth analysis of economic moats, market sentiment, and secular trends.
+- **Web Search Integration**: Leverages the Tavily search API for real-time information and citations.
+- **Competitive Landscape**: Assesses the competitive position and market share trends of companies.
 
-![System Architecture Diagram](https://i.imgur.com/your-architecture-diagram.png) <!-- Replace with a real diagram -->
+### 3. **🎯 Ranker Agent**
+- **Composite Scoring**: Combines fundamental (60%) and qualitative (40%) scores into a single, comprehensive rating.
+- **Investment Grading**: Assigns investment grades (A+ to D) with a detailed breakdown of scoring.
+- **Portfolio Construction**: Generates a ranked list of investment opportunities and a sample portfolio.
 
----
+## 📁 Project Structure
 
-## ⚙️ Installation
+```
+/alpha-agents
+├── Home.py                   # Main Streamlit application
+├── pages/                    # Streamlit pages for each agent and tool
+│   ├── 1_🤖_Agentic_Screener_v2.py
+│   ├── 2_📊_Fundamental_Agent.py
+│   ├── 3_🔍_Rationale_Agent.py
+│   ├── 4_🎯_Ranker_Agent.py
+│   └── 5_📁_Trace_Manager.py
+├── src/
+│   ├── agents/               # Agent implementations
+│   │   ├── fundamental_agent_v2.py
+│   │   ├── rationale_agent_v2.py
+│   │   └── ranker_agent_v2.py
+│   └── utils/                # Utility functions
+│       ├── trace_manager.py
+│       └── yfinance_util.py
+├── prompts/                  # Prompts for each agent
+│   ├── fundamental_agent_v2.py
+│   ├── rationale_agent_v2.py
+│   └── ranker_agent_v2.py
+├── tracing/                  # Directory for JSON trace files
+├── logs/                     # Directory for application logs
+├── docs/                     # Project documentation
+│   ├── METHODOLOGY.md
+│   └── user_guide.md
+├── tests/                    # Test suite for agents
+├── requirements.txt          # Python dependencies
+└── README.md                 # This file
+```
 
-Follow these steps to set up and run the Alpha Agents system on your local machine.
+## 🔧 Getting Started
 
 ### Prerequisites
 
-- Python 3.10 or higher
-- `pip` for package management
-- `git` for cloning the repository
+- Python 3.8+
+- Pip and Virtualenv
+- An active Tavily API key (`TAVILY_API_KEY`)
+- API keys for your chosen LLM providers (e.g., `OPENAI_API_KEY`)
 
-### 1. Clone the Repository
+### Installation
 
-```bash
-git clone https://github.com/predictivelabsai/alpha-agents.git
-cd alpha-agents
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/alpha-agents.git
+    cd alpha-agents
+    ```
 
-### 2. Set Up a Virtual Environment
+2.  **Set up a virtual environment:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
 
-It is highly recommended to use a virtual environment to manage dependencies.
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```bash
-# For macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+4.  **Set up environment variables:**
+    Create a `.env` file in the root directory and add your API keys:
+    ```
+    TAVILY_API_KEY="your_tavily_api_key"
+    OPENAI_API_KEY="your_openai_api_key"
+    # Add other provider keys as needed
+    ```
 
-# For Windows
-python -m venv venv
-venv\Scripts\activate
-```
+### Running the Application
 
-### 3. Install Dependencies
-
-Install all required Python packages using the `requirements.txt` file.
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure Environment Variables
-
-Create a `.env` file in the root directory of the project and add your OpenAI API key.
-
-```env
-OPENAI_API_KEY="your-openai-api-key-here"
-```
-
-Replace `your-openai-api-key-here` with your actual OpenAI API key.
-
----
-
-## 🚀 Running the Application
-
-Once the installation is complete, you can run the Streamlit application.
-
-### 1. Run the Test Suite (Optional but Recommended)
-
-Before running the application, it is recommended to run the comprehensive test suite to ensure all components are working correctly and to generate initial analysis data.
-
-```bash
-python tests/run_all_tests.py
-```
-
-This will create a `test-data/` directory with CSV and JSON files containing agent analysis results.
-
-### 2. Start the Streamlit Application
-
-Run the following command to start the Streamlit server:
+To launch the Streamlit application, run:
 
 ```bash
 streamlit run Home.py
 ```
 
-The application will be available at `http://localhost:8501` in your web browser.
+The application will be accessible at `http://localhost:8501`.
 
----
+## 📖 Usage
 
-## 📋 Usage Guide
+The application is divided into several pages, accessible from the sidebar:
 
-The Alpha Agents application is organized into several pages, accessible from the sidebar navigation.
-
-### 🏠 Home
-
-The home page provides an overview of the system, its key features, and the specialized AI agents. It also shows a summary of system performance based on the latest test data.
-
-### 📊 Stock Analysis
-
-Analyze individual stocks by providing the stock symbol, company name, and other relevant details. The multi-agent system will perform a comprehensive analysis and provide recommendations, risk assessments, and detailed reasoning from each agent.
-
-### 📊 Analytics
-
-Explore advanced visualizations of the system's performance. This page includes:
-
-- **Agent Consensus & Risk Heatmaps**: Visualize agent agreement and risk assessments across multiple stocks.
-- **Performance Metrics**: View confidence score distributions and recommendation breakdowns.
-- **Portfolio Optimization**: Analyze risk vs. expected return for a basket of stocks.
-- **Sector Analysis**: Understand sector-wise performance and recommendations.
-
-### 🎯 Portfolio Builder
-
-Build and analyze diversified portfolios. Add multiple stocks to a portfolio and let the agents collaborate to provide investment decisions, sector allocation analysis, and overall portfolio recommendations.
-
-### ℹ️ About
-
-Learn more about the Alpha Agents system, its research foundation, system architecture, and technical implementation details.
-
----
+- **Agentic Screener v2**: Run the complete 3-agent pipeline from start to finish.
+- **Fundamental Agent**: Run the Fundamental Agent independently for sector analysis and stock screening.
+- **Rationale Agent**: Perform deep qualitative analysis on a single stock.
+- **Ranker Agent**: Score and rank stocks based on pre-computed or mock data.
+- **Trace Manager**: View, search, and analyze the JSON traces generated by the agents.
 
 ## 🧪 Testing
 
-The project includes a comprehensive testing framework to ensure reliability and validate agent performance.
-
-- **Unit Tests**: Individual tests for each agent and core components.
-- **Integration Tests**: Tests for the multi-agent system and its collaboration mechanisms.
-- **Data Generation**: Scripts to generate test data for analysis and visualization.
-
-To run all tests, use the following command:
+To run the test suite for the agents, use:
 
 ```bash
-python tests/run_all_tests.py
+pytest
 ```
 
-Test results and generated data are stored in the `test-data/` directory.
+## 📚 Documentation
 
----
-
-## 🌐 Deploying the NextJS Landing Page
-
-The project includes a professional NextJS landing page for Lohusalu Capital Management located in the `web-ui/` directory. Here's how to deploy it to various platforms:
-
-### 📁 Landing Page Structure
-
-```
-web-ui/
-├── src/
-│   └── app/
-│       ├── page.tsx          # Main landing page
-│       ├── layout.tsx        # App layout
-│       └── globals.css       # Global styles
-├── public/
-│   ├── logo.png             # Company logo
-│   ├── hero-skyline.jpg     # Hero background image
-│   ├── buildings-perspective.jpg
-│   └── modern-towers.jpg
-├── package.json
-└── next.config.ts
-```
-
-### 🚀 Deployment Options
-
-#### Option 1: Vercel (Recommended)
-
-Vercel is the easiest way to deploy NextJS applications:
-
-1. **Fork/Clone the repository**:
-   ```bash
-   git clone https://github.com/predictivelabsai/alpha-agents.git
-   cd alpha-agents/web-ui
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Test locally**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Deploy to Vercel**:
-   - Visit [vercel.com](https://vercel.com)
-   - Connect your GitHub account
-   - Import the repository
-   - Set the **Root Directory** to `web-ui`
-   - Deploy automatically
-
-5. **Custom Domain** (Optional):
-   - Add your custom domain in Vercel dashboard
-   - Update DNS settings as instructed
-
-#### Option 2: Netlify
-
-1. **Build the application**:
-   ```bash
-   cd web-ui
-   npm install
-   npm run build
-   ```
-
-2. **Deploy to Netlify**:
-   - Visit [netlify.com](https://netlify.com)
-   - Drag and drop the `web-ui/out` folder (after running `npm run build`)
-   - Or connect your GitHub repository
-   - Set **Base directory** to `web-ui`
-   - Set **Build command** to `npm run build`
-   - Set **Publish directory** to `web-ui/out`
-
-#### Option 3: Render.com
-
-Render.com offers two deployment options for NextJS applications:
-
-##### Option 3A: Web Service (Recommended - Full NextJS Features)
-
-Deploy as a Web Service to maintain all NextJS functionality including server-side rendering:
-
-1. **Create a new Web Service on Render**:
-   - Visit [render.com](https://render.com)
-   - Connect your GitHub repository
-   - Choose "Web Service"
-
-2. **Configure build settings**:
-   - **Root Directory**: `web-ui`
-   - **Language**: `Node`
-   - **Build Command**: `yarn; yarn build`
-   - **Start Command**: `yarn start`
-
-3. **Environment Variables** (if needed):
-   - Add any required environment variables in the Render dashboard
-
-##### Option 3B: Static Site (Static Export Only)
-
-Deploy as a Static Site for faster loading but limited to static features:
-
-1. **Configure NextJS for static export** in `next.config.ts`:
-   ```typescript
-   /** @type {import('next').NextConfig} */
-   const nextConfig = {
-     output: 'export',
-     trailingSlash: true,
-     images: {
-       unoptimized: true
-     }
-   }
-   
-   module.exports = nextConfig
-   ```
-
-2. **Create a new Static Site on Render**:
-   - Visit [render.com](https://render.com)
-   - Connect your GitHub repository
-   - Choose "Static Site"
-
-3. **Configure build settings**:
-   - **Root Directory**: `web-ui`
-   - **Build Command**: `yarn; yarn build`
-   - **Publish Directory**: `out`
-
-**Note**: Web Service option provides full NextJS features including API routes and server-side rendering, while Static Site is faster but limited to client-side functionality.
-
-#### Option 4: GitHub Pages
-
-1. **Enable static export** in `next.config.ts`:
-   ```typescript
-   /** @type {import('next').NextConfig} */
-   const nextConfig = {
-     output: 'export',
-     trailingSlash: true,
-     images: {
-       unoptimized: true
-     }
-   }
-   
-   module.exports = nextConfig
-   ```
-
-2. **Build and export**:
-   ```bash
-   cd web-ui
-   npm run build
-   ```
-
-3. **Deploy to GitHub Pages**:
-   - Push the `out` folder to a `gh-pages` branch
-   - Enable GitHub Pages in repository settings
-
-### 🔧 Environment Configuration
-
-The landing page includes:
-- **Professional Design**: Based on Pershing Square Holdings structure
-- **Responsive Layout**: Mobile and desktop optimized
-- **High-Quality Images**: Professional skyscraper photography
-- **Login Integration**: Direct link to the Streamlit application
-- **SEO Optimized**: Meta tags and structured content
-
-### 🎨 Customization
-
-To customize the landing page:
-
-1. **Update Company Information**:
-   - Edit `src/app/page.tsx`
-   - Modify contact details, team information, and performance metrics
-
-2. **Replace Images**:
-   - Add new images to `public/` directory
-   - Update image references in `page.tsx`
-
-3. **Styling Changes**:
-   - Modify `src/app/globals.css`
-   - Update Tailwind classes in components
-
-4. **Logo Updates**:
-   - Replace `public/logo.png` with your company logo
-   - Ensure proper dimensions (recommended: 200x200px)
-
-### 📊 Performance Optimization
-
-The landing page is optimized for:
-- **Fast Loading**: Optimized images and minimal JavaScript
-- **SEO**: Proper meta tags and semantic HTML
-- **Mobile First**: Responsive design for all devices
-- **Accessibility**: WCAG compliant components
-
----
+- **[METHODOLOGY.md](docs/METHODOLOGY.md)**: A detailed explanation of the 3-agent architecture, scoring methodology, and tracing system.
+- **[user_guide.md](docs/user_guide.md)**: A comprehensive guide to using the Streamlit application and its features.
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, please open an issue or submit a pull request.
-
-1. **Fork the repository**
-2. **Create a new branch** (`git checkout -b feature/your-feature-name`)
-3. **Make your changes**
-4. **Commit your changes** (`git commit -m 'Add some feature'`)
-5. **Push to the branch** (`git push origin feature/your-feature-name`)
-6. **Open a pull request**
-
----
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs, feature requests, or improvements.
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
----
-
-## 📞 Contact
-
-For any questions or inquiries, please contact the development team.
-
-- **Project Lead**: [Your Name](mailto:your-email@example.com)
-- **GitHub Repository**: [https://github.com/predictivelabsai/alpha-agents](https://github.com/predictivelabsai/alpha-agents)
-
-"""
 

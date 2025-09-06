@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-09-05T15:55:58.615906",
+  "test_status": "PASS",
+  "sector_count": 2,
+  "stock_count": 2,
+  "final_recommendations": 2,
+  "top_recommendation": {
+    "ticker": "AAPL",
+    "grade": "A",
+    "score": 88.8
+  },
+  "portfolio_metrics": {
+    "risk_profile": "Medium",
+    "expected_return": 18.5,
+    "diversification_score": 75.0
+  }
+}

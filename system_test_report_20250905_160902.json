@@ -1,0 +1,130 @@
+{
+  "timestamp": "2025-09-05T16:09:02.501601",
+  "overall_score": "33/33",
+  "percentage": "100.0%",
+  "page_tests": {
+    "Home.py": {
+      "status": "PASS",
+      "has_imports": true,
+      "has_streamlit": true,
+      "has_functions": true,
+      "size": 13416
+    },
+    "pages/1_\ud83e\udd16_Agentic_Screener_v2.py": {
+      "status": "PASS",
+      "has_imports": true,
+      "has_streamlit": true,
+      "has_functions": true,
+      "size": 29064
+    },
+    "pages/2_\ud83d\udcca_Fundamental_Agent.py": {
+      "status": "PASS",
+      "has_imports": true,
+      "has_streamlit": true,
+      "has_functions": true,
+      "size": 16131
+    },
+    "pages/3_\ud83d\udd0d_Rationale_Agent.py": {
+      "status": "PASS",
+      "has_imports": true,
+      "has_streamlit": true,
+      "has_functions": true,
+      "size": 24381
+    },
+    "pages/4_\ud83c\udfaf_Ranker_Agent.py": {
+      "status": "PASS",
+      "has_imports": true,
+      "has_streamlit": true,
+      "has_functions": true,
+      "size": 31906
+    },
+    "pages/5_\ud83d\udcc1_Trace_Manager.py": {
+      "status": "PASS",
+      "has_imports": true,
+      "has_streamlit": true,
+      "has_functions": true,
+      "size": 18902
+    }
+  },
+  "agent_tests": {
+    "fundamental_agent": "PASS",
+    "rationale_agent": "PASS",
+    "ranker_agent": "PASS"
+  },
+  "data_structure_tests": {
+    "status": "PASS",
+    "structures_tested": 5
+  },
+  "environment_tests": {
+    "OPENAI_API_KEY": "SET",
+    "TAVILY_API_KEY": "SET",
+    "dep_streamlit": "AVAILABLE",
+    "dep_langchain_openai": "AVAILABLE",
+    "dep_yfinance": "AVAILABLE",
+    "dep_pandas": "AVAILABLE",
+    "dep_numpy": "AVAILABLE",
+    "dep_tavily": "AVAILABLE"
+  },
+  "file_structure_tests": {
+    "Home.py": {
+      "status": "EXISTS",
+      "size": 13571
+    },
+    "pages/1_\ud83e\udd16_Agentic_Screener_v2.py": {
+      "status": "EXISTS",
+      "size": 29155
+    },
+    "pages/2_\ud83d\udcca_Fundamental_Agent.py": {
+      "status": "EXISTS",
+      "size": 16204
+    },
+    "pages/3_\ud83d\udd0d_Rationale_Agent.py": {
+      "status": "EXISTS",
+      "size": 24499
+    },
+    "pages/4_\ud83c\udfaf_Ranker_Agent.py": {
+      "status": "EXISTS",
+      "size": 32032
+    },
+    "pages/5_\ud83d\udcc1_Trace_Manager.py": {
+      "status": "EXISTS",
+      "size": 18971
+    },
+    "src/agents/fundamental_agent_v2.py": {
+      "status": "EXISTS",
+      "size": 29302
+    },
+    "src/agents/rationale_agent_v2.py": {
+      "status": "EXISTS",
+      "size": 38491
+    },
+    "src/agents/ranker_agent_v2.py": {
+      "status": "EXISTS",
+      "size": 41529
+    },
+    "src/utils/trace_manager.py": {
+      "status": "EXISTS",
+      "size": 29552
+    },
+    "prompts/fundamental_agent_v2.py": {
+      "status": "EXISTS",
+      "size": 7540
+    },
+    "prompts/rationale_agent_v2.py": {
+      "status": "EXISTS",
+      "size": 13841
+    },
+    "prompts/ranker_agent_v2.py": {
+      "status": "EXISTS",
+      "size": 12999
+    },
+    ".env": {
+      "status": "EXISTS",
+      "size": 316
+    },
+    "requirements.txt": {
+      "status": "EXISTS",
+      "size": 548
+    }
+  }
+}
