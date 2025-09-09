@@ -16,9 +16,9 @@ import asyncio
 import logging
 
 # Add src to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(os.path.dirname(__file__))'))
 
-from agents.rationale_agent_v2 import RationaleAgent
+from agents.agents.rationale_agent_v2 import RationaleAgent
 
 # Page configuration
 st.set_page_config(

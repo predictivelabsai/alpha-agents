@@ -3,9 +3,9 @@ Lohusalu Capital Management - 3-Agent System for Equity Portfolio Construction
 """
 
 from .base_agent import BaseAgent, Stock, AgentAnalysis, InvestmentDecision, RiskTolerance, PortfolioRecommendation
-from .fundamental_agent_v2 import FundamentalAgent
-from .rationale_agent_v2 import RationaleAgent
-from .ranker_agent_v2 import RankerAgent
+from .fundamental_agent import FundamentalAgent
+from .rationale_agent import RationaleAgent
+from .ranker_agent import RankerAgent
 
 # Legacy compatibility
 def create_multi_agent_portfolio_system():

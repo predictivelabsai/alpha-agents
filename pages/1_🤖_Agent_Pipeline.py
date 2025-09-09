@@ -1,5 +1,5 @@
 """
-Agentic Screener v2 - Lohusalu Capital Management
+Agent Pipeline - Lohusalu Capital Management
 Updated multi-agent stock screening with new 3-agent architecture
 """
 
@@ -18,16 +18,16 @@ import time
 from typing import Dict, List, Optional, Any
 
 # Add src to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(os.path.dirname(__file__))'))
 
-from agents.fundamental_agent_v2 import FundamentalAgent
-from agents.rationale_agent_v2 import RationaleAgent
-from agents.ranker_agent_v2 import RankerAgent
+from agents.agents.fundamental_agent_v2 import FundamentalAgent
+from agents.agents.rationale_agent_v2 import RationaleAgent
+from agents.agents.ranker_agent_v2 import RankerAgent
 from utils.trace_manager import TraceManager
 
 # Page configuration
 st.set_page_config(
-    page_title="Agentic Screener v2 - Lohusalu Capital Management",
+    page_title="Agent Pipeline - Lohusalu Capital Management",
     page_icon="🤖",
     layout="wide"
 )
@@ -248,12 +248,12 @@ class AgenticScreenerPipeline:
             raise e
 
 def main():
-    """Main function for Agentic Screener v2 page"""
+    """Main function for Agent Pipeline page"""
     
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>🤖 Agentic Screener v2</h1>
+        <h1>🤖 Agent Pipeline</h1>
         <p>Complete 3-Agent Stock Screening Pipeline</p>
     </div>
     """, unsafe_allow_html=True)

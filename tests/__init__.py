@@ -1,4 +1,0 @@
-"""
-Alpha Agents Testing Package
-"""
-

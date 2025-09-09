@@ -14,7 +14,7 @@ from datetime import datetime, timedelta
 import logging
 
 # Add src to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(os.path.dirname(__file__))'))
 
 from utils.trace_manager import TraceManager, display_trace_manager_interface
 

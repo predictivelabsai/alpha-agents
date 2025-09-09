@@ -112,7 +112,7 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.subheader("🧭 Navigation")
     st.sidebar.markdown("""
-    **🤖 Agentic Screener**: Complete 3-agent investment pipeline  
+    **🤖 Agent Pipeline**: Complete 3-agent investment pipeline  
     **📊 Fundamental Agent**: Sector analysis & quantitative screening  
     **🔍 Rationale Agent**: Qualitative analysis with web search  
     **🎯 Ranker Agent**: Final scoring & portfolio recommendations  
@@ -128,47 +128,37 @@ def main():
     optimization using specialized agents that collaborate and debate to make informed investment decisions.
     """)
     
-    # System overview - All 5 agents
+    # System overview - 3 agents
     st.subheader("🤖 Specialized AI Agents")
     
+    # Main content sections
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        <div class="agent-card">
-            <h3>📊 Fundamental Agent</h3>
-            <p>Analyzes 10-K/10-Q reports, financial statements, earnings quality, and fundamental metrics to assess company financial health and intrinsic value.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        ### 📊 Fundamental Agent
+        
+        Analyzes financial statements, earnings quality, and fundamental metrics to assess company financial health and intrinsic value. Performs sector selection and quantitative screening.
+        """)
         
         st.markdown("""
-        <div class="agent-card">
-            <h3>📰 Sentiment Agent</h3>
-            <p>Processes financial news, analyst ratings, social media sentiment, and market psychology to gauge investor sentiment and momentum.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        ### 🔍 Rationale Agent
         
-        st.markdown("""
-        <div class="agent-card">
-            <h3>🧠 Rationale Agent</h3>
-            <p>Evaluates business quality using a 7-step framework: sales growth, profitability, competitive moats, operational efficiency, and debt structure.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        Evaluates business quality using qualitative analysis: economic moats, competitive advantages, sentiment analysis, and secular trends with comprehensive web search.
+        """)
     
     with col2:
         st.markdown("""
-        <div class="agent-card">
-            <h3>💰 Valuation Agent</h3>
-            <p>Analyzes stock prices, trading volumes, technical indicators, and relative valuation metrics to identify attractive entry points.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        ### 🎯 Ranker Agent
+        
+        Combines fundamental and qualitative analysis to generate final investment scores, grades (A+ to D), and comprehensive investment recommendations.
+        """)
         
         st.markdown("""
-        <div class="agent-card">
-            <h3>🚀 Secular Trend Agent</h3>
-            <p>Identifies companies positioned to benefit from major technology trends: Agentic AI, Cloud Infrastructure, AI Semiconductors, Cybersecurity, and Electrification.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        ### 🤖 Agent Pipeline
+        
+        Complete 3-agent workflow that processes stocks through Fundamental → Rationale → Ranker agents for comprehensive investment analysis.
+        """)
     
     st.markdown("---")
     
@@ -203,72 +193,114 @@ def main():
         </div>
         """, unsafe_allow_html=True)
     
-    # Multi-Agent Collaboration Diagram
+    # Methodology Overview with Expanders
     st.markdown("---")
-    st.subheader("🤖 Multi-Agent Collaboration Architecture")
+    st.subheader("📋 Investment Methodology")
     
-    # Create and display the collaboration diagram
-    try:
-        collaboration_fig = diagram_generator.create_collaboration_diagram()
-        st.plotly_chart(collaboration_fig, use_container_width=True)
+    # 3-Agent Pipeline Overview
+    with st.expander("🤖 **3-Agent Pipeline Architecture**", expanded=False):
+        st.markdown("""
+        The Lohusalu Capital Management system implements a sophisticated **3-agent pipeline** that collaborates 
+        to provide comprehensive stock analysis and portfolio recommendations.
         
-        # Workflow diagram
-        st.subheader("📊 Agent Processing Workflow")
-        workflow_fig = diagram_generator.create_agent_workflow_diagram()
-        st.plotly_chart(workflow_fig, use_container_width=True)
+        **Pipeline Flow:**
+        1. **📊 Fundamental Agent** → Sector analysis & quantitative screening
+        2. **🔍 Rationale Agent** → Qualitative analysis with web research  
+        3. **🎯 Ranker Agent** → Final scoring & investment recommendations
         
-        # Agent descriptions
-        st.subheader("🔍 Agent Specializations")
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.markdown("""
-            **📊 Fundamental Agent**
-            - Financial statement analysis
-            - DCF valuation models
-            - Earnings quality assessment
-            - Balance sheet strength evaluation
-            
-            **📰 Sentiment Agent**
-            - News sentiment analysis
-            - Market psychology assessment
-            - Social media sentiment tracking
-            - Analyst rating changes
-            
-            **💰 Valuation Agent**
-            - Technical analysis
-            - Price momentum indicators
-            - Relative valuation metrics
-            - Support/resistance levels
-            """)
-        
-        with col2:
-            st.markdown("""
-            **🧠 Rationale Agent**
-            - 7-step business quality framework
-            - Competitive moat analysis
-            - Management effectiveness
-            - Long-term sustainability
-            
-            **🚀 Secular Trend Agent**
-            - Technology trend positioning
-            - Market disruption analysis
-            - Future growth catalysts
-            - Innovation assessment
-            
-            **🏆 Ranking Agent**
-            - Multi-agent synthesis
-            - Consensus building
-            - Final investment decisions
-            - Risk-adjusted recommendations
-            """)
-        
-    except Exception as e:
-        st.error(f"Error generating collaboration diagram: {e}")
-        st.info("Collaboration diagram temporarily unavailable. Please check system configuration.")
+        **Key Features:**
+        - **LangGraph-based** collaborative system
+        - **Sequential analysis** with consensus building
+        - **Weighted confidence** scoring with final synthesis
+        - **Real-time data** integration via yfinance API
+        - **Complete transparency** with reasoning traces
+        """)
     
-    # Quick stats from test data
+    # Fundamental Agent Methodology
+    with st.expander("📊 **Fundamental Agent Methodology**", expanded=False):
+        st.markdown("""
+        **Primary Function:** Sector analysis and quantitative stock screening.
+        
+        **Methodology:**
+        - **Sector Analysis:** Identifies trending sectors by analyzing market data and economic indicators. 
+          Assigns weights to sectors based on growth potential and momentum.
+        - **Quantitative Screening:** Screens stocks within selected sectors against rigorous financial metrics:
+          - **Growth:** Revenue and EPS growth (YoY and QoQ)
+          - **Profitability:** ROE, ROA, and net profit margins
+          - **Valuation:** P/E, P/S, and P/B ratios relative to industry peers
+          - **Financial Health:** Debt-to-equity and current ratios
+        - **Intrinsic Value:** Calculates DCF-based intrinsic value to determine upside potential.
+        
+        **Output:** List of qualified companies meeting quantitative criteria with fundamental scores.
+        """)
+    
+    # Rationale Agent Methodology  
+    with st.expander("🔍 **Rationale Agent Methodology**", expanded=False):
+        st.markdown("""
+        **Primary Function:** Qualitative analysis of competitive advantages and market position.
+        
+        **Methodology:**
+        - **Economic Moat:** Assesses strength and durability of competitive advantages 
+          (network effects, brand loyalty, switching costs).
+        - **Sentiment Analysis:** Analyzes market sentiment through news, social media, and analyst ratings.
+        - **Secular Trends:** Identifies long-term trends and evaluates company alignment.
+        - **Tavily Search:** Conducts extensive web searches to gather qualitative data with citations.
+        
+        **Analysis Components:**
+        - Competitive advantage assessment
+        - Market sentiment evaluation  
+        - Long-term trend alignment
+        - Qualitative business evaluation
+        
+        **Output:** Comprehensive qualitative analysis with web-sourced citations and reasoning.
+        """)
+    
+    # Ranker Agent Methodology
+    with st.expander("🎯 **Ranker Agent Methodology**", expanded=False):
+        st.markdown("""
+        **Primary Function:** Synthesizes analysis from Fundamental and Rationale agents for final recommendations.
+        
+        **Methodology:**
+        - **Composite Scoring:** Calculates weighted average of fundamental (60%) and qualitative (40%) scores.
+        - **Investment Grading:** Assigns investment grade (A+ to D) based on composite score.
+        - **Investment Thesis:** Generates comprehensive thesis outlining strengths, risks, and catalysts.
+        - **Portfolio Construction:** Provides ranked investment opportunities and portfolio allocation.
+        
+        **Scoring Dimensions:**
+        - Growth potential and sustainability
+        - Profitability and financial strength
+        - Competitive moat and market position
+        - Sentiment and trend alignment
+        
+        **Output:** Final investment grades, detailed thesis, and portfolio recommendations.
+        """)
+    
+    # Multi-Agent Collaboration Process
+    with st.expander("🔄 **Multi-Agent Collaboration Process**", expanded=False):
+        st.markdown("""
+        **Phase 1: Independent Analysis**
+        - Each agent processes stocks independently using specialized methodologies
+        - Real-time data integration from yfinance API and Tavily search
+        - Individual recommendations and confidence scores generated
+        
+        **Phase 2: Data Aggregation**  
+        - All agent analyses collected by the Ranker Agent
+        - Consistency checks and data validation performed
+        - Agent-specific insights and concerns catalogued
+        
+        **Phase 3: Final Synthesis**
+        - Multi-factor composite scoring calculation
+        - Risk-reward assessment integration
+        - Investment thesis development with supporting evidence
+        - Final recommendation and investment grade determination
+        
+        **Quality Assurance:**
+        - Confidence scoring system (0.0-1.0) for each agent
+        - Weighted averaging based on agent specialization
+        - Complete reasoning traces for transparency and audit
+        """)
+    
+    # System Performance Metrics
     st.markdown("---")
     st.subheader("📊 System Performance")
     

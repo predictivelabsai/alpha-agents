@@ -56,7 +56,7 @@ class FundamentalAgent:
         self.logger = logging.getLogger(__name__)
         self.model_provider = model_provider
         self.model_name = model_name
-        self.llm = self._initialize_llm()
+        self._initialize_llm()  # Call as method, don't assign return value
         
         # Sector universe
         self.sectors = [
@@ -83,14 +83,26 @@ class FundamentalAgent:
         try:
             # Initialize LLM based on provider
             if self.model_provider == "openai":
+                from langchain_openai import ChatOpenAI
                 self.llm = ChatOpenAI(model=self.model_name, temperature=0.1)
             else:
                 # Default to OpenAI for now
+                from langchain_openai import ChatOpenAI
                 self.llm = ChatOpenAI(model="gpt-4", temperature=0.1)
+                
+            # Verify LLM is properly initialized
+            if self.llm is None:
+                raise Exception("LLM initialization returned None")
+                
         except Exception as e:
             self.logger.error(f"Error initializing LLM: {e}")
             # Fallback to basic OpenAI model
-            self.llm = ChatOpenAI(model="gpt-4", temperature=0.1)
+            try:
+                from langchain_openai import ChatOpenAI
+                self.llm = ChatOpenAI(model="gpt-4", temperature=0.1)
+            except Exception as fallback_error:
+                self.logger.error(f"Fallback LLM initialization failed: {fallback_error}")
+                self.llm = None
     
     def analyze_sectors(self) -> List[SectorAnalysis]:
         """
@@ -173,6 +185,10 @@ class FundamentalAgent:
     def _analyze_sector_with_llm(self, sector: str, sector_data: Dict) -> SectorAnalysis:
         """Analyze sector using LLM"""
         try:
+            # Check if LLM is properly initialized
+            if self.llm is None:
+                raise Exception("LLM not properly initialized")
+                
             prompt = f"""
             As a fundamental analyst, analyze the {sector} sector based on the following performance data:
             
@@ -184,20 +200,13 @@ class FundamentalAgent:
             - Momentum: {sector_data.get('momentum', 0):.2f}%
             - Volume Trend: {sector_data.get('volume_trend', 1):.2f}x
             
-            Provide:
-            1. Weight (0-100): How attractive is this sector for investment?
-            2. Momentum Score (0-100): Current momentum and trend strength
-            3. Growth Potential (0-100): Long-term growth prospects
-            4. Reasoning: 2-3 sentences explaining your analysis
-            5. Top 3 stock tickers to focus on in this sector
-            
-            Format your response as JSON:
+            Provide analysis in JSON format:
             {{
-                "weight": <number>,
-                "momentum_score": <number>,
-                "growth_potential": <number>,
-                "reasoning": "<text>",
-                "top_stocks": ["<ticker1>", "<ticker2>", "<ticker3>"]
+                "weight": <sector_weight_0_100>,
+                "momentum_score": <momentum_score_0_100>,
+                "growth_potential": <growth_potential_0_100>,
+                "reasoning": "<detailed_reasoning>",
+                "top_stocks": ["<stock1>", "<stock2>", "<stock3>"]
             }}
             """
             
@@ -206,8 +215,7 @@ class FundamentalAgent:
                 HumanMessage(content=prompt)
             ]
             
-            response = self.llm.invoke(messages)
-            
+            response = self.llm.invoke(messages)        
             # Parse JSON response
             try:
                 analysis_data = json.loads(response.content)

@@ -17,9 +17,9 @@ import logging
 import numpy as np
 
 # Add src to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(os.path.dirname(__file__))'))
 
-from agents.ranker_agent_v2 import RankerAgent
+from agents.agents.ranker_agent_v2 import RankerAgent
 
 # Page configuration
 st.set_page_config(

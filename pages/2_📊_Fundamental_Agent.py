@@ -12,13 +12,14 @@ import json
 import os
 import sys
 from datetime import datetime
+from typing import Dict, List, Optional, Any
 import asyncio
 import logging
 
 # Add src to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(os.path.dirname(__file__))'))
 
-from agents.fundamental_agent_v2 import FundamentalAgent
+from agents.agents.fundamental_agent_v2 import FundamentalAgent
 
 # Page configuration
 st.set_page_config(
@@ -230,6 +231,9 @@ def run_fundamental_analysis(model_provider, model_name, max_stocks, save_trace,
                     st.success(f"✅ Analysis trace saved to: {trace_file}")
         
         st.success("🎉 Fundamental analysis completed successfully!")
+        
+        # Display expandable trace
+        display_analysis_trace(agent, sector_analyses, stock_screenings)
         
     except Exception as e:
         st.error(f"❌ Error in fundamental analysis: {str(e)}")
@@ -484,4 +488,87 @@ def display_recent_traces():
 
 if __name__ == "__main__":
     main()
+
+
+
+def display_analysis_trace(agent, sector_analyses, stock_screenings):
+    """Display expandable analysis trace"""
+    
+    with st.expander("🔍 **Analysis Trace & Reasoning**", expanded=False):
+        st.markdown("### 📊 Complete Analysis Trace")
+        
+        # Create trace data
+        trace_data = {
+            "timestamp": datetime.now().isoformat(),
+            "agent": "FundamentalAgent",
+            "model_provider": agent.model_provider,
+            "model_name": agent.model_name,
+            "sector_analyses": [
+                {
+                    "sector": sa.sector,
+                    "weight": sa.weight,
+                    "momentum_score": sa.momentum_score,
+                    "growth_potential": sa.growth_potential,
+                    "reasoning": sa.reasoning,
+                    "top_stocks": sa.top_stocks
+                } for sa in sector_analyses
+            ],
+            "stock_screenings": [
+                {
+                    "symbol": ss.symbol,
+                    "company_name": ss.company_name,
+                    "sector": ss.sector,
+                    "fundamental_score": ss.fundamental_score,
+                    "intrinsic_value": ss.intrinsic_value,
+                    "current_price": ss.current_price,
+                    "upside_potential": ss.upside_potential,
+                    "financial_metrics": ss.financial_metrics,
+                    "reasoning": ss.reasoning
+                } for ss in stock_screenings
+            ],
+            "screening_criteria": agent.screening_criteria,
+            "total_sectors_analyzed": len(sector_analyses),
+            "total_stocks_screened": len(stock_screenings)
+        }
+        
+        # Display as formatted JSON
+        st.json(trace_data)
+        
+        # Display as DataFrame
+        st.markdown("### 📋 Sector Analysis Summary")
+        if sector_analyses:
+            sector_df = pd.DataFrame([
+                {
+                    'Sector': sa.sector,
+                    'Weight': sa.weight,
+                    'Momentum': sa.momentum_score,
+                    'Growth Potential': sa.growth_potential,
+                    'Top Stocks': ', '.join(sa.top_stocks[:3])
+                } for sa in sector_analyses
+            ])
+            st.dataframe(sector_df, use_container_width=True)
+        
+        st.markdown("### 📈 Stock Screening Summary")
+        if stock_screenings:
+            stock_df = pd.DataFrame([
+                {
+                    'Symbol': ss.symbol,
+                    'Company': ss.company_name,
+                    'Sector': ss.sector,
+                    'Score': ss.fundamental_score,
+                    'Current Price': f"${ss.current_price:.2f}",
+                    'Intrinsic Value': f"${ss.intrinsic_value:.2f}",
+                    'Upside': f"{ss.upside_potential:.1f}%"
+                } for ss in stock_screenings
+            ])
+            st.dataframe(stock_df, use_container_width=True)
+        
+        # Download trace button
+        trace_json = json.dumps(trace_data, indent=2)
+        st.download_button(
+            label="📥 Download Analysis Trace (JSON)",
+            data=trace_json,
+            file_name=f"fundamental_analysis_trace_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+            mime="application/json"
+        )
 
