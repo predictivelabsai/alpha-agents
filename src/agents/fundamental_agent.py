@@ -28,7 +28,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 from utils.yfinance_util import YFinanceUtil
-from utils.data import get_data_deprecated
+from utils.data import get_data_deprecated, SECTORS, INDUSTRIES
 
 
 @dataclass
@@ -466,14 +466,8 @@ Provide 2-3 sentences highlighting the key financial strengths that make this a 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Run the fundamental agent.")
     parser.add_argument("region")
-    parser.add_argument(
-        "--sector",
-        help="Sector to filter by.",
-    )
-    parser.add_argument(
-        "--industry",
-        help="Industry to filter by.",
-    )
+    parser.add_argument("--sector", help="Sector to filter by.")
+    parser.add_argument("--industry", help="Industry to filter by.")
     parser.add_argument(
         "--min-cap",
         dest="min_cap",
