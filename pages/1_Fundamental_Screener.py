@@ -1,40 +1,19 @@
-"""Streamlit app for interacting with the FundamentalAgent screener."""
+"""Streamlit app for interacting with the StockScreener."""
 
 import math
-from pathlib import Path
 import io
 from typing import Dict
-import pandas as pd
+import pandas as pd  # type: ignore
 
-import streamlit as st
+import streamlit as st  # type: ignore
 
-try:
-    from .fundamental_agent import FundamentalAgent
-except ImportError:  # pragma: no cover - fallback when run as a script
-    import sys
-
-    src_dir = Path(__file__).resolve().parents[2]
-    repo_root = src_dir.parent
-    for path in (src_dir, repo_root):
-        path_str = str(path)
-        if path_str not in sys.path:
-            sys.path.insert(0, path_str)
-    from agents.fundamental_agent.fundamental_agent import FundamentalAgent
-
-from agents.fundamental_agent.stock_screener import StockScreener
+from utils.stock_screener import StockScreener
+from utils.db_util import save_fundamental_screen
 
 SECTORS = sorted(StockScreener.SECTORS)
 INDUSTRIES = sorted(StockScreener.INDUSTRIES)
 REGIONS = sorted(StockScreener.REGIONS)
 DEFAULT_REGION = "US"
-
-
-@st.cache_resource(show_spinner=False)
-def get_agent() -> FundamentalAgent:
-    """Create a single FundamentalAgent instance for the app lifecycle."""
-
-    return FundamentalAgent()
-
 
 @st.cache_data(show_spinner=False)
 def run_screen(
@@ -57,8 +36,8 @@ def run_screen(
         options["sectors"] = selection
     else:
         options["industries"] = selection
-    agent = StockScreener(**options)
-    return agent.screen()
+    screener = StockScreener(**options)
+    return screener.screen()
 
 
 def main() -> None:
@@ -130,6 +109,10 @@ def main() -> None:
                 file_name="fundamental_screen_results.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             )
+            if st.button("Store in Database"):
+                with st.spinner("Saving results to database..."):
+                    run_id = save_fundamental_screen(df.reset_index(drop=False))
+                st.success(f"Saved {len(df)} rows to database (run_id={run_id}).")
 
 
 if __name__ == "__main__":
