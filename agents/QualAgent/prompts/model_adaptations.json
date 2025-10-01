@@ -1,0 +1,55 @@
+{
+  "model_adaptations": {
+    "llama": {
+      "instruction_style": "direct",
+      "supports_json_mode": true,
+      "max_context_length": 131072,
+      "prefers_explicit_instructions": true,
+      "requires_role_emphasis": true,
+      "output_formatting_preference": "json",
+      "optimization_prompt": "\nLLAMA-SPECIFIC GUIDANCE:\n- Use clear, step-by-step reasoning throughout your analysis\n- Provide explicit examples where helpful for complex concepts\n- Structure analysis logically from general market context to specific company details\n- Emphasize factual accuracy and comprehensive source verification\n- Break down complex assessments into component parts\n- Use systematic evaluation methodology for each dimension"
+    },
+    "mixtral": {
+      "instruction_style": "structured",
+      "supports_json_mode": true,
+      "max_context_length": 32768,
+      "prefers_explicit_instructions": true,
+      "requires_role_emphasis": false,
+      "output_formatting_preference": "json",
+      "optimization_prompt": "\nANALYSIS EXCELLENCE STANDARDS:\n- Apply multi-faceted reasoning across all analytical dimensions\n- Synthesize insights from diverse sources and perspectives systematically\n- Maintain analytical rigor while highlighting key strategic insights\n- Balance analytical depth with clarity in all assessments\n- Consider multiple scenarios and potential outcomes\n- Provide nuanced evaluation that captures complexity"
+    },
+    "qwen": {
+      "instruction_style": "conversational",
+      "supports_json_mode": true,
+      "max_context_length": 32768,
+      "prefers_explicit_instructions": false,
+      "requires_role_emphasis": true,
+      "output_formatting_preference": "json",
+      "optimization_prompt": "\nANALYTICAL FRAMEWORK EMPHASIS:\n- Follow systematic evaluation methodology consistently\n- Consider both quantitative indicators and qualitative factors equally\n- Provide nuanced assessment of competitive dynamics and market positioning\n- Ensure comprehensive coverage of all required analytical dimensions\n- Apply rigorous scoring methodology with clear justifications\n- Integrate multiple data sources for robust conclusions"
+    },
+    "gpt": {
+      "instruction_style": "conversational",
+      "supports_json_mode": true,
+      "max_context_length": 128000,
+      "prefers_explicit_instructions": false,
+      "requires_role_emphasis": false,
+      "output_formatting_preference": "json",
+      "optimization_prompt": "\nHIGH-QUALITY ANALYSIS STANDARDS:\n- Leverage your analytical capabilities for insightful company assessment\n- Provide well-reasoned judgments based on available information\n- Ensure comprehensive coverage while maintaining analytical flow\n- Generate actionable insights for investment decision-making"
+    },
+    "deepseek": {
+      "instruction_style": "direct",
+      "supports_json_mode": true,
+      "max_context_length": 16384,
+      "prefers_explicit_instructions": true,
+      "requires_role_emphasis": true,
+      "output_formatting_preference": "json",
+      "optimization_prompt": "\nDEEPSEEK-SPECIFIC GUIDANCE:\n- Apply systematic analytical methodology with clear reasoning chains\n- Provide detailed justifications for all scores and assessments\n- Use structured approach to competitive and market analysis\n- Ensure comprehensive source citation and evidence presentation\n- Maintain consistency in scoring methodology across dimensions"
+    }
+  },
+  "universal_instructions": {
+    "role_emphasis": "\nCRITICAL: You are a senior equity research analyst. Your analysis will directly influence investment decisions.\nMaintain the highest standards of analytical rigor, objectivity, and professional judgment throughout your assessment.\n",
+    "explicit_guidance": "\nEXECUTION REQUIREMENTS:\n1. Follow the exact TechQual dimension framework provided\n2. Provide specific justifications with comprehensive source citations\n3. Apply consistent scoring methodology (1-5 scale) across all dimensions\n4. Include quantitative confidence scores (0.0-1.0) for all assessments\n5. Generate detailed competitive analysis with peer comparisons\n6. Ensure JSON output matches required schema exactly\n7. Utilize available research tools to gather current market information\n8. Cite specific sources and data points throughout your analysis\n9. Address contradictory evidence when identified\n10. Provide actionable insights for investment decision-making\n",
+    "json_formatting": "\nOUTPUT FORMAT CRITICAL:\n- Return ONLY valid JSON matching the exact output schema provided\n- NO markdown formatting, NO code blocks, NO explanatory text outside JSON\n- Ensure all required fields are present and properly formatted\n- Use exact enumeration values specified in schema\n- Format dates as YYYY-MM-DD\n- Double-quote all strings, avoid trailing commas\n- Include specific source citations within your analysis content\n- Maintain proper JSON structure throughout\n"
+  },
+  "tools_integration_prompt": "\n## Research Tools Integration\n\nYou have access to powerful research tools to enhance your analysis quality:\n\n**Available Tools:**\n- **Tavily**: Real-time web search for current news, earnings, partnerships, product launches\n- **Polygon**: Financial market data including stock prices, volumes, institutional activity\n- **Exa**: AI-powered semantic search for strategic insights and competitive intelligence\n- **Twitter/X**: Social sentiment and management communications (reference context)\n- **GuruFocus**: Fundamental financial metrics and ratios (reference context)\n- **Reddit**: Community discussions and user feedback (reference context)\n\n**Tool Usage Guidelines:**\n1. Use tools strategically to gather current, relevant information\n2. Cross-reference information from multiple sources when possible\n3. Always cite specific sources and data points in your analysis\n4. Be aware of data recency and relevance to the analysis timeframe\n5. Leverage real-time tools (Tavily, Polygon, Exa) for current market conditions\n6. Use reference tools (Twitter, GuruFocus, Reddit) for context and comprehensive perspective\n\n**Quality Standards:**\n- Prioritize authoritative sources and official company communications\n- Verify information across multiple sources when possible\n- Note any limitations or gaps in available data\n- Include data timestamps and source credibility assessments\n"
+}

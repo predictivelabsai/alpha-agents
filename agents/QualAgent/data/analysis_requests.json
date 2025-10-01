@@ -1,0 +1,155 @@
+[
+  {
+    "company_id": "cfc99153-a76e-45d9-aa93-6c8d940c3b82",
+    "focus_themes": [
+      "Core business strength"
+    ],
+    "geographies_of_interest": [
+      "US"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "fbca27ef-7604-46a8-9651-0e769c4d3d5f",
+    "request_date": "2025-10-01T21:41:28.057475",
+    "status": "failed",
+    "error_message": "All model analyses failed",
+    "processing_time_seconds": null,
+    "created_at": "2025-10-01T21:41:28.057475",
+    "updated_at": "2025-10-01T21:41:28.180147"
+  },
+  {
+    "company_id": "cfc99153-a76e-45d9-aa93-6c8d940c3b82",
+    "focus_themes": [
+      "Core business strength"
+    ],
+    "geographies_of_interest": [
+      "US"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "6329e0be-c421-47fb-84ab-b7c96115985a",
+    "request_date": "2025-10-01T21:45:25.139505",
+    "status": "failed",
+    "error_message": "All model analyses failed",
+    "processing_time_seconds": null,
+    "created_at": "2025-10-01T21:45:25.139505",
+    "updated_at": "2025-10-01T21:45:25.232357"
+  },
+  {
+    "company_id": "cfc99153-a76e-45d9-aa93-6c8d940c3b82",
+    "focus_themes": [
+      "Core business strength"
+    ],
+    "geographies_of_interest": [
+      "US"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "d725785f-8b4d-41bd-ab4e-2211e3c06bad",
+    "request_date": "2025-10-01T21:56:32.086077",
+    "status": "completed",
+    "error_message": null,
+    "processing_time_seconds": 51.28260350227356,
+    "created_at": "2025-10-01T21:56:32.086077",
+    "updated_at": "2025-10-01T21:57:23.329762"
+  },
+  {
+    "company_id": "72c249f9-2f24-46cb-8bbb-20348f15bd14",
+    "focus_themes": [
+      "AI market opportunity",
+      "Competitive positioning"
+    ],
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "d8861ca9-e7a3-4c9b-8353-f39eb905b155",
+    "request_date": "2025-10-01T22:02:19.447948",
+    "status": "completed",
+    "error_message": null,
+    "processing_time_seconds": 45.44157099723816,
+    "created_at": "2025-10-01T22:02:19.447948",
+    "updated_at": "2025-10-01T22:03:04.729418"
+  },
+  {
+    "company_id": "cfc99153-a76e-45d9-aa93-6c8d940c3b82",
+    "focus_themes": [
+      "AI market opportunity",
+      "Competitive positioning"
+    ],
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "325a8b2a-f0b1-40d2-a0ac-b39a357aab14",
+    "request_date": "2025-10-01T22:03:06.769572",
+    "status": "completed",
+    "error_message": null,
+    "processing_time_seconds": 25.303948879241943,
+    "created_at": "2025-10-01T22:03:06.769572",
+    "updated_at": "2025-10-01T22:03:32.061526"
+  },
+  {
+    "company_id": "cfc99153-a76e-45d9-aa93-6c8d940c3b82",
+    "focus_themes": [],
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "5341d86f-cf40-4e2a-961d-cb7e8f2efa91",
+    "request_date": "2025-10-01T22:24:50.394846",
+    "status": "completed",
+    "error_message": null,
+    "processing_time_seconds": 12.073121309280396,
+    "created_at": "2025-10-01T22:24:50.394846",
+    "updated_at": "2025-10-01T22:25:02.472971"
+  }
+]
