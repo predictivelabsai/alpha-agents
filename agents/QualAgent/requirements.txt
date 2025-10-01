@@ -1,0 +1,34 @@
+# QualAgent Requirements
+# Python 3.8+ required
+
+# Core dependencies
+pandas>=1.5.0
+numpy>=1.21.0
+requests>=2.28.0
+python-dotenv>=0.19.0
+
+# Web framework
+flask>=2.2.0
+flask-cors>=3.0.10
+
+# JSON and data handling
+uuid
+pathlib
+json
+datetime
+
+# OpenAI API (optional)
+openai>=1.0.0
+
+# Logging and utilities
+logging
+
+# Development and testing (optional)
+pytest>=7.0.0
+jupyter>=1.0.0
+
+# Note: The following APIs require separate API keys:
+# - TogetherAI: https://together.ai
+# - Tavily: https://tavily.com
+# - Polygon: https://polygon.io
+# - Exa: https://exa.ai

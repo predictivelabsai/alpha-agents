@@ -1,0 +1,132 @@
+[
+  {
+    "id": "c76ae8cb-5b30-4b83-b5da-3c8755528dc1",
+    "analysis_id": "8a775172-335b-407b-a8ff-3c24015d3fff",
+    "structured_data": {
+      "company": "NVIDIA Corporation",
+      "ticker": "NVDA",
+      "subsector": "Semiconductors",
+      "analysis_date": "2023-12-31",
+      "lookback_window": 24,
+      "focus_themes": [
+        "General technology analysis"
+      ],
+      "geographic_focus": [
+        "US",
+        "Global"
+      ],
+      "dimensions": [],
+      "competitive_analysis": {
+        "competitors": [
+          {
+            "name": "AMD",
+            "business_model": "GPU and CPU manufacturing",
+            "competitive_positioning": "Strong competitor in the GPU market, with a growing presence in the datacenter market",
+            "relative_strengths": [
+              "Strong brand, innovative products"
+            ],
+            "relative_weaknesses": [
+              "Limited presence in the AI market"
+            ],
+            "market_share_dynamics": "AMD's market share in the GPU market is growing, but the company still lags behind NVIDIA",
+            "strategic_partnerships": "AMD has partnerships with several major technology companies, including Google and Microsoft"
+          },
+          {
+            "name": "Intel",
+            "business_model": "CPU and GPU manufacturing",
+            "competitive_positioning": "Strong competitor in the CPU market, with a growing presence in the GPU market",
+            "relative_strengths": [
+              "Strong brand, significant resources"
+            ],
+            "relative_weaknesses": [
+              "Limited presence in the AI market"
+            ],
+            "market_share_dynamics": "Intel's market share in the CPU market is significant, but the company is still developing its presence in the GPU market",
+            "strategic_partnerships": "Intel has partnerships with several major technology companies, including Google and Microsoft"
+          }
+        ]
+      },
+      "strategic_insights": {
+        "key_growth_drivers": [
+          "Growing demand for AI, gaming, and datacenter solutions"
+        ],
+        "major_risk_factors": [
+          "Intense competition in the GPU market, regulatory risks related to business operations and supply chain"
+        ],
+        "catalysts": [
+          "New product launches, strategic partnerships, growing demand for AI and gaming solutions"
+        ],
+        "red_flags": [
+          "Regulatory risks, intense competition in the GPU market"
+        ],
+        "transformation_potential": "High, with the company having a strong track record of innovation and a significant pipeline of new products and technologies",
+        "platform_expansion_opportunities": [
+          "Growing demand for AI, gaming, and datacenter solutions, expansion into new markets such as autonomous vehicles and healthcare"
+        ]
+      },
+      "as_of_date": "2025-10-01",
+      "sector": "Semiconductors",
+      "moat_breakdown": {
+        "brand_monopoly": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "barriers_to_entry": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "economies_of_scale": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "network_effects": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "switching_costs": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "overall_moat": {
+          "score": "Insufficient Info",
+          "rollup_justification": "No justification provided",
+          "confidence": 0.5
+        }
+      },
+      "competitors": [],
+      "key_tailwinds": [],
+      "key_headwinds": [],
+      "catalysts_next_6_12m": [],
+      "red_flags": [],
+      "queries_run": {
+        "web": [],
+        "twitter": [],
+        "gurufocus": [],
+        "reddit": []
+      },
+      "audit": {
+        "primary_source_used": false,
+        "recency_ok": true,
+        "contradictions_noted": false,
+        "tool_limitations": "No limitations noted"
+      },
+      "step_alignment": {
+        "covered": [],
+        "qualitative_proxies_only": [],
+        "excluded": []
+      },
+      "_parsing_metadata": {
+        "parsed_at": "2025-10-01T22:25:02.324949",
+        "original_length": 7347,
+        "cleaned_length": 7339,
+        "validation_passed": true
+      }
+    },
+    "created_at": "2025-10-01T22:25:02.451965"
+  }
+]
