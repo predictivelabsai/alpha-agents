@@ -28,7 +28,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 from utils.yfinance_util import YFinanceUtil
-from utils.data import get_data_deprecated, SECTORS, INDUSTRIES
+from utils.data import StockScreener
 
 
 @dataclass
@@ -38,6 +38,7 @@ class QualifiedCompany:
     ticker: str
     company_name: str
     sector: str
+    industry: str
     market_cap: float
 
     # Growth metrics
@@ -63,9 +64,9 @@ class QualifiedCompany:
     overall_score: float
 
     # Optional LLM commentary
-    commentary: str
+    # commentary: str
 
-    timestamp: str
+    # timestamp: str
 
 
 class FundamentalAgent:
@@ -114,17 +115,26 @@ class FundamentalAgent:
         industries: str | Collection[str] | None = None,
         min_cap: float = 0,
         max_cap: float = float("inf"),
-        n_return: int = 20,
+        verbose: bool = True,
     ) -> pd.DataFrame:
         """Screen sector for companies meeting quantitative criteria"""
 
         # Get stock universe
-        tickers = get_data_deprecated(
-            region, sectors, industries, min_cap=min_cap, max_cap=max_cap
+        tickers = (
+            StockScreener(
+                region=region,
+                sectors=sectors,
+                industries=industries,
+                min_cap=min_cap,
+                max_cap=max_cap,
+            )
+            ._get_stock_universe()
+            .index.tolist()
         )
         qualified_companies = []
-        print("Calculating metrics ...")
-        for ticker in tqdm(tickers):
+        if verbose:
+            tickers = tqdm(tickers)
+        for ticker in tickers:
             try:
                 # Get financial metrics
                 metrics = self.yfinance_util.get_fundamental_metrics(ticker)
@@ -133,15 +143,14 @@ class FundamentalAgent:
                     continue
 
                 # Apply quantitative filters
-                if self._meets_quantitative_criteria(metrics):
-                    qualified_company = self._create_qualified_company(
-                        metrics, metrics["sector"]
-                    )
-                    qualified_companies.append(qualified_company)
+                qualified_company = self._create_qualified_company(
+                    metrics, metrics["sector"]
+                )
+                qualified_companies.append(qualified_company)
 
-                    # print(
-                    #     f"✓ {ticker} qualified with score {qualified_company.overall_score:.1f}"
-                    # )
+            # print(
+            #     f"✓ {ticker} qualified with score {qualified_company.overall_score:.1f}"
+            # )
 
             except Exception as e:
                 logger.error(f"Error analyzing {ticker}: {e}")
@@ -151,7 +160,6 @@ class FundamentalAgent:
         qualified_companies.sort(key=lambda x: x.overall_score, reverse=True)
 
         # Limit results
-        qualified_companies = qualified_companies[:n_return]
 
         qualified_companies_list = [asdict(s) for s in qualified_companies]
         return pd.DataFrame(qualified_companies_list)
@@ -234,6 +242,7 @@ class FundamentalAgent:
             ticker=metrics.get("ticker", ""),
             company_name=metrics.get("company_name", "N/A"),
             sector=metrics.get("sector", sector),
+            industry=metrics.get("industry"),
             market_cap=metrics.get("market_cap", 0),
             # Growth metrics
             revenue_growth_5y=metrics.get("revenue_growth_5y", 0),
@@ -253,8 +262,6 @@ class FundamentalAgent:
             profitability_score=profitability_score,
             debt_score=debt_score,
             overall_score=overall_score,
-            commentary=commentary,
-            timestamp=datetime.now().isoformat(),
         )
 
         return qualified_company
@@ -482,13 +489,12 @@ def main(argv: list[str] | None = None) -> None:
         default=float("inf"),
         help="Maximum market capitalization in USD.",
     )
+    parser.add_argument("--excel", action="store_true")
     args = parser.parse_args(argv)
-    if args.sector is not None:
-        sector_industry: str = args.sector
-    elif args.industry is not None:
-        sector_industry: str = args.industry
+    if (args.sector is not None) ^ (args.industry is not None):
+        sector_industry: str = args.sector or args.industry
     else:
-        parser.error("Please provide at least one of --sector or --industry.")
+        parser.error("Please provide exactly one of --sector or --industry.")
     agent = FundamentalAgent()
     results = agent.screen_sector(
         region=args.region,
@@ -499,9 +505,14 @@ def main(argv: list[str] | None = None) -> None:
     )
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     pathlib.Path("test-data/screener").mkdir(exist_ok=True)
-    results.to_csv(
-        f"test-data/screener/{sector_industry.replace(' - ', '_').lower()}_{timestamp}.csv"
-    )
+    if args.excel:
+        results.to_excel(
+            f"test-data/screener/{sector_industry.replace(' - ', '_').lower()}_{timestamp}.xlsx"
+        )
+    else:
+        results.to_csv(
+            f"test-data/screener/{sector_industry.replace(' - ', '_').lower()}_{timestamp}.csv"
+        )
 
 
 if __name__ == "__main__":
