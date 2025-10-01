@@ -254,9 +254,6 @@ class StockScreener:
             self.industries |= {
                 ind for s in sectors for ind in self.SECTORS_INDUSTRIES[s]
             }
-        self.financials: pd.DataFrame = pd.DataFrame()
-        self.cash_flow: pd.DataFrame = pd.DataFrame()
-        self.balance_sheet: pd.DataFrame = pd.DataFrame()
 
     @staticmethod
     def _as_set(x: str | Collection[str]) -> set[str]:
@@ -325,8 +322,12 @@ class StockScreener:
         if subset is not None:
             data = data.reindex(subset)
         # keep only the most recent 5 periods and rename columns
-        data = data.iloc[:, :5]
-        column_names = [f"0{period}"] + [f"-{i}{period}" for i in range(1, 5)]
+        if period == "Y":
+            data = data.iloc[:, :4]
+            column_names = [f"0{period}"] + [f"-{i}{period}" for i in range(1, 4)]
+        else:
+            data = data.iloc[:, :5]
+            column_names = [f"0{period}"] + [f"-{i}{period}" for i in range(1, 5)]
         data.columns = column_names[: data.shape[1]]
         data = data.reindex(columns=column_names)
         data_stacked: pd.Series = data.stack(future_stack=True)
@@ -335,6 +336,8 @@ class StockScreener:
 
     def _get_data(self, verbose: bool = True) -> None:
         self.data = self._get_stock_universe()
+        self.yearly_calc_data = pd.DataFrame()
+        self.quarterly_calc_data = pd.DataFrame()
         tickers = tqdm(self.data.index) if verbose else self.data.index
         for ticker in tickers:
             try:
@@ -343,48 +346,203 @@ class StockScreener:
             except Exception:
                 continue
             market_cap = info.get("marketCap", -float("inf"))
-            if self.min_cap <= market_cap <= self.max_cap:
-                company_name = info.get("longName") or info.get("shortName")
-                self.data.loc[ticker, "market_cap"] = market_cap
-                self.data.loc[ticker, "company_name"] = company_name
-                financials = StockScreener._extract_section_data(
-                    stock,
-                    section="financials",
-                    subset=[
-                        "Total Revenue",
-                        "Net Income",
-                        "Operating Income",
-                        "Gross Profit",
-                        "Cost Of Revenue",
-                        "EBITDA",
-                    ],
-                )
-                self.financials.loc[financials.name, financials.index] = financials
-                cash_flow = StockScreener._extract_section_data(
-                    stock,
-                    section="cash_flow",
-                    subset=[
-                        "Operating Cash Flow",
-                    ],
-                )
-                self.cash_flow.loc[cash_flow.name, cash_flow.index] = cash_flow
-                balance_sheet = StockScreener._extract_section_data(
-                    stock,
-                    section="balance_sheet",
-                    subset=[
-                        "Stockholders Equity",
-                        "Invested Capital",
-                        "Accounts Receivable",
-                        "Accounts Payable",
-                        "Inventory",
-                        "Current Assets",
-                        "Current Liabilities",
-                        "Total Debt",
-                    ],
-                )
-                self.balance_sheet.loc[balance_sheet.name, balance_sheet.index] = (
-                    balance_sheet
-                )
+
+            company_name = info.get("longName") or info.get("shortName")
+            self.data.loc[ticker, "market_cap"] = market_cap
+            self.data.loc[ticker, "company_name"] = company_name
+            financials = StockScreener._extract_section_data(
+                stock,
+                section="financials",
+                subset=[
+                    "Total Revenue",
+                    "Net Income",
+                    "Operating Income",
+                    "Gross Profit",
+                    "Cost Of Revenue",
+                    "EBIT",
+                    "EBITDA",
+                    "Tax Rate For Calcs",
+                    "Interest Expense",
+                ],
+            )
+            quarterly_financials = StockScreener._extract_section_data(
+                stock,
+                section="financials",
+                subset=[
+                    "Total Revenue",
+                    "Net Income",
+                    "Operating Income",
+                    "Gross Profit",
+                    "Cost Of Revenue",
+                    "EBIT",
+                    "EBITDA",
+                    "Normalized Income",
+                    "Tax Rate For Calcs",
+                    "Interest Expense",
+                ],
+                period="Q",
+            )
+            cash_flow = StockScreener._extract_section_data(
+                stock,
+                section="cash_flow",
+                subset=["Operating Cash Flow", "Repayment of Debt"],
+            )
+            quarterly_cash_flow = StockScreener._extract_section_data(
+                stock,
+                section="cash_flow",
+                subset=["Operating Cash Flow", "Repayment Of Debt"],
+                period="Q",
+            )
+            balance_sheet = StockScreener._extract_section_data(
+                stock,
+                section="balance_sheet",
+                subset=[
+                    "Stockholders Equity",
+                    "Invested Capital",
+                    "Accounts Receivable",
+                    "Accounts Payable",
+                    "Inventory",
+                    "Current Assets",
+                    "Current Liabilities",
+                    "Total Debt",
+                    "Total Assets",
+                ],
+            )
+            quarterly_balance_sheet = StockScreener._extract_section_data(
+                stock,
+                section="balance_sheet",
+                subset=[
+                    "Stockholders Equity",
+                    "Invested Capital",
+                    "Accounts Receivable",
+                    "Accounts Payable",
+                    "Inventory",
+                    "Current Assets",
+                    "Current Liabilities",
+                    "Total Debt",
+                    "Total Assets",
+                ],
+                period="Q",
+            )
+            yearly_combined = pd.concat([financials, cash_flow, balance_sheet])
+            quarterly_combined = pd.concat(
+                [quarterly_financials, quarterly_cash_flow, quarterly_balance_sheet]
+            )
+            self.yearly_calc_data.loc[yearly_combined.name, yearly_combined.index] = (
+                yearly_combined
+            )
+            self.quarterly_calc_data.loc[
+                quarterly_combined.name, quarterly_combined.index
+            ] = quarterly_combined
+
+    def _compute_metric(self) -> pd.Series:
+        self.data["gross_profit_margin_ttm"] = self._compute_ttm_ratio(
+            "Gross Profit", "Total Revenue"
+        )
+        self.data["operating_profit_margin_ttm"] = self._compute_ttm_ratio(
+            "Operating Income", "Total Revenue"
+        )
+        self.data["net_profit_margin_ttm"] = self._compute_ttm_ratio(
+            "Net Income", "Total Revenue"
+        )
+        self.data["ebit_margin_ttm"] = self._compute_ttm_ratio("EBIT", "Total Revenue")
+        self.data["ebitda_margin_ttm"] = self._compute_ttm_ratio(
+            "EBITDA", "Total Revenue"
+        )
+        self.data["roa_ttm"] = self._compute_ttm_average_ratio(
+            "Net Income", "Total Assets"
+        )
+        self.data["roe_ttm"] = self._compute_ttm_average_ratio(
+            "Net Income", "Stockholders Equity"
+        )
+        yearly_nopat = (
+            1 - self.yearly_calc_data["Tax Rate For Calcs"]
+        ) * self.yearly_calc_data["EBIT"]
+        self.yearly_calc_data = pd.concat(
+            [self.yearly_calc_data, pd.concat({"NOPAT": yearly_nopat}, axis=1)], axis=1
+        )
+        quarterly_nopat = (
+            1 - self.quarterly_calc_data["Tax Rate For Calcs"]
+        ) * self.quarterly_calc_data["EBIT"]
+        self.quarterly_calc_data = pd.concat(
+            [self.quarterly_calc_data, pd.concat({"NOPAT": quarterly_nopat}, axis=1)],
+            axis=1,
+        )
+        self.data["roic_ttm"] = self._compute_ttm_average_ratio(
+            "NOPAT", "Invested Capital"
+        )
+        self.data["total_revenue_4y_cagr"] = self._compute_4y_growth("Total Revenue")
+        self.data["net_income_4y_cagr"] = self._compute_4y_growth("Net Income")
+        self.data["operating_cash_flow_4y_cagr"] = self._compute_4y_growth(
+            "Operating Cash Flow"
+        )
+        self.data["total_revenue_4y_consistency"] = self._compute_consistency_ratio(
+            "Total Revenue"
+        )
+        self.data["net_income_4y_consistency"] = self._compute_consistency_ratio(
+            "Net Income"
+        )
+        self.data["operating_cash_flow_4y_consistency"] = (
+            self._compute_consistency_ratio("Operating Cash Flow")
+        )
+        self.data["current_ratio"] = (
+            self.quarterly_calc_data["Current Assets"]["0Q"]
+            / self.quarterly_calc_data["Current Liabilities"]["0Q"]
+        )
+        self.data["debt_to_ebitda_ratio"] = (
+            self.quarterly_calc_data["Total Debt"]["0Q"]
+            / self.quarterly_calc_data["EBITDA"]["0Q"]
+        )
+        self.data["debt_servicing_ratio"] = (
+            self.quarterly_calc_data["Interest Expense"]["0Q"]
+            + self.quarterly_calc_data["Repayment Of Debt"]["0Q"].abs()
+        ) / self.quarterly_calc_data["EBITDA"]["0Q"]
+
+    def _compute_4y_growth(self, metric: str) -> pd.Series:
+        return (
+            self.yearly_calc_data[metric].iloc[:, -1]
+            / self.yearly_calc_data[metric].iloc[:, 0]
+        ) ** (1 / 5) - 1
+
+    def _compute_ttm_ratio(self, dividend: str, divisor: str) -> pd.Series:
+        dividend_sum, divisor_sum = (
+            self.quarterly_calc_data[dividend].iloc[:, :4].sum(axis=1),
+            self.quarterly_calc_data[divisor].iloc[:, :4].sum(axis=1),
+        )
+        return pd.to_numeric(dividend_sum) / pd.to_numeric(divisor_sum)
+
+    def _compute_ttm_average_ratio(self, dividend: str, divisor: str) -> pd.Series:
+        dividend_sum = self.quarterly_calc_data[dividend].iloc[:, :4].sum(axis=1)
+        divisor_df = self.quarterly_calc_data[divisor]
+        divisor_avg = (
+            divisor_df.iloc[:, [0, 4]].sum(axis=1, skipna=False)
+            + (divisor_df.iloc[:, 1:4] * 2).sum(axis=1, skipna=False)
+        ) / 8
+        return dividend_sum / divisor_avg
+
+    def _compute_latest_ratio(self, dividend: str, divisor: str) -> pd.Series:
+        return self.yearly_calc_data[dividend] / self.yearly_calc_data[divisor]
+
+    def _compute_consistency_ratio(self, metric: str) -> pd.Series:
+        pct_change = self.yearly_calc_data[metric].iloc[:, ::-1].pct_change(axis=1)
+        return pct_change.mean(axis=1) / pct_change.std(axis=1)
+
+    def screen(self):
+        self._get_data()
+        self._compute_metric()
+        self.score()
+        return self.data[
+            self.data["market_cap"].between(self.min_cap, self.max_cap)
+        ].sort_values(by="score", ascending=False)
+
+    def score(
+        self,
+        profitability_weight: float = 1,
+        growth_weight: float = 1,
+        debt_weight: float = 1,
+    ):
+        score = self.data.rank(pct=True).mean(axis=1)
+        self.data.loc[:, "score"] = score * 100
 
 
 def get_data_deprecated(
@@ -414,3 +572,11 @@ def get_data_deprecated(
     ]
     info = info[["company_name", "market_cap"]]
     return info, screener.financials, screener.cash_flow, screener.balance_sheet
+
+
+if __name__ == "__main__":
+    screener = StockScreener("US", industries="Semiconductors")
+    screener._get_data(verbose=True)
+    screener._compute_metric()
+    print(screener.data)
+    print(screener.data.isna().sum())

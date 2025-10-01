@@ -1,20 +1,28 @@
+import numpy as np
 import pandas as pd
-from typing import List
 
 
-def calculate_growth(df: pd.DataFrame, prefix: str) -> pd.Series:
-    cols = [c for c in df.columns if c.startswith(prefix)]
-    sub = df[cols]
+def calculate_growth(df: pd.DataFrame) -> pd.Series:
+    values = df.to_numpy()
+    mask = ~np.isnan(values)
 
-    def _calculate_growth(row):
-        non_na = row.dropna()
-        if len(non_na) < 2:
-            return None
-        old = non_na.iloc[-1]
-        new = non_na.iloc[0]
-        return (new / old - 1) * 100
+    counts = mask.sum(axis=1)
+    valid = counts >= 2
 
-    return sub.apply(_calculate_growth, axis=1)
+    if values.shape[1] == 0:
+        return pd.Series(np.nan, index=df.index)
+
+    first_idx = mask.argmax(axis=1)
+    last_idx = values.shape[1] - 1 - mask[:, ::-1].argmax(axis=1)
+
+    row_indices = np.arange(values.shape[0])
+    new_vals = values[row_indices, first_idx]
+    old_vals = values[row_indices, last_idx]
+
+    result = np.full(values.shape[0], np.nan, dtype=float)
+    result[valid] = (new_vals[valid] / old_vals[valid] - 1) * 100
+
+    return pd.Series(result, index=df.index)
 
 
 def is_increasing(df: pd.DataFrame, prefix: str) -> pd.Series:
