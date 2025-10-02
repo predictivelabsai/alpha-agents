@@ -1,0 +1,28 @@
+{
+  "status": "error",
+  "error": "CSV missing required 'ticker' column",
+  "columns": [
+    "sector",
+    "industry",
+    "market_cap",
+    "company_name",
+    "gross_profit_margin_ttm",
+    "operating_profit_margin_ttm",
+    "net_profit_margin_ttm",
+    "ebit_margin_ttm",
+    "ebitda_margin_ttm",
+    "roa_ttm",
+    "roe_ttm",
+    "roic_ttm",
+    "total_revenue_4y_cagr",
+    "net_income_4y_cagr",
+    "operating_cash_flow_4y_cagr",
+    "total_revenue_4y_consistency",
+    "net_income_4y_consistency",
+    "operating_cash_flow_4y_consistency",
+    "current_ratio",
+    "debt_to_ebitda_ratio",
+    "debt_servicing_ratio",
+    "score"
+  ]
+}
