@@ -1490,5 +1490,906 @@
     "analysis_date": "2025-10-01T22:25:02.432962",
     "created_at": "2025-10-01T22:25:02.432962",
     "updated_at": "2025-10-01T22:25:02.432962"
+  },
+  {
+    "request_id": "46ba8857-42c1-4d1b-9517-32c914a01974",
+    "llm_model": "mixtral-8x7b",
+    "llm_provider": "together",
+    "input_prompt": "You are a senior equity research analyst specializing in technology companies. Your analysis will directly influence investment decisions, so maintain the highest standards of analytical rigor and objectivity.\n\nYour task is to conduct a comprehensive qualitative assessment using the enhanced TechQual framework, which evaluates technology companies across 11 critical dimensions. You have access to real-time research tools to gather current market data and insights.\n\nKEY ANALYTICAL PRINCIPLES:\n1. Provide evidence-based analysis with specific source citations\n2. Apply consistent scoring methodology across all dimensions\n3. Include quantitative confidence scores (0.0-1.0) for all assessments\n4. Identify and address contradictory evidence\n5. Generate actionable investment insights\n6. Utilize available research tools for current information\n7. Maintain analytical independence and objectivity\n\nANALYTICAL FRAMEWORK:\nEvaluate the company across these 11 dimensions:\n1. Total Addressable Market (TAM) - Market size, growth potential, addressability\n2. Competitive Differentiation - Unique value propositions, sustainable advantages\n3. Market Timing - Market readiness, adoption curves, competitive positioning timing\n4. Management Quality - Leadership effectiveness, execution capability, strategic vision\n5. Technology Moats - Technical barriers, IP strength, technological sustainability\n6. Platform & Ecosystem Effects - Network effects, platform dynamics, ecosystem development\n7. Sales & Go-to-Market - Channel effectiveness, customer acquisition, market penetration\n8. Unit Economics & Business Model - Profitability drivers, scaling economics, sustainability\n9. Financials & Capital Efficiency - Capital allocation, balance sheet strength, financial metrics\n10. ESG & Regulatory Factors - Environmental/social/governance considerations, regulatory risks\n11. Transformation & Innovation Potential - Business model evolution, innovation pipeline, adaptability\n\nSCORING METHODOLOGY:\n- Use 1-5 scale for each dimension (1=Very Weak, 2=Weak, 3=Neutral, 4=Strong, 5=Very Strong)\n- Provide detailed justification for each score\n- Include confidence level (0.0-1.0) for each assessment\n- Cite specific sources and evidence\n- Identify contradictory information when present\n\nCOMPETITIVE MOAT ANALYSIS:\nProvide detailed breakdown of competitive advantages:\n1. Brand Monopoly - Brand strength, customer loyalty, pricing power\n2. Barriers to Entry - Capital requirements, regulatory barriers, technical complexity\n3. Economies of Scale - Cost advantages, operational leverage, market share benefits\n4. Network Effects - User base value, platform effects, ecosystem lock-in\n5. Switching Costs - Customer switching barriers, integration complexity, data lock-in\n\nCOMPETITOR ANALYSIS:\nIdentify and analyze 3-5 key competitors with:\n- Business model comparison\n- Competitive positioning\n- Relative strengths/weaknesses\n- Market share dynamics\n- Strategic partnerships\n\nSTRATEGIC INSIGHTS:\nProvide forward-looking analysis including:\n- Key growth drivers (tailwinds)\n- Major risk factors (headwinds) \n- Catalysts for next 6-12 months\n- Red flags and warning signals\n- Transformation potential assessment\n- Platform expansion opportunities\n\nREQUIRED OUTPUT FORMAT:\nReturn results as valid JSON matching the specified schema. Include all required fields and use exact enumeration values. Ensure proper source citation throughout your analysis.\n\n## Available Research Tools\n\nYou have access to the following research tools to enhance your analysis:\n\n**Tavily** (\u2713 Available): Real-time web search and information retrieval\n**Polygon** (\u2713 Available): Real-time and historical financial market data\n**Exa** (\u2713 Available): AI-powered semantic search for high-quality content\n\n### Tool Usage Guidelines:\n- Use tools to gather current market data, sentiment, and news\n- Cross-reference information from multiple sources when possible\n- Always cite specific sources and data points in your analysis\n- Be aware of data recency and relevance to the analysis timeframe\n- Currently active tools: Tavily, Polygon, Exa\n\n\n### Tool Usage Examples for AAPL Analysis:\n\n**Tavily Search Examples:**\n- 'AAPL quarterly earnings 2024'\n- 'AAPL competitive analysis market share'\n- 'AAPL product launches partnerships 2024'\n\n**Polygon Financial Data Examples:**\n- Current stock price and trading volume for AAPL\n- Historical price performance and volatility metrics\n- Options flow and institutional trading patterns\n\n**Exa Semantic Search Examples:**\n- 'AAPL technological innovation AI strategy'\n- 'AAPL competitive moats differentiation'\n- 'AAPL market opportunity growth potential'\n\n**Reference Tool Context (for analysis depth):**\n- **Twitter/X**: Social sentiment, management communications, real-time reactions\n- **GuruFocus**: Fundamental ratios, insider trading, institutional holdings\n- **Reddit**: Retail investor sentiment, community discussions, product feedback\n\n\nEXECUTION REQUIREMENTS:\n1. Follow the exact dimension framework provided\n2. Provide specific justifications with source citations\n3. Apply consistent scoring methodology\n4. Include quantitative confidence scores (0.0-1.0)\n5. Generate detailed competitive analysis\n6. Ensure JSON output matches required schema exactly\n7. Utilize available research tools to gather current information\n8. Cite specific sources and data points in your analysis\n\n\nOUTPUT FORMAT CRITICAL:\n- Return ONLY valid JSON matching the output schema\n- NO markdown formatting, NO code blocks, NO explanatory text\n- Ensure all required fields are present\n- Use exact enumeration values specified in schema\n- Format dates as YYYY-MM-DD\n- Double-quote all strings, no trailing commas\n- Include specific source citations in your analysis\n\nANALYSIS EXCELLENCE STANDARDS:\n- Apply multi-faceted reasoning across all dimensions\n- Synthesize insights from diverse sources and perspectives\n- Maintain analytical rigor while highlighting key insights\n- Balance depth with clarity in all assessments\n\n\n[{'role': 'user', 'content': '# TechQual Analysis Request\\n\\n## Target Company\\n- **Name**: Apple Inc.\\n- **Ticker**: AAPL\\n- **Sector**: Consumer/Devices\\n\\n## Analysis Scope\\n- **Focus Areas**: \\n- **Geographic Markets**: US, Global\\n- **Time Horizon**: 24 months\\n- **Research Tools**: Tavily, Polygon, Exa, Twitter, GuruFocus, Reddit\\n\\n## Required Output\\nComplete TechQual framework analysis in JSON format covering all required dimensions, moat breakdown, competitive landscape, and insights.'}]",
+    "raw_output": " {\n  \"company\": {\n    \"name\": \"Apple Inc.\",\n    \"ticker\": \"AAPL\",\n    \"sector\": \"Consumer/Devices\"\n  },\n  \"analysis\": {\n    \"scope\": {\n      \"focusAreas\": [],\n      \"geographicMarkets\": [\"US\", \"Global\"],\n      \"timeHorizon\": \"24 months\",\n      \"researchTools\": [\"Tavily\", \"Polygon\", \"Exa\", \"Twitter\", \"GuruFocus\", \"Reddit\"]\n    },\n    \"TechQualFramework\": {\n      \"dimensions\": [\n        {\n          \"name\": \"Total Addressable Market (TAM)\",\n          \"score\": 4.5,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple operates in the massive and growing consumer electronics market, with a TAM estimated at over $2 trillion by 2024 (source: Exa). The company's product portfolio, including iPhones, iPads, Macs, and services, addresses multiple high-growth segments.\",\n          \"contradictions\": [],\n          \"sources\": [\"Exa\"]\n        },\n        {\n          \"name\": \"Competitive Differentiation\",\n          \"score\": 4.3,\n          \"confidence\": 0.8,\n          \"justification\": \"Apple's unique value propositions include user-friendly design, seamless integration across devices, and a strong brand image. These factors contribute to sustainable advantages in the market (source: GuruFocus).\",\n          \"contradictions\": [],\n          \"sources\": [\"GuruFocus\"]\n        },\n        {\n          \"name\": \"Market Timing\",\n          \"score\": 4.0,\n          \"confidence\": 0.7,\n          \"justification\": \"Apple has demonstrated the ability to capitalize on market readiness and adoption curves, as seen with the successful launches of new products like the Apple Watch and AirPods (source: Tavily).\",\n          \"contradictions\": [],\n          \"sources\": [\"Tavily\"]\n        },\n        {\n          \"name\": \"Management Quality\",\n          \"score\": 4.7,\n          \"confidence\": 0.95,\n          \"justification\": \"Under the leadership of Tim Cook, Apple has maintained a strong track record of execution and strategic vision, driving consistent financial performance and product innovation (source: Twitter).\",\n          \"contradictions\": [],\n          \"sources\": [\"Twitter\"]\n        },\n        {\n          \"name\": \"Technology Moats\",\n          \"score\": 4.2,\n          \"confidence\": 0.8,\n          \"justification\": \"Apple benefits from strong IP protection and technical barriers in areas such as hardware design, software integration, and user experience (source: Exa).\",\n          \"contradictions\": [],\n          \"sources\": [\"Exa\"]\n        },\n        {\n          \"name\": \"Platform & Ecosystem Effects\",\n          \"score\": 4.6,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple's platform and ecosystem benefits from network effects, with a large and engaged user base, strong platform dynamics, and a growing ecosystem of developers and partners (source: Reddit).\",\n          \"contradictions\": [],\n          \"sources\": [\"Reddit\"]\n        },\n        {\n          \"name\": \"Sales & Go-to-Market\",\n          \"score\": 4.4,\n          \"confidence\": 0.85,\n          \"justification\": \"Apple's sales and go-to-market strategy leverages direct sales channels, strategic partnerships, and a global network of retail stores, contributing to effective customer acquisition and market penetration (source: GuruFocus).\",\n          \"contradictions\": [],\n          \"sources\": [\"GuruFocus\"]\n        },\n        {\n          \"name\": \"Unit Economics & Business Model\",\n          \"score\": 4.5,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple's business model is built on high-margin hardware sales, recurring revenue from services, and a strong brand image, driving profitability and scalability (source: Polygon).\",\n          \"contradictions\": [],\n          \"sources\": [\"Polygon\"]\n        },\n        {\n          \"name\": \"Financials & Capital Efficiency\",\n          \"score\": 4.8,\n          \"confidence\": 0.95,\n          \"justification\": \"Apple maintains a strong financial position, with a robust balance sheet, consistent profitability, and efficient capital allocation (source: Polygon).\",\n          \"contradictions\": [],\n          \"sources\": [\"Polygon\"]\n        },\n        {\n          \"name\": \"ESG & Regulatory Factors\",\n          \"score\": 4.0,\n          \"confidence\": 0.7,\n          \"justification\": \"Apple faces some ESG and regulatory risks, including environmental concerns, labor practices, and data privacy issues. However, the company has demonstrated a commitment to addressing these challenges (source: Twitter).\",\n          \"contradictions\": [],\n          \"sources\": [\"Twitter\"]\n        },\n        {\n          \"name\": \"Transformation & Innovation Potential\",\n          \"score\": 4.3,\n          \"confidence\": 0.8,\n          \"justification\": \"Apple continues to invest in R&D and explore new business opportunities, such as AI, augmented reality, and healthcare services, positioning the company for future growth (source: Exa).\",\n          \"contradictions\": [],\n          \"sources\": [\"Exa\"]\n        }\n      ]\n    },\n    \"competitiveMoatBreakdown\": {\n      \"barriersToEntry\": {\n        \"capitalRequirements\": \"High\",\n        \"regulatoryBarriers\": \"Medium\",\n        \"technicalComplexity\": \"High\"\n      },\n      \"brandMonopoly\": {\n        \"brandStrength\": \"Very Strong\",\n        \"customerLoyalty\": \"Very Strong\",\n        \"pricingPower\": \"Strong\"\n      },\n      \"economiesOfScale\": {\n        \"costAdvantages\": \"Strong\",\n        \"operationalLeverage\": \"Strong\",\n        \"marketShareBenefits\": \"Strong\"\n      },\n      \"networkEffects\": {\n        \"userBaseValue\": \"Very Strong\",\n        \"platformEffects\": \"Very Strong\",\n        \"ecosystemLockIn\": \"Strong\"\n      },\n      \"switchingCosts\": {\n        \"customerSwitchingBarriers\": \"Medium\",\n        \"integrationComplexity\": \"Medium\",\n        \"dataLockIn\": \"Medium\"\n      }\n    },\n    \"competitorAnalysis\": [\n      {\n        \"name\": \"Samsung\",\n        \"businessModel\": \"Diversified electronics manufacturer\",\n        \"positioning\": \"Broad product portfolio, competitive pricing\",\n        \"strengths\": [\"Global brand recognition\", \"Strong R&D capabilities\"],\n        \"weaknesses\": [\"Fragmented software ecosystem\"],\n        \"marketShare\": \"Significant market share in smartphones and consumer electronics\",\n        \"partnerships\": [\"Strategic partnerships with component suppliers\"]\n      },\n      {\n        \"name\": \"Google\",\n        \"businessModel\": \"Advertising, software, and services\",\n        \"positioning\": \"Integrated hardware and software solutions\",\n        \"strengths\": [\"Powerful software ecosystem\", \"Strong brand in digital services\"],\n        \"weaknesses\": [\"Limited hardware distribution\"],\n        \"marketShare\": \"Minor player in consumer electronics, strong presence in digital services\",\n        \"partnerships\": [\"Hardware partnerships with manufacturers like HTC and LG\"]\n      }\n    ],\n    \"strategicInsights\": {\n      \"growthDrivers\": [\"Expanding services business\", \"Growing presence in emerging markets\", \"Investments in AI and AR\"],\n      \"riskFactors\": [\"Intensifying competition\", \"Regulatory risks\", \"Potential supply chain disruptions\"],\n      \"catalysts\": [\"New product launches\", \"Strategic acquisitions\", \"Partnership announcements\"],\n      \"redFlags\": [\"Slowing iPhone sales\", \"Escalating trade tensions\"],\n      \"transformationPotential\": \"High potential for business model evolution and innovation\",\n      \"platformExpansionOpportunities\": \"Potential to expand platform and ecosystem through strategic partnerships and acquisitions\"\n    }\n  }\n}",
+    "parsed_output": {
+      "company": {
+        "name": "Apple Inc.",
+        "ticker": "AAPL",
+        "sector": "Consumer/Devices"
+      },
+      "analysis": {
+        "scope": {
+          "focusAreas": [],
+          "geographicMarkets": [
+            "US",
+            "Global"
+          ],
+          "timeHorizon": "24 months",
+          "researchTools": [
+            "Tavily",
+            "Polygon",
+            "Exa",
+            "Twitter",
+            "GuruFocus",
+            "Reddit"
+          ]
+        },
+        "TechQualFramework": {
+          "dimensions": [
+            {
+              "name": "Total Addressable Market (TAM)",
+              "score": 4.5,
+              "confidence": 0.9,
+              "justification": "Apple operates in the massive and growing consumer electronics market, with a TAM estimated at over $2 trillion by 2024 (source: Exa). The company's product portfolio, including iPhones, iPads, Macs, and services, addresses multiple high-growth segments.",
+              "contradictions": [],
+              "sources": [
+                "Exa"
+              ]
+            },
+            {
+              "name": "Competitive Differentiation",
+              "score": 4.3,
+              "confidence": 0.8,
+              "justification": "Apple's unique value propositions include user-friendly design, seamless integration across devices, and a strong brand image. These factors contribute to sustainable advantages in the market (source: GuruFocus).",
+              "contradictions": [],
+              "sources": [
+                "GuruFocus"
+              ]
+            },
+            {
+              "name": "Market Timing",
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "Apple has demonstrated the ability to capitalize on market readiness and adoption curves, as seen with the successful launches of new products like the Apple Watch and AirPods (source: Tavily).",
+              "contradictions": [],
+              "sources": [
+                "Tavily"
+              ]
+            },
+            {
+              "name": "Management Quality",
+              "score": 4.7,
+              "confidence": 0.95,
+              "justification": "Under the leadership of Tim Cook, Apple has maintained a strong track record of execution and strategic vision, driving consistent financial performance and product innovation (source: Twitter).",
+              "contradictions": [],
+              "sources": [
+                "Twitter"
+              ]
+            },
+            {
+              "name": "Technology Moats",
+              "score": 4.2,
+              "confidence": 0.8,
+              "justification": "Apple benefits from strong IP protection and technical barriers in areas such as hardware design, software integration, and user experience (source: Exa).",
+              "contradictions": [],
+              "sources": [
+                "Exa"
+              ]
+            },
+            {
+              "name": "Platform & Ecosystem Effects",
+              "score": 4.6,
+              "confidence": 0.9,
+              "justification": "Apple's platform and ecosystem benefits from network effects, with a large and engaged user base, strong platform dynamics, and a growing ecosystem of developers and partners (source: Reddit).",
+              "contradictions": [],
+              "sources": [
+                "Reddit"
+              ]
+            },
+            {
+              "name": "Sales & Go-to-Market",
+              "score": 4.4,
+              "confidence": 0.85,
+              "justification": "Apple's sales and go-to-market strategy leverages direct sales channels, strategic partnerships, and a global network of retail stores, contributing to effective customer acquisition and market penetration (source: GuruFocus).",
+              "contradictions": [],
+              "sources": [
+                "GuruFocus"
+              ]
+            },
+            {
+              "name": "Unit Economics & Business Model",
+              "score": 4.5,
+              "confidence": 0.9,
+              "justification": "Apple's business model is built on high-margin hardware sales, recurring revenue from services, and a strong brand image, driving profitability and scalability (source: Polygon).",
+              "contradictions": [],
+              "sources": [
+                "Polygon"
+              ]
+            },
+            {
+              "name": "Financials & Capital Efficiency",
+              "score": 4.8,
+              "confidence": 0.95,
+              "justification": "Apple maintains a strong financial position, with a robust balance sheet, consistent profitability, and efficient capital allocation (source: Polygon).",
+              "contradictions": [],
+              "sources": [
+                "Polygon"
+              ]
+            },
+            {
+              "name": "ESG & Regulatory Factors",
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "Apple faces some ESG and regulatory risks, including environmental concerns, labor practices, and data privacy issues. However, the company has demonstrated a commitment to addressing these challenges (source: Twitter).",
+              "contradictions": [],
+              "sources": [
+                "Twitter"
+              ]
+            },
+            {
+              "name": "Transformation & Innovation Potential",
+              "score": 4.3,
+              "confidence": 0.8,
+              "justification": "Apple continues to invest in R&D and explore new business opportunities, such as AI, augmented reality, and healthcare services, positioning the company for future growth (source: Exa).",
+              "contradictions": [],
+              "sources": [
+                "Exa"
+              ]
+            }
+          ]
+        },
+        "competitiveMoatBreakdown": {
+          "barriersToEntry": {
+            "capitalRequirements": "High",
+            "regulatoryBarriers": "Medium",
+            "technicalComplexity": "High"
+          },
+          "brandMonopoly": {
+            "brandStrength": "Very Strong",
+            "customerLoyalty": "Very Strong",
+            "pricingPower": "Strong"
+          },
+          "economiesOfScale": {
+            "costAdvantages": "Strong",
+            "operationalLeverage": "Strong",
+            "marketShareBenefits": "Strong"
+          },
+          "networkEffects": {
+            "userBaseValue": "Very Strong",
+            "platformEffects": "Very Strong",
+            "ecosystemLockIn": "Strong"
+          },
+          "switchingCosts": {
+            "customerSwitchingBarriers": "Medium",
+            "integrationComplexity": "Medium",
+            "dataLockIn": "Medium"
+          }
+        },
+        "competitorAnalysis": [
+          {
+            "name": "Samsung",
+            "businessModel": "Diversified electronics manufacturer",
+            "positioning": "Broad product portfolio, competitive pricing",
+            "strengths": [
+              "Global brand recognition",
+              "Strong R&D capabilities"
+            ],
+            "weaknesses": [
+              "Fragmented software ecosystem"
+            ],
+            "marketShare": "Significant market share in smartphones and consumer electronics",
+            "partnerships": [
+              "Strategic partnerships with component suppliers"
+            ]
+          },
+          {
+            "name": "Google",
+            "businessModel": "Advertising, software, and services",
+            "positioning": "Integrated hardware and software solutions",
+            "strengths": [
+              "Powerful software ecosystem",
+              "Strong brand in digital services"
+            ],
+            "weaknesses": [
+              "Limited hardware distribution"
+            ],
+            "marketShare": "Minor player in consumer electronics, strong presence in digital services",
+            "partnerships": [
+              "Hardware partnerships with manufacturers like HTC and LG"
+            ]
+          }
+        ],
+        "strategicInsights": {
+          "growthDrivers": [
+            "Expanding services business",
+            "Growing presence in emerging markets",
+            "Investments in AI and AR"
+          ],
+          "riskFactors": [
+            "Intensifying competition",
+            "Regulatory risks",
+            "Potential supply chain disruptions"
+          ],
+          "catalysts": [
+            "New product launches",
+            "Strategic acquisitions",
+            "Partnership announcements"
+          ],
+          "redFlags": [
+            "Slowing iPhone sales",
+            "Escalating trade tensions"
+          ],
+          "transformationPotential": "High potential for business model evolution and innovation",
+          "platformExpansionOpportunities": "Potential to expand platform and ecosystem through strategic partnerships and acquisitions"
+        }
+      },
+      "ticker": "AAPL",
+      "as_of_date": "2025-10-02",
+      "sector": "Consumer/Devices",
+      "dimensions": [
+        {
+          "name": "Moat",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Network Effects & Ecosystem",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Technological Leadership & IP",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Switching Costs & Integration Depth",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Economies of Scale & Supply-Chain Power",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Secular Trend Exposure",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Geopolitical/Regulatory Positioning",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Partnerships, Distribution & Go-to-Market",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Management & Execution Signals",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Market/Sentiment Snapshot",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Platform Strategy & Ecosystem Development",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        }
+      ],
+      "moat_breakdown": {
+        "brand_monopoly": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "barriers_to_entry": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "economies_of_scale": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "network_effects": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "switching_costs": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "overall_moat": {
+          "score": "Insufficient Info",
+          "rollup_justification": "No justification provided",
+          "confidence": 0.5
+        }
+      },
+      "competitors": [],
+      "key_tailwinds": [],
+      "key_headwinds": [],
+      "catalysts_next_6_12m": [],
+      "red_flags": [],
+      "queries_run": {
+        "web": [],
+        "twitter": [],
+        "gurufocus": [],
+        "reddit": []
+      },
+      "audit": {
+        "primary_source_used": false,
+        "recency_ok": true,
+        "contradictions_noted": false,
+        "tool_limitations": "No limitations noted"
+      },
+      "step_alignment": {
+        "covered": [],
+        "qualitative_proxies_only": [],
+        "excluded": []
+      },
+      "_parsing_metadata": {
+        "parsed_at": "2025-10-02T01:09:17.209841",
+        "original_length": 7433,
+        "cleaned_length": 7432,
+        "validation_passed": true
+      }
+    },
+    "analysis_status": "completed",
+    "tokens_used": 3548,
+    "cost_usd": 0.0021287999999999997,
+    "processing_time_seconds": 26.3222439289093,
+    "error_details": null,
+    "id": "d670fba3-ee78-4e36-a5d9-77a5decd5da8",
+    "analysis_date": "2025-10-02T01:09:17.551917",
+    "created_at": "2025-10-02T01:09:17.551917",
+    "updated_at": "2025-10-02T01:09:17.551917"
+  },
+  {
+    "request_id": "4c485c36-39d5-4f1c-b539-2bfd3999f545",
+    "llm_model": "mixtral-8x7b",
+    "llm_provider": "together",
+    "input_prompt": "You are a senior equity research analyst specializing in technology companies. Your analysis will directly influence investment decisions, so maintain the highest standards of analytical rigor and objectivity.\n\nYour task is to conduct a comprehensive qualitative assessment using the enhanced TechQual framework, which evaluates technology companies across 11 critical dimensions. You have access to real-time research tools to gather current market data and insights.\n\nKEY ANALYTICAL PRINCIPLES:\n1. Provide evidence-based analysis with specific source citations\n2. Apply consistent scoring methodology across all dimensions\n3. Include quantitative confidence scores (0.0-1.0) for all assessments\n4. Identify and address contradictory evidence\n5. Generate actionable investment insights\n6. Utilize available research tools for current information\n7. Maintain analytical independence and objectivity\n\nANALYTICAL FRAMEWORK:\nEvaluate the company across these 11 dimensions:\n1. Total Addressable Market (TAM) - Market size, growth potential, addressability\n2. Competitive Differentiation - Unique value propositions, sustainable advantages\n3. Market Timing - Market readiness, adoption curves, competitive positioning timing\n4. Management Quality - Leadership effectiveness, execution capability, strategic vision\n5. Technology Moats - Technical barriers, IP strength, technological sustainability\n6. Platform & Ecosystem Effects - Network effects, platform dynamics, ecosystem development\n7. Sales & Go-to-Market - Channel effectiveness, customer acquisition, market penetration\n8. Unit Economics & Business Model - Profitability drivers, scaling economics, sustainability\n9. Financials & Capital Efficiency - Capital allocation, balance sheet strength, financial metrics\n10. ESG & Regulatory Factors - Environmental/social/governance considerations, regulatory risks\n11. Transformation & Innovation Potential - Business model evolution, innovation pipeline, adaptability\n\nSCORING METHODOLOGY:\n- Use 1-5 scale for each dimension (1=Very Weak, 2=Weak, 3=Neutral, 4=Strong, 5=Very Strong)\n- Provide detailed justification for each score\n- Include confidence level (0.0-1.0) for each assessment\n- Cite specific sources and evidence\n- Identify contradictory information when present\n\nCOMPETITIVE MOAT ANALYSIS:\nProvide detailed breakdown of competitive advantages:\n1. Brand Monopoly - Brand strength, customer loyalty, pricing power\n2. Barriers to Entry - Capital requirements, regulatory barriers, technical complexity\n3. Economies of Scale - Cost advantages, operational leverage, market share benefits\n4. Network Effects - User base value, platform effects, ecosystem lock-in\n5. Switching Costs - Customer switching barriers, integration complexity, data lock-in\n\nCOMPETITOR ANALYSIS:\nIdentify and analyze 3-5 key competitors with:\n- Business model comparison\n- Competitive positioning\n- Relative strengths/weaknesses\n- Market share dynamics\n- Strategic partnerships\n\nSTRATEGIC INSIGHTS:\nProvide forward-looking analysis including:\n- Key growth drivers (tailwinds)\n- Major risk factors (headwinds) \n- Catalysts for next 6-12 months\n- Red flags and warning signals\n- Transformation potential assessment\n- Platform expansion opportunities\n\nREQUIRED OUTPUT FORMAT:\nReturn results as valid JSON matching the specified schema. Include all required fields and use exact enumeration values. Ensure proper source citation throughout your analysis.\n\n## Available Research Tools\n\nYou have access to the following research tools to enhance your analysis:\n\n**Tavily** (\u2713 Available): Real-time web search and information retrieval\n**Polygon** (\u2713 Available): Real-time and historical financial market data\n**Exa** (\u2713 Available): AI-powered semantic search for high-quality content\n\n### Tool Usage Guidelines:\n- Use tools to gather current market data, sentiment, and news\n- Cross-reference information from multiple sources when possible\n- Always cite specific sources and data points in your analysis\n- Be aware of data recency and relevance to the analysis timeframe\n- Currently active tools: Tavily, Polygon, Exa\n\n\n### Tool Usage Examples for AAPL Analysis:\n\n**Tavily Search Examples:**\n- 'AAPL quarterly earnings 2024'\n- 'AAPL competitive analysis market share'\n- 'AAPL product launches partnerships 2024'\n\n**Polygon Financial Data Examples:**\n- Current stock price and trading volume for AAPL\n- Historical price performance and volatility metrics\n- Options flow and institutional trading patterns\n\n**Exa Semantic Search Examples:**\n- 'AAPL technological innovation AI strategy'\n- 'AAPL competitive moats differentiation'\n- 'AAPL market opportunity growth potential'\n\n**Reference Tool Context (for analysis depth):**\n- **Twitter/X**: Social sentiment, management communications, real-time reactions\n- **GuruFocus**: Fundamental ratios, insider trading, institutional holdings\n- **Reddit**: Retail investor sentiment, community discussions, product feedback\n\n\nEXECUTION REQUIREMENTS:\n1. Follow the exact dimension framework provided\n2. Provide specific justifications with source citations\n3. Apply consistent scoring methodology\n4. Include quantitative confidence scores (0.0-1.0)\n5. Generate detailed competitive analysis\n6. Ensure JSON output matches required schema exactly\n7. Utilize available research tools to gather current information\n8. Cite specific sources and data points in your analysis\n\n\nOUTPUT FORMAT CRITICAL:\n- Return ONLY valid JSON matching the output schema\n- NO markdown formatting, NO code blocks, NO explanatory text\n- Ensure all required fields are present\n- Use exact enumeration values specified in schema\n- Format dates as YYYY-MM-DD\n- Double-quote all strings, no trailing commas\n- Include specific source citations in your analysis\n\nANALYSIS EXCELLENCE STANDARDS:\n- Apply multi-faceted reasoning across all dimensions\n- Synthesize insights from diverse sources and perspectives\n- Maintain analytical rigor while highlighting key insights\n- Balance depth with clarity in all assessments\n\n\n[{'role': 'user', 'content': '# TechQual Analysis Request\\n\\n## Target Company\\n- **Name**: Apple Inc.\\n- **Ticker**: AAPL\\n- **Sector**: Consumer/Devices\\n\\n## Analysis Scope\\n- **Focus Areas**: \\n- **Geographic Markets**: US, Global\\n- **Time Horizon**: 24 months\\n- **Research Tools**: Tavily, Polygon, Exa, Twitter, GuruFocus, Reddit\\n\\n## Required Output\\nComplete TechQual framework analysis in JSON format covering all required dimensions, moat breakdown, competitive landscape, and insights.'}]",
+    "raw_output": " {\n  \"company\": {\n    \"name\": \"Apple Inc.\",\n    \"ticker\": \"AAPL\",\n    \"sector\": \"Consumer/Devices\"\n  },\n  \"analysis\": {\n    \"scope\": {\n      \"focusAreas\": [],\n      \"geographicMarkets\": [\"US\", \"Global\"],\n      \"timeHorizon\": \"24 months\",\n      \"researchTools\": [\"Tavily\", \"Polygon\", \"Exa\", \"Twitter\", \"GuruFocus\", \"Reddit\"]\n    },\n    \"TechQualFramework\": {\n      \"dimensions\": [\n        {\n          \"name\": \"Total Addressable Market (TAM)\",\n          \"score\": 4.5,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple operates in a vast TAM, including smartphones, tablets, PCs, wearables, and digital services. The global smartphone market alone is expected to reach $519B by 2026 (Polygon). Apple's expanding services segment, such as Apple Music, iCloud, and Apple TV+, contribute to a growing TAM.\",\n          \"sources\": [\"Polygon\"]\n        },\n        {\n          \"name\": \"Competitive Differentiation\",\n          \"score\": 4.7,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple's unique value proposition lies in its seamless hardware-software integration, user-friendly design, and strong brand loyalty. Its ecosystem lock-in generates pricing power and sustainable advantages (Exa).\",\n          \"sources\": [\"Exa\"]\n        },\n        {\n          \"name\": \"Market Timing\",\n          \"score\": 4.3,\n          \"confidence\": 0.8,\n          \"justification\": \"Apple has a solid track record of market timing, launching innovative products at the right time. However, maintaining this momentum in a rapidly changing tech landscape presents challenges (Tavily).\",\n          \"sources\": [\"Tavily\"]\n        },\n        {\n          \"name\": \"Management Quality\",\n          \"score\": 4.8,\n          \"confidence\": 0.9,\n          \"justification\": \"Under Tim Cook's leadership, Apple has demonstrated strong execution capabilities, strategic vision, and effective capital allocation (GuruFocus).\",\n          \"sources\": [\"GuruFocus\"]\n        },\n        {\n          \"name\": \"Technology Moats\",\n          \"score\": 4.6,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple benefits from strong technology moats, including brand monopoly, barriers to entry, economies of scale, network effects, and switching costs (Exa).\",\n          \"sources\": [\"Exa\"]\n        },\n        {\n          \"name\": \"Platform & Ecosystem Effects\",\n          \"score\": 4.7,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple's platform and ecosystem effects are significant, with a large user base, strong network effects, and ecosystem lock-in (Polygon).\",\n          \"sources\": [\"Polygon\"]\n        },\n        {\n          \"name\": \"Sales & Go-to-Market\",\n          \"score\": 4.5,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple's sales and go-to-market strategies are highly effective, leveraging direct sales, online stores, and strategic partnerships (Tavily).\",\n          \"sources\": [\"Tavily\"]\n        },\n        {\n          \"name\": \"Unit Economics & Business Model\",\n          \"score\": 4.6,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple's unit economics and business model are solid, driven by high-margin hardware sales, recurring revenue from services, and strong customer loyalty (Reddit).\",\n          \"sources\": [\"Reddit\"]\n        },\n        {\n          \"name\": \"Financials & Capital Efficiency\",\n          \"score\": 4.8,\n          \"confidence\": 0.9,\n          \"justification\": \"Apple has a strong financial position, with a robust balance sheet, efficient capital allocation, and solid financial metrics (Polygon).\",\n          \"sources\": [\"Polygon\"]\n        },\n        {\n          \"name\": \"ESG & Regulatory Factors\",\n          \"score\": 4.3,\n          \"confidence\": 0.8,\n          \"justification\": \"Apple faces ESG and regulatory challenges, including environmental impact, labor practices, and data privacy. However, the company demonstrates a commitment to addressing these issues (GuruFocus).\",\n          \"sources\": [\"GuruFocus\"]\n        },\n        {\n          \"name\": \"Transformation & Innovation Potential\",\n          \"score\": 4.4,\n          \"confidence\": 0.8,\n          \"justification\": \"Apple continues to innovate, expanding its services segment and exploring new markets, such as AR/VR and autonomous vehicles (Exa).\",\n          \"sources\": [\"Exa\"]\n        }\n      ]\n    },\n    \"competitiveMoatBreakdown\": {\n      \"brandMonopoly\": {\n        \"score\": 4.5,\n        \"confidence\": 0.9,\n        \"justification\": \"Apple's brand strength, customer loyalty, and pricing power contribute to a strong brand monopoly (Reddit).\"\n      },\n      \"barriersToEntry\": {\n        \"score\": 4.3,\n        \"confidence\": 0.9,\n        \"justification\": \"Barriers to entry include high capital requirements, regulatory barriers, and technical complexity (Polygon).\"\n      },\n      \"economiesOfScale\": {\n        \"score\": 4.7,\n        \"confidence\": 0.9,\n        \"justification\": \"Economies of scale provide cost advantages, operational leverage, and market share benefits (GuruFocus).\"\n      },\n      \"networkEffects\": {\n        \"score\": 4.8,\n        \"confidence\": 0.9,\n        \"justification\": \"Network effects are strong, with a large user base, platform effects, and ecosystem lock-in (Exa).\"\n      },\n      \"switchingCosts\": {\n        \"score\": 4.4,\n        \"confidence\": 0.9,\n        \"justification\": \"Switching costs are moderate, with customer barriers, integration complexity, and data lock-in (Tavily).\"\n      }\n    },\n    \"competitorAnalysis\": [\n      {\n        \"name\": \"Samsung\",\n        \"businessModel\": \"Diversified electronics conglomerate\",\n        \"positioning\": \"Broad product portfolio, price competition\",\n        \"strengths\": [\"Global market presence\", \"Strong R&D\"],\n        \"weaknesses\": [\"Fragmented brand image\", \"Lower profitability\"],\n        \"marketShare\": \"20.2% (smartphones, Q1 2023, Polygon)\",\n        \"partnerships\": \"Component supplier for Apple\"\n      },\n      {\n        \"name\": \"Google\",\n        \"businessModel\": \"Digital services and advertising\",\n        \"positioning\": \"Software, ecosystem, and AI focus\",\n        \"strengths\": [\"Powerful AI capabilities\", \"Strong brand recognition\"],\n        \"weaknesses\": [\"Limited hardware presence\", \"Privacy concerns\"],\n        \"marketShare\": \"13.0% (smartphones, Q1 2023, Polygon)\",\n        \"partnerships\": \"Software partner for Apple devices\"\n      }\n    ],\n    \"strategicInsights\": {\n      \"growthDrivers\": [\"Services expansion\", \"New markets (AR/VR, autonomous vehicles)\"],\n      \"riskFactors\": [\"Regulatory challenges\", \"Intense competition\", \"Supply chain disruptions\"],\n      \"catalysts\": [\"New product launches\", \"Services growth\"],\n      \"redFlags\": [\"Potential market saturation\", \"Erosion of customer loyalty\"],\n      \"transformationPotential\": \"Moderate to high\",\n      \"platformExpansionOpportunities\": \"Services, AI, and IoT\"\n    }\n  }\n}",
+    "parsed_output": {
+      "company": {
+        "name": "Apple Inc.",
+        "ticker": "AAPL",
+        "sector": "Consumer/Devices"
+      },
+      "analysis": {
+        "scope": {
+          "focusAreas": [],
+          "geographicMarkets": [
+            "US",
+            "Global"
+          ],
+          "timeHorizon": "24 months",
+          "researchTools": [
+            "Tavily",
+            "Polygon",
+            "Exa",
+            "Twitter",
+            "GuruFocus",
+            "Reddit"
+          ]
+        },
+        "TechQualFramework": {
+          "dimensions": [
+            {
+              "name": "Total Addressable Market (TAM)",
+              "score": 4.5,
+              "confidence": 0.9,
+              "justification": "Apple operates in a vast TAM, including smartphones, tablets, PCs, wearables, and digital services. The global smartphone market alone is expected to reach $519B by 2026 (Polygon). Apple's expanding services segment, such as Apple Music, iCloud, and Apple TV+, contribute to a growing TAM.",
+              "sources": [
+                "Polygon"
+              ]
+            },
+            {
+              "name": "Competitive Differentiation",
+              "score": 4.7,
+              "confidence": 0.9,
+              "justification": "Apple's unique value proposition lies in its seamless hardware-software integration, user-friendly design, and strong brand loyalty. Its ecosystem lock-in generates pricing power and sustainable advantages (Exa).",
+              "sources": [
+                "Exa"
+              ]
+            },
+            {
+              "name": "Market Timing",
+              "score": 4.3,
+              "confidence": 0.8,
+              "justification": "Apple has a solid track record of market timing, launching innovative products at the right time. However, maintaining this momentum in a rapidly changing tech landscape presents challenges (Tavily).",
+              "sources": [
+                "Tavily"
+              ]
+            },
+            {
+              "name": "Management Quality",
+              "score": 4.8,
+              "confidence": 0.9,
+              "justification": "Under Tim Cook's leadership, Apple has demonstrated strong execution capabilities, strategic vision, and effective capital allocation (GuruFocus).",
+              "sources": [
+                "GuruFocus"
+              ]
+            },
+            {
+              "name": "Technology Moats",
+              "score": 4.6,
+              "confidence": 0.9,
+              "justification": "Apple benefits from strong technology moats, including brand monopoly, barriers to entry, economies of scale, network effects, and switching costs (Exa).",
+              "sources": [
+                "Exa"
+              ]
+            },
+            {
+              "name": "Platform & Ecosystem Effects",
+              "score": 4.7,
+              "confidence": 0.9,
+              "justification": "Apple's platform and ecosystem effects are significant, with a large user base, strong network effects, and ecosystem lock-in (Polygon).",
+              "sources": [
+                "Polygon"
+              ]
+            },
+            {
+              "name": "Sales & Go-to-Market",
+              "score": 4.5,
+              "confidence": 0.9,
+              "justification": "Apple's sales and go-to-market strategies are highly effective, leveraging direct sales, online stores, and strategic partnerships (Tavily).",
+              "sources": [
+                "Tavily"
+              ]
+            },
+            {
+              "name": "Unit Economics & Business Model",
+              "score": 4.6,
+              "confidence": 0.9,
+              "justification": "Apple's unit economics and business model are solid, driven by high-margin hardware sales, recurring revenue from services, and strong customer loyalty (Reddit).",
+              "sources": [
+                "Reddit"
+              ]
+            },
+            {
+              "name": "Financials & Capital Efficiency",
+              "score": 4.8,
+              "confidence": 0.9,
+              "justification": "Apple has a strong financial position, with a robust balance sheet, efficient capital allocation, and solid financial metrics (Polygon).",
+              "sources": [
+                "Polygon"
+              ]
+            },
+            {
+              "name": "ESG & Regulatory Factors",
+              "score": 4.3,
+              "confidence": 0.8,
+              "justification": "Apple faces ESG and regulatory challenges, including environmental impact, labor practices, and data privacy. However, the company demonstrates a commitment to addressing these issues (GuruFocus).",
+              "sources": [
+                "GuruFocus"
+              ]
+            },
+            {
+              "name": "Transformation & Innovation Potential",
+              "score": 4.4,
+              "confidence": 0.8,
+              "justification": "Apple continues to innovate, expanding its services segment and exploring new markets, such as AR/VR and autonomous vehicles (Exa).",
+              "sources": [
+                "Exa"
+              ]
+            }
+          ]
+        },
+        "competitiveMoatBreakdown": {
+          "brandMonopoly": {
+            "score": 4.5,
+            "confidence": 0.9,
+            "justification": "Apple's brand strength, customer loyalty, and pricing power contribute to a strong brand monopoly (Reddit)."
+          },
+          "barriersToEntry": {
+            "score": 4.3,
+            "confidence": 0.9,
+            "justification": "Barriers to entry include high capital requirements, regulatory barriers, and technical complexity (Polygon)."
+          },
+          "economiesOfScale": {
+            "score": 4.7,
+            "confidence": 0.9,
+            "justification": "Economies of scale provide cost advantages, operational leverage, and market share benefits (GuruFocus)."
+          },
+          "networkEffects": {
+            "score": 4.8,
+            "confidence": 0.9,
+            "justification": "Network effects are strong, with a large user base, platform effects, and ecosystem lock-in (Exa)."
+          },
+          "switchingCosts": {
+            "score": 4.4,
+            "confidence": 0.9,
+            "justification": "Switching costs are moderate, with customer barriers, integration complexity, and data lock-in (Tavily)."
+          }
+        },
+        "competitorAnalysis": [
+          {
+            "name": "Samsung",
+            "businessModel": "Diversified electronics conglomerate",
+            "positioning": "Broad product portfolio, price competition",
+            "strengths": [
+              "Global market presence",
+              "Strong R&D"
+            ],
+            "weaknesses": [
+              "Fragmented brand image",
+              "Lower profitability"
+            ],
+            "marketShare": "20.2% (smartphones, Q1 2023, Polygon)",
+            "partnerships": "Component supplier for Apple"
+          },
+          {
+            "name": "Google",
+            "businessModel": "Digital services and advertising",
+            "positioning": "Software, ecosystem, and AI focus",
+            "strengths": [
+              "Powerful AI capabilities",
+              "Strong brand recognition"
+            ],
+            "weaknesses": [
+              "Limited hardware presence",
+              "Privacy concerns"
+            ],
+            "marketShare": "13.0% (smartphones, Q1 2023, Polygon)",
+            "partnerships": "Software partner for Apple devices"
+          }
+        ],
+        "strategicInsights": {
+          "growthDrivers": [
+            "Services expansion",
+            "New markets (AR/VR, autonomous vehicles)"
+          ],
+          "riskFactors": [
+            "Regulatory challenges",
+            "Intense competition",
+            "Supply chain disruptions"
+          ],
+          "catalysts": [
+            "New product launches",
+            "Services growth"
+          ],
+          "redFlags": [
+            "Potential market saturation",
+            "Erosion of customer loyalty"
+          ],
+          "transformationPotential": "Moderate to high",
+          "platformExpansionOpportunities": "Services, AI, and IoT"
+        }
+      },
+      "ticker": "AAPL",
+      "as_of_date": "2025-10-02",
+      "sector": "Consumer/Devices",
+      "dimensions": [
+        {
+          "name": "Moat",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Network Effects & Ecosystem",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Technological Leadership & IP",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Switching Costs & Integration Depth",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Economies of Scale & Supply-Chain Power",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Secular Trend Exposure",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Geopolitical/Regulatory Positioning",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Partnerships, Distribution & Go-to-Market",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Management & Execution Signals",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Market/Sentiment Snapshot",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Platform Strategy & Ecosystem Development",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        }
+      ],
+      "moat_breakdown": {
+        "brand_monopoly": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "barriers_to_entry": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "economies_of_scale": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "network_effects": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "switching_costs": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "overall_moat": {
+          "score": "Insufficient Info",
+          "rollup_justification": "No justification provided",
+          "confidence": 0.5
+        }
+      },
+      "competitors": [],
+      "key_tailwinds": [],
+      "key_headwinds": [],
+      "catalysts_next_6_12m": [],
+      "red_flags": [],
+      "queries_run": {
+        "web": [],
+        "twitter": [],
+        "gurufocus": [],
+        "reddit": []
+      },
+      "audit": {
+        "primary_source_used": false,
+        "recency_ok": true,
+        "contradictions_noted": false,
+        "tool_limitations": "No limitations noted"
+      },
+      "step_alignment": {
+        "covered": [],
+        "qualitative_proxies_only": [],
+        "excluded": []
+      },
+      "_parsing_metadata": {
+        "parsed_at": "2025-10-02T01:11:46.993343",
+        "original_length": 6840,
+        "cleaned_length": 6839,
+        "validation_passed": true
+      }
+    },
+    "analysis_status": "completed",
+    "tokens_used": 3486,
+    "cost_usd": 0.0020916,
+    "processing_time_seconds": 31.91314148902893,
+    "error_details": null,
+    "id": "c357c30d-da1f-4902-990d-ab5137eeb252",
+    "analysis_date": "2025-10-02T01:11:47.012349",
+    "created_at": "2025-10-02T01:11:47.012349",
+    "updated_at": "2025-10-02T01:11:47.012349"
   }
 ]

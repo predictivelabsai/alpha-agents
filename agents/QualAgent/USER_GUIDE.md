@@ -13,10 +13,11 @@ QualAgent automatically gathers information using integrated research tools (Tav
 3. [Configuration](#configuration)
 4. [Command Line Usage](#command-line-usage)
 5. [Jupyter Notebook Usage](#jupyter-notebook-usage)
-6. [Data Management](#data-management)
-7. [Cost Management](#cost-management)
-8. [Troubleshooting](#troubleshooting)
-9. [Best Practices](#best-practices)
+6. [Adding Companies](#adding-companies)
+7. [Data Management](#data-management)
+8. [Cost Management](#cost-management)
+9. [Troubleshooting](#troubleshooting)
+10. [Best Practices](#best-practices)
 
 ---
 
@@ -221,6 +222,101 @@ results = demo.run_batch_analysis(
     subsector_filter="Semiconductors"
 )
 ```
+
+---
+
+## 🏢 Adding Companies
+
+**Quick and easy ways to add new companies to your QualAgent database**
+
+### Command Line Method (Easiest)
+
+**Single Company - Minimal Info:**
+```bash
+python utils/add_company.py --ticker ROKU --name "Roku Inc."
+```
+
+**Single Company - With Market Cap:**
+```bash
+python utils/add_company.py --ticker NFLX --name "Netflix Inc." --market-cap 180000000000
+```
+
+**Quick Add Multiple Companies:**
+```bash
+python utils/add_company.py --quick-add "SPOT,Spotify Technology" "PINS,Pinterest Inc."
+```
+
+### Interactive Mode
+```bash
+python utils/add_company.py --interactive
+```
+
+Prompts for ticker, name, market cap, subsector, and description.
+
+### Bulk Import from CSV
+
+**Create Template:**
+```bash
+python utils/add_company.py --create-csv-template my_companies.csv
+```
+
+**Edit CSV with your companies:**
+```csv
+ticker,company_name,market_cap,subsector,description
+ROKU,Roku Inc.,8000000000,Consumer/Devices,Streaming platform
+NFLX,Netflix Inc.,180000000000,Consumer/Devices,Streaming service
+```
+
+**Import from CSV:**
+```bash
+python utils/add_company.py --from-csv my_companies.csv
+```
+
+### Python Script Method
+
+```python
+from utils.simple_add_company import add_company_simple, add_multiple_companies
+
+# Add single company
+add_company_simple("ROKU", "Roku Inc.", 8000000000)
+
+# Add multiple companies
+companies = [
+    ("NFLX", "Netflix Inc.", 180000000000),
+    ("SPOT", "Spotify Technology", 25000000000),
+    ("PINS", "Pinterest Inc.")  # No market cap
+]
+add_multiple_companies(companies)
+```
+
+### Available Subsectors
+
+System auto-guesses but you can specify:
+- **Semiconductors** - GPU/AI chips, CPUs, Memory
+- **Cloud/SaaS** - Cloud platforms, SaaS, Data platforms
+- **Cybersecurity** - Security software, Network security
+- **Consumer/Devices** - Smartphones, EVs, Streaming, Gaming
+- **Infrastructure** - Cloud infrastructure, Networking
+- **Electronic Components** - Hardware components, Sensors
+- **Technology** - General technology (default)
+
+### Useful Commands
+
+```bash
+# List all companies
+python utils/add_company.py --list
+
+# Check if company exists
+python run_analysis_demo.py --list | grep TICKER
+
+# Test analysis on new company
+python run_analysis_demo.py --single TICKER --models mixtral-8x7b
+```
+
+### Minimum Required Info
+- **Ticker**: Stock symbol (e.g., "AAPL")
+- **Company Name**: Full legal name (e.g., "Apple Inc.")
+- Everything else is optional and auto-guessed!
 
 ---
 
