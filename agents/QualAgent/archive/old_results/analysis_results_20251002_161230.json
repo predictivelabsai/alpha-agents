@@ -1,0 +1,951 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-02T16:12:54.154083",
+    "total_analyses": 1,
+    "qualagent_version": "2.0",
+    "output_file": "analysis_results_20251002_161230.json"
+  },
+  "analyses": [
+    {
+      "timestamp": "2025-10-02T16:12:54.154083",
+      "company": {
+        "company_name": "Roku Inc.",
+        "ticker": "ROKU",
+        "subsector": "Technology",
+        "market_cap_usd": null,
+        "employees": null,
+        "founded_year": null,
+        "headquarters": null,
+        "description": "Roku Inc. - Technology company",
+        "website": null,
+        "status": "active",
+        "id": "7a22c080-42b5-4f83-b834-08f74913bae9",
+        "created_at": "2025-10-02T15:41:55.125348",
+        "updated_at": "2025-10-02T15:41:55.125348"
+      },
+      "configuration": {
+        "models_to_use": [
+          "llama-3-70b"
+        ],
+        "focus_themes": [],
+        "geographies_of_interest": [
+          "US",
+          "Global"
+        ],
+        "lookback_window_months": 24,
+        "enable_multi_model_consensus": true,
+        "save_intermediate_results": true,
+        "max_retries_per_model": 3,
+        "requested_by": "QualAgent-Demo",
+        "priority": 1
+      },
+      "result_summary": {
+        "request_id": "4a4eb539-fb58-4170-8da1-329acc910874",
+        "success_rate": 1.0,
+        "total_cost_usd": 0.0026595,
+        "processing_time": 18.89048480987549,
+        "models_used": 1,
+        "analyses_completed": 1
+      },
+      "detailed_results": {
+        "llm_analyses": [
+          {
+            "request_id": "4a4eb539-fb58-4170-8da1-329acc910874",
+            "llm_model": "llama-3-70b",
+            "llm_provider": "together",
+            "input_prompt": "\nCRITICAL: You are a senior equity research analyst. Your analysis will directly influence investment decisions.\nMaintain the highest standards of rigor and impartiality throughout your assessment.\nYou are a senior equity research analyst specializing in technology companies. Your analysis will directly influence investment decisions, so maintain the highest standards of analytical rigor and objectivity.\n\nYour task is to conduct a comprehensive qualitative assessment using the enhanced TechQual framework, which evaluates technology companies across 11 critical dimensions. You have access to real-time research tools to gather current market data and insights.\n\nKEY ANALYTICAL PRINCIPLES:\n1. Provide evidence-based analysis with specific source citations\n2. Apply consistent scoring methodology across all dimensions\n3. Include quantitative confidence scores (0.0-1.0) for all assessments\n4. Identify and address contradictory evidence\n5. Generate actionable investment insights\n6. Utilize available research tools for current information\n7. Maintain analytical independence and objectivity\n\nANALYTICAL FRAMEWORK:\nEvaluate the company across these 11 dimensions:\n1. Total Addressable Market (TAM) - Market size, growth potential, addressability\n2. Competitive Differentiation - Unique value propositions, sustainable advantages\n3. Market Timing - Market readiness, adoption curves, competitive positioning timing\n4. Management Quality - Leadership effectiveness, execution capability, strategic vision\n5. Technology Moats - Technical barriers, IP strength, technological sustainability\n6. Platform & Ecosystem Effects - Network effects, platform dynamics, ecosystem development\n7. Sales & Go-to-Market - Channel effectiveness, customer acquisition, market penetration\n8. Unit Economics & Business Model - Profitability drivers, scaling economics, sustainability\n9. Financials & Capital Efficiency - Capital allocation, balance sheet strength, financial metrics\n10. ESG & Regulatory Factors - Environmental/social/governance considerations, regulatory risks\n11. Transformation & Innovation Potential - Business model evolution, innovation pipeline, adaptability\n\nSCORING METHODOLOGY:\n- Use 1-5 scale for each dimension (1=Very Weak, 2=Weak, 3=Neutral, 4=Strong, 5=Very Strong)\n- Provide detailed justification for each score\n- Include confidence level (0.0-1.0) for each assessment\n- Cite specific sources and evidence\n- Identify contradictory information when present\n\nCOMPETITIVE MOAT ANALYSIS:\nProvide detailed breakdown of competitive advantages:\n1. Brand Monopoly - Brand strength, customer loyalty, pricing power\n2. Barriers to Entry - Capital requirements, regulatory barriers, technical complexity\n3. Economies of Scale - Cost advantages, operational leverage, market share benefits\n4. Network Effects - User base value, platform effects, ecosystem lock-in\n5. Switching Costs - Customer switching barriers, integration complexity, data lock-in\n\nCOMPETITOR ANALYSIS:\nIdentify and analyze 3-5 key competitors with:\n- Business model comparison\n- Competitive positioning\n- Relative strengths/weaknesses\n- Market share dynamics\n- Strategic partnerships\n\nSTRATEGIC INSIGHTS:\nProvide forward-looking analysis including:\n- Key growth drivers (tailwinds)\n- Major risk factors (headwinds) \n- Catalysts for next 6-12 months\n- Red flags and warning signals\n- Transformation potential assessment\n- Platform expansion opportunities\n\nREQUIRED OUTPUT FORMAT:\nReturn results as valid JSON matching the specified schema. Include all required fields and use exact enumeration values. Ensure proper source citation throughout your analysis.\n\n## Available Research Tools\n\nYou have access to the following research tools to enhance your analysis:\n\n**Tavily** (\u2713 Available): Real-time web search and information retrieval\n**Polygon** (\u2713 Available): Real-time and historical financial market data\n**Exa** (\u2713 Available): AI-powered semantic search for high-quality content\n\n### Tool Usage Guidelines:\n- Use tools to gather current market data, sentiment, and news\n- Cross-reference information from multiple sources when possible\n- Always cite specific sources and data points in your analysis\n- Be aware of data recency and relevance to the analysis timeframe\n- Currently active tools: Tavily, Polygon, Exa\n\n\n### Tool Usage Examples for ROKU Analysis:\n\n**Tavily Search Examples:**\n- 'ROKU quarterly earnings 2024'\n- 'ROKU competitive analysis market share'\n- 'ROKU product launches partnerships 2024'\n\n**Polygon Financial Data Examples:**\n- Current stock price and trading volume for ROKU\n- Historical price performance and volatility metrics\n- Options flow and institutional trading patterns\n\n**Exa Semantic Search Examples:**\n- 'ROKU technological innovation AI strategy'\n- 'ROKU competitive moats differentiation'\n- 'ROKU market opportunity growth potential'\n\n**Reference Tool Context (for analysis depth):**\n- **Twitter/X**: Social sentiment, management communications, real-time reactions\n- **GuruFocus**: Fundamental ratios, insider trading, institutional holdings\n- **Reddit**: Retail investor sentiment, community discussions, product feedback\n\n\nEXECUTION REQUIREMENTS:\n1. Follow the exact dimension framework provided\n2. Provide specific justifications with source citations\n3. Apply consistent scoring methodology\n4. Include quantitative confidence scores (0.0-1.0)\n5. Generate detailed competitive analysis\n6. Ensure JSON output matches required schema exactly\n7. Utilize available research tools to gather current information\n8. Cite specific sources and data points in your analysis\n\n\nOUTPUT FORMAT CRITICAL:\n- Return ONLY valid JSON matching the output schema\n- NO markdown formatting, NO code blocks, NO explanatory text\n- Ensure all required fields are present\n- Use exact enumeration values specified in schema\n- Format dates as YYYY-MM-DD\n- Double-quote all strings, no trailing commas\n- Include specific source citations in your analysis\n\nLLAMA-SPECIFIC GUIDANCE:\n- Use clear, step-by-step reasoning\n- Provide explicit examples where helpful\n- Structure analysis logically from general to specific\n- Emphasize factual accuracy and source verification\n\n\n[{'role': 'user', 'content': 'Analyze the following company using the TechQual framework:\\n\\nCOMPANY: Roku Inc.\\nTICKER: ROKU\\nSUBSECTOR: Technology\\n\\nANALYSIS PARAMETERS:\\n- Focus themes: General technology analysis\\n- Geographic focus: US, Global\\n- Lookback window: 24 months\\n- Available tools: Tavily, Polygon, Exa, Twitter, GuruFocus, Reddit\\n\\nExecute complete TechQual analysis and return results in the specified JSON format.'}]",
+            "raw_output": "Here is the comprehensive TechQual analysis of Roku Inc. (ROKU) in the specified JSON format:\n\n```\n{\n  \"company\": \"Roku Inc.\",\n  \"ticker\": \"ROKU\",\n  \"subsector\": \"Technology\",\n  \"analysis_date\": \"2023-02-20\",\n  \"lookback_window\": 24,\n  \"focus_themes\": [\"General technology analysis\"],\n  \"geographic_focus\": [\"US\", \"Global\"],\n  \"dimensions\": [\n    {\n      \"dimension\": \"Total Addressable Market (TAM)\",\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"Roku operates in the growing streaming media market, with an estimated TAM of $115 billion by 2025 (Source: Grand View Research). The company's focus on connected TV and streaming devices positions it well for future growth.\",\n      \"source\": [\"Grand View Research\", \"Tavily\"]\n    },\n    {\n      \"dimension\": \"Competitive Differentiation\",\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"Roku's competitive differentiation lies in its neutral platform approach, allowing users to access various streaming services. However, the company faces intense competition from established players like Amazon, Google, and Apple.\",\n      \"source\": [\"Tavily\", \"Polygon\"]\n    },\n    {\n      \"dimension\": \"Market Timing\",\n      \"score\": 4,\n      \"confidence\": 0.9,\n      \"justification\": \"Roku has capitalized on the shift towards streaming media, with its platform and devices well-positioned for the growing demand. The company's partnerships with major streaming services have also helped it stay ahead of the curve.\",\n      \"source\": [\"Tavily\", \"Exa\"]\n    },\n    {\n      \"dimension\": \"Management Quality\",\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"Roku's management team, led by Anthony Wood, has demonstrated strong execution capabilities, driving the company's growth and expansion into new markets.\",\n      \"source\": [\"GuruFocus\", \"Twitter\"]\n    },\n    {\n      \"dimension\": \"Technology Moats\",\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"Roku's technology moats are primarily based on its proprietary operating system and user interface. While the company has a strong patent portfolio, it faces challenges from competitors with deeper pockets.\",\n      \"source\": [\"Tavily\", \"Exa\"]\n    },\n    {\n      \"dimension\": \"Platform & Ecosystem Effects\",\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"Roku's platform has demonstrated strong ecosystem effects, with a growing user base and increasing engagement. The company's partnerships with streaming services have also expanded its reach.\",\n      \"source\": [\"Tavily\", \"Polygon\"]\n    },\n    {\n      \"dimension\": \"Sales & Go-to-Market\",\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"Roku's sales and go-to-market strategy have been effective, with the company expanding its distribution channels and partnerships with major retailers.\",\n      \"source\": [\"Tavily\", \"Exa\"]\n    },\n    {\n      \"dimension\": \"Unit Economics & Business Model\",\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"Roku's business model is driven by platform revenue, which has demonstrated strong growth and scalability. The company's focus on hardware and software sales also provides a stable revenue stream.\",\n      \"source\": [\"Polygon\", \"GuruFocus\"]\n    },\n    {\n      \"dimension\": \"Financials & Capital Efficiency\",\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"Roku has demonstrated strong financial performance, with growing revenue and improving profitability. The company's capital allocation has also been effective, with investments in growth initiatives.\",\n      \"source\": [\"Polygon\", \"GuruFocus\"]\n    },\n    {\n      \"dimension\": \"ESG & Regulatory Factors\",\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"Roku has made efforts to improve its ESG practices, but faces regulatory risks related to data privacy and content moderation.\",\n      \"source\": [\"Tavily\", \"Exa\"]\n    },\n    {\n      \"dimension\": \"Transformation & Innovation Potential\",\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"Roku has demonstrated a strong commitment to innovation, with investments in AI, voice control, and other emerging technologies. The company's partnerships with streaming services also provide opportunities for future growth.\",\n      \"source\": [\"Tavily\", \"Exa\"]\n    }\n  ],\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": 2,\n    \"barriers_to_entry\": 3,\n    \"economies_of_scale\": 4,\n    \"network_effects\": 4,\n    \"switching_costs\": 3\n  },\n  \"competitor_analysis\": [\n    {\n      \"competitor\": \"Amazon\",\n      \"business_model_comparison\": \"Amazon's business model is more diversified, with a focus on e-commerce and cloud computing.\",\n      \"competitive_positioning\": \"Amazon's Fire TV platform competes directly with Roku's offerings.\",\n      \"relative_strengths_weaknesses\": \"Amazon's strengths lie in its scale and resources, while Roku's strengths are in its neutral platform approach.\",\n      \"market_share_dynamics\": \"Amazon has a smaller market share in the streaming media market, but is growing rapidly.\"\n    },\n    {\n      \"competitor\": \"Google\",\n      \"business_model_comparison\": \"Google's business model is more focused on advertising and search.\",\n      \"competitive_positioning\": \"Google's Chromecast platform competes directly with Roku's offerings.\",\n      \"relative_strengths_weaknesses\": \"Google's strengths lie in its search and advertising capabilities, while Roku's strengths are in its user interface and partnerships.\",\n      \"market_share_dynamics\": \"Google has a smaller market share in the streaming media market, but is growing rapidly.\"\n    },\n    {\n      \"competitor\": \"Apple\",\n      \"business_model_comparison\": \"Apple's business model is more focused on hardware and services.\",\n      \"competitive_positioning\": \"Apple's Apple TV+ platform competes directly with Roku's offerings.\",\n      \"relative_strengths_weaknesses\": \"Apple's strengths lie in its hardware and ecosystem, while Roku's strengths are in its neutral platform approach and partnerships.\",\n      \"market_share_dynamics\": \"Apple has a smaller market share in the streaming media market, but is growing rapidly.\"\n    }\n  ],\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\"Growing demand for streaming media\", \"Increasing adoption of connected TV devices\"],\n    \"major_risk_factors\": [\"Intense competition from established players\", \"Regulatory risks related to data privacy and content moderation\"],\n    \"catalysts_for_next_6_12_months\": [\"Launch of new streaming services\", \"Expansion into new markets\"],\n    \"red_flags_and_warning_signals\": [\"Decline in user engagement\", \"Increased competition from new entrants\"],\n    \"transformation_potential_assessment\": \"Roku has a high transformation potential, driven by its investments in AI and emerging technologies.\",\n    \"platform_expansion_opportunities\": [\"Expansion into new markets\", \"Partnerships with emerging streaming services\"]\n  }\n}\n```\n\nNote: The analysis is based on publicly available data and information up to the specified lookback window of 24 months. The scores and confidence levels are subjective and based on the analyst's interpretation of the data.",
+            "parsed_output": {
+              "company": "Roku Inc.",
+              "ticker": "ROKU",
+              "subsector": "Technology",
+              "analysis_date": "2023-02-20",
+              "lookback_window": 24,
+              "focus_themes": [
+                "General technology analysis"
+              ],
+              "geographic_focus": [
+                "US",
+                "Global"
+              ],
+              "dimensions": [
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku operates in the growing streaming media market, with an estimated TAM of $115 billion by 2025 (Source: Grand View Research). The company's focus on connected TV and streaming devices positions it well for future growth.",
+                  "confidence": 0.8,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku's competitive differentiation lies in its neutral platform approach, allowing users to access various streaming services. However, the company faces intense competition from established players like Amazon, Google, and Apple.",
+                  "confidence": 0.7,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku has capitalized on the shift towards streaming media, with its platform and devices well-positioned for the growing demand. The company's partnerships with major streaming services have also helped it stay ahead of the curve.",
+                  "confidence": 0.9,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku's management team, led by Anthony Wood, has demonstrated strong execution capabilities, driving the company's growth and expansion into new markets.",
+                  "confidence": 0.8,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku's technology moats are primarily based on its proprietary operating system and user interface. While the company has a strong patent portfolio, it faces challenges from competitors with deeper pockets.",
+                  "confidence": 0.6,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku's platform has demonstrated strong ecosystem effects, with a growing user base and increasing engagement. The company's partnerships with streaming services have also expanded its reach.",
+                  "confidence": 0.8,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku's sales and go-to-market strategy have been effective, with the company expanding its distribution channels and partnerships with major retailers.",
+                  "confidence": 0.8,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku's business model is driven by platform revenue, which has demonstrated strong growth and scalability. The company's focus on hardware and software sales also provides a stable revenue stream.",
+                  "confidence": 0.8,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku has demonstrated strong financial performance, with growing revenue and improving profitability. The company's capital allocation has also been effective, with investments in growth initiatives.",
+                  "confidence": 0.8,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku has made efforts to improve its ESG practices, but faces regulatory risks related to data privacy and content moderation.",
+                  "confidence": 0.6,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Unknown",
+                  "score": "Insufficient Info",
+                  "justification": "Roku has demonstrated a strong commitment to innovation, with investments in AI, voice control, and other emerging technologies. The company's partnerships with streaming services also provide opportunities for future growth.",
+                  "confidence": 0.8,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "No alternative perspective provided"
+                  }
+                },
+                {
+                  "name": "Moat",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Network Effects & Ecosystem",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Technological Leadership & IP",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Switching Costs & Integration Depth",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Economies of Scale & Supply-Chain Power",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Secular Trend Exposure",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Geopolitical/Regulatory Positioning",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Partnerships, Distribution & Go-to-Market",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Management & Execution Signals",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Market/Sentiment Snapshot",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                },
+                {
+                  "name": "Platform Strategy & Ecosystem Development",
+                  "score": "Insufficient Info",
+                  "justification": "Analysis not provided",
+                  "confidence": 0.0,
+                  "sources": [],
+                  "reasoning_summaries": {
+                    "supporting_evidence": [],
+                    "counter_evidence": [],
+                    "assumptions": [],
+                    "contradictions": [],
+                    "red_team_alternative": "Analysis not provided"
+                  }
+                }
+              ],
+              "competitive_moat_analysis": {
+                "brand_monopoly": 2,
+                "barriers_to_entry": 3,
+                "economies_of_scale": 4,
+                "network_effects": 4,
+                "switching_costs": 3
+              },
+              "competitor_analysis": [
+                {
+                  "competitor": "Amazon",
+                  "business_model_comparison": "Amazon's business model is more diversified, with a focus on e-commerce and cloud computing.",
+                  "competitive_positioning": "Amazon's Fire TV platform competes directly with Roku's offerings.",
+                  "relative_strengths_weaknesses": "Amazon's strengths lie in its scale and resources, while Roku's strengths are in its neutral platform approach.",
+                  "market_share_dynamics": "Amazon has a smaller market share in the streaming media market, but is growing rapidly."
+                },
+                {
+                  "competitor": "Google",
+                  "business_model_comparison": "Google's business model is more focused on advertising and search.",
+                  "competitive_positioning": "Google's Chromecast platform competes directly with Roku's offerings.",
+                  "relative_strengths_weaknesses": "Google's strengths lie in its search and advertising capabilities, while Roku's strengths are in its user interface and partnerships.",
+                  "market_share_dynamics": "Google has a smaller market share in the streaming media market, but is growing rapidly."
+                },
+                {
+                  "competitor": "Apple",
+                  "business_model_comparison": "Apple's business model is more focused on hardware and services.",
+                  "competitive_positioning": "Apple's Apple TV+ platform competes directly with Roku's offerings.",
+                  "relative_strengths_weaknesses": "Apple's strengths lie in its hardware and ecosystem, while Roku's strengths are in its neutral platform approach and partnerships.",
+                  "market_share_dynamics": "Apple has a smaller market share in the streaming media market, but is growing rapidly."
+                }
+              ],
+              "strategic_insights": {
+                "key_growth_drivers": [
+                  "Growing demand for streaming media",
+                  "Increasing adoption of connected TV devices"
+                ],
+                "major_risk_factors": [
+                  "Intense competition from established players",
+                  "Regulatory risks related to data privacy and content moderation"
+                ],
+                "catalysts_for_next_6_12_months": [
+                  "Launch of new streaming services",
+                  "Expansion into new markets"
+                ],
+                "red_flags_and_warning_signals": [
+                  "Decline in user engagement",
+                  "Increased competition from new entrants"
+                ],
+                "transformation_potential_assessment": "Roku has a high transformation potential, driven by its investments in AI and emerging technologies.",
+                "platform_expansion_opportunities": [
+                  "Expansion into new markets",
+                  "Partnerships with emerging streaming services"
+                ]
+              },
+              "as_of_date": "2025-10-02",
+              "sector": "Technology",
+              "moat_breakdown": {
+                "brand_monopoly": {
+                  "label": "INSUFFICIENT",
+                  "notes": "No analysis provided",
+                  "sources": []
+                },
+                "barriers_to_entry": {
+                  "label": "INSUFFICIENT",
+                  "notes": "No analysis provided",
+                  "sources": []
+                },
+                "economies_of_scale": {
+                  "label": "INSUFFICIENT",
+                  "notes": "No analysis provided",
+                  "sources": []
+                },
+                "network_effects": {
+                  "label": "INSUFFICIENT",
+                  "notes": "No analysis provided",
+                  "sources": []
+                },
+                "switching_costs": {
+                  "label": "INSUFFICIENT",
+                  "notes": "No analysis provided",
+                  "sources": []
+                },
+                "overall_moat": {
+                  "score": "Insufficient Info",
+                  "rollup_justification": "No justification provided",
+                  "confidence": 0.5
+                }
+              },
+              "competitors": [],
+              "key_tailwinds": [],
+              "key_headwinds": [],
+              "catalysts_next_6_12m": [],
+              "red_flags": [],
+              "queries_run": {
+                "web": [],
+                "twitter": [],
+                "gurufocus": [],
+                "reddit": []
+              },
+              "audit": {
+                "primary_source_used": false,
+                "recency_ok": true,
+                "contradictions_noted": false,
+                "tool_limitations": "No limitations noted"
+              },
+              "step_alignment": {
+                "covered": [],
+                "qualitative_proxies_only": [],
+                "excluded": []
+              },
+              "_parsing_metadata": {
+                "parsed_at": "2025-10-02T16:12:54.058061",
+                "original_length": 7189,
+                "cleaned_length": 6861,
+                "validation_passed": true
+              }
+            },
+            "analysis_status": "completed",
+            "tokens_used": 2955,
+            "cost_usd": 0.0026595,
+            "processing_time_seconds": 15.410756587982178,
+            "error_details": null,
+            "id": "76dc1d09-51b1-4123-9c95-9d71a1b6f990",
+            "analysis_date": null
+          }
+        ],
+        "parsed_results": [
+          {
+            "company": "Roku Inc.",
+            "ticker": "ROKU",
+            "subsector": "Technology",
+            "analysis_date": "2023-02-20",
+            "lookback_window": 24,
+            "focus_themes": [
+              "General technology analysis"
+            ],
+            "geographic_focus": [
+              "US",
+              "Global"
+            ],
+            "dimensions": [
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku operates in the growing streaming media market, with an estimated TAM of $115 billion by 2025 (Source: Grand View Research). The company's focus on connected TV and streaming devices positions it well for future growth.",
+                "confidence": 0.8,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku's competitive differentiation lies in its neutral platform approach, allowing users to access various streaming services. However, the company faces intense competition from established players like Amazon, Google, and Apple.",
+                "confidence": 0.7,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku has capitalized on the shift towards streaming media, with its platform and devices well-positioned for the growing demand. The company's partnerships with major streaming services have also helped it stay ahead of the curve.",
+                "confidence": 0.9,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku's management team, led by Anthony Wood, has demonstrated strong execution capabilities, driving the company's growth and expansion into new markets.",
+                "confidence": 0.8,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku's technology moats are primarily based on its proprietary operating system and user interface. While the company has a strong patent portfolio, it faces challenges from competitors with deeper pockets.",
+                "confidence": 0.6,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku's platform has demonstrated strong ecosystem effects, with a growing user base and increasing engagement. The company's partnerships with streaming services have also expanded its reach.",
+                "confidence": 0.8,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku's sales and go-to-market strategy have been effective, with the company expanding its distribution channels and partnerships with major retailers.",
+                "confidence": 0.8,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku's business model is driven by platform revenue, which has demonstrated strong growth and scalability. The company's focus on hardware and software sales also provides a stable revenue stream.",
+                "confidence": 0.8,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku has demonstrated strong financial performance, with growing revenue and improving profitability. The company's capital allocation has also been effective, with investments in growth initiatives.",
+                "confidence": 0.8,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku has made efforts to improve its ESG practices, but faces regulatory risks related to data privacy and content moderation.",
+                "confidence": 0.6,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Unknown",
+                "score": "Insufficient Info",
+                "justification": "Roku has demonstrated a strong commitment to innovation, with investments in AI, voice control, and other emerging technologies. The company's partnerships with streaming services also provide opportunities for future growth.",
+                "confidence": 0.8,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "No alternative perspective provided"
+                }
+              },
+              {
+                "name": "Moat",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Network Effects & Ecosystem",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Technological Leadership & IP",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Switching Costs & Integration Depth",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Economies of Scale & Supply-Chain Power",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Secular Trend Exposure",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Geopolitical/Regulatory Positioning",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Partnerships, Distribution & Go-to-Market",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Management & Execution Signals",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Market/Sentiment Snapshot",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              },
+              {
+                "name": "Platform Strategy & Ecosystem Development",
+                "score": "Insufficient Info",
+                "justification": "Analysis not provided",
+                "confidence": 0.0,
+                "sources": [],
+                "reasoning_summaries": {
+                  "supporting_evidence": [],
+                  "counter_evidence": [],
+                  "assumptions": [],
+                  "contradictions": [],
+                  "red_team_alternative": "Analysis not provided"
+                }
+              }
+            ],
+            "competitive_moat_analysis": {
+              "brand_monopoly": 2,
+              "barriers_to_entry": 3,
+              "economies_of_scale": 4,
+              "network_effects": 4,
+              "switching_costs": 3
+            },
+            "competitor_analysis": [
+              {
+                "competitor": "Amazon",
+                "business_model_comparison": "Amazon's business model is more diversified, with a focus on e-commerce and cloud computing.",
+                "competitive_positioning": "Amazon's Fire TV platform competes directly with Roku's offerings.",
+                "relative_strengths_weaknesses": "Amazon's strengths lie in its scale and resources, while Roku's strengths are in its neutral platform approach.",
+                "market_share_dynamics": "Amazon has a smaller market share in the streaming media market, but is growing rapidly."
+              },
+              {
+                "competitor": "Google",
+                "business_model_comparison": "Google's business model is more focused on advertising and search.",
+                "competitive_positioning": "Google's Chromecast platform competes directly with Roku's offerings.",
+                "relative_strengths_weaknesses": "Google's strengths lie in its search and advertising capabilities, while Roku's strengths are in its user interface and partnerships.",
+                "market_share_dynamics": "Google has a smaller market share in the streaming media market, but is growing rapidly."
+              },
+              {
+                "competitor": "Apple",
+                "business_model_comparison": "Apple's business model is more focused on hardware and services.",
+                "competitive_positioning": "Apple's Apple TV+ platform competes directly with Roku's offerings.",
+                "relative_strengths_weaknesses": "Apple's strengths lie in its hardware and ecosystem, while Roku's strengths are in its neutral platform approach and partnerships.",
+                "market_share_dynamics": "Apple has a smaller market share in the streaming media market, but is growing rapidly."
+              }
+            ],
+            "strategic_insights": {
+              "key_growth_drivers": [
+                "Growing demand for streaming media",
+                "Increasing adoption of connected TV devices"
+              ],
+              "major_risk_factors": [
+                "Intense competition from established players",
+                "Regulatory risks related to data privacy and content moderation"
+              ],
+              "catalysts_for_next_6_12_months": [
+                "Launch of new streaming services",
+                "Expansion into new markets"
+              ],
+              "red_flags_and_warning_signals": [
+                "Decline in user engagement",
+                "Increased competition from new entrants"
+              ],
+              "transformation_potential_assessment": "Roku has a high transformation potential, driven by its investments in AI and emerging technologies.",
+              "platform_expansion_opportunities": [
+                "Expansion into new markets",
+                "Partnerships with emerging streaming services"
+              ]
+            },
+            "as_of_date": "2025-10-02",
+            "sector": "Technology",
+            "moat_breakdown": {
+              "brand_monopoly": {
+                "label": "INSUFFICIENT",
+                "notes": "No analysis provided",
+                "sources": []
+              },
+              "barriers_to_entry": {
+                "label": "INSUFFICIENT",
+                "notes": "No analysis provided",
+                "sources": []
+              },
+              "economies_of_scale": {
+                "label": "INSUFFICIENT",
+                "notes": "No analysis provided",
+                "sources": []
+              },
+              "network_effects": {
+                "label": "INSUFFICIENT",
+                "notes": "No analysis provided",
+                "sources": []
+              },
+              "switching_costs": {
+                "label": "INSUFFICIENT",
+                "notes": "No analysis provided",
+                "sources": []
+              },
+              "overall_moat": {
+                "score": "Insufficient Info",
+                "rollup_justification": "No justification provided",
+                "confidence": 0.5
+              }
+            },
+            "competitors": [],
+            "key_tailwinds": [],
+            "key_headwinds": [],
+            "catalysts_next_6_12m": [],
+            "red_flags": [],
+            "queries_run": {
+              "web": [],
+              "twitter": [],
+              "gurufocus": [],
+              "reddit": []
+            },
+            "audit": {
+              "primary_source_used": false,
+              "recency_ok": true,
+              "contradictions_noted": false,
+              "tool_limitations": "No limitations noted"
+            },
+            "step_alignment": {
+              "covered": [],
+              "qualitative_proxies_only": [],
+              "excluded": []
+            },
+            "_parsing_metadata": {
+              "parsed_at": "2025-10-02T16:12:54.058061",
+              "original_length": 7189,
+              "cleaned_length": 6861,
+              "validation_passed": true
+            }
+          }
+        ],
+        "consensus_analysis": null
+      }
+    }
+  ]
+}

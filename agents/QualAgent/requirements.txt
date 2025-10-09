@@ -2,14 +2,14 @@
 # Python 3.8+ required
 
 # Core dependencies
-pandas>=1.5.0
-numpy>=1.21.0
-requests>=2.28.0
-python-dotenv>=0.19.0
+pandas
+numpy
+requests
+python-dotenv
 
 # Web framework
-flask>=2.2.0
-flask-cors>=3.0.10
+flask
+flask-cors
 
 # JSON and data handling
 uuid
@@ -18,14 +18,40 @@ json
 datetime
 
 # OpenAI API (optional)
-openai>=1.0.0
+openai
 
 # Logging and utilities
 logging
 
 # Development and testing (optional)
-pytest>=7.0.0
-jupyter>=1.0.0
+pytest
+jupyter
+
+# ========== NEW PACKAGES TO INSTALL ==========
+
+# Advanced workflow optimization (REQUIRED for enhanced features)
+langchain
+langgraph
+langchain-core
+
+# Data processing and analysis (REQUIRED for enhanced scoring)
+scipy
+scikit-learn
+
+# Enhanced data storage (REQUIRED for human feedback database)
+sqlalchemy
+
+# Code quality tools (OPTIONAL but recommended)
+black
+flake8
+
+# Performance monitoring (OPTIONAL)
+psutil
+memory-profiler
+
+# Visualization (OPTIONAL)
+plotly
+streamlit
 
 # Note: The following APIs require separate API keys:
 # - TogetherAI: https://together.ai

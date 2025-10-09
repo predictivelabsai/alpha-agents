@@ -199,5 +199,53 @@
     "processing_time_seconds": 32.03114891052246,
     "created_at": "2025-10-02T01:11:15.048392",
     "updated_at": "2025-10-02T01:11:47.081363"
+  },
+  {
+    "company_id": "7a22c080-42b5-4f83-b834-08f74913bae9",
+    "focus_themes": [],
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "4a4eb539-fb58-4170-8da1-329acc910874",
+    "request_date": "2025-10-02T16:12:35.263906",
+    "status": "completed",
+    "error_message": null,
+    "processing_time_seconds": 18.89048480987549,
+    "created_at": "2025-10-02T16:12:35.263906",
+    "updated_at": "2025-10-02T16:12:54.150085"
+  },
+  {
+    "company_id": "b466c046-dda7-4906-86ce-b01b0632e82e",
+    "focus_themes": [],
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "tools_available": [
+      "Tavily",
+      "Twitter",
+      "GuruFocus",
+      "Reddit"
+    ],
+    "requested_by": "QualAgent-Demo",
+    "priority": 1,
+    "id": "e1c3c88a-7cd6-416b-adfa-c4c2cec7d1e7",
+    "request_date": "2025-10-02T17:45:48.002201",
+    "status": "completed",
+    "error_message": null,
+    "processing_time_seconds": 26.949496507644653,
+    "created_at": "2025-10-02T17:45:48.002201",
+    "updated_at": "2025-10-02T17:46:11.570852"
   }
 ]

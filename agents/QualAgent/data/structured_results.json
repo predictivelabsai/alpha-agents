@@ -1007,5 +1007,611 @@
       }
     },
     "created_at": "2025-10-02T01:11:47.058357"
+  },
+  {
+    "id": "4ff53f54-5133-4a34-b8e3-a7968b80cbdd",
+    "analysis_id": "76dc1d09-51b1-4123-9c95-9d71a1b6f990",
+    "structured_data": {
+      "company": "Roku Inc.",
+      "ticker": "ROKU",
+      "subsector": "Technology",
+      "analysis_date": "2023-02-20",
+      "lookback_window": 24,
+      "focus_themes": [
+        "General technology analysis"
+      ],
+      "geographic_focus": [
+        "US",
+        "Global"
+      ],
+      "dimensions": [
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku operates in the growing streaming media market, with an estimated TAM of $115 billion by 2025 (Source: Grand View Research). The company's focus on connected TV and streaming devices positions it well for future growth.",
+          "confidence": 0.8,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku's competitive differentiation lies in its neutral platform approach, allowing users to access various streaming services. However, the company faces intense competition from established players like Amazon, Google, and Apple.",
+          "confidence": 0.7,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku has capitalized on the shift towards streaming media, with its platform and devices well-positioned for the growing demand. The company's partnerships with major streaming services have also helped it stay ahead of the curve.",
+          "confidence": 0.9,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku's management team, led by Anthony Wood, has demonstrated strong execution capabilities, driving the company's growth and expansion into new markets.",
+          "confidence": 0.8,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku's technology moats are primarily based on its proprietary operating system and user interface. While the company has a strong patent portfolio, it faces challenges from competitors with deeper pockets.",
+          "confidence": 0.6,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku's platform has demonstrated strong ecosystem effects, with a growing user base and increasing engagement. The company's partnerships with streaming services have also expanded its reach.",
+          "confidence": 0.8,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku's sales and go-to-market strategy have been effective, with the company expanding its distribution channels and partnerships with major retailers.",
+          "confidence": 0.8,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku's business model is driven by platform revenue, which has demonstrated strong growth and scalability. The company's focus on hardware and software sales also provides a stable revenue stream.",
+          "confidence": 0.8,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku has demonstrated strong financial performance, with growing revenue and improving profitability. The company's capital allocation has also been effective, with investments in growth initiatives.",
+          "confidence": 0.8,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku has made efforts to improve its ESG practices, but faces regulatory risks related to data privacy and content moderation.",
+          "confidence": 0.6,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Unknown",
+          "score": "Insufficient Info",
+          "justification": "Roku has demonstrated a strong commitment to innovation, with investments in AI, voice control, and other emerging technologies. The company's partnerships with streaming services also provide opportunities for future growth.",
+          "confidence": 0.8,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "No alternative perspective provided"
+          }
+        },
+        {
+          "name": "Moat",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Network Effects & Ecosystem",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Technological Leadership & IP",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Switching Costs & Integration Depth",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Economies of Scale & Supply-Chain Power",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Secular Trend Exposure",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Geopolitical/Regulatory Positioning",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Partnerships, Distribution & Go-to-Market",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Management & Execution Signals",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Market/Sentiment Snapshot",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        },
+        {
+          "name": "Platform Strategy & Ecosystem Development",
+          "score": "Insufficient Info",
+          "justification": "Analysis not provided",
+          "confidence": 0.0,
+          "sources": [],
+          "reasoning_summaries": {
+            "supporting_evidence": [],
+            "counter_evidence": [],
+            "assumptions": [],
+            "contradictions": [],
+            "red_team_alternative": "Analysis not provided"
+          }
+        }
+      ],
+      "competitive_moat_analysis": {
+        "brand_monopoly": 2,
+        "barriers_to_entry": 3,
+        "economies_of_scale": 4,
+        "network_effects": 4,
+        "switching_costs": 3
+      },
+      "competitor_analysis": [
+        {
+          "competitor": "Amazon",
+          "business_model_comparison": "Amazon's business model is more diversified, with a focus on e-commerce and cloud computing.",
+          "competitive_positioning": "Amazon's Fire TV platform competes directly with Roku's offerings.",
+          "relative_strengths_weaknesses": "Amazon's strengths lie in its scale and resources, while Roku's strengths are in its neutral platform approach.",
+          "market_share_dynamics": "Amazon has a smaller market share in the streaming media market, but is growing rapidly."
+        },
+        {
+          "competitor": "Google",
+          "business_model_comparison": "Google's business model is more focused on advertising and search.",
+          "competitive_positioning": "Google's Chromecast platform competes directly with Roku's offerings.",
+          "relative_strengths_weaknesses": "Google's strengths lie in its search and advertising capabilities, while Roku's strengths are in its user interface and partnerships.",
+          "market_share_dynamics": "Google has a smaller market share in the streaming media market, but is growing rapidly."
+        },
+        {
+          "competitor": "Apple",
+          "business_model_comparison": "Apple's business model is more focused on hardware and services.",
+          "competitive_positioning": "Apple's Apple TV+ platform competes directly with Roku's offerings.",
+          "relative_strengths_weaknesses": "Apple's strengths lie in its hardware and ecosystem, while Roku's strengths are in its neutral platform approach and partnerships.",
+          "market_share_dynamics": "Apple has a smaller market share in the streaming media market, but is growing rapidly."
+        }
+      ],
+      "strategic_insights": {
+        "key_growth_drivers": [
+          "Growing demand for streaming media",
+          "Increasing adoption of connected TV devices"
+        ],
+        "major_risk_factors": [
+          "Intense competition from established players",
+          "Regulatory risks related to data privacy and content moderation"
+        ],
+        "catalysts_for_next_6_12_months": [
+          "Launch of new streaming services",
+          "Expansion into new markets"
+        ],
+        "red_flags_and_warning_signals": [
+          "Decline in user engagement",
+          "Increased competition from new entrants"
+        ],
+        "transformation_potential_assessment": "Roku has a high transformation potential, driven by its investments in AI and emerging technologies.",
+        "platform_expansion_opportunities": [
+          "Expansion into new markets",
+          "Partnerships with emerging streaming services"
+        ]
+      },
+      "as_of_date": "2025-10-02",
+      "sector": "Technology",
+      "moat_breakdown": {
+        "brand_monopoly": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "barriers_to_entry": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "economies_of_scale": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "network_effects": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "switching_costs": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "overall_moat": {
+          "score": "Insufficient Info",
+          "rollup_justification": "No justification provided",
+          "confidence": 0.5
+        }
+      },
+      "competitors": [],
+      "key_tailwinds": [],
+      "key_headwinds": [],
+      "catalysts_next_6_12m": [],
+      "red_flags": [],
+      "queries_run": {
+        "web": [],
+        "twitter": [],
+        "gurufocus": [],
+        "reddit": []
+      },
+      "audit": {
+        "primary_source_used": false,
+        "recency_ok": true,
+        "contradictions_noted": false,
+        "tool_limitations": "No limitations noted"
+      },
+      "step_alignment": {
+        "covered": [],
+        "qualitative_proxies_only": [],
+        "excluded": []
+      },
+      "_parsing_metadata": {
+        "parsed_at": "2025-10-02T16:12:54.058061",
+        "original_length": 7189,
+        "cleaned_length": 6861,
+        "validation_passed": true
+      }
+    },
+    "created_at": "2025-10-02T16:12:54.129078"
+  },
+  {
+    "id": "7458db99-c760-4777-b0d3-f839795b14cb",
+    "analysis_id": "3337266c-ff45-4004-9958-c241bbddc4a6",
+    "structured_data": {
+      "company": "NVE Corporation",
+      "ticker": "NVEC",
+      "subsector": "Technology",
+      "analysis_date": "2023-09-15",
+      "lookback_window": "24 months",
+      "geographic_focus": [
+        "US",
+        "Global"
+      ],
+      "focus_themes": [
+        "General technology analysis"
+      ],
+      "dimensions": [],
+      "competitive_moat_analysis": {
+        "Brand Monopoly": {
+          "score": 3,
+          "confidence": 0.6,
+          "justification": "NVEC has a strong brand reputation in the magnetoresistive sensor market, but it does not have a monopoly on the technology."
+        },
+        "Barriers to Entry": {
+          "score": 5,
+          "confidence": 0.9,
+          "justification": "The development of TMR technology requires significant investments in R&D and manufacturing capabilities, creating a high barrier to entry for new competitors."
+        },
+        "Economies of Scale": {
+          "score": 4,
+          "confidence": 0.8,
+          "justification": "NVEC's manufacturing scale and operational efficiency provide cost advantages, enabling the company to maintain a competitive pricing strategy."
+        },
+        "Network Effects": {
+          "score": 3,
+          "confidence": 0.6,
+          "justification": "While NVEC's partnerships with OEMs and system integrators provide some network benefits, the company does not have a strong network effect."
+        },
+        "Switching Costs": {
+          "score": 4,
+          "confidence": 0.8,
+          "justification": "NVEC's customers have invested in the company's technology and have developed customized solutions, creating switching costs that make it difficult to change suppliers."
+        }
+      },
+      "competitor_analysis": {
+        "competitors": [
+          {
+            "company": "Allegro MicroSystems",
+            "business_model_comparison": "Allegro focuses on Hall-effect sensors, while NVEC specializes in TMR technology.",
+            "competitive_positioning": "Allegro is a strong competitor in the magnetoresistive sensor market, but NVEC's TMR technology provides a unique value proposition.",
+            "relative_strengths_weaknesses": "Allegro has a strong presence in the automotive market, while NVEC has a broader addressable market.",
+            "market_share_dynamics": "Allegro and NVEC are among the top players in the magnetoresistive sensor market, with a combined market share of over 50%."
+          },
+          {
+            "company": "Infineon Technologies",
+            "business_model_comparison": "Infineon is a diversified semiconductor company with a broad product portfolio, while NVEC focuses on magnetoresistive sensors.",
+            "competitive_positioning": "Infineon is a strong competitor in the semiconductor industry, but NVEC's specialized focus on TMR technology provides a competitive advantage.",
+            "relative_strengths_weaknesses": "Infineon has a strong brand reputation and diversified revenue streams, while NVEC has a unique technology advantage.",
+            "market_share_dynamics": "Infineon and NVEC compete in the magnetoresistive sensor market, with Infineon having a larger market share."
+          },
+          {
+            "company": "STMicroelectronics",
+            "business_model_comparison": "STMicroelectronics is a diversified semiconductor company with a broad product portfolio, while NVEC focuses on magnetoresistive sensors.",
+            "competitive_positioning": "STMicroelectronics is a strong competitor in the semiconductor industry, but NVEC's specialized focus on TMR technology provides a competitive advantage.",
+            "relative_strengths_weaknesses": "STMicroelectronics has a strong brand reputation and diversified revenue streams, while NVEC has a unique technology advantage.",
+            "market_share_dynamics": "STMicroelectronics and NVEC compete in the magnetoresistive sensor market, with STMicroelectronics having a larger market share."
+          }
+        ]
+      },
+      "strategic_insights": {
+        "key_growth_drivers": [
+          "Growing demand for IoT devices",
+          "Increasing adoption of autonomous vehicles",
+          "Expanding use of industrial automation"
+        ],
+        "major_risk_factors": [
+          "Intense competition in the magnetoresistive sensor market",
+          "Dependence on a limited number of customers",
+          "Risks associated with global supply chain disruptions"
+        ],
+        "catalysts_for_next_6_12_months": [
+          "New product launches",
+          "Expansion into new markets",
+          "Strategic partnerships and collaborations"
+        ],
+        "red_flags_and_warning_signals": [
+          "Decline in gross margin",
+          "Increase in operating expenses",
+          "Negative trends in customer orders"
+        ],
+        "transformation_potential_assessment": "NVEC has a strong innovation pipeline and is well-positioned to capitalize on emerging trends in the technology industry.",
+        "platform_expansion_opportunities": [
+          "Expansion into new markets",
+          "Development of new products and applications",
+          "Strategic partnerships and collaborations"
+        ]
+      },
+      "as_of_date": "2025-10-02",
+      "sector": "Technology",
+      "moat_breakdown": {
+        "brand_monopoly": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "barriers_to_entry": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "economies_of_scale": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "network_effects": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "switching_costs": {
+          "label": "INSUFFICIENT",
+          "notes": "No analysis provided",
+          "sources": []
+        },
+        "overall_moat": {
+          "score": "Insufficient Info",
+          "rollup_justification": "No justification provided",
+          "confidence": 0.5
+        }
+      },
+      "competitors": [],
+      "key_tailwinds": [],
+      "key_headwinds": [],
+      "catalysts_next_6_12m": [],
+      "red_flags": [],
+      "queries_run": {
+        "web": [],
+        "twitter": [],
+        "gurufocus": [],
+        "reddit": []
+      },
+      "audit": {
+        "primary_source_used": false,
+        "recency_ok": true,
+        "contradictions_noted": false,
+        "tool_limitations": "No limitations noted"
+      },
+      "step_alignment": {
+        "covered": [],
+        "qualitative_proxies_only": [],
+        "excluded": []
+      },
+      "_parsing_metadata": {
+        "parsed_at": "2025-10-02T17:46:11.313883",
+        "original_length": 9734,
+        "cleaned_length": 9384,
+        "validation_passed": true
+      }
+    },
+    "created_at": "2025-10-02T17:46:11.537846"
   }
 ]

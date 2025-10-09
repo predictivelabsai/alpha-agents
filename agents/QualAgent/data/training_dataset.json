@@ -1,0 +1,119 @@
+[
+  {
+    "id": "fb_1760048308",
+    "timestamp": "2025-10-09T23:18:28.267350",
+    "input": {
+      "company_ticker": "MSFT",
+      "model_outputs": [
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.9079497907949783,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Microsoft's scale and extensive resources create significant barriers to entry for potential competi..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.9,
+              "justification": "Microsoft's brand is well-established and recognized in the Cloud/SaaS sector, particularly with its..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Microsoft's deep integrations with customer systems and the need for employee re-training create sig..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 1.0,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 key competitors"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.9,
+              "justification": "Microsoft's strong position in the Cloud/SaaS sector and ongoing innovation provide significant tran..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.001488,
+          "processing_time": 22.272916316986084
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.77016129032258,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Microsoft's significant investments in research and development, as well as its large and establishe..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.9,
+              "justification": "Microsoft's strong brand recognition and reputation in the software industry, particularly in the en..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Microsoft's customers often face significant switching costs when considering alternative products o..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 1.0,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 key competitors"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Microsoft's ongoing transformation into a cloud-first company, led by CEO Satya Nadella, has driven ..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0020466,
+          "processing_time": 6.7785279750823975
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "mixtral-8x7b",
+        "consensus_score": 3.5893898261263004,
+        "consensus_confidence": 0.8282111692844676
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "expert1",
+      "selected_model": "mixtral-8x7b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  }
+]

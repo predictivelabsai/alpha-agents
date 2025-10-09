@@ -366,6 +366,109 @@ class LLMIntegration:
             return (estimated_tokens / 1000) * config.cost_per_1k_tokens
         return 0.0
 
+
+    def get_model_cost(self, model_key: str) -> float:
+        """Get cost per 1K tokens for a model"""
+        config = self.models.get(model_key)
+        if config:
+            return config.cost_per_1k_tokens
+        return 0.0
+
+    def run_analysis(self, company, config):
+        """Run analysis using the structured prompt and JSON format"""
+        try:
+            # Get model from config
+            models = config.get('models_to_use', ['mixtral-8x7b'])
+            model = models[0] if models else 'mixtral-8x7b'
+
+            # Create structured analysis prompt
+            prompt = self._build_structured_prompt(company)
+
+            # Call LLM with structured prompt
+            response = self.call_llm(
+                model_key=model,
+                messages=[
+                    {"role": "system", "content": "You are a senior equity research analyst. Provide analysis in valid JSON format only."},
+                    {"role": "user", "content": prompt}
+                ]
+            )
+
+            return response
+
+        except Exception as e:
+            return LLMResponse(
+                content="",
+                model_used=model,
+                provider="unknown",
+                error=str(e)
+            )
+
+    def _build_structured_prompt(self, company):
+        """Build structured prompt for financial analysis with JSON output"""
+        return f"""
+Please provide a comprehensive financial analysis of {company.company_name} ({company.ticker}) in the {company.subsector} sector.
+
+IMPORTANT: Return your response as valid JSON in the exact format specified below. Do not include any text outside the JSON structure.
+
+Required JSON Structure:
+{{
+  "competitive_moat_analysis": {{
+    "brand_monopoly": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation", "sources": []}},
+    "barriers_to_entry": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation", "sources": []}},
+    "economies_of_scale": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation", "sources": []}},
+    "network_effects": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation", "sources": []}},
+    "switching_costs": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation", "sources": []}}
+  }},
+  "strategic_insights": {{
+    "key_growth_drivers": [
+      {{"driver": "specific growth driver", "impact": "1-5", "timeframe": "short/medium/long", "confidence": 0.0-1.0}}
+    ],
+    "major_risk_factors": [
+      {{"risk": "specific risk", "severity": "1-5", "probability": 0.0-1.0, "mitigation": "possible mitigation"}}
+    ],
+    "red_flags": [
+      {{"flag": "specific red flag", "severity": "1-5", "evidence": "supporting evidence"}}
+    ],
+    "transformation_potential": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation"}},
+    "platform_expansion": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation"}},
+    "competitive_differentiation": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation"}},
+    "market_timing": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation"}},
+    "management_quality": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation"}},
+    "technology_moats": {{"score": 1-5, "confidence": 0.0-1.0, "justification": "detailed explanation"}}
+  }},
+  "competitor_analysis": [
+    {{
+      "name": "Competitor Name",
+      "ticker": "TICKER",
+      "competitive_position": "description",
+      "market_share": "percentage or description",
+      "key_differentiators": ["differentiator1", "differentiator2"],
+      "threat_level": 1-5
+    }}
+  ]
+}}
+
+Scoring Guidelines:
+- 1 = Very Weak/Poor
+- 2 = Weak/Below Average
+- 3 = Neutral/Average
+- 4 = Strong/Above Average
+- 5 = Very Strong/Excellent
+
+Focus on:
+1. Quantifiable competitive advantages
+2. Sustainable business model elements
+3. Growth catalysts and risks
+4. Competitive positioning
+5. Management execution capability
+
+Provide specific evidence and reasoning for all scores. Confidence should reflect the quality and availability of supporting data.
+
+Company: {company.company_name}
+Ticker: {company.ticker}
+Sector: {company.subsector}
+"""
+
     def validate_api_keys(self) -> Dict[str, bool]:
         """Validate API keys by making test calls"""
         validation_results = {}

@@ -1,0 +1,26 @@
+{
+  "analysis_config": {
+    "user_id": "test_user",
+    "company_ticker": "NVDA",
+    "analysis_type": "quick",
+    "models_to_use": [
+      "mixtral-8x7b"
+    ],
+    "focus_themes": null,
+    "geographies_of_interest": null,
+    "lookback_window_months": 24,
+    "enable_weight_approval": false,
+    "enable_human_feedback": false,
+    "max_concurrent_models": 1,
+    "custom_weights": null,
+    "expert_id": null
+  },
+  "weight_approval_session": null,
+  "execution_summary": {
+    "total_models_used": 5,
+    "successful_models": 3,
+    "best_model": "mixtral-8x7b",
+    "composite_score": 3.0,
+    "confidence": 0.3
+  }
+}

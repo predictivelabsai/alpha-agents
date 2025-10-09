@@ -1,0 +1,2 @@
+company_ticker,score_component,score,confidence,category,justification
+NVDA,COMPOSITE_SCORE,3.0,0.3,composite,Weighted composite from 0 components

@@ -328,5 +328,35 @@
     "id": "3ce61f2b-2ee5-4734-b2a4-85684b316bb7",
     "created_at": "2025-10-02T15:31:22.395310",
     "updated_at": "2025-10-02T15:31:22.395310"
+  },
+  {
+    "company_name": "Roku Inc.",
+    "ticker": "ROKU",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "Roku Inc. - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "7a22c080-42b5-4f83-b834-08f74913bae9",
+    "created_at": "2025-10-02T15:41:55.125348",
+    "updated_at": "2025-10-02T15:41:55.125348"
+  },
+  {
+    "company_name": "NVE Corporation",
+    "ticker": "NVEC",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "NVE Corporation - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "b466c046-dda7-4906-86ce-b01b0632e82e",
+    "created_at": "2025-10-02T17:44:12.527892",
+    "updated_at": "2025-10-02T17:44:12.527892"
   }
 ]

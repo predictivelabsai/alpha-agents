@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "timestamp": 1759798790,
+    "company_ticker": "NVDA",
+    "analysis_type": "multi_llm",
+    "models_used": [
+      "mixtral-8x7b",
+      "llama-3-70b",
+      "qwen2-72b",
+      "llama-3.1-70b",
+      "deepseek-coder-33b"
+    ]
+  },
+  "company": {
+    "company_name": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "subsector": "Semiconductors",
+    "market_cap_usd": 1200000000000,
+    "employees": 29600,
+    "founded_year": 1993,
+    "headquarters": "Santa Clara, CA",
+    "description": "Designs graphics processing units for gaming and AI markets",
+    "website": "https://www.nvidia.com",
+    "status": "active",
+    "id": "cfc99153-a76e-45d9-aa93-6c8d940c3b82",
+    "created_at": "2025-10-01T21:38:05.867109",
+    "updated_at": "2025-10-01T21:38:05.867109"
+  },
+  "composite_score": {
+    "score": 3.0,
+    "confidence": 0.3,
+    "components_count": 0
+  },
+  "consensus_scores": {},
+  "individual_model_results": {
+    "mixtral-8x7b": {
+      "error": "'LLMIntegration' object has no attribute 'run_analysis'"
+    },
+    "llama-3-70b": {
+      "error": "'LLMIntegration' object has no attribute 'run_analysis'"
+    },
+    "qwen2-72b": {
+      "error": "'LLMIntegration' object has no attribute 'run_analysis'"
+    },
+    "llama-3.1-70b": {
+      "error": "'LLMIntegration' object has no attribute 'run_analysis'"
+    },
+    "deepseek-coder-33b": {
+      "error": "'LLMIntegration' object has no attribute 'run_analysis'"
+    }
+  },
+  "best_model": "none",
+  "execution_metadata": {
+    "models_used": [
+      "mixtral-8x7b",
+      "llama-3-70b",
+      "qwen2-72b",
+      "llama-3.1-70b",
+      "deepseek-coder-33b"
+    ],
+    "successful_models": [],
+    "failed_models": [
+      "mixtral-8x7b",
+      "llama-3-70b",
+      "qwen2-72b",
+      "llama-3.1-70b",
+      "deepseek-coder-33b"
+    ],
+    "consensus_method": "weighted_average",
+    "scoring_metadata": {
+      "error": "No scores available"
+    },
+    "execution_time_seconds": 0.0042498111724853516,
+    "concurrent_execution": true
+  },
+  "total_cost_usd": 0,
+  "total_time_seconds": 0.0042498111724853516
+}
