@@ -20,4 +20,3 @@ scikit-learn
 pydantic
 tavily-python
 openpyxl
-

@@ -93,7 +93,11 @@ def main() -> None:
                 f"Showing {len(df)} companies filtered by {params['filter_by'].lower()} '{params['selection']}'."
             )
             st.dataframe(df, width="stretch")
-            csv = df.to_csv(index=False).encode("utf-8")
+            # Ensure ticker column is included in exports
+            df_export = df.reset_index(drop=False)
+            if "ticker" not in df_export.columns and "index" in df_export.columns:
+                df_export = df_export.rename(columns={"index": "ticker"})
+            csv = df_export.to_csv(index=False).encode("utf-8")
             st.download_button(
                 "Download results as CSV",
                 csv,
@@ -101,7 +105,7 @@ def main() -> None:
                 mime="text/csv",
             )
             excel_buffer = io.BytesIO()
-            df.to_excel(excel_buffer, index=False, sheet_name="Results")
+            df_export.to_excel(excel_buffer, index=False, sheet_name="Results")
             excel_buffer.seek(0)
             st.download_button(
                 "Download results as Excel",
