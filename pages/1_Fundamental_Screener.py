@@ -2,10 +2,15 @@
 
 import math
 import io
+import sys
+import os
 from typing import Dict
 import pandas as pd  # type: ignore
 
 import streamlit as st  # type: ignore
+
+# Add the parent directory to Python path to find utils module
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.stock_screener import StockScreener
 from utils.db_util import save_fundamental_screen
@@ -93,6 +98,11 @@ def main() -> None:
                 f"Showing {len(df)} companies filtered by {params['filter_by'].lower()} '{params['selection']}'."
             )
             st.dataframe(df, width="stretch")
+            
+            # Store results in session state for QualAgent
+            st.session_state["screener_results"] = df
+            st.success(f"✅ Results stored for QualAgent analysis!")
+            
             # Ensure ticker column is included in exports
             df_export = df.reset_index(drop=False)
             if "ticker" not in df_export.columns and "index" in df_export.columns:
