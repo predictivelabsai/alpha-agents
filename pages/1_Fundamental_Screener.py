@@ -97,7 +97,7 @@ def main() -> None:
             df_export = df.reset_index(drop=False)
             if "ticker" not in df_export.columns and "index" in df_export.columns:
                 df_export = df_export.rename(columns={"index": "ticker"})
-            csv = df_export.to_csv(index=False).encode("utf-8")
+            csv = df_export.to_csv().encode("utf-8")
             st.download_button(
                 "Download results as CSV",
                 csv,
