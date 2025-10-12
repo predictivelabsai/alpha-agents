@@ -1,0 +1,22 @@
+{
+  "status": "ok",
+  "run_id": "hf-20251012-113431",
+  "prompt": "Say 'Hello, world!' and identify your model in one short sentence.",
+  "results": [
+    {
+      "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "status": "error",
+      "error": "404 Client Error: Not Found for url: https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "status": "error",
+      "error": "404 Client Error: Not Found for url: https://api-inference.huggingface.co/models/Qwen/Qwen2.5-7B-Instruct"
+    },
+    {
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "status": "error",
+      "error": "404 Client Error: Not Found for url: https://api-inference.huggingface.co/models/meta-llama/Llama-3.1-8B-Instruct"
+    }
+  ]
+}
