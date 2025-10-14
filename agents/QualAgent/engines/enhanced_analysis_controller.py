@@ -37,6 +37,7 @@ class EnhancedAnalysisConfig:
     max_concurrent_models: int = 3
     custom_weights: Optional[WeightingScheme] = None
     expert_id: Optional[str] = None
+    batch_timestamp: Optional[str] = None  # For grouping analyses from the same batch run (format: YYYYMMDD_HHMMSS)
 
 @dataclass
 class EnhancedAnalysisResult:
@@ -287,11 +288,11 @@ class EnhancedAnalysisController:
 
         # Save multi-LLM results
         saved_files = self.multi_llm_engine.save_multi_format_results(
-            multi_llm_result, str(self.results_dir)
+            multi_llm_result, str(self.results_dir), config.batch_timestamp
         )
 
         # Save enhanced metadata
-        timestamp = int(time.time())
+        timestamp = config.batch_timestamp if config.batch_timestamp is not None else datetime.now().strftime("%Y%m%d_%H%M%S")
         metadata_file = self.results_dir / f"enhanced_metadata_{config.company_ticker}_{timestamp}.json"
 
         metadata = {

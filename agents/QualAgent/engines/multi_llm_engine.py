@@ -13,6 +13,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass, asdict
 from pathlib import Path
+from datetime import datetime
 import numpy as np
 
 from engines.llm_integration import LLMIntegration, LLMResponse
@@ -428,10 +429,16 @@ class MultiLLMEngine:
         best_model = max(model_quality_scores.items(), key=lambda x: x[1])
         return best_model[0]
 
-    def save_multi_format_results(self, result: MultiLLMResult, output_dir: str = None) -> Dict[str, str]:
-        """Save results in JSON, CSV, and PKL formats"""
+    def save_multi_format_results(self, result: MultiLLMResult, output_dir: str = None, batch_timestamp: str = None) -> Dict[str, str]:
+        """Save results in JSON, CSV, and PKL formats
+
+        Args:
+            result: MultiLLM analysis result
+            output_dir: Output directory path
+            batch_timestamp: Optional batch timestamp for grouping related analyses (format: YYYYMMDD_HHMMSS)
+        """
         output_dir = Path(output_dir) if output_dir else Path.cwd()
-        timestamp = int(time.time())
+        timestamp = batch_timestamp if batch_timestamp is not None else datetime.now().strftime("%Y%m%d_%H%M%S")
         ticker = result.company.ticker
 
         saved_files = {}

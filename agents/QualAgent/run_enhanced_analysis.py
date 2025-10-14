@@ -94,9 +94,13 @@ class EnhancedQualAgentDemo:
         results = []
         total_estimated_cost = 0.0
 
+        # Generate single human-readable timestamp for the entire batch
+        batch_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        logger.info(f"Batch timestamp: {batch_timestamp} - all companies will use this timestamp for grouping")
+
         # Estimate total cost
         for ticker in companies:
-            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker})
+            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker, 'batch_timestamp': batch_timestamp})
             cost_estimate = self.controller.estimate_analysis_cost(config)
             total_estimated_cost += cost_estimate['total_estimated_cost']
 
@@ -116,7 +120,7 @@ class EnhancedQualAgentDemo:
         for i, ticker in enumerate(companies, 1):
             print(f"\nREFRESH Analyzing {ticker} ({i}/{len(companies)})")
 
-            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker})
+            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker, 'batch_timestamp': batch_timestamp})
 
             try:
                 result = self.controller.run_enhanced_analysis(config)

@@ -134,8 +134,15 @@ def parse_result_filename(filename):
     if filename.startswith("multi_llm_analysis_") and filename.endswith(".json"):
         parts = filename[19:-5].split("_")  # Remove prefix and suffix
         if len(parts) >= 2:
-            ticker = "_".join(parts[:-1])  # Join all but last part (timestamp)
-            timestamp = parts[-1]
+            # Handle new timestamp format: YYYYMMDD_HHMMSS (2 parts) vs old format (1 part)
+            if len(parts) >= 3 and len(parts[-2]) == 8 and len(parts[-1]) == 6:
+                # New format: ticker_YYYYMMDD_HHMMSS
+                ticker = "_".join(parts[:-2])  # Join all but last 2 parts
+                timestamp = f"{parts[-2]}_{parts[-1]}"  # Rejoin timestamp parts
+            else:
+                # Old format: ticker_unixtime or other formats
+                ticker = "_".join(parts[:-1])  # Join all but last part
+                timestamp = parts[-1]
             return ticker, timestamp
     return None, None
 
@@ -432,11 +439,22 @@ def explore_llm_results_section():
         timestamp_options = []
         for ts in timestamps:
             try:
-                # Convert timestamp to readable date
-                dt = pd.to_datetime(int(ts), unit='s')
-                readable = dt.strftime('%Y-%m-%d %H:%M:%S')
+                # Handle both old Unix timestamps and new human-readable format
+                if ts.isdigit() and len(ts) == 10:
+                    # Old Unix timestamp format
+                    dt = pd.to_datetime(int(ts), unit='s')
+                    readable = dt.strftime('%Y-%m-%d %H:%M:%S')
+                elif '_' in ts and len(ts) == 15:
+                    # New human-readable format: YYYYMMDD_HHMMSS
+                    date_part, time_part = ts.split('_')
+                    year, month, day = date_part[:4], date_part[4:6], date_part[6:8]
+                    hour, minute, second = time_part[:2], time_part[2:4], time_part[4:6]
+                    readable = f"{year}-{month}-{day} {hour}:{minute}:{second}"
+                else:
+                    # Fallback for any other format
+                    readable = f"Analysis Run {ts}"
                 timestamp_options.append(f"{readable} (ID: {ts})")
-            except:
+            except Exception as e:
                 timestamp_options.append(f"Timestamp: {ts}")
 
         selected_option = st.selectbox(
@@ -486,7 +504,7 @@ def explore_llm_results_section():
                 composite_score = result['composite_score']
 
                 score_fmt = safe_float_format(composite_score, 0.0, ".2f")
-            with st.expander(f"🏢 {ticker} - Score: {score_fmt}/5.0", expanded=False):
+                with st.expander(f"🏢 {ticker} - Score: {score_fmt}/5.0", expanded=False):
                     display_company_llm_analysis(result, show_expanded=False)
 
 def main():
@@ -1276,101 +1294,102 @@ def run_batch_analysis(companies, user_id, analysis_type, max_concurrent, lookba
         st.error("❌ No companies selected for batch analysis")
         return
 
-    st.info(f"🔄 Starting batch analysis for {len(companies)} companies...")
-
-    # Initialize batch results storage
-    if 'batch_results' not in st.session_state:
-        st.session_state.batch_results = {}
+    st.info(f"🚀 Starting batch analysis for {len(companies)} companies...")
 
     # Progress tracking
     progress_bar = st.progress(0)
     status_text = st.empty()
+    status_text.text(f"🔄 Initializing batch analysis for {len(companies)} companies...")
 
-    # Process each company
-    successful_analyses = 0
-    failed_analyses = 0
+    try:
+        # Run batch analysis with the improved batch timestamp functionality
+        cmd = [
+            sys.executable,
+            "run_enhanced_analysis.py",
+            "--user-id", user_id,
+            "--batch",
+            "--companies", ",".join(companies),
+            "--analysis-type", analysis_type,
+            "--custom-weights", "approved_weights.json",
+            "--max-concurrent", str(max_concurrent),
+            "--lookback-months", str(lookback_months),
+            "--auto-approve"
+        ]
 
-    for i, company in enumerate(companies):
-        progress = (i + 1) / len(companies)
-        progress_bar.progress(progress)
-        status_text.text(f"Analyzing {company} ({i+1}/{len(companies)})...")
+        if geographies:
+            cmd.extend(["--geographies", ",".join(geographies)])
 
-        try:
-            # Run individual analysis
-            cmd = [
-                sys.executable,
-                "run_enhanced_analysis.py",
-                "--user-id", user_id,
-                "--company", company,
-                "--analysis-type", analysis_type,
-                "--custom-weights", "approved_weights.json",
-                "--max-concurrent", str(max_concurrent),
-                "--lookback-months", str(lookback_months),
-                "--geographies", ",".join(geographies),
-                "--auto-approve"
-            ]
+        # Add selected models
+        if st.session_state.selected_models:
+            cmd.extend(["--models", ",".join(st.session_state.selected_models)])
 
-            # Add selected models
-            if st.session_state.selected_models:
-                cmd.extend(["--models", ",".join(st.session_state.selected_models)])
+        # Display command being executed (for debugging)
+        display_cmd = [
+            sys.executable,
+            str(qual_agent_path / "run_enhanced_analysis.py"),
+            "--user-id", user_id,
+            "--batch",
+            "--companies", ",".join(companies),
+            "--analysis-type", analysis_type,
+            "--custom-weights", str(qual_agent_path / "approved_weights.json"),
+            "--max-concurrent", str(max_concurrent),
+            "--lookback-months", str(lookback_months),
+            "--auto-approve"
+        ]
 
-            # Execute analysis
-            result = subprocess.run(
-                cmd,
-                cwd=qual_agent_path,
-                capture_output=True,
-                text=True,
-                timeout=600  # 10 minute timeout per company
-            )
+        if geographies:
+            display_cmd.extend(["--geographies", ",".join(geographies)])
 
-            if result.returncode == 0:
-                # Parse results from output or files
+        if st.session_state.selected_models:
+            display_cmd.extend(["--models", ",".join(st.session_state.selected_models)])
+
+        with st.expander("🔧 Command Details", expanded=False):
+            st.code(" ".join(display_cmd))
+
+        # Update progress to show execution
+        progress_bar.progress(0.1)
+        status_text.text("🚀 Running enhanced batch analysis with shared timestamp...")
+
+        result = subprocess.run(
+            cmd,
+            cwd=qual_agent_path,
+            capture_output=True,
+            text=True,
+            timeout=None  # No timeout limit for batch processing (can run for hours)
+        )
+
+        progress_bar.progress(0.9)
+
+        if result.returncode == 0:
+            # Success
+            st.session_state.batch_results = {}
+            for company in companies:
                 st.session_state.batch_results[company] = {
                     'status': 'success',
                     'timestamp': time.time(),
-                    'stdout': result.stdout,
-                    'stderr': result.stderr
+                    'output': result.stdout
                 }
-                successful_analyses += 1
-                status_text.text(f"✅ {company} completed successfully")
 
-            else:
-                st.session_state.batch_results[company] = {
-                    'status': 'failed',
-                    'timestamp': time.time(),
-                    'error': result.stderr or "Unknown error",
-                    'stdout': result.stdout
-                }
-                failed_analyses += 1
-                status_text.text(f"❌ {company} failed")
+            progress_bar.progress(1.0)
+            status_text.text("📊 Batch analysis completed successfully!")
 
-        except subprocess.TimeoutExpired:
-            st.session_state.batch_results[company] = {
-                'status': 'timeout',
-                'timestamp': time.time(),
-                'error': "Analysis timed out"
-            }
-            failed_analyses += 1
-            status_text.text(f"⏱️ {company} timed out")
+            st.success(f"🎉 Batch Analysis Complete!")
+            st.info(f"✅ All {len(companies)} companies analyzed with shared timestamp for easy grouping")
 
-        except Exception as e:
-            st.session_state.batch_results[company] = {
-                'status': 'error',
-                'timestamp': time.time(),
-                'error': str(e)
-            }
-            failed_analyses += 1
-            status_text.text(f"❌ {company} error: {str(e)}")
+            # Parse results with same timestamp
+            parse_batch_results(companies)
 
-    # Final status
-    progress_bar.progress(1.0)
-    status_text.text("📊 Batch analysis completed!")
+        else:
+            st.error("❌ Batch analysis failed")
+            st.error(f"Error details: {result.stderr}")
 
-    st.success(f"🎉 Batch Analysis Complete!")
-    st.info(f"✅ Successful: {successful_analyses} | ❌ Failed: {failed_analyses}")
+    except subprocess.TimeoutExpired:
+        st.error("❌ Batch analysis timed out after 20 minutes")
+        status_text.text("⏱️ Batch analysis timed out")
 
-    # Load and parse results files
-    parse_batch_results(companies)
+    except Exception as e:
+        st.error(f"❌ Error running batch analysis: {str(e)}")
+        status_text.text(f"❌ Error: {str(e)}")
 
     # Trigger results display
     st.session_state.show_batch_results = True

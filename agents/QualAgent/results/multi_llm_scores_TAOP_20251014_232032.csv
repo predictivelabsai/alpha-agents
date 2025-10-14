@@ -1,0 +1,17 @@
+company_ticker,score_component,score,confidence,category,justification
+TAOP,moat_network_effects,2.5,0.55,competitive_moat,"Consensus from 2 models: llama-3-70b: TAOP Inc. has some network effects advantages, particularly in..."
+TAOP,competitive_differentiation,3.0,0.6499999999999999,strategic_insights,"Consensus from 2 models: llama-3-70b: TAOP Inc. has some competitive differentiation advantages, par..."
+TAOP,red_flags,2.3333333333333335,0.85,strategic_insights,Consensus from 1 models: llama-3-70b: Based on 3 identified red flags with average impact 3.7/5.0
+TAOP,moat_economies_of_scale,2.5,0.65,competitive_moat,"Consensus from 2 models: llama-3-70b: TAOP Inc. has limited economies of scale advantages, given its..."
+TAOP,key_growth_drivers,3.583333333333333,0.825,strategic_insights,Consensus from 2 models: llama-3-70b: Based on 3 identified growth drivers with average impact 3.7/5...
+TAOP,platform_expansion,3.5,0.7,strategic_insights,"Consensus from 2 models: llama-3-70b: TAOP Inc. has significant platform expansion opportunities, pa..."
+TAOP,transformation_potential,3.0,0.6499999999999999,strategic_insights,"Consensus from 2 models: llama-3-70b: TAOP Inc. has some transformation potential, given its focus o..."
+TAOP,moat_switching_costs,2.0,0.55,competitive_moat,Consensus from 2 models: llama-3-70b: The switching costs for TAOP Inc.'s customers are relatively l...
+TAOP,market_timing,3.5,0.7,strategic_insights,Consensus from 2 models: llama-3-70b: TAOP Inc. is well-positioned to benefit from the growing deman...
+TAOP,moat_barriers_to_entry,2.5,0.7,competitive_moat,"Consensus from 2 models: llama-3-70b: The barriers to entry in the technology sector, particularly i..."
+TAOP,management_quality,3.0,0.6499999999999999,strategic_insights,"Consensus from 2 models: llama-3-70b: TAOP Inc.'s management team has some strengths, particularly i..."
+TAOP,moat_brand_monopoly,2.0,0.6,competitive_moat,Consensus from 2 models: llama-3-70b: TAOP Inc. has a relatively weak brand presence in the technolo...
+TAOP,technology_moats,3.0,0.6499999999999999,strategic_insights,"Consensus from 2 models: llama-3-70b: TAOP Inc. has some technology moats advantages, particularly i..."
+TAOP,major_risk_factors,2.0833333333333335,0.825,strategic_insights,Consensus from 2 models: llama-3-70b: Based on 3 identified risk factors with average impact 4.3/5.0...
+TAOP,competitive_positioning,2.833333333333334,0.8999999999999999,competitive,"Consensus from 2 models: llama-3-70b: Analysis of 3 competitors, average threat level: 3.7/5.0; mixt..."
+TAOP,COMPOSITE_SCORE,1.7390873015873016,0.69,composite,Weighted composite from 15 components

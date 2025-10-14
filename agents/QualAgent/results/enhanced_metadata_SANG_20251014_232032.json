@@ -1,0 +1,47 @@
+{
+  "analysis_config": {
+    "user_id": "chenHX",
+    "company_ticker": "SANG",
+    "analysis_type": "expert_guided",
+    "models_to_use": [
+      "llama-3-70b",
+      "mixtral-8x7b",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+    ],
+    "focus_themes": null,
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "enable_weight_approval": true,
+    "enable_human_feedback": true,
+    "max_concurrent_models": 3,
+    "custom_weights": {
+      "brand_monopoly": 0.11904761904761905,
+      "barriers_to_entry": 0.17857142857142858,
+      "economies_of_scale": 0.11904761904761905,
+      "network_effects": 0.11904761904761905,
+      "switching_costs": 0.11904761904761905,
+      "competitive_differentiation": 0.09523809523809523,
+      "market_timing": 0.07142857142857142,
+      "management_quality": 0.05952380952380953,
+      "technology_moats": 0.09523809523809523,
+      "key_growth_drivers": 0.05952380952380953,
+      "transformation_potential": 0.047619047619047616,
+      "platform_expansion": 0.03571428571428571,
+      "major_risk_factors": -0.07142857142857142,
+      "red_flags": -0.047619047619047616
+    },
+    "expert_id": "chenHX",
+    "batch_timestamp": "20251014_232032"
+  },
+  "weight_approval_session": null,
+  "execution_summary": {
+    "total_models_used": 2,
+    "successful_models": 2,
+    "best_model": "llama-3-70b",
+    "composite_score": 2.1071428571428577,
+    "confidence": 0.71
+  }
+}
