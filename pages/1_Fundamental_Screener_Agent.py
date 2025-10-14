@@ -10,9 +10,43 @@ import pandas as pd  # type: ignore
 import streamlit as st  # type: ignore
 
 # Add the parent directory to Python path to find utils module
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# More robust path resolution for Streamlit
+script_dir = os.path.dirname(os.path.abspath(__file__))  # pages directory
+parent_dir = os.path.dirname(script_dir)  # alpha-agents directory
+utils_dir = os.path.join(parent_dir, 'utils')
 
-from utils.stock_screener import StockScreener
+# Add parent directory to Python path
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+# # Debug path information
+# st.write(f"🔍 Debug Info:")
+# st.write(f"Script directory: {script_dir}")
+# st.write(f"Parent directory: {parent_dir}")
+# st.write(f"Utils directory: {utils_dir}")
+# st.write(f"Utils exists: {os.path.exists(utils_dir)}")
+# st.write(f"Python path contains parent: {parent_dir in sys.path}")
+
+# # Verify utils directory exists
+# if not os.path.exists(utils_dir):
+#     st.error(f"Utils directory not found at: {utils_dir}")
+#     st.stop()
+
+# # Verify stock_screener.py exists
+# stock_screener_file = os.path.join(utils_dir, 'stock_screener.py')
+# if not os.path.exists(stock_screener_file):
+#     st.error(f"stock_screener.py not found at: {stock_screener_file}")
+#     st.stop()
+
+# st.write(f"Stock screener file exists: {os.path.exists(stock_screener_file)}")
+
+try:
+    from utils.stock_screener import StockScreener
+    # st.success("✅ Successfully imported StockScreener!")
+except ImportError as e:
+    st.error(f"Import error: {e}")
+    st.error(f"Current sys.path: {sys.path}")
+    st.stop()
 from utils.db_util import save_fundamental_screen
 
 SECTORS = sorted(StockScreener.SECTORS)
@@ -46,7 +80,7 @@ def run_screen(
 
 
 def main() -> None:
-    st.set_page_config(page_title="Fundamental Screener", layout="wide")
+    st.set_page_config(page_title="Fundamental Screener Agent", layout="wide")
     st.title("Fundamental Agent Screener")
 
     st.sidebar.header("Filters")

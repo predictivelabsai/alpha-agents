@@ -85,8 +85,22 @@ class MultiLLMEngine:
 
         logger.info(f"Starting multi-LLM analysis for {company.ticker}")
 
-        # Get available models
-        models = self.get_available_models()
+        # Get available models (filter by models_to_use if specified)
+        all_available_models = self.get_available_models()
+
+        if analysis_config.get('models_to_use'):
+            # Filter to only use specified models
+            requested_models = analysis_config['models_to_use']
+            models = [m for m in all_available_models if m.model_name in requested_models]
+            logger.info(f"Filtering to {len(models)} requested models: {[m.model_name for m in models]}")
+
+            if not models:
+                logger.warning(f"None of requested models {requested_models} are available. Using all available.")
+                models = all_available_models
+        else:
+            # Use all available models
+            models = all_available_models
+
         if not models:
             raise ValueError("No LLM models available for analysis")
 
@@ -445,7 +459,7 @@ class MultiLLMEngine:
             'total_time_seconds': result.total_time_seconds
         }
 
-        with open(json_file, 'w') as f:
+        with open(json_file, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=2, default=str)
         saved_files['json'] = str(json_file)
 
