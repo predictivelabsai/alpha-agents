@@ -196,6 +196,7 @@ class EnhancedAnalysisController:
             'focus_themes': config.focus_themes or [],
             'geographies_of_interest': config.geographies_of_interest or ['US', 'Global'],
             'lookback_window_months': config.lookback_window_months,
+            'models_to_use': config.models_to_use,  # FIX: Pass through selected models
             'enable_multi_model_consensus': True,
             'save_intermediate_results': True,
             'requested_by': f"EnhancedAnalysis-{config.user_id}",
@@ -305,7 +306,7 @@ class EnhancedAnalysisController:
             }
         }
 
-        with open(metadata_file, 'w') as f:
+        with open(metadata_file, 'w', encoding='utf-8') as f:
             json.dump(metadata, f, indent=2, default=str)
 
         saved_files['metadata'] = str(metadata_file)

@@ -48,20 +48,24 @@ class WeightingScheme:
     red_flags: float = -0.04
 
     def normalize_weights(self) -> 'WeightingScheme':
-        """Normalize weights to sum to 1.0 (excluding negative weights)"""
-        positive_weights = {k: v for k, v in asdict(self).items() if v > 0}
-        total_positive = sum(positive_weights.values())
+        """
+        Normalize ALL weights (positive and negative) to sum to 1.0
 
-        if total_positive == 0:
+        This ensures risk factors are properly weighted relative to positive factors.
+        After normalization: sum(all_weights) = 1.0
+        """
+        all_weights = asdict(self)
+        total_weight_sum = sum(all_weights.values())
+
+        if abs(total_weight_sum) < 1e-10:  # Avoid division by zero
             return self
 
-        # Normalize positive weights
+        # Normalize ALL weights proportionally
         normalized = WeightingScheme()
-        for key, value in asdict(self).items():
-            if value > 0:
-                setattr(normalized, key, value / total_positive)
-            else:
-                setattr(normalized, key, value)  # Keep negative weights as-is
+        normalization_factor = 1.0 / total_weight_sum
+
+        for key, value in all_weights.items():
+            setattr(normalized, key, value * normalization_factor)
 
         return normalized
 
@@ -315,44 +319,87 @@ class EnhancedScoringSystem:
             return ScoreComponent("Competitive Positioning", 3.0, 0.3,
                                 "No competitor analysis available", [], "competitive")
 
-        # Analyze competitive strengths mentioned
-        total_score = 0
+        # Enhanced competitive positioning logic
+        total_threat_level = 0
+        market_position_indicators = 0
+        num_competitors = len(competitors)
+
         for competitor in competitors:
-            # Look for competitive advantages mentioned
-            positioning = competitor.get('competitive_positioning', '').lower()
-            strengths = competitor.get('relative_strengths_weaknesses', '').lower()
+            # Threat level analysis (lower threat = better positioning)
+            threat_level = competitor.get('threat_level', 3)
+            if isinstance(threat_level, (int, float)):
+                total_threat_level += threat_level
+            else:
+                total_threat_level += 3  # Default if not numeric
 
-            # Positive indicators for our company
-            if any(phrase in positioning for phrase in ['advantage', 'leading', 'unique']):
-                total_score += 1
-            if any(phrase in strengths for phrase in ['stronger', 'better', 'superior']):
-                total_score += 0.5
+            # Market position indicators
+            positioning = competitor.get('competitive_position', '').lower()
+            market_share = competitor.get('market_share', '').lower()
 
-        # Calculate final score
-        max_possible = len(competitors) * 1.5
-        if max_possible > 0:
-            competitive_strength = (total_score / max_possible) * 5
+            # Look for indicators of strong competitive position
+            strong_indicators = ['leader', 'dominant', 'strong position', 'market leader']
+            weak_indicators = ['challenger', 'niche', 'small', 'limited', 'emerging']
+
+            if any(indicator in positioning for indicator in strong_indicators):
+                market_position_indicators += 1
+            elif any(indicator in positioning for indicator in weak_indicators):
+                market_position_indicators -= 0.5
+
+        # Calculate average threat level (inverted for scoring)
+        avg_threat_level = total_threat_level / num_competitors if num_competitors > 0 else 3
+
+        # Convert threat level to competitive strength
+        # Lower average threat from competitors = stronger competitive position
+        threat_score = (6 - avg_threat_level)  # Invert scale: threat 1 = score 5, threat 5 = score 1
+
+        # Market position adjustment
+        position_adjustment = min(1.0, market_position_indicators * 0.3)
+
+        # Final score calculation
+        base_score = max(1.0, min(5.0, threat_score + position_adjustment))
+
+        # Quality adjustment based on number of competitors analyzed
+        if num_competitors >= 3:
+            quality_bonus = 0.2
+        elif num_competitors >= 2:
+            quality_bonus = 0.1
         else:
-            competitive_strength = 3.0
+            quality_bonus = 0
 
-        score = max(1.0, min(5.0, competitive_strength))
-        confidence = 0.6 + min(0.3, len(competitors) * 0.1)
+        final_score = min(5.0, base_score + quality_bonus)
+        confidence = 0.6 + min(0.3, num_competitors * 0.1)
 
-        return ScoreComponent("Competitive Positioning", score, confidence,
-                            f"Analysis of {len(competitors)} key competitors", [], "competitive")
+        justification = f"Analysis of {num_competitors} competitors, average threat level: {avg_threat_level:.1f}/5.0"
+
+        return ScoreComponent("Competitive Positioning", final_score, confidence,
+                            justification, [], "competitive")
 
     def calculate_composite_score(self, scores: Dict[str, ScoreComponent],
                                 weights: WeightingScheme = None) -> Tuple[float, float, Dict]:
-        """Calculate weighted composite score with confidence adjustment"""
+        """
+        Calculate mathematically sound weighted composite score.
+
+        Methodology:
+        1. All weights (positive/negative) normalized to sum = 1.0
+        2. Direct multiplication: weight * raw_score (no arbitrary inversions)
+        3. Negative weights naturally reduce composite score
+        4. Confidence tracked as metadata, not double-weighted
+        5. Final score can extend beyond 1-5 range (financially meaningful)
+        """
         if not scores:
             return 3.0, 0.3, {"error": "No scores available"}
 
         weights = weights or self.default_weights.normalize_weights()
         weight_dict = asdict(weights)
 
-        weighted_sum = 0.0
-        confidence_weighted_sum = 0.0
-        total_weight = 0.0
+        # Verify weights sum to 1.0 (within tolerance)
+        weight_sum = sum(weight_dict.values())
+        if abs(weight_sum - 1.0) > 0.001:
+            print(f"Warning: Weights sum to {weight_sum:.3f}, expected 1.000")
+
+        composite_score = 0.0
+        total_confidence = 0.0
+        components_count = 0
         used_components = {}
 
         # Map score names to weight names
@@ -373,46 +420,45 @@ class EnhancedScoringSystem:
             weight_name = score_to_weight_mapping.get(score_name)
             if weight_name and weight_name in weight_dict:
                 weight = weight_dict[weight_name]
+                raw_score = score_component.score  # Keep 1-5 scale as-is
+                confidence = score_component.confidence
 
-                # Confidence-adjusted score
-                confidence_adjusted_score = score_component.score * score_component.confidence
+                # Direct multiplication: weight * score
+                # Negative weights naturally reduce the composite score
+                contribution = weight * raw_score
 
-                # Apply weight (can be negative for risk factors)
-                if weight < 0:  # Risk factors
-                    contribution = abs(weight) * (6.0 - confidence_adjusted_score)  # Inverse for risks
-                else:  # Positive factors
-                    contribution = weight * confidence_adjusted_score
-
-                weighted_sum += contribution
-                confidence_weighted_sum += abs(weight) * score_component.confidence
-                total_weight += abs(weight)
+                composite_score += contribution
+                total_confidence += confidence
+                components_count += 1
 
                 used_components[score_name] = {
-                    'score': score_component.score,
-                    'confidence': score_component.confidence,
+                    'raw_score': raw_score,
+                    'confidence': confidence,
                     'weight': weight,
-                    'contribution': contribution
+                    'contribution': contribution,
+                    'interpretation': 'positive_factor' if weight > 0 else 'risk_factor'
                 }
 
-        if total_weight == 0:
+        if components_count == 0:
             return 3.0, 0.3, {"error": "No weighted components found"}
 
-        # Calculate final composite score
-        composite_score = weighted_sum / total_weight if total_weight > 0 else 3.0
-        composite_confidence = confidence_weighted_sum / total_weight if total_weight > 0 else 0.3
+        # Average confidence as metadata
+        average_confidence = total_confidence / components_count
 
-        # Ensure score is in valid range
-        composite_score = max(1.0, min(5.0, composite_score))
-        composite_confidence = max(0.0, min(1.0, composite_confidence))
+        # Note: composite_score can extend beyond 1-5 range, which is financially meaningful
+        # High positive weights with high scores can exceed 5.0
+        # High risk scores with negative weights can push below 1.0
 
         metadata = {
-            'total_weight_used': total_weight,
-            'components_used': len(used_components),
+            'weight_sum_check': weight_sum,
+            'components_used': components_count,
             'component_details': used_components,
-            'weights_applied': weight_dict
+            'weights_applied': weight_dict,
+            'calculation_method': 'mathematically_consistent_direct_weighting',
+            'score_range_note': 'Score may extend beyond 1-5 range due to risk factor weighting'
         }
 
-        return composite_score, composite_confidence, metadata
+        return composite_score, average_confidence, metadata
 
     def get_default_weights_for_approval(self) -> Dict[str, float]:
         """Get default weights formatted for user approval"""

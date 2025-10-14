@@ -1,0 +1,119 @@
+[
+  {
+    "id": "fb_1760359616",
+    "timestamp": "2025-10-13T13:46:56.566866",
+    "input": {
+      "company_ticker": "TSLA",
+      "model_outputs": [
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.6915966386554615,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.9,
+              "justification": "Tesla has significant barriers to entry in the EV market, including its proprietary technology, manu..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Tesla has established a strong brand in the electric vehicle (EV) market, with a loyal customer base..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "Tesla's customers have relatively low switching costs, as they can easily switch to other EV manufac..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 2.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Tesla has significant transformation potential through its expansion into new markets, such as auton..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0021285,
+          "processing_time": 9.588970184326172
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.337254901960784,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Tesla has faced decreasing barriers to entry as more companies enter the EV market. However, Tesla's..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.7,
+              "justification": "Tesla has a well-known brand in the electric vehicle (EV) market, but it does not have a monopoly. C..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "Switching costs for EV buyers are relatively low, as most competitors offer similar technology and c..."
+            },
+            "key_growth_drivers": {
+              "score": 4.333333333333333,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 4.3/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 2.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "Tesla's focus on sustainable energy and autonomous driving presents significant transformation poten..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0018059999999999997,
+          "processing_time": 27.70020627975464
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3.1-70b",
+        "consensus_score": 2.397266313932981,
+        "consensus_confidence": 0.7688888888888888
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3.1-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  }
+]

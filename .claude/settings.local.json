@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"c:\\py\\Anaconda3\\envs\\personal_CRM\\python.exe\" -c \"import json; data=json.load(open(''D:/Oxford/Extra/Finance_NLP/alpha-agents/agents/QualAgent/results/multi_llm_analysis_AAPL_1760352533.json'')); print(''llama-3.1-70b parsed_output keys:'', list(data[''individual_model_results''][''llama-3.1-70b''][''parsed_output''].keys()))\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

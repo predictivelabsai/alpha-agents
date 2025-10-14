@@ -1,0 +1,808 @@
+{
+  "configured_tests": {
+    "llama-3-70b": {
+      "success": true,
+      "time": 2.644500255584717,
+      "cost": 0.0003348,
+      "tokens_used": 372,
+      "content_length": 981,
+      "json_parseable": false,
+      "response_preview": "Here is a more detailed financial analysis in JSON format:\n\n```\n{\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"Brief test analysis\",\n  \"financials\": {\n    \"...",
+      "error": null
+    },
+    "mixtral-8x7b": {
+      "success": true,
+      "time": 2.345398426055908,
+      "cost": 0.0001608,
+      "tokens_used": 268,
+      "content_length": 806,
+      "json_parseable": false,
+      "response_preview": " {\n  \"company\\_name\": \"Tech Giants Inc.\",\n  \"score\": 4.2,\n  \"confidence\": 0.9,\n  \"justification\": \"Tech Giants Inc. has shown consistent revenue growth over the past five years, with a strong profit m...",
+      "error": null
+    },
+    "qwen2-72b": {
+      "success": false,
+      "error": "400 Client Error: Bad Request for url: https://api.together.xyz/v1/chat/completions",
+      "time": 3.7015440464019775,
+      "cost": 0.0
+    },
+    "llama-3.1-70b": {
+      "success": true,
+      "time": 0.7629430294036865,
+      "cost": 0.0001719,
+      "tokens_used": 191,
+      "content_length": 409,
+      "json_parseable": true,
+      "response_preview": "{\n  \"company_name\": \"ABC Inc.\",\n  \"score\": 7,\n  \"confidence\": 0.9,\n  \"justification\": \"ABC Inc. has demonstrated strong revenue growth over the past quarter, with a 15% increase in sales. The company'...",
+      "error": null
+    },
+    "deepseek-coder-33b": {
+      "success": false,
+      "error": "400 Client Error: Bad Request for url: https://api.together.xyz/v1/chat/completions",
+      "time": 3.672241449356079,
+      "cost": 0.0
+    },
+    "gpt-4o": {
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************QxsA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+      "time": 4.747363805770874,
+      "cost": 0.0
+    },
+    "gpt-4o-mini": {
+      "success": false,
+      "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************QxsA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+      "time": 3.4612343311309814,
+      "cost": 0.0
+    },
+    "mistralai/Mixtral-8x7B-Instruct-v0.1": {
+      "success": true,
+      "time": 2.154149055480957,
+      "tokens": 180,
+      "json_parseable": false,
+      "content_preview": " {\n  \"company\\_name\": \"Tech Giants Inc.\",\n  \"score\": 4.2,\n  \"confidence\": 0.9,\n  \"justification\": \"Tech Giants Inc. has shown strong financial perform...",
+      "status_code": 200
+    },
+    "meta-llama/Llama-3-70b-chat-hf": {
+      "success": true,
+      "time": 1.3486523628234863,
+      "tokens": 173,
+      "json_parseable": false,
+      "content_preview": "Here is a more detailed financial analysis in JSON format:\n\n```\n{\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justificatio...",
+      "status_code": 200
+    },
+    "Qwen/Qwen2-72B-Instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsacdV-2kFHot-98d5e860dd2a9497\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2694072723388672,
+      "status_code": 400
+    },
+    "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo": {
+      "success": true,
+      "time": 0.9413588047027588,
+      "tokens": 193,
+      "json_parseable": false,
+      "content_preview": "{\n  \"company_name\": \"ABC Inc.\",\n  \"score\": 7,\n  \"confidence\": 0.9,\n  \"justification\": \"ABC Inc. has demonstrated strong revenue growth over the past q...",
+      "status_code": 200
+    },
+    "deepseek-ai/deepseek-coder-33b-instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaczh-2kFHot-98d5e8687ef8ef09\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2894587516784668,
+      "status_code": 400
+    },
+    "meta-llama/Llama-3-8b-chat-hf": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsad5c-2kFHot-98d5e86a48a4ef56\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29869627952575684,
+      "status_code": 400
+    },
+    "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo": {
+      "success": true,
+      "time": 0.4629490375518799,
+      "tokens": 193,
+      "json_parseable": false,
+      "content_preview": "{\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"Brief test analysis\",\n  \"financial_indicators\": {\n    \"reve...",
+      "status_code": 200
+    },
+    "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": {
+      "success": true,
+      "time": 1.9999840259552002,
+      "tokens": 193,
+      "json_parseable": false,
+      "content_preview": "```\n{\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"Brief test analysis\",\n  \"financial_indicators\": {\n    \"...",
+      "status_code": 200
+    },
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "success": true,
+      "time": 0.8675048351287842,
+      "tokens": 185,
+      "json_parseable": false,
+      "content_preview": " {\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"The financial analysis of Test Company is based on a score...",
+      "status_code": 200
+    },
+    "google/gemma-2b-it": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaeDr-4pPsy7-98d5e881096c9cfb\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 1.0020341873168945,
+      "status_code": 400
+    },
+    "google/gemma-7b-it": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaeTZ-2kFHot-98d5e8873839beb5\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2911093235015869,
+      "status_code": 400
+    },
+    "Qwen/Qwen2-7B-Instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaeYR-2kFHot-98d5e8890a813c70\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2892336845397949,
+      "status_code": 400
+    },
+    "Qwen/Qwen2-1.5B-Instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaedA-2kFHot-98d5e88add494137\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.268740177154541,
+      "status_code": 400
+    },
+    "deepseek-ai/deepseek-coder-6.7b-instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaek1-2kFHot-98d5e88c8f0c46df\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.7922046184539795,
+      "status_code": 400
+    },
+    "codellama/CodeLlama-7b-Instruct-hf": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaewz-2kFHot-98d5e891790d6361\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29381728172302246,
+      "status_code": 400
+    },
+    "codellama/CodeLlama-13b-Instruct-hf": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaf2Q-2kFHot-98d5e8935a7ee20e\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2615649700164795,
+      "status_code": 400
+    },
+    "codellama/CodeLlama-34b-Instruct-hf": {
+      "success": false,
+      "error": "HTTP 503: {\n  \"id\": \"oEsaf7g-2kFHot-98d5e89508d8ed01\",\n  \"error\": {\n    \"message\": \"Service unavailable\",\n    ",
+      "time": 1.9499142169952393,
+      "status_code": 503
+    },
+    "togethercomputer/RedPajama-INCITE-7B-Chat": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsafhE-2kFHot-98d5e8a12ae2cd1e\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.3006477355957031,
+      "status_code": 400
+    },
+    "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsafnz-3NKUce-98d5e8a308356382\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.8144576549530029,
+      "status_code": 400
+    },
+    "NousResearch/Nous-Hermes-2-Yi-34B": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsag2Y-2kFHot-98d5e8a82ad9d8f8\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29825901985168457,
+      "status_code": 400
+    },
+    "teknium/OpenHermes-2.5-Mistral-7B": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsag7e-2kFHot-98d5e8aa1fa8ecdb\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29073572158813477,
+      "status_code": 400
+    },
+    "mistralai/Mistral-7B-Instruct-v0.1": {
+      "success": true,
+      "time": 0.9311861991882324,
+      "tokens": 189,
+      "json_parseable": false,
+      "content_preview": " {\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"Based on the available data, the company appears to be per...",
+      "status_code": 200
+    },
+    "upstage/SOLAR-10.7B-Instruct-v1.0": {
+      "success": false,
+      "error": "HTTP 500: {\n  \"id\": \"oEsagfJ-57nCBj-98d5e8b1ace52532\",\n  \"error\": {\n    \"message\": \"Internal server error\",\n  ",
+      "time": 1.1708548069000244,
+      "status_code": 500
+    },
+    "garage-bAInd/Platypus2-70B-instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsagpQ-2kFHot-98d5e8b91b47f422\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2639315128326416,
+      "status_code": 400
+    },
+    "openchat/openchat-3.5-1210": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsagzt-2kFHot-98d5e8ba9e9caff9\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.6326141357421875,
+      "status_code": 400
+    },
+    "Open-Orca/Mistral-7B-OpenOrca": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsah65-2kFHot-98d5e8be9c879483\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.28438854217529297,
+      "status_code": 400
+    },
+    "HuggingFaceH4/zephyr-7b-beta": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsahB1-2kFHot-98d5e8c06f9693de\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2797966003417969,
+      "status_code": 400
+    },
+    "moonshot-ai/moonshot-v1-8k": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahGQ-2kFHot-98d5e8c22bb0cd14\",\n  \"error\": {\n    \"message\": \"Unable to access model moo",
+      "time": 0.3129103183746338,
+      "status_code": 404
+    },
+    "moonshot-ai/moonshot-v1-32k": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahMm-2kFHot-98d5e8c4089bef54\",\n  \"error\": {\n    \"message\": \"Unable to access model moo",
+      "time": 0.2966494560241699,
+      "status_code": 404
+    },
+    "moonshot-ai/moonshot-v1-128k": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahSW-2kFHot-98d5e8c5e9a6cd7a\",\n  \"error\": {\n    \"message\": \"Unable to access model moo",
+      "time": 0.29892778396606445,
+      "status_code": 404
+    },
+    "THUDM/chatglm3-6b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahXR-2kFHot-98d5e8c7cff3652d\",\n  \"error\": {\n    \"message\": \"Unable to access model THU",
+      "time": 0.2635328769683838,
+      "status_code": 404
+    },
+    "THUDM/chatglm2-6b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahbg-2kFHot-98d5e8c97f1b9491\",\n  \"error\": {\n    \"message\": \"Unable to access model THU",
+      "time": 0.25659728050231934,
+      "status_code": 404
+    },
+    "baichuan-inc/Baichuan2-7B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahgc-2kFHot-98d5e8cb1d680ec9\",\n  \"error\": {\n    \"message\": \"Unable to access model bai",
+      "time": 0.274672269821167,
+      "status_code": 404
+    },
+    "baichuan-inc/Baichuan2-13B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahmH-2kFHot-98d5e8ccc9f1587a\",\n  \"error\": {\n    \"message\": \"Unable to access model bai",
+      "time": 0.28766489028930664,
+      "status_code": 404
+    },
+    "01-ai/Yi-34B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahrb-2kFHot-98d5e8ce8b21d874\",\n  \"error\": {\n    \"message\": \"Unable to access model 01-",
+      "time": 0.2907216548919678,
+      "status_code": 404
+    },
+    "01-ai/Yi-6B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahw1-2kFHot-98d5e8d07bb99849\",\n  \"error\": {\n    \"message\": \"Unable to access model 01-",
+      "time": 0.26423048973083496,
+      "status_code": 404
+    },
+    "alibaba/Qwen-7B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsai2p-2kFHot-98d5e8d22a4063b3\",\n  \"error\": {\n    \"message\": \"Unable to access model ali",
+      "time": 0.3284122943878174,
+      "status_code": 404
+    },
+    "alibaba/Qwen-14B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsai88-2kFHot-98d5e8d43f236397\",\n  \"error\": {\n    \"message\": \"Unable to access model ali",
+      "time": 0.3130183219909668,
+      "status_code": 404
+    },
+    "internlm/internlm-chat-7b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiDP-2kFHot-98d5e8d608515f1b\",\n  \"error\": {\n    \"message\": \"Unable to access model int",
+      "time": 0.3235611915588379,
+      "status_code": 404
+    },
+    "internlm/internlm-chat-20b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiJM-2kFHot-98d5e8d81942b461\",\n  \"error\": {\n    \"message\": \"Unable to access model int",
+      "time": 0.26276493072509766,
+      "status_code": 404
+    },
+    "Qwen/Qwen1.5-7B-Chat": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaiPY-2kFHot-98d5e8d9b8ae4599\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.32941508293151855,
+      "status_code": 400
+    },
+    "Qwen/Qwen1.5-14B-Chat": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaiUC-2kFHot-98d5e8dbcb621655\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2624971866607666,
+      "status_code": 400
+    },
+    "Qwen/Qwen1.5-72B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiZ3-2kFHot-98d5e8dd687494c6\",\n  \"error\": {\n    \"message\": \"Unable to access model Qwe",
+      "time": 0.26183080673217773,
+      "status_code": 404
+    },
+    "microsoft/DialoGPT-large": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaieR-2kFHot-98d5e8df4b2a718d\",\n  \"error\": {\n    \"message\": \"Unable to access model mic",
+      "time": 0.3203775882720947,
+      "status_code": 404
+    },
+    "microsoft/DialoGPT-small": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsairF-2kFHot-98d5e8e12f6e342f\",\n  \"error\": {\n    \"message\": \"Unable to access model mic",
+      "time": 0.7007122039794922,
+      "status_code": 404
+    },
+    "facebook/blenderbot-400M-distill": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiwn-2kFHot-98d5e8e58f0c7773\",\n  \"error\": {\n    \"message\": \"Unable to access model fac",
+      "time": 0.2943847179412842,
+      "status_code": 404
+    },
+    "EleutherAI/gpt-j-6b": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaj2A-2kFHot-98d5e8e75e07e3ca\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2619192600250244,
+      "status_code": 400
+    },
+    "EleutherAI/gpt-neox-20b": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaj6x-2kFHot-98d5e8e8ff579505\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2759859561920166,
+      "status_code": 400
+    },
+    "bigscience/bloom-7b1": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsajBp-2kFHot-98d5e8eac82cd745\",\n  \"error\": {\n    \"message\": \"Unable to access model big",
+      "time": 0.27628660202026367,
+      "status_code": 404
+    },
+    "bigscience/bloomz-7b1": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsajGK-2kFHot-98d5e8ec6e5dc028\",\n  \"error\": {\n    \"message\": \"Unable to access model big",
+      "time": 0.26437973976135254,
+      "status_code": 404
+    }
+  },
+  "discovery_tests": {
+    "mistralai/Mixtral-8x7B-Instruct-v0.1": {
+      "success": true,
+      "time": 2.154149055480957,
+      "tokens": 180,
+      "json_parseable": false,
+      "content_preview": " {\n  \"company\\_name\": \"Tech Giants Inc.\",\n  \"score\": 4.2,\n  \"confidence\": 0.9,\n  \"justification\": \"Tech Giants Inc. has shown strong financial perform...",
+      "status_code": 200
+    },
+    "meta-llama/Llama-3-70b-chat-hf": {
+      "success": true,
+      "time": 1.3486523628234863,
+      "tokens": 173,
+      "json_parseable": false,
+      "content_preview": "Here is a more detailed financial analysis in JSON format:\n\n```\n{\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justificatio...",
+      "status_code": 200
+    },
+    "Qwen/Qwen2-72B-Instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsacdV-2kFHot-98d5e860dd2a9497\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2694072723388672,
+      "status_code": 400
+    },
+    "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo": {
+      "success": true,
+      "time": 0.9413588047027588,
+      "tokens": 193,
+      "json_parseable": false,
+      "content_preview": "{\n  \"company_name\": \"ABC Inc.\",\n  \"score\": 7,\n  \"confidence\": 0.9,\n  \"justification\": \"ABC Inc. has demonstrated strong revenue growth over the past q...",
+      "status_code": 200
+    },
+    "deepseek-ai/deepseek-coder-33b-instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaczh-2kFHot-98d5e8687ef8ef09\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2894587516784668,
+      "status_code": 400
+    },
+    "meta-llama/Llama-3-8b-chat-hf": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsad5c-2kFHot-98d5e86a48a4ef56\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29869627952575684,
+      "status_code": 400
+    },
+    "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo": {
+      "success": true,
+      "time": 0.4629490375518799,
+      "tokens": 193,
+      "json_parseable": false,
+      "content_preview": "{\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"Brief test analysis\",\n  \"financial_indicators\": {\n    \"reve...",
+      "status_code": 200
+    },
+    "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": {
+      "success": true,
+      "time": 1.9999840259552002,
+      "tokens": 193,
+      "json_parseable": false,
+      "content_preview": "```\n{\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"Brief test analysis\",\n  \"financial_indicators\": {\n    \"...",
+      "status_code": 200
+    },
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "success": true,
+      "time": 0.8675048351287842,
+      "tokens": 185,
+      "json_parseable": false,
+      "content_preview": " {\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"The financial analysis of Test Company is based on a score...",
+      "status_code": 200
+    },
+    "google/gemma-2b-it": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaeDr-4pPsy7-98d5e881096c9cfb\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 1.0020341873168945,
+      "status_code": 400
+    },
+    "google/gemma-7b-it": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaeTZ-2kFHot-98d5e8873839beb5\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2911093235015869,
+      "status_code": 400
+    },
+    "Qwen/Qwen2-7B-Instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaeYR-2kFHot-98d5e8890a813c70\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2892336845397949,
+      "status_code": 400
+    },
+    "Qwen/Qwen2-1.5B-Instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaedA-2kFHot-98d5e88add494137\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.268740177154541,
+      "status_code": 400
+    },
+    "deepseek-ai/deepseek-coder-6.7b-instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaek1-2kFHot-98d5e88c8f0c46df\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.7922046184539795,
+      "status_code": 400
+    },
+    "codellama/CodeLlama-7b-Instruct-hf": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaewz-2kFHot-98d5e891790d6361\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29381728172302246,
+      "status_code": 400
+    },
+    "codellama/CodeLlama-13b-Instruct-hf": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaf2Q-2kFHot-98d5e8935a7ee20e\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2615649700164795,
+      "status_code": 400
+    },
+    "codellama/CodeLlama-34b-Instruct-hf": {
+      "success": false,
+      "error": "HTTP 503: {\n  \"id\": \"oEsaf7g-2kFHot-98d5e89508d8ed01\",\n  \"error\": {\n    \"message\": \"Service unavailable\",\n    ",
+      "time": 1.9499142169952393,
+      "status_code": 503
+    },
+    "togethercomputer/RedPajama-INCITE-7B-Chat": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsafhE-2kFHot-98d5e8a12ae2cd1e\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.3006477355957031,
+      "status_code": 400
+    },
+    "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsafnz-3NKUce-98d5e8a308356382\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.8144576549530029,
+      "status_code": 400
+    },
+    "NousResearch/Nous-Hermes-2-Yi-34B": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsag2Y-2kFHot-98d5e8a82ad9d8f8\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29825901985168457,
+      "status_code": 400
+    },
+    "teknium/OpenHermes-2.5-Mistral-7B": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsag7e-2kFHot-98d5e8aa1fa8ecdb\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.29073572158813477,
+      "status_code": 400
+    },
+    "mistralai/Mistral-7B-Instruct-v0.1": {
+      "success": true,
+      "time": 0.9311861991882324,
+      "tokens": 189,
+      "json_parseable": false,
+      "content_preview": " {\n  \"company_name\": \"Test Company\",\n  \"score\": 4,\n  \"confidence\": 0.8,\n  \"justification\": \"Based on the available data, the company appears to be per...",
+      "status_code": 200
+    },
+    "upstage/SOLAR-10.7B-Instruct-v1.0": {
+      "success": false,
+      "error": "HTTP 500: {\n  \"id\": \"oEsagfJ-57nCBj-98d5e8b1ace52532\",\n  \"error\": {\n    \"message\": \"Internal server error\",\n  ",
+      "time": 1.1708548069000244,
+      "status_code": 500
+    },
+    "garage-bAInd/Platypus2-70B-instruct": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsagpQ-2kFHot-98d5e8b91b47f422\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2639315128326416,
+      "status_code": 400
+    },
+    "openchat/openchat-3.5-1210": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsagzt-2kFHot-98d5e8ba9e9caff9\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.6326141357421875,
+      "status_code": 400
+    },
+    "Open-Orca/Mistral-7B-OpenOrca": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsah65-2kFHot-98d5e8be9c879483\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.28438854217529297,
+      "status_code": 400
+    },
+    "HuggingFaceH4/zephyr-7b-beta": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsahB1-2kFHot-98d5e8c06f9693de\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2797966003417969,
+      "status_code": 400
+    },
+    "moonshot-ai/moonshot-v1-8k": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahGQ-2kFHot-98d5e8c22bb0cd14\",\n  \"error\": {\n    \"message\": \"Unable to access model moo",
+      "time": 0.3129103183746338,
+      "status_code": 404
+    },
+    "moonshot-ai/moonshot-v1-32k": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahMm-2kFHot-98d5e8c4089bef54\",\n  \"error\": {\n    \"message\": \"Unable to access model moo",
+      "time": 0.2966494560241699,
+      "status_code": 404
+    },
+    "moonshot-ai/moonshot-v1-128k": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahSW-2kFHot-98d5e8c5e9a6cd7a\",\n  \"error\": {\n    \"message\": \"Unable to access model moo",
+      "time": 0.29892778396606445,
+      "status_code": 404
+    },
+    "THUDM/chatglm3-6b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahXR-2kFHot-98d5e8c7cff3652d\",\n  \"error\": {\n    \"message\": \"Unable to access model THU",
+      "time": 0.2635328769683838,
+      "status_code": 404
+    },
+    "THUDM/chatglm2-6b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahbg-2kFHot-98d5e8c97f1b9491\",\n  \"error\": {\n    \"message\": \"Unable to access model THU",
+      "time": 0.25659728050231934,
+      "status_code": 404
+    },
+    "baichuan-inc/Baichuan2-7B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahgc-2kFHot-98d5e8cb1d680ec9\",\n  \"error\": {\n    \"message\": \"Unable to access model bai",
+      "time": 0.274672269821167,
+      "status_code": 404
+    },
+    "baichuan-inc/Baichuan2-13B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahmH-2kFHot-98d5e8ccc9f1587a\",\n  \"error\": {\n    \"message\": \"Unable to access model bai",
+      "time": 0.28766489028930664,
+      "status_code": 404
+    },
+    "01-ai/Yi-34B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahrb-2kFHot-98d5e8ce8b21d874\",\n  \"error\": {\n    \"message\": \"Unable to access model 01-",
+      "time": 0.2907216548919678,
+      "status_code": 404
+    },
+    "01-ai/Yi-6B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsahw1-2kFHot-98d5e8d07bb99849\",\n  \"error\": {\n    \"message\": \"Unable to access model 01-",
+      "time": 0.26423048973083496,
+      "status_code": 404
+    },
+    "alibaba/Qwen-7B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsai2p-2kFHot-98d5e8d22a4063b3\",\n  \"error\": {\n    \"message\": \"Unable to access model ali",
+      "time": 0.3284122943878174,
+      "status_code": 404
+    },
+    "alibaba/Qwen-14B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsai88-2kFHot-98d5e8d43f236397\",\n  \"error\": {\n    \"message\": \"Unable to access model ali",
+      "time": 0.3130183219909668,
+      "status_code": 404
+    },
+    "internlm/internlm-chat-7b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiDP-2kFHot-98d5e8d608515f1b\",\n  \"error\": {\n    \"message\": \"Unable to access model int",
+      "time": 0.3235611915588379,
+      "status_code": 404
+    },
+    "internlm/internlm-chat-20b": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiJM-2kFHot-98d5e8d81942b461\",\n  \"error\": {\n    \"message\": \"Unable to access model int",
+      "time": 0.26276493072509766,
+      "status_code": 404
+    },
+    "Qwen/Qwen1.5-7B-Chat": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaiPY-2kFHot-98d5e8d9b8ae4599\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.32941508293151855,
+      "status_code": 400
+    },
+    "Qwen/Qwen1.5-14B-Chat": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaiUC-2kFHot-98d5e8dbcb621655\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2624971866607666,
+      "status_code": 400
+    },
+    "Qwen/Qwen1.5-72B-Chat": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiZ3-2kFHot-98d5e8dd687494c6\",\n  \"error\": {\n    \"message\": \"Unable to access model Qwe",
+      "time": 0.26183080673217773,
+      "status_code": 404
+    },
+    "microsoft/DialoGPT-large": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaieR-2kFHot-98d5e8df4b2a718d\",\n  \"error\": {\n    \"message\": \"Unable to access model mic",
+      "time": 0.3203775882720947,
+      "status_code": 404
+    },
+    "microsoft/DialoGPT-small": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsairF-2kFHot-98d5e8e12f6e342f\",\n  \"error\": {\n    \"message\": \"Unable to access model mic",
+      "time": 0.7007122039794922,
+      "status_code": 404
+    },
+    "facebook/blenderbot-400M-distill": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsaiwn-2kFHot-98d5e8e58f0c7773\",\n  \"error\": {\n    \"message\": \"Unable to access model fac",
+      "time": 0.2943847179412842,
+      "status_code": 404
+    },
+    "EleutherAI/gpt-j-6b": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaj2A-2kFHot-98d5e8e75e07e3ca\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2619192600250244,
+      "status_code": 400
+    },
+    "EleutherAI/gpt-neox-20b": {
+      "success": false,
+      "error": "HTTP 400: {\n  \"id\": \"oEsaj6x-2kFHot-98d5e8e8ff579505\",\n  \"error\": {\n    \"message\": \"Unable to access non-serve",
+      "time": 0.2759859561920166,
+      "status_code": 400
+    },
+    "bigscience/bloom-7b1": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsajBp-2kFHot-98d5e8eac82cd745\",\n  \"error\": {\n    \"message\": \"Unable to access model big",
+      "time": 0.27628660202026367,
+      "status_code": 404
+    },
+    "bigscience/bloomz-7b1": {
+      "success": false,
+      "error": "HTTP 404: {\n  \"id\": \"oEsajGK-2kFHot-98d5e8ec6e5dc028\",\n  \"error\": {\n    \"message\": \"Unable to access model big",
+      "time": 0.26437973976135254,
+      "status_code": 404
+    }
+  },
+  "timestamp": 1760264903.4911847,
+  "summary": {
+    "configured_working": [
+      "llama-3-70b",
+      "mixtral-8x7b",
+      "llama-3.1-70b",
+      "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "meta-llama/Llama-3-70b-chat-hf",
+      "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "mistralai/Mistral-7B-Instruct-v0.3",
+      "mistralai/Mistral-7B-Instruct-v0.1"
+    ],
+    "configured_failed": [
+      "qwen2-72b",
+      "deepseek-coder-33b",
+      "gpt-4o",
+      "gpt-4o-mini",
+      "Qwen/Qwen2-72B-Instruct",
+      "deepseek-ai/deepseek-coder-33b-instruct",
+      "meta-llama/Llama-3-8b-chat-hf",
+      "google/gemma-2b-it",
+      "google/gemma-7b-it",
+      "Qwen/Qwen2-7B-Instruct",
+      "Qwen/Qwen2-1.5B-Instruct",
+      "deepseek-ai/deepseek-coder-6.7b-instruct",
+      "codellama/CodeLlama-7b-Instruct-hf",
+      "codellama/CodeLlama-13b-Instruct-hf",
+      "codellama/CodeLlama-34b-Instruct-hf",
+      "togethercomputer/RedPajama-INCITE-7B-Chat",
+      "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO",
+      "NousResearch/Nous-Hermes-2-Yi-34B",
+      "teknium/OpenHermes-2.5-Mistral-7B",
+      "upstage/SOLAR-10.7B-Instruct-v1.0",
+      "garage-bAInd/Platypus2-70B-instruct",
+      "openchat/openchat-3.5-1210",
+      "Open-Orca/Mistral-7B-OpenOrca",
+      "HuggingFaceH4/zephyr-7b-beta",
+      "moonshot-ai/moonshot-v1-8k",
+      "moonshot-ai/moonshot-v1-32k",
+      "moonshot-ai/moonshot-v1-128k",
+      "THUDM/chatglm3-6b",
+      "THUDM/chatglm2-6b",
+      "baichuan-inc/Baichuan2-7B-Chat",
+      "baichuan-inc/Baichuan2-13B-Chat",
+      "01-ai/Yi-34B-Chat",
+      "01-ai/Yi-6B-Chat",
+      "alibaba/Qwen-7B-Chat",
+      "alibaba/Qwen-14B-Chat",
+      "internlm/internlm-chat-7b",
+      "internlm/internlm-chat-20b",
+      "Qwen/Qwen1.5-7B-Chat",
+      "Qwen/Qwen1.5-14B-Chat",
+      "Qwen/Qwen1.5-72B-Chat",
+      "microsoft/DialoGPT-large",
+      "microsoft/DialoGPT-small",
+      "facebook/blenderbot-400M-distill",
+      "EleutherAI/gpt-j-6b",
+      "EleutherAI/gpt-neox-20b",
+      "bigscience/bloom-7b1",
+      "bigscience/bloomz-7b1"
+    ],
+    "discovery_working": [
+      "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "meta-llama/Llama-3-70b-chat-hf",
+      "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "mistralai/Mistral-7B-Instruct-v0.3",
+      "mistralai/Mistral-7B-Instruct-v0.1"
+    ],
+    "discovery_failed": [
+      "Qwen/Qwen2-72B-Instruct",
+      "deepseek-ai/deepseek-coder-33b-instruct",
+      "meta-llama/Llama-3-8b-chat-hf",
+      "google/gemma-2b-it",
+      "google/gemma-7b-it",
+      "Qwen/Qwen2-7B-Instruct",
+      "Qwen/Qwen2-1.5B-Instruct",
+      "deepseek-ai/deepseek-coder-6.7b-instruct",
+      "codellama/CodeLlama-7b-Instruct-hf",
+      "codellama/CodeLlama-13b-Instruct-hf",
+      "codellama/CodeLlama-34b-Instruct-hf",
+      "togethercomputer/RedPajama-INCITE-7B-Chat",
+      "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO",
+      "NousResearch/Nous-Hermes-2-Yi-34B",
+      "teknium/OpenHermes-2.5-Mistral-7B",
+      "upstage/SOLAR-10.7B-Instruct-v1.0",
+      "garage-bAInd/Platypus2-70B-instruct",
+      "openchat/openchat-3.5-1210",
+      "Open-Orca/Mistral-7B-OpenOrca",
+      "HuggingFaceH4/zephyr-7b-beta",
+      "moonshot-ai/moonshot-v1-8k",
+      "moonshot-ai/moonshot-v1-32k",
+      "moonshot-ai/moonshot-v1-128k",
+      "THUDM/chatglm3-6b",
+      "THUDM/chatglm2-6b",
+      "baichuan-inc/Baichuan2-7B-Chat",
+      "baichuan-inc/Baichuan2-13B-Chat",
+      "01-ai/Yi-34B-Chat",
+      "01-ai/Yi-6B-Chat",
+      "alibaba/Qwen-7B-Chat",
+      "alibaba/Qwen-14B-Chat",
+      "internlm/internlm-chat-7b",
+      "internlm/internlm-chat-20b",
+      "Qwen/Qwen1.5-7B-Chat",
+      "Qwen/Qwen1.5-14B-Chat",
+      "Qwen/Qwen1.5-72B-Chat",
+      "microsoft/DialoGPT-large",
+      "microsoft/DialoGPT-small",
+      "facebook/blenderbot-400M-distill",
+      "EleutherAI/gpt-j-6b",
+      "EleutherAI/gpt-neox-20b",
+      "bigscience/bloom-7b1",
+      "bigscience/bloomz-7b1"
+    ],
+    "total_tested": 107,
+    "total_working": 10
+  }
+}

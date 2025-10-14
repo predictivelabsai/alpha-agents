@@ -1,0 +1,10 @@
+Requirement already satisfied: plotly in c:\users\chenhao xue\appdata\roaming\python\python39\site-packages (6.0.1)
+Collecting plotly
+  Downloading plotly-6.3.1-py3-none-any.whl (9.8 MB)
+Requirement already satisfied: packaging in c:\py\anaconda3\lib\site-packages (from plotly) (25.0)
+Requirement already satisfied: narwhals>=1.15.1 in c:\users\chenhao xue\appdata\roaming\python\python39\site-packages (from plotly) (1.32.0)
+Installing collected packages: plotly
+  Attempting uninstall: plotly
+    Found existing installation: plotly 6.0.1
+    Uninstalling plotly-6.0.1:
+      Successfully uninstalled plotly-6.0.1

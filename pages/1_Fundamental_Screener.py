@@ -2,13 +2,26 @@
 
 import math
 import io
+import sys
+from pathlib import Path
 from typing import Dict
 import pandas as pd  # type: ignore
 
 import streamlit as st  # type: ignore
 
-from utils.stock_screener import StockScreener
-from utils.db_util import save_fundamental_screen
+# Add main repo utils to path for Fundamental Screener
+main_repo_path = Path(__file__).parent.parent
+sys.path.insert(0, str(main_repo_path))
+
+try:
+    from utils.stock_screener import StockScreener
+    from utils.db_util import save_fundamental_screen
+except ImportError as e:
+    st.error(f"❌ Failed to import Fundamental Screener modules: {e}")
+    st.error(f"🔍 Main repo path: {main_repo_path}")
+    st.error(f"🔍 Looking for: {main_repo_path / 'utils' / 'stock_screener.py'}")
+    st.error(f"🔍 File exists: {(main_repo_path / 'utils' / 'stock_screener.py').exists()}")
+    st.stop()
 
 SECTORS = sorted(StockScreener.SECTORS)
 INDUSTRIES = sorted(StockScreener.INDUSTRIES)

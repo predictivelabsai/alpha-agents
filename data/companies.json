@@ -1,0 +1,17 @@
+[
+  {
+    "company_name": "TSLA Inc.",
+    "ticker": "TSLA",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "TSLA - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "4fb143cb-723d-45dc-87ad-c5b49064d07d",
+    "created_at": "2025-10-13T13:46:28.823739",
+    "updated_at": "2025-10-13T13:46:28.823739"
+  }
+]

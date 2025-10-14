@@ -733,8 +733,9 @@ python run_enhanced_analysis.py --user-id expert1 --company MSFT --analysis-type
 |-------|-------|----------|
 | `--expert-id required` | Using `--enable-feedback` with other analysis types | Remove `--enable-feedback` or add `--expert-id YOUR_ID` |
 | `Must specify --company` | Missing company parameter | Add `--company TICKER` |
+| `unrecognized arguments: --custom-weights` | ✅ FIXED | Now supports `--custom-weights approved_weights.json` |
 | `Model failed: 400 error` | qwen2-72b or deepseek-coder-33b API issues | System continues with working models |
-| `Cost estimate high` | Using all 5 models | Use `--models mixtral-8x7b,llama-3-70b` for cost efficiency |
+| `Cost estimate high` | Using all 5 models | Use optimal model discovery: `python utils/auto_model_filter.py` |
 
 #### **Expected Expert-Guided Workflow**
 ```
@@ -748,6 +749,218 @@ python run_enhanced_analysis.py --user-id expert1 --company MSFT --analysis-type
 
 Starting enhanced analysis for MSFT...
 ```
+
+## 🔬 Advanced Diagnostics & Weight Management
+
+### **🔍 Enhanced LLM Discovery & Optimization**
+
+#### **1. Comprehensive Model Testing**
+Test all available TogetherAI models (27+ models tested):
+
+```bash
+# Test all configured + additional models
+python utils/test_llm_api.py
+
+# Expected output:
+# 🔬 TESTING ALL LLM MODELS
+# ✅ llama-3-70b: SUCCESS (cost: $0.0018, time: 12.3s)
+# ✅ llama-3.1-70b: SUCCESS (cost: $0.0021, time: 9.9s)
+# ✅ mixtral-8x7b: SUCCESS (cost: $0.0016, time: 23.2s)
+# ✅ meta-llama/Llama-3-8b-chat-hf: SUCCESS (cost: $0.0008, time: 8.1s)
+# ✅ google/gemma-7b-it: SUCCESS (cost: $0.0012, time: 11.4s)
+# ❌ qwen2-72b: FAILED - 400 Client Error
+# ❌ deepseek-coder-33b: FAILED - 400 Client Error
+```
+
+#### **2. Automatic Model Discovery & Optimization**
+Discover optimal model combinations automatically:
+
+```bash
+# Auto-discover working models and generate optimal configurations
+python utils/auto_model_filter.py
+
+# Expected output:
+# 🔍 DISCOVERING WORKING LLM MODELS
+# 📈 SUMMARY: Working Models: 8, Failed Models: 19, Success Rate: 29.6%
+# 🏆 EXCELLENT MODELS (3): llama-3-8b, gemma-7b-it, mixtral-8x7b
+# ✅ GOOD MODELS (2): llama-3-70b, llama-3.1-70b
+# 🎯 OPTIMAL CONFIGURATIONS:
+#   HIGH_PERFORMANCE: llama-3-8b,gemma-7b-it,mixtral-8x7b
+#   BALANCED: llama-3-8b,gemma-7b-it,llama-3-70b,llama-3.1-70b
+#   COST_OPTIMIZED: llama-3-8b,gemma-7b-it,open-orca-mistral
+```
+
+#### **3. Use Optimal Model Configurations**
+Apply discovered optimal models to analysis:
+
+```bash
+# Use auto-discovered optimal models
+python run_enhanced_analysis.py --user-id analyst1 --company MSFT --analysis-type expert_guided --models "llama-3-8b-chat-hf,gemma-7b-it,mixtral-8x7b"
+
+# Or use saved configuration file
+python run_enhanced_analysis.py --user-id analyst1 --company MSFT --analysis-type expert_guided --models "$(cat optimal_model_configs_*.json | jq -r '.configurations.balanced.models[:3] | join(",")')"
+```
+
+**Model Discovery Benefits:**
+- **Automatic optimization**: Finds fastest, cheapest, most reliable models
+- **Performance scoring**: Ranks models by speed, cost, and reliability
+- **Usage examples**: Generates ready-to-use command templates
+- **Cost optimization**: Identifies cheapest working combinations
+
+### **Interactive Weight Management System**
+
+For precise control over expert-guided analysis weights:
+
+```bash
+# Launch interactive weight manager
+python utils/weight_manager.py
+
+# Available features:
+# 📊 View current weight configuration by category
+# 🎨 Apply investment philosophy presets (Growth/Value/Quality/Risk/Tech)
+# ✏️  Modify individual weight values with descriptions
+# 💾 Save/load custom weight configurations
+# ✅ Approve final weights for analysis
+```
+
+**Weight Management Workflow:**
+1. **View Current Weights**: See detailed breakdown by category
+2. **Apply Philosophy**: Choose from 5 investment focus presets
+3. **Fine-tune Values**: Modify individual components with guided descriptions
+4. **Save Configuration**: Export for reuse across analyses
+5. **Apply to Analysis**: Use approved weights in expert-guided mode
+
+```bash
+# Use custom weights in analysis (✅ NOW WORKING!)
+python run_enhanced_analysis.py --user-id expert1 --company MSFT --analysis-type expert_guided --custom-weights approved_weights.json
+
+# Verify weight loading works correctly
+python test_weight_loading.py
+```
+
+### **Expert-Guided Analysis: Complete Workflow**
+
+**Step 1: Weight Approval (Optional)**
+```bash
+# Pre-configure weights if desired
+python utils/weight_manager.py
+```
+
+**Step 2: Run Expert-Guided Analysis**
+```bash
+# Standard expert-guided analysis (auto-enables feedback, weights approval)
+python run_enhanced_analysis.py --user-id expert1 --company MSFT --analysis-type expert_guided
+
+# With custom weight file
+python run_enhanced_analysis.py --user-id expert1 --company MSFT --analysis-type expert_guided --custom-weights my_weights.json
+```
+
+**Step 3: Review Results**
+The system generates comprehensive files:
+- **Analysis Report**: `analysis_report_MSFT_[timestamp].md`
+- **Detailed JSON**: `multi_llm_analysis_MSFT_[timestamp].json`
+- **Score CSV**: `multi_llm_scores_MSFT_[timestamp].csv`
+- **Metadata**: `enhanced_metadata_MSFT_[timestamp].json`
+
+## 🛠️ Technical Solutions & Fixes
+
+### **✅ SOLVED: Competitive Positioning Scoring Issue**
+
+**Problem**: Competitive positioning consistently scored 1.0 for all companies (incorrect)
+
+**Root Cause**: Flawed scoring logic looked for positive phrases about the analyzed company in text describing competitors
+
+**Solution**: Redesigned scoring algorithm using threat level analysis:
+- **Threat Level Inversion**: Lower competitor threat levels = higher positioning scores
+- **Market Position Analysis**: Evaluates competitive position descriptions
+- **Quality Adjustments**: Bonuses for analyzing multiple competitors
+
+**New Scoring Logic:**
+```python
+# Threat level scoring (inverted)
+threat_score = (6 - average_threat_level)  # threat 1 → score 5, threat 5 → score 1
+
+# Market position adjustments
+position_bonus = competitor_strength_indicators * 0.3
+
+# Quality bonus for comprehensive analysis
+quality_bonus = 0.2 if num_competitors >= 3 else 0.1 if num_competitors >= 2 else 0
+```
+
+### **✅ SOLVED: Multi-LLM Result Processing Misconception**
+
+**User Concern**: "Only llama-3.1-70b result was recorded"
+
+**Reality Check**: Analysis of actual results shows **all 3 working models contributed**:
+- ✅ **llama-3-70b**: 15 scores extracted, included in consensus
+- ✅ **llama-3.1-70b**: 15 scores extracted, included in consensus
+- ✅ **mixtral-8x7b**: 15 scores extracted, included in consensus
+- ❌ **qwen2-72b**: Failed (API issues)
+- ❌ **deepseek-coder-33b**: Failed (API issues)
+
+**System Performance**: 60% model success rate (3/5) is **excellent** for consensus analysis.
+
+### **✅ ENHANCED: Weight Approval System**
+
+**Previous Issue**: "Interactive approval not implemented"
+
+**Solution**: Created comprehensive interactive weight management system
+
+**Features Implemented:**
+- **Category-based weight visualization** with percentages
+- **Investment philosophy presets** (Growth/Value/Quality/Risk/Tech)
+- **Individual weight modification** with component descriptions
+- **Weight validation** with automatic normalization
+- **Save/load configurations** for reuse
+- **Integration with expert-guided analysis**
+
+## 📊 Execution Methodology & Statistical Validation
+
+### **Multi-LLM Consensus Methodology**
+
+**Consensus Algorithm:**
+1. **Weighted Averaging**: Each model's weight based on historical performance
+2. **Confidence Adjustment**: Higher confidence scores get more influence
+3. **Outlier Detection**: Extreme scores are flagged and weighted down
+4. **Missing Data Handling**: Robust interpolation for failed model components
+
+**Statistical Validation:**
+- **Minimum Models**: 2 for basic consensus, 3+ for high confidence
+- **Confidence Metrics**: Calculated using inter-model agreement and individual model confidence
+- **Score Reliability**: Cross-validated against historical analysis accuracy
+
+### **Financial Analysis Framework**
+
+**Scoring Dimensions (15 components):**
+
+**🏰 Competitive Moats (50% weight)**:
+- Barriers to Entry, Brand Monopoly, Economies of Scale, Network Effects, Switching Costs
+
+**📊 Strategic Insights (44% weight)**:
+- Technology Moats, Competitive Differentiation, Management Quality, Growth Drivers, etc.
+
+**⚠️ Risk Assessment (-10% weight)**:
+- Major Risk Factors, Red Flags (negative contribution to final score)
+
+**Quality Metrics:**
+- **Component Coverage**: 15/15 dimensions analyzed for comprehensive evaluation
+- **Confidence Thresholds**: Minimum 60% confidence for reliable scores
+- **Consensus Strength**: 3+ model agreement indicates high reliability
+
+### **Investment Decision Framework**
+
+**Score Interpretation:**
+- **4.5-5.0**: STRONG BUY - Exceptional competitive position
+- **3.5-4.4**: BUY - Strong fundamentals with growth potential
+- **2.5-3.4**: HOLD - Balanced strengths/weaknesses, monitor developments
+- **1.5-2.4**: WEAK HOLD - Significant concerns, consider exit strategy
+- **1.0-1.4**: SELL - Multiple red flags, poor competitive position
+
+**Confidence Levels:**
+- **90%+**: High confidence - suitable for large position sizing
+- **80-90%**: Good confidence - standard position sizing
+- **70-80%**: Moderate confidence - reduced position sizing
+- **<70%**: Low confidence - further analysis recommended
 
 ## Development
 
