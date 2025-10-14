@@ -1,20 +1,20 @@
 {
-  "timestamp": 1760399773.8543682,
+  "timestamp": 1760462590.3685622,
   "approved_by": "streamlit_user",
   "weights": {
-    "barriers_to_entry": 0.12820512820512817,
-    "brand_monopoly": 0.06410256410256408,
-    "economies_of_scale": 0.06410256410256408,
-    "network_effects": 0.12820512820512817,
-    "switching_costs": 0.06410256410256408,
-    "competitive_differentiation": 0.0769230769230769,
-    "technology_moats": 0.19230769230769226,
-    "market_timing": 0.03846153846153845,
-    "management_quality": 0.03205128205128204,
-    "key_growth_drivers": 0.03205128205128204,
-    "transformation_potential": 0.09615384615384613,
-    "platform_expansion": 0.09615384615384613,
-    "major_risk_factors": -0.009615384615384612,
-    "red_flags": -0.003205128205128204
+    "barriers_to_entry": 0.17857142857142858,
+    "brand_monopoly": 0.11904761904761905,
+    "economies_of_scale": 0.11904761904761905,
+    "network_effects": 0.11904761904761905,
+    "switching_costs": 0.11904761904761905,
+    "competitive_differentiation": 0.09523809523809523,
+    "technology_moats": 0.09523809523809523,
+    "market_timing": 0.07142857142857142,
+    "management_quality": 0.05952380952380953,
+    "key_growth_drivers": 0.05952380952380953,
+    "transformation_potential": 0.047619047619047616,
+    "platform_expansion": 0.03571428571428571,
+    "major_risk_factors": -0.07142857142857142,
+    "red_flags": -0.047619047619047616
   }
 }

@@ -1,0 +1,46 @@
+{
+  "analysis_config": {
+    "user_id": "chenHX",
+    "company_ticker": "SQNS",
+    "analysis_type": "expert_guided",
+    "models_to_use": [
+      "mixtral-8x7b",
+      "llama-3.1-70b",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+    ],
+    "focus_themes": null,
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "enable_weight_approval": true,
+    "enable_human_feedback": true,
+    "max_concurrent_models": 3,
+    "custom_weights": {
+      "brand_monopoly": 0.19700551615445233,
+      "barriers_to_entry": 0.19621749408983452,
+      "economies_of_scale": 0.1576044129235619,
+      "network_effects": 0.07880220646178095,
+      "switching_costs": 0.1182033096926714,
+      "competitive_differentiation": 0.03940110323089047,
+      "market_timing": 0.04728132387706856,
+      "management_quality": 0.02364066193853428,
+      "technology_moats": 0.06304176516942475,
+      "key_growth_drivers": 0.03940110323089047,
+      "transformation_potential": 0.031520882584712376,
+      "platform_expansion": 0.02364066193853428,
+      "major_risk_factors": -0.01182033096926714,
+      "red_flags": -0.003940110323089047
+    },
+    "expert_id": "chenHX"
+  },
+  "weight_approval_session": null,
+  "execution_summary": {
+    "total_models_used": 2,
+    "successful_models": 2,
+    "best_model": "llama-3.1-70b",
+    "composite_score": 2.3131074336748103,
+    "confidence": 0.7216666666666667
+  }
+}
