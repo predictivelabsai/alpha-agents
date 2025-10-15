@@ -21,6 +21,126 @@ import base64
 qual_agent_path = Path(__file__).parent.parent / "agents" / "QualAgent"
 sys.path.insert(0, str(qual_agent_path))
 
+# Database utility functions (copied from utils/db_util.py to avoid import issues)
+def get_database_engine():
+    """Get database engine - direct implementation to avoid import issues"""
+    import os
+    from sqlalchemy import create_engine
+    from dotenv import load_dotenv
+    
+    # Load environment variables
+    load_dotenv()
+    
+    db_url = os.getenv("DATABASE_URL")
+    if not db_url:
+        raise ValueError("DATABASE_URL environment variable must be set for PostgreSQL connection")
+    return create_engine(db_url)
+
+def load_fundamental_screen_postgresql(run_id=None, limit=None, industry_filter=None, sector_filter=None, min_score=None):
+    """Load screening results from PostgreSQL database with enhanced filtering"""
+    try:
+        from sqlalchemy import text
+        import pandas as pd
+        
+        engine = get_database_engine()
+        
+        # Check if table exists first
+        try:
+            table_check = "SELECT COUNT(*) as count FROM fundamental_screen LIMIT 1"
+            count_result = pd.read_sql_query(text(table_check), engine)
+            if count_result.empty or count_result.iloc[0]['count'] == 0:
+                st.warning("No data found in fundamental_screen table")
+                return pd.DataFrame()
+        except Exception as e:
+            st.error(f"Table access error: {e}")
+            return pd.DataFrame()
+        
+        # Build dynamic query with proper SQLAlchemy parameters
+        query = "SELECT * FROM fundamental_screen WHERE 1=1"
+        params = {}
+        
+        if run_id:
+            query += " AND run_id = :run_id"
+            params['run_id'] = run_id
+        
+        if industry_filter:
+            query += " AND industry ILIKE :industry_filter"
+            params['industry_filter'] = f"%{industry_filter}%"
+        
+        if sector_filter:
+            query += " AND sector ILIKE :sector_filter"
+            params['sector_filter'] = f"%{sector_filter}%"
+        
+        if min_score is not None:
+            query += " AND score >= :min_score"
+            params['min_score'] = min_score
+        
+        query += " ORDER BY created_at DESC, score DESC"
+        
+        if limit:
+            query += " LIMIT :limit"
+            params['limit'] = limit
+        
+        # Execute query with proper parameter handling
+        if params:
+            df = pd.read_sql_query(text(query), engine, params=params)
+        else:
+            df = pd.read_sql_query(text(query), engine)
+        
+        # Debug: Check if we got data
+        if df.empty:
+            st.warning("No data found in database")
+            return pd.DataFrame()
+        
+        return df
+    except Exception as e:
+        st.error(f"Database load error: {e}")
+        return pd.DataFrame()
+
+def get_database_filters():
+    """Get available filter options from database"""
+    try:
+        from sqlalchemy import text
+        
+        engine = get_database_engine()
+        
+        # Check if table exists first
+        table_check_query = "SELECT COUNT(*) as count FROM fundamental_screen LIMIT 1"
+        try:
+            count_df = pd.read_sql_query(text(table_check_query), engine)
+            if count_df.empty or count_df.iloc[0]['count'] == 0:
+                return {'industries': [], 'sectors': [], 'runs': []}
+        except Exception:
+            return {'industries': [], 'sectors': [], 'runs': []}
+        
+        # Get unique industries
+        industries_query = "SELECT DISTINCT industry FROM fundamental_screen WHERE industry IS NOT NULL ORDER BY industry"
+        industries_df = pd.read_sql_query(text(industries_query), engine)
+        industries = industries_df['industry'].tolist() if not industries_df.empty else []
+        
+        # Get unique sectors
+        sectors_query = "SELECT DISTINCT sector FROM fundamental_screen WHERE sector IS NOT NULL ORDER BY sector"
+        sectors_df = pd.read_sql_query(text(sectors_query), engine)
+        sectors = sectors_df['sector'].tolist() if not sectors_df.empty else []
+        
+        # Get unique run_ids
+        runs_query = "SELECT DISTINCT run_id, created_at FROM fundamental_screen ORDER BY created_at DESC LIMIT 10"
+        runs_df = pd.read_sql_query(text(runs_query), engine)
+        runs = runs_df['run_id'].tolist() if not runs_df.empty else []
+        
+        return {
+            'industries': industries,
+            'sectors': sectors,
+            'runs': runs
+        }
+    except Exception as e:
+        st.warning(f"Could not load filter options: {e}")
+        return {
+            'industries': [],
+            'sectors': [],
+            'runs': []
+        }
+
 # Initialize variables for imports
 LLMAPITester = None
 InteractiveWeightManager = None
@@ -545,68 +665,342 @@ def data_input_section():
     """Data input section with file upload and database options"""
     st.header("📁 Data Input")
 
-    col1, col2 = st.columns([1, 1])
+    # Data source selection
+    st.subheader("📊 Data Source")
+    data_source = st.radio(
+        "Load Companies",
+        ["From Screener", "From Database", "Upload CSV", "Manual Input"],
+        horizontal=True
+    )
 
-    with col1:
-        st.subheader("Option 1: Upload File")
+    companies_to_analyze = []
 
-        uploaded_file = st.file_uploader(
-            "Choose a CSV or Excel file containing company data",
-            type=['csv', 'xlsx', 'xls'],
-            help="File should contain columns: ticker (required), company_name (optional), sector (optional), industry (optional)"
-        )
-
-        if uploaded_file is not None:
+    if data_source == "From Screener":
+        if "screener_results" in st.session_state and not st.session_state["screener_results"].empty:
+            df = st.session_state["screener_results"]
+            st.success(f"✅ Found {len(df)} companies from screener results")
+            
+            # Show companies with better column handling
+            st.subheader("📋 Companies from Screener")
+            
+            # Determine display columns
+            display_cols = []
+            if 'ticker' in df.columns:
+                display_cols.append('ticker')
+            if 'company_name' in df.columns:
+                display_cols.append('company_name')
+            elif 'name' in df.columns:
+                display_cols.append('name')
+            if 'sector' in df.columns:
+                display_cols.append('sector')
+            if 'score' in df.columns:
+                display_cols.append('score')
+            
+            if display_cols:
+                st.dataframe(df[display_cols], width='stretch')
+            else:
+                st.dataframe(df.head(), width='stretch')
+            
+            # Select companies with better ticker handling
+            ticker_col = None
+            if 'ticker' in df.columns:
+                ticker_col = 'ticker'
+            elif 'index' in df.columns:
+                ticker_col = 'index'
+            elif df.index.name == 'ticker':
+                ticker_col = 'index'
+            
+            if ticker_col:
+                st.subheader("🎯 Company Selection")
+                
+                # Quick selection buttons
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    select_all = st.button("✅ Select All", key="screener_select_all")
+                with col2:
+                    select_top = st.button("🏆 Select Top 5", key="screener_select_top")
+                with col3:
+                    select_none = st.button("❌ Select None", key="screener_select_none")
+                
+                # Handle selection buttons
+                if select_all:
+                    st.session_state['screener_selected_tickers'] = df[ticker_col].tolist()
+                elif select_top:
+                    st.session_state['screener_selected_tickers'] = df[ticker_col].tolist()[:5]
+                elif select_none:
+                    st.session_state['screener_selected_tickers'] = []
+                
+                # Multiselect with session state
+                default_selection = st.session_state.get('screener_selected_tickers', df[ticker_col].tolist()[:3])
+                selected_tickers = st.multiselect(
+                    "Select companies to analyze",
+                    df[ticker_col].tolist(),
+                    default=default_selection,
+                    key="screener_company_selection"
+                )
+                companies_to_analyze = selected_tickers
+                
+                # Show selection summary
+                if companies_to_analyze:
+                    st.success(f"✅ Selected {len(companies_to_analyze)} companies for analysis")
+                    st.write("Selected companies:", ", ".join(companies_to_analyze))
+                else:
+                    st.warning("⚠️ No companies selected")
+            else:
+                st.error("❌ No ticker column found in screener results")
+                st.info("Available columns:", list(df.columns))
+        else:
+            st.warning("No screener results available. Run the Fundamental Screener first!")
+    
+    elif data_source == "From Database":
+        st.subheader("🗄️ Load from PostgreSQL Database")
+        
+        # Test database connection first
+        try:
+            from sqlalchemy import text
+            
+            engine = get_database_engine()
+            
+            # Test connection with better error handling
+            with engine.connect() as conn:
+                result = conn.execute(text("SELECT 1 as test"))
+                test_value = result.fetchone()[0]
+            
+            st.success("✅ Database connection successful!")
+            
+            # Test if fundamental_screen table exists and has data
             try:
-                if uploaded_file.name.endswith('.csv'):
-                    df = pd.read_csv(uploaded_file)
+                test_query = "SELECT COUNT(*) as count FROM fundamental_screen LIMIT 1"
+                test_result = pd.read_sql_query(test_query, engine)
+                if test_result.empty or test_result.iloc[0]['count'] == 0:
+                    st.warning("⚠️ No data found in fundamental_screen table")
+                    st.info("💡 Run the Fundamental Screener first to populate the database")
+                    st.stop()
                 else:
-                    df = pd.read_excel(uploaded_file)
-
-                # Validate required columns
-                if 'ticker' not in df.columns:
-                    st.error("❌ File must contain a 'ticker' column")
-                else:
-                    st.success(f"✅ Successfully loaded {len(df)} companies")
-                    st.session_state.uploaded_companies = df
-
-                    # Display preview
-                    st.subheader("Data Preview")
-                    st.dataframe(df.head(10), use_container_width=True)
-
-                    # Show column info
-                    st.info(f"**Columns detected**: {', '.join(df.columns.tolist())}")
-
+                    st.success(f"✅ Found {test_result.iloc[0]['count']} companies in database")
             except Exception as e:
-                st.error(f"❌ Error reading file: {str(e)}")
+                st.error(f"❌ Table access error: {e}")
+                st.info("💡 The fundamental_screen table may not exist. Run the screener first.")
+                st.stop()
+            
+            # Only Pre-built Queries mode
+            query_mode = "📊 Pre-built Queries"
+            
+        except Exception as e:
+            st.error(f"❌ Database connection failed: {str(e)}")
+            st.info("💡 Please check your DATABASE_URL in .env file")
+            st.stop()
+        
+        if query_mode == "📊 Pre-built Queries":
+            st.subheader("📊 Company Selection from Database")
+            
+            # Load all companies from database
+            with st.spinner("Loading all companies from database..."):
+                try:
+                    # Load all companies without limit
+                    simple_query = "SELECT * FROM fundamental_screen ORDER BY created_at DESC, score DESC"
+                    all_companies = pd.read_sql_query(simple_query, engine)
+                except Exception as e:
+                    st.error(f"Direct query failed: {e}")
+                    # Fallback to the function
+                    all_companies = load_fundamental_screen_postgresql()
+            
+            if not all_companies.empty:
+                st.success(f"✅ Loaded {len(all_companies)} companies from database")
+                
+                # Add filtering options
+                st.subheader("🔍 Filter Companies")
+                col1, col2, col3 = st.columns(3)
+                
+                with col1:
+                    # Sector filter
+                    if 'sector' in all_companies.columns:
+                        unique_sectors = ['All Sectors'] + sorted(all_companies['sector'].dropna().unique().tolist())
+                        selected_sector = st.selectbox("Filter by Sector", unique_sectors)
+                        sector_filter = None if selected_sector == "All Sectors" else selected_sector
+                    else:
+                        sector_filter = None
+                        st.info("No sector column found")
+                
+                with col2:
+                    # Industry filter
+                    if 'industry' in all_companies.columns:
+                        unique_industries = ['All Industries'] + sorted(all_companies['industry'].dropna().unique().tolist())
+                        selected_industry = st.selectbox("Filter by Industry", unique_industries)
+                        industry_filter = None if selected_industry == "All Industries" else selected_industry
+                    else:
+                        industry_filter = None
+                        st.info("No industry column found")
+                
+                with col3:
+                    # Score filter
+                    if 'score' in all_companies.columns:
+                        min_score = st.number_input(
+                            "Minimum Score", 
+                            min_value=0.0, 
+                            max_value=100.0, 
+                            value=0.0, 
+                            step=1.0,
+                            help="Filter companies with score above this value"
+                        )
+                        score_filter = min_score if min_score > 0 else None
+                    else:
+                        score_filter = None
+                        st.info("No score column found")
+                
+                # Apply filters
+                filtered_companies = all_companies.copy()
+                if sector_filter:
+                    filtered_companies = filtered_companies[filtered_companies['sector'] == sector_filter]
+                if industry_filter:
+                    filtered_companies = filtered_companies[filtered_companies['industry'] == industry_filter]
+                if score_filter:
+                    filtered_companies = filtered_companies[filtered_companies['score'] >= score_filter]
+                
+                st.info(f"📊 Showing {len(filtered_companies)} companies after filtering (from {len(all_companies)} total)")
+                
+                # Show filtered companies
+                st.subheader("📊 Filtered Companies")
+                
+                # Display columns with better formatting
+                display_cols = []
+                if 'ticker' in filtered_companies.columns:
+                    display_cols.append('ticker')
+                if 'company_name' in filtered_companies.columns:
+                    display_cols.append('company_name')
+                if 'sector' in filtered_companies.columns:
+                    display_cols.append('sector')
+                if 'industry' in filtered_companies.columns:
+                    display_cols.append('industry')
+                if 'score' in filtered_companies.columns:
+                    display_cols.append('score')
+                if 'market_cap' in filtered_companies.columns:
+                    display_cols.append('market_cap')
+                
+                if display_cols:
+                    # Format the dataframe for better display
+                    display_df = filtered_companies[display_cols].copy()
+                    if 'score' in display_df.columns:
+                        display_df['score'] = display_df['score'].round(2)
+                    if 'market_cap' in display_df.columns:
+                        display_df['market_cap'] = display_df['market_cap'].apply(lambda x: f"${x/1e9:.1f}B" if pd.notna(x) and x > 0 else "N/A")
+                    
+                    st.dataframe(display_df, width='stretch')
+                else:
+                    st.dataframe(filtered_companies, width='content')
+                
+                # Direct company selection - using working approach from alpha_agents_fixed.py
+                if 'ticker' in filtered_companies.columns:
+                    st.subheader("🎯 Select Companies for Analysis")
+                    
+                    # Quick selection buttons
+                    col1, col2, col3, col4 = st.columns(4)
+                    with col1:
+                        select_all = st.button("✅ Select All", key="direct_select_all")
+                    with col2:
+                        select_top5 = st.button("🏆 Select Top 5", key="direct_select_top5")
+                    with col3:
+                        select_top10 = st.button("🥇 Select Top 10", key="direct_select_top10")
+                    with col4:
+                        select_none = st.button("❌ Select None", key="direct_select_none")
+                    
+                    # Handle selection buttons - using working approach
+                    if select_all:
+                        st.session_state['direct_selected_tickers'] = filtered_companies['ticker'].tolist()
+                    elif select_top5:
+                        st.session_state['direct_selected_tickers'] = filtered_companies['ticker'].tolist()[:5]
+                    elif select_top10:
+                        st.session_state['direct_selected_tickers'] = filtered_companies['ticker'].tolist()[:10]
+                    elif select_none:
+                        st.session_state['direct_selected_tickers'] = []
+                    
+                    # Multiselect with better default - using working approach
+                    default_selection = st.session_state.get('direct_selected_tickers', filtered_companies['ticker'].tolist()[:3])
+                    selected_tickers = st.multiselect(
+                        "Select companies to analyze",
+                        filtered_companies['ticker'].tolist(),
+                        default=default_selection,
+                        key="direct_company_selection",
+                        help="Choose companies for QualAgent analysis"
+                    )
+                    companies_to_analyze = selected_tickers
+                    
+                    # Show selection summary with company details
+                    if companies_to_analyze:
+                        st.success(f"✅ Selected {len(companies_to_analyze)} companies for analysis")
+                        
+                        # Show selected companies with their details
+                        selected_df = filtered_companies[filtered_companies['ticker'].isin(companies_to_analyze)]
+                        if not selected_df.empty:
+                            st.subheader("📋 Selected Companies Details")
+                            detail_cols = ['ticker']
+                            if 'company_name' in selected_df.columns:
+                                detail_cols.append('company_name')
+                            if 'sector' in selected_df.columns:
+                                detail_cols.append('sector')
+                            if 'score' in selected_df.columns:
+                                detail_cols.append('score')
+                            
+                            detail_df = selected_df[detail_cols].copy()
+                            if 'score' in detail_df.columns:
+                                detail_df['score'] = detail_df['score'].round(2)
+                            
+                            st.dataframe(detail_df, width='stretch')
+                        
+                        # Store selected companies for analysis
+                        st.session_state["companies_to_analyze"] = companies_to_analyze
+                        st.session_state["analysis_data_source"] = "database"
+                        st.session_state["analysis_data"] = filtered_companies
+                        
+                        st.success("🎯 Companies ready for QualAgent analysis! Go to 'Run Analysis' tab to start.")
+                    else:
+                        st.warning("⚠️ No companies selected")
+                else:
+                    st.error("❌ No 'ticker' column found in database")
+            else:
+                st.warning("⚠️ No companies found in database")
+                st.info("💡 Run the Fundamental Screener first to populate the database")
+        
+    
+    elif data_source == "Upload CSV":
+        uploaded_file = st.file_uploader("Upload CSV file", type=['csv'])
+        if uploaded_file is not None:
+            df = pd.read_csv(uploaded_file)
+            st.subheader("📋 Uploaded Data")
+            st.dataframe(df.head(), width='stretch')
+            
+            if 'ticker' in df.columns:
+                selected_tickers = st.multiselect(
+                    "Select companies to analyze",
+                    df['ticker'].tolist(),
+                    default=df['ticker'].tolist()[:3]
+                )
+                companies_to_analyze = selected_tickers
+            else:
+                st.error("CSV file must contain a 'ticker' column")
+    
+    elif data_source == "Manual Input":
+        st.subheader("📝 Manual Company Input")
+        manual_tickers = st.text_area(
+            "Enter ticker symbols (one per line)",
+            value="NVDA\nMSFT\nAAPL",
+            help="Enter stock ticker symbols, one per line"
+        )
+        companies_to_analyze = [ticker.strip().upper() for ticker in manual_tickers.split('\n') if ticker.strip()]
+    
 
-    with col2:
-        st.subheader("Option 2: Database Connection")
-        st.info("🚧 **Coming Soon**: Direct database integration")
-
-        if st.button("🗃️ Connect to Database", disabled=True):
-            st.warning("Database integration will be implemented in the next version")
-
-        st.markdown("""
-        **Future database features:**
-        - Connect to company database
-        - Filter by sector/industry
-        - Automatic company info retrieval
-        - Batch processing capabilities
-        """)
-
-    # Sample data option
-    st.subheader("Option 3: Use Sample Data")
-    if st.button("📋 Load Sample Companies"):
-        sample_data = pd.DataFrame({
-            'ticker': ['MSFT', 'AAPL', 'NVDA', 'GOOGL', 'TSLA'],
-            'company_name': ['Microsoft Corporation', 'Apple Inc.', 'NVIDIA Corporation', 'Alphabet Inc.', 'Tesla, Inc.'],
-            'sector': ['Technology', 'Technology', 'Technology', 'Technology', 'Consumer Discretionary'],
-            'industry': ['Software', 'Consumer Electronics', 'Semiconductors', 'Internet Services', 'Electric Vehicles']
+    # Store selected companies for analysis
+    if companies_to_analyze:
+        # Convert to DataFrame format expected by the analysis section
+        companies_df = pd.DataFrame({
+            'ticker': companies_to_analyze,
+            'company_name': [f"{ticker} Inc." for ticker in companies_to_analyze],
+            'sector': ['Technology'] * len(companies_to_analyze),
+            'industry': ['Software'] * len(companies_to_analyze)
         })
-        st.session_state.uploaded_companies = sample_data
-        st.success("✅ Sample data loaded successfully")
-        st.dataframe(sample_data, use_container_width=True)
+        st.session_state.uploaded_companies = companies_df
+        st.success(f"✅ {len(companies_to_analyze)} companies ready for analysis")
+        st.dataframe(companies_df, width='stretch')
 
 def api_testing_section():
     """API testing section"""

@@ -11,13 +11,18 @@ import streamlit as st  # type: ignore
 
 # Add the parent directory to Python path to find utils module
 # More robust path resolution for Streamlit
-script_dir = os.path.dirname(os.path.abspath(__file__))  # pages directory
-parent_dir = os.path.dirname(script_dir)  # alpha-agents directory
-utils_dir = os.path.join(parent_dir, 'utils')
+from pathlib import Path
+import os
 
-# Add parent directory to Python path
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
+# Get the project root directory
+project_root = Path(__file__).parent.parent
+utils_path = project_root / "utils"
+
+# Add both project root and utils directory to path
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+if str(utils_path) not in sys.path:
+    sys.path.insert(0, str(utils_path))
 
 # # Debug path information
 # st.write(f"🔍 Debug Info:")
@@ -40,14 +45,26 @@ if parent_dir not in sys.path:
 
 # st.write(f"Stock screener file exists: {os.path.exists(stock_screener_file)}")
 
-try:
-    from utils.stock_screener import StockScreener
-    # st.success("✅ Successfully imported StockScreener!")
-except ImportError as e:
-    st.error(f"Import error: {e}")
-    st.error(f"Current sys.path: {sys.path}")
-    st.stop()
-from utils.db_util import save_fundamental_screen
+# Direct import approach - import files directly from utils directory
+import importlib.util
+
+# Import stock_screener directly
+stock_screener_path = utils_path / "stock_screener.py"
+spec = importlib.util.spec_from_file_location("stock_screener", stock_screener_path)
+stock_screener_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(stock_screener_module)
+StockScreener = stock_screener_module.StockScreener
+
+# Fast screener removed - using only standard screener
+
+# Import db_util directly
+db_util_path = utils_path / "db_util.py"
+spec = importlib.util.spec_from_file_location("db_util", db_util_path)
+db_util_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(db_util_module)
+save_fundamental_screen = db_util_module.save_fundamental_screen
+
+st.success("✅ Successfully imported all modules!")
 
 SECTORS = sorted(StockScreener.SECTORS)
 INDUSTRIES = sorted(StockScreener.INDUSTRIES)
@@ -63,7 +80,8 @@ def run_screen(
     max_cap: float,
 ) -> "pd.DataFrame":
     """Execute the screen with the provided parameters."""
-
+    
+    # Use standard screener only
     options: Dict[str, object] = {
         "region": region,
         "min_cap": min_cap,
@@ -81,9 +99,11 @@ def run_screen(
 
 def main() -> None:
     st.set_page_config(page_title="Fundamental Screener Agent", layout="wide")
-    st.title("Fundamental Agent Screener")
+    st.title("📊 Fundamental Agent Screener")
+    st.markdown("**Quantitative Analysis** - Filter stocks based on financial metrics")
 
-    st.sidebar.header("Filters")
+    st.sidebar.header("🔍 Filters")
+    
     filter_by = st.sidebar.radio("Filter By", ("Sector", "Industry"))
 
     if filter_by == "Sector":
@@ -102,7 +122,7 @@ def main() -> None:
     )
     max_cap = float("inf") if max_cap_value == 0 else max_cap_value
 
-    run_requested = st.sidebar.button("Run screen", type="primary")
+    run_requested = st.sidebar.button("🚀 Run Screen", type="primary")
 
     if "screen_params" not in st.session_state:
         st.info("Adjust the filters and click 'Run screen' to fetch results.")
@@ -137,30 +157,54 @@ def main() -> None:
             st.session_state["screener_results"] = df
             st.success(f"✅ Results stored for QualAgent analysis!")
             
+            # Show screener mode used
+            st.info(f"📊 Screener Mode: Standard Mode")
+            
+            # Export and Database options
+            st.subheader("📥 Export & Save Options")
+            
             # Ensure ticker column is included in exports
             df_export = df.reset_index(drop=False)
             if "ticker" not in df_export.columns and "index" in df_export.columns:
                 df_export = df_export.rename(columns={"index": "ticker"})
-            csv = df_export.to_csv().encode("utf-8")
-            st.download_button(
-                "Download results as CSV",
-                csv,
-                file_name="fundamental_screen_results.csv",
-                mime="text/csv",
-            )
-            excel_buffer = io.BytesIO()
-            df_export.to_excel(excel_buffer, index=False, sheet_name="Results")
-            excel_buffer.seek(0)
-            st.download_button(
-                "Download results as Excel",
-                data=excel_buffer.getvalue(),
-                file_name="fundamental_screen_results.xlsx",
-                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            )
-            if st.button("Store in Database"):
-                with st.spinner("Saving results to database..."):
-                    run_id = save_fundamental_screen(df.reset_index(drop=False))
-                st.success(f"Saved {len(df)} rows to database (run_id={run_id}).")
+            
+            col1, col2, col3 = st.columns(3)
+            
+            with col1:
+                csv = df_export.to_csv(index=False).encode("utf-8")
+                st.download_button(
+                    "📥 Download CSV",
+                    csv,
+                    file_name="fundamental_screen_results.csv",
+                    mime="text/csv",
+                )
+            
+            with col2:
+                excel_buffer = io.BytesIO()
+                df_export.to_excel(excel_buffer, index=False, sheet_name="Results")
+                excel_buffer.seek(0)
+                st.download_button(
+                    "📥 Download Excel",
+                    data=excel_buffer.getvalue(),
+                    file_name="fundamental_screen_results.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                )
+            
+            with col3:
+                if st.button("💾 Store in PostgreSQL Database", type="primary"):
+                    try:
+                        with st.spinner("Saving results to PostgreSQL database..."):
+                            run_id = save_fundamental_screen(df.reset_index(drop=False))
+                        st.success(f"✅ Saved {len(df)} rows to PostgreSQL database!")
+                        st.success(f"Run ID: `{run_id}`")
+                        st.session_state["last_run_id"] = run_id
+                    except Exception as e:
+                        st.error(f"Database save failed: {str(e)}")
+                        st.info("💡 You can still download CSV/Excel files")
+            
+            # Navigation hint
+            st.markdown("---")
+            st.info("💡 **Next Step**: Go to 'QualAgent Analysis' page to analyze these companies with AI!")
 
 
 if __name__ == "__main__":

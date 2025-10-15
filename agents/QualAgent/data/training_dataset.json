@@ -62608,5 +62608,436 @@
       "comparison_type": "model_selection",
       "expert_comments": "Automated feedback collection"
     }
+  },
+  {
+    "id": "fb_1760531809",
+    "timestamp": "2025-10-15T14:36:49.847358",
+    "input": {
+      "company_ticker": "CWEN",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.331168831168831,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004311,
+          "processing_time": 14.038686752319336
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.7941712204007283,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "Barriers to entry for the technology sector are moderate. Capital requirements and technical complex..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "CWEN Inc. operates in the technology sector, which tends to have lower brand loyalty compared to oth..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.5,
+              "justification": "Switching costs are low in the technology sector, as customers can easily move between competitors w..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "CWEN Inc. has demonstrated some flexibility in adapting its business model, but there are uncertaint..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0035153999999999997,
+          "processing_time": 30.538978099822998
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "mixtral-8x7b",
+        "consensus_score": 2.382936507936508,
+        "consensus_confidence": 0.6416666666666665
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "raslen",
+      "selected_model": "mixtral-8x7b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760534810",
+    "timestamp": "2025-10-15T15:26:50.369783",
+    "input": {
+      "company_ticker": "MSB",
+      "model_outputs": [
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.5298850574712644,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MSB Inc. operates in a highly competitive technology sector, but it has established significant barr..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MSB Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing power..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MSB Inc. has moderate switching costs, but they are not insurmountable. The company's customers can ..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MSB Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changi..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0049176,
+          "processing_time": 12.702041149139404
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.486060606060606,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "While MSB Inc. has some regulatory barriers to entry, such as obtaining necessary licenses and permi..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MSB Inc. has a strong brand reputation in the technology sector, with a customer loyalty rate of 85%..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MSB Inc.'s customers do face some switching costs, such as retraining and integration costs, when sw..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MSB Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changi..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0045477,
+          "processing_time": 16.070144653320312
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.3641255605381164,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MSB Inc. faces moderate barriers to entry. The company has made significant investments in technolog..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MSB Inc. has a recognized brand with average customer loyalty. While customers may not necessarily c..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MSB Inc. has moderate switching costs, providing some customer retention advantage. However, custome..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.45,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 3.5/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MSB Inc. has moderate transformation potential but faces execution uncertainty in evolving its busin..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0035147999999999993,
+          "processing_time": 51.69889450073242
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3.1-70b",
+        "consensus_score": 2.301445578231293,
+        "consensus_confidence": 0.7232142857142858
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "raslen",
+      "selected_model": "llama-3.1-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760535217",
+    "timestamp": "2025-10-15T15:33:37.698950",
+    "input": {
+      "company_ticker": "RGLD",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.442307692307692,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.8999999999999999,
+              "justification": "Based on 4 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0044577,
+          "processing_time": 15.88367748260498
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.2169154228855725,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "The royalty and streaming segment of the precious metals industry has high barriers to entry due to ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "RGLD Inc. has a recognized brand in the royalty and streaming segment of the precious metals industr..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "RGLD Inc.'s customers, primarily mining companies, may face some switching costs if they were to swi..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.1,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "RGLD Inc. has some transformation potential, as the company can continue to grow its portfolio of ro..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0046395,
+          "processing_time": 10.645102262496948
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.8720379146919433,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "RGLD Inc. faces moderate barriers to entry due to the need for significant investment in research an..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "RGLD Inc. has a weak brand differentiation in the Technology sector, with price-sensitive customers ..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "RGLD Inc. has moderate switching costs due to integration complexity and retraining costs. However, ..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 1.833333333333333,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "RGLD Inc. has moderate transformation potential, with a demonstrated ability to adapt its business m..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0037332,
+          "processing_time": 45.62737321853638
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "mixtral-8x7b",
+        "consensus_score": 2.351615646258504,
+        "consensus_confidence": 0.6714285714285715
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "raslen",
+      "selected_model": "mixtral-8x7b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
   }
 ]
