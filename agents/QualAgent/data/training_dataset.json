@@ -59438,5 +59438,3175 @@
       "comparison_type": "model_selection",
       "expert_comments": "Automated feedback collection"
     }
+  },
+  {
+    "id": "fb_1760487878",
+    "timestamp": "2025-10-15T01:24:38.817819",
+    "input": {
+      "company_ticker": "SAGT",
+      "model_outputs": [
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.628193832599119,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has moderate barriers to entry, with significant capital requirements and tech..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SAGT Inc. has a strong brand recognition in the technology sector, with a loyal customer base and si..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "SAGT Inc.'s products and services have significant switching costs, with customers investing signifi..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "SAGT Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.00521,
+          "processing_time": 25.93694758415222
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.3846153846153846,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.8999999999999999,
+              "justification": "Based on 3 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004356,
+          "processing_time": 15.22932767868042
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.898717948717949,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "SAGT faces moderate barriers to entry due to its established market position and expertise in techno..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SAGT has a recognized brand in the technology sector, but it does not exhibit strong pricing power o..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "SAGT has moderate switching costs due to integration complexity and retraining costs. However, compe..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "SAGT has demonstrated some transformation potential through strategic initiatives and R&D investment..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0037236,
+          "processing_time": 26.823538780212402
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "consensus_score": 2.5330687830687832,
+        "consensus_confidence": 0.6933333333333332
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760487910",
+    "timestamp": "2025-10-15T01:25:10.257202",
+    "input": {
+      "company_ticker": "ACFN",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.5697478991596636,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN operates in a sector with significant regulatory barriers, requiring substantial investment and..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "ACFN has a recognized brand in the technology sector, with a moderate level of customer loyalty. Whi..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN's products and services have high switching costs, making it difficult for customers to switch ..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN has demonstrated a willingness to adapt its business model and enter new markets. The company's..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0044028,
+          "processing_time": 16.618520975112915
+        },
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.5109243697478987,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has moderate barriers to entry, with significant capital requirements and tech..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN Inc. has a strong brand recognition in the technology sector, with a loyal customer base and si..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN Inc.'s products and services have high switching costs, with significant integration complexity..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN Inc. has a strong track record of innovation and R&D, with a focus on transforming its business..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.005337,
+          "processing_time": 30.22595191001892
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.272727272727273,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0035933999999999996,
+          "processing_time": 28.30222463607788
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.6613756613756614,
+        "consensus_confidence": 0.7366666666666667
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760487946",
+    "timestamp": "2025-10-15T01:25:46.910033",
+    "input": {
+      "company_ticker": "SQNS",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.272727272727273,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0043227,
+          "processing_time": 13.682352066040039
+        },
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.064454976303318,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "The IoT and 5G markets have high barriers to entry due to the complexity of the technology, regulato..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SQNS has a recognized brand in the IoT and 5G markets, but customer loyalty and pricing power are mo..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SQNS has a moderate level of switching costs due to the complexity of its products and the need for ..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "SQNS has a moderate level of transformation potential due to its strong track record of innovation a..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.005023,
+          "processing_time": 29.548540115356445
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.6941176470588233,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 2.0,
+              "confidence": 0.7,
+              "justification": "SQNS Inc. faces low barriers to entry, as the semiconductor and IoT market is relatively accessible ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "SQNS Inc. has a weak brand differentiation with price-sensitive customers, as it operates in the hig..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "SQNS Inc. faces low switching costs, as customers can move to competitors with minimal friction. SQN..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SQNS Inc. has moderate transformation potential, as it demonstrates some strategic flexibility and i..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0037362,
+          "processing_time": 35.53884243965149
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "mixtral-8x7b",
+        "consensus_score": 2.1626984126984126,
+        "consensus_confidence": 0.6783333333333333
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "mixtral-8x7b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760487982",
+    "timestamp": "2025-10-15T01:26:22.951709",
+    "input": {
+      "company_ticker": "HIT",
+      "model_outputs": [
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.5098591549295777,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has high barriers to entry, requiring significant investment in research and d..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "HIT Inc. has a strong brand recognition in the technology sector, with a loyal customer base and sig..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "HIT Inc.'s products and services have high switching costs, particularly for enterprise customers. T..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "HIT Inc. has demonstrated a strong ability to adapt to changing market conditions and technological ..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004796000000000001,
+          "processing_time": 24.182559490203857
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.3311688311688314,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0045045,
+          "processing_time": 14.310026407241821
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.3134615384615382,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "HIT Inc. faces moderate barriers to entry due to its size, expertise, and established market positio..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "HIT Inc. has a recognized brand with average customer loyalty. While customers may not necessarily c..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "HIT Inc. has moderate switching costs, which provide some customer retention advantage. However, cus..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.45,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 3.5/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "HIT Inc. has demonstrated some flexibility in adapting its business model, but execution uncertainty..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0034325999999999996,
+          "processing_time": 32.164997816085815
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "mixtral-8x7b",
+        "consensus_score": 2.5555555555555554,
+        "consensus_confidence": 0.6916666666666667
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "mixtral-8x7b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760488032",
+    "timestamp": "2025-10-15T01:27:12.220467",
+    "input": {
+      "company_ticker": "FATN",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.659504132231405,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "FATN Inc. has significant barriers to entry, including high capital requirements, complex technology..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc. has a recognized brand in the technology sector, with a moderate level of customer loyalty..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "FATN Inc. has high switching costs, with customers facing significant integration complexity, data l..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "FATN Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0044172000000000005,
+          "processing_time": 14.17515230178833
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.0126315789473685,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. faces moderate barriers to entry due to the need for substantial investment in technology ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc. has a recognized brand with average customer loyalty. While customers may not necessarily ..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. has moderate switching costs due to integration complexity and retraining costs. However, ..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.8000000000000003,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. has moderate transformation potential, with some demonstrated flexibility. However, execut..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0036347999999999997,
+          "processing_time": 33.3985378742218
+        },
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 2.9169082125603865,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "The technology sector has moderate to high barriers to entry, requiring significant investment in re..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc. has a recognized brand within the technology sector, but customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc.'s products and services have moderate switching costs, primarily due to integration comple..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.1,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. has some ability to adapt its business model and enter adjacent markets, but this potentia..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004993,
+          "processing_time": 47.94855284690857
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.3267195767195767,
+        "consensus_confidence": 0.7241666666666667
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760488071",
+    "timestamp": "2025-10-15T01:27:51.335069",
+    "input": {
+      "company_ticker": "CCRD",
+      "model_outputs": [
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.3912663755458508,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "The technology sector has high barriers to entry due to significant capital requirements, complex te..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "CCRD Inc. has a recognized brand within the technology sector, but customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "CCRD Inc.'s customers face moderate switching costs due to the complexity of its products and servic..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "CCRD Inc. has demonstrated its ability to adapt to changing market conditions and evolve its busines..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.005031,
+          "processing_time": 26.551840782165527
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.3846153846153846,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.8999999999999999,
+              "justification": "Based on 3 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0043173,
+          "processing_time": 13.68666696548462
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.272727272727273,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0036912,
+          "processing_time": 34.97999429702759
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "consensus_score": 2.6765873015873014,
+        "consensus_confidence": 0.6849999999999999
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760488115",
+    "timestamp": "2025-10-15T01:28:35.371764",
+    "input": {
+      "company_ticker": "MPTI",
+      "model_outputs": [
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.586547085201793,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has high barriers to entry, requiring significant investment in research and d..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MPTI Inc. has a strong brand recognition in the technology sector, with a loyal customer base and si..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MPTI Inc.'s products and services have high switching costs, particularly for customers who have inv..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.1,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MPTI Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0052450000000000005,
+          "processing_time": 40.22881007194519
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.272727272727273,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0044063999999999996,
+          "processing_time": 14.748928785324097
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.604477611940298,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0023153999999999996,
+          "processing_time": 2.0612952709198
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "consensus_score": 2.3035714285714284,
+        "consensus_confidence": 0.6649999999999999
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "model_rankings": null,
+      "quality_ratings": {
+        "mixtral-8x7b": 4,
+        "llama-3-70b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760488155",
+    "timestamp": "2025-10-15T01:29:15.091749",
+    "input": {
+      "company_ticker": "MAPS",
+      "model_outputs": [
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.650420168067227,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has moderate barriers to entry, with significant capital requirements and tech..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MAPS Inc. has a strong brand recognition in the technology sector, with a loyal customer base and si..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MAPS Inc.'s products and services have significant switching costs, with customers facing substantia..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.1,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MAPS Inc. has a strong track record of innovation and adaptation, with a focus on R&D and customer s..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.005168,
+          "processing_time": 31.842568397521973
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.326923076923077,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.8999999999999999,
+              "justification": "Based on 3 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0042597,
+          "processing_time": 12.760239839553833
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.8509803921568624,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MAPS faces moderate barriers to entry due to the need for significant investment in R&D and marketin..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "MAPS has a weak brand differentiation with price-sensitive customers, as it operates in the technolo..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "MAPS has low switching costs, with customers able to move to competitors with minimal friction. Ther..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MAPS has moderate transformation potential but execution uncertainty due to the rapidly changing tec..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.003639,
+          "processing_time": 35.566099643707275
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "consensus_score": 2.380952380952381,
+        "consensus_confidence": 0.7166666666666667
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760488203",
+    "timestamp": "2025-10-15T01:30:03.084199",
+    "input": {
+      "company_ticker": "VTSI",
+      "model_outputs": [
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.424034334763948,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "The technology sector has high barriers to entry, requiring significant investment in research and d..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "VTSI Inc. has a recognized brand within the technology sector, but its customer loyalty and pricing ..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "VTSI Inc. has moderate switching costs, with some customers facing significant costs to switch to a ..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.1,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "VTSI Inc. has a strong ability to adapt its business model to changing market conditions, with a hig..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.005024,
+          "processing_time": 43.86579990386963
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.3802359882005897,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "VTSI operates in a sector with significant regulatory barriers, requiring substantial investment in ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "VTSI has a recognized brand in the technology sector, with a moderate level of customer loyalty. Whi..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "VTSI's customers face moderate switching costs, as they would need to invest time and resources in l..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "VTSI has demonstrated a willingness to adapt to changing market conditions and invest in new technol..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004554,
+          "processing_time": 15.967078447341919
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.272727272727273,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0038783999999999997,
+          "processing_time": 40.33308529853821
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "consensus_score": 2.505291005291005,
+        "consensus_confidence": 0.7108333333333334
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760488248",
+    "timestamp": "2025-10-15T01:30:48.315710",
+    "input": {
+      "company_ticker": "MIND",
+      "model_outputs": [
+        {
+          "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+          "composite_score": 3.6185840707964605,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has moderate barriers to entry, with significant capital requirements and tech..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MIND Inc. has a strong brand recognition in the technology sector, with a loyal customer base and si..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "MIND Inc.'s products and services have significant switching costs, with customers investing time an..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 3.1,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "MIND Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.005203,
+          "processing_time": 44.135257720947266
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.3311688311688314,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004419,
+          "processing_time": 15.927675008773804
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.7478048780487807,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MIND Inc. has moderate barriers to entry due to the need for some expertise and capital investment. ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has a weak brand differentiation with price-sensitive customers. The company is not yet an..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has low switching costs, and customers can move to competitors with minimal friction. Ther..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.6833333333333336,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has moderate transformation potential but execution uncertainty. The company has demonstra..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0036185999999999996,
+          "processing_time": 30.912946224212646
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "consensus_score": 2.390873015873016,
+        "consensus_confidence": 0.6874999999999999
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4,
+        "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489546",
+    "timestamp": "2025-10-15T01:52:26.136780",
+    "input": {
+      "company_ticker": "SAGT",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.612222222222222,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SAGT operates in a sector with significant regulatory barriers, requiring substantial investment and..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SAGT has a recognized brand in the technology sector, with a moderate level of customer loyalty. Whi..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SAGT's customers face high switching costs due to integration complexity, data lock-in, and retraini..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SAGT has demonstrated a strong ability to adapt its business model and enter adjacent markets. The c..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004283100000000001,
+          "processing_time": 14.357280015945435
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.428699551569506,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SAGT Inc. operates in a technology sector with high barriers to entry, including significant capital..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SAGT Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SAGT Inc. has high switching costs, creating strong customer stickiness and predictable revenue. The..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.1,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SAGT Inc. has a good transformation potential, with a proven ability to evolve and enter new markets..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004392,
+          "processing_time": 9.788170576095581
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.066346153846153,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "SAGT faces moderate barriers to entry due to its established market position and technology investme..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SAGT has a recognized brand in the technology sector, but it does not exhibit strong pricing power o..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SAGT has moderate switching costs due to integration complexity and retraining costs. However, compe..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.433333333333333,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SAGT has demonstrated some transformation potential through strategic initiatives and partnerships. ..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0035993999999999996,
+          "processing_time": 31.607898235321045
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.4006519274376417,
+        "consensus_confidence": 0.7439285714285715
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489577",
+    "timestamp": "2025-10-15T01:52:57.573605",
+    "input": {
+      "company_ticker": "ACFN",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.5661016949152544,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN operates in a sector with significant regulatory barriers, requiring substantial investment and..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "ACFN has a recognized brand in the technology sector, with a moderate level of customer loyalty. Whi..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN's customers face high switching costs due to integration complexity, data lock-in, and retraini..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "ACFN has demonstrated its ability to adapt its business model and enter adjacent markets. The compan..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004281299999999999,
+          "processing_time": 13.657591819763184
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.6734299516908218,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 2.0,
+              "confidence": 0.7,
+              "justification": "ACFN Inc. faces low barriers to entry, as the technology sector is characterized by rapid innovation..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "ACFN Inc. has a weak brand differentiation with price-sensitive customers, as they operate in the hi..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "ACFN Inc. faces low switching costs, as customers can move to competitors with minimal friction. The..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.4666666666666672,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.3/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "ACFN Inc. has moderate transformation potential, but execution uncertainty exists due to the rapidly..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0035945999999999994,
+          "processing_time": 30.303919792175293
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 2.4481675392670157,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has moderate barriers to entry, with significant investment required in resear..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "ACFN Inc. has a relatively weak brand presence in the technology sector. While the company has estab..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "ACFN Inc. has moderate switching costs, as the company's customers can switch to competitors' produc..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "ACFN Inc. has moderate transformation potential, as the company has demonstrated some ability to ada..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0045999,
+          "processing_time": 13.190444946289062
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 1.8785430839002273,
+        "consensus_confidence": 0.6982142857142858
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489620",
+    "timestamp": "2025-10-15T01:53:40.276358",
+    "input": {
+      "company_ticker": "SQNS",
+      "model_outputs": [
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.579735682819383,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SQNS Inc. operates in a highly competitive technology sector, but it has established significant bar..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SQNS Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SQNS Inc.'s customers face moderate switching costs, driven by the company's proprietary technology ..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.1,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "SQNS Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0044757,
+          "processing_time": 41.26956272125244
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.506896551724138,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SQNS has significant barriers to entry, including high capital requirements, complex technology, and..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SQNS has a recognized brand in the technology sector, with a moderate level of customer loyalty. Whi..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "SQNS has moderate switching costs, with some integration complexity and data lock-in. However, custo..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "SQNS has a good track record of innovation and adapting to changing market conditions. The company h..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0043047,
+          "processing_time": 14.344063520431519
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.564948453608248,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 2.0,
+              "confidence": 0.7,
+              "justification": "SQNS Inc. faces low barriers to entry in the semiconductor and IoT market, with moderate challenges ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "SQNS Inc. has a weak brand differentiation with price-sensitive customers, as it operates in the hig..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "SQNS Inc. has low switching costs, with customers able to move to competitors with minimal friction...."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "SQNS Inc. has moderate transformation potential, with some demonstrated flexibility. However, execut..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0037955999999999992,
+          "processing_time": 41.63234829902649
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.0642951625094486,
+        "consensus_confidence": 0.7227777777777779
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "llama-3.1-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489651",
+    "timestamp": "2025-10-15T01:54:11.609208",
+    "input": {
+      "company_ticker": "HIT",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.591812865497076,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "While HIT Inc. has some regulatory barriers to entry, such as obtaining necessary licenses and permi..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "HIT Inc. has a strong brand reputation in the technology sector, with a customer loyalty rate of 85%..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "HIT Inc. has high switching costs due to its complex and customized solutions, which require signifi..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "HIT Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changi..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004491,
+          "processing_time": 16.29182767868042
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.573076923076923,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "HIT Inc. faces moderate barriers to entry due to the need for significant investment in R&D and mark..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "HIT Inc. has a recognized brand with average customer loyalty. While customers may not necessarily c..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "HIT Inc. has moderate switching costs due to integration complexity and retraining costs. However, t..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.45,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 3.5/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "HIT Inc. has demonstrated strategic flexibility and a strong innovation culture, positioning it well..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0033155999999999997,
+          "processing_time": 24.402210474014282
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.444648318042814,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "The technology sector has relatively low barriers to entry, with many new companies emerging each ye..."
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "HIT Inc. has established a strong brand presence in the technology sector, with a loyal customer bas..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "HIT Inc.'s customers face moderate switching costs when considering alternative providers. While the..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "HIT Inc. has demonstrated its ability to adapt to changing market conditions and invest in new techn..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0047403,
+          "processing_time": 27.262928009033203
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.4502551020408165,
+        "consensus_confidence": 0.7246428571428571
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4,
+        "llama-3.1-70b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489686",
+    "timestamp": "2025-10-15T01:54:46.560436",
+    "input": {
+      "company_ticker": "FATN",
+      "model_outputs": [
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.5278538812785394,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "FATN Inc. operates in a technology sector with high barriers to entry, including significant capital..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc.'s customers face moderate switching costs, including retraining costs, data migration, and..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc. has demonstrated its ability to adapt and evolve its business model in response to changin..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0046197,
+          "processing_time": 13.151048421859741
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.511111111111111,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "FATN Inc. has significant barriers to entry, including high capital requirements, complex technology..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc. has a recognized brand in the technology sector, with a moderate level of customer loyalty..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. has moderate switching costs, with some integration complexity and data lock-in. However, ..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "FATN Inc. has a strong track record of innovation and adaptation, with a culture that encourages exp..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004573799999999999,
+          "processing_time": 15.782610893249512
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.8742268041237113,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. faces moderate barriers to entry, with some capital requirements and technical complexity ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "FATN Inc. has a recognized brand with average customer loyalty. While customers may not necessarily ..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. has moderate switching costs, with some integration complexity and retraining costs for cu..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "FATN Inc. has moderate transformation potential, with some demonstrated flexibility and innovation c..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0036551999999999995,
+          "processing_time": 33.68579626083374
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.3198696145124718,
+        "consensus_confidence": 0.7206349206349207
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489727",
+    "timestamp": "2025-10-15T01:55:27.828714",
+    "input": {
+      "company_ticker": "CCRD",
+      "model_outputs": [
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.518385650224215,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "CCRD Inc. operates in a highly competitive technology sector, but the company has established signif..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "CCRD Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "CCRD Inc.'s customers face moderate switching costs when considering alternative products or service..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.1,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "CCRD Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004503599999999999,
+          "processing_time": 11.850192546844482
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.185714285714286,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "CCRD Inc. operates in a sector with significant regulatory barriers, requiring substantial investmen..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "CCRD Inc. has a recognized brand in the technology sector, with a moderate level of customer loyalty..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "CCRD Inc.'s products have moderate switching costs, as customers may face some integration complexit..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "CCRD Inc. has some transformation potential, with opportunities to expand into adjacent markets and ..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0045774000000000006,
+          "processing_time": 17.084645986557007
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.778921568627451,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "Moderate barriers to entry exist due to the need for significant investment in R&D and marketing to ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "CCRD has a weak brand differentiation with price-sensitive customers, as it operates in the highly c..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "Low switching costs exist, allowing customers to move to competitors with minimal friction. This is ..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.3833333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "CCRD has moderate transformation potential, but execution uncertainty exists. The company has demons..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.003426,
+          "processing_time": 38.90806269645691
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.077050264550265,
+        "consensus_confidence": 0.7206349206349205
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489756",
+    "timestamp": "2025-10-15T01:55:56.005425",
+    "input": {
+      "company_ticker": "MPTI",
+      "model_outputs": [
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.5444444444444443,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MPTI Inc. faces moderate barriers to entry due to the need for significant investment in research an..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MPTI Inc. has a recognized brand in the technology sector, but it does not exhibit unmatched loyalty..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MPTI Inc. has moderate switching costs due to its integrated solutions and customer training require..."
+            },
+            "key_growth_drivers": {
+              "score": 4.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 4.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.6,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 3.5/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MPTI Inc. has demonstrated strategic flexibility and a strong innovation culture, enabling it to ada..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0033185999999999997,
+          "processing_time": 23.90333914756775
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.506896551724138,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MPTI has significant barriers to entry, including high capital requirements, complex technology, and..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MPTI has a recognized brand in the technology sector, with a moderate level of customer loyalty. Whi..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MPTI has moderate switching costs, with some integration complexity and data lock-in. However, custo..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MPTI has a good track record of adapting to changing market conditions and has demonstrated innovati..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0043101,
+          "processing_time": 13.997878313064575
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 2.5731843575418996,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 2.0,
+              "confidence": 0.5,
+              "justification": "The technology sector has relatively low barriers to entry, and new competitors can easily enter the..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MPTI Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.5,
+              "justification": "MPTI Inc. has moderate switching costs, as its customers can easily switch to competitors. However, ..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.1,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MPTI Inc. has moderate transformation potential, as it has a relatively flexible business model and ..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0043326,
+          "processing_time": 11.634252786636353
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.053240740740741,
+        "consensus_confidence": 0.6977777777777778
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489788",
+    "timestamp": "2025-10-15T01:56:28.377847",
+    "input": {
+      "company_ticker": "MAPS",
+      "model_outputs": [
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 3.461695906432749,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "The technology sector has high barriers to entry, including significant capital requirements, techni..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MAPS Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MAPS Inc.'s customers face moderate switching costs, driven by the company's proprietary technology ..."
+            },
+            "key_growth_drivers": {
+              "score": 4.0,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 4.0/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.2,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.7,
+              "justification": "MAPS Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0047691,
+          "processing_time": 10.066654205322266
+        },
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.326923076923077,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.8999999999999999,
+              "justification": "Based on 3 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004383,
+          "processing_time": 15.742206811904907
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.8645000000000005,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MAPS faces moderate barriers to entry due to the need for significant investment in R&D, marketing, ..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "MAPS has a weak brand differentiation with price-sensitive customers, as it operates in the technolo..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MAPS has moderate switching costs due to integration complexity and retraining costs. However, these..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.716666666666667,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.3/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MAPS has moderate transformation potential, with some demonstrated flexibility in its business model..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0036582,
+          "processing_time": 31.53782320022583
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3.1-70b",
+        "consensus_score": 2.4073129251700682,
+        "consensus_confidence": 0.7007142857142857
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3.1-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489824",
+    "timestamp": "2025-10-15T01:57:04.807367",
+    "input": {
+      "company_ticker": "VTSI",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.5697478991596636,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "VTSI operates in a sector with significant regulatory barriers, requiring substantial investment and..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "VTSI has a recognized brand in the technology sector, with a moderate level of customer loyalty. Whi..."
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "VTSI's products and services are moderately difficult to switch, due to integration complexity and d..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "VTSI has demonstrated a willingness to adapt its business model and invest in new technologies. The ..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.004391099999999999,
+          "processing_time": 13.082478523254395
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 3.272727272727273,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Barriers To Entry"
+            },
+            "moat_brand_monopoly": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Brand Monopoly"
+            },
+            "moat_switching_costs": {
+              "score": 4.0,
+              "confidence": 0.6,
+              "justification": "Extracted from narrative analysis - Switching Costs"
+            },
+            "key_growth_drivers": {
+              "score": 3.0,
+              "confidence": 0.8,
+              "justification": "Based on 2 identified growth drivers"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.5,
+              "justification": "Default score from narrative analysis"
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0036521999999999995,
+          "processing_time": 35.30601739883423
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 2.529142857142858,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 2.0,
+              "confidence": 0.5,
+              "justification": "The technology sector has relatively low barriers to entry, and new competitors can easily enter the..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "VTSI Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.5,
+              "justification": "VTSI Inc.'s customers do not face significant switching costs when moving to competitors. The compan..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "VTSI Inc. has some transformation potential, but its ability to adapt its business model and enter n..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0045531,
+          "processing_time": 12.210813522338867
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 2.3262471655328802,
+        "consensus_confidence": 0.6770634920634923
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
+  },
+  {
+    "id": "fb_1760489847",
+    "timestamp": "2025-10-15T01:57:27.887205",
+    "input": {
+      "company_ticker": "MIND",
+      "model_outputs": [
+        {
+          "model_name": "llama-3-70b",
+          "composite_score": 3.53132183908046,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MIND Inc. has high barriers to entry due to its significant investments in research and development,..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MIND Inc. has a recognized brand in the technology sector, with a moderate level of customer loyalty..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has moderate switching costs due to its established relationships with customers and the c..."
+            },
+            "key_growth_drivers": {
+              "score": 3.6666666666666665,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.7/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.5333333333333337,
+              "confidence": 0.8999999999999999,
+              "justification": "Analysis of 3 competitors, average threat level: 3.7/5.0"
+            },
+            "transformation_potential": {
+              "score": 4.0,
+              "confidence": 0.8,
+              "justification": "MIND Inc. has a strong track record of innovation and has demonstrated its ability to adapt to chang..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0043857,
+          "processing_time": 13.145988941192627
+        },
+        {
+          "model_name": "mixtral-8x7b",
+          "composite_score": 2.833500837520938,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MIND Inc. faces moderate barriers to entry due to the need for substantial investment in research an..."
+            },
+            "moat_brand_monopoly": {
+              "score": 2.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has a weak brand differentiation with price-sensitive customers, as it operates in the tec..."
+            },
+            "moat_switching_costs": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has moderate switching costs, providing some customer retention advantage. However, custom..."
+            },
+            "key_growth_drivers": {
+              "score": 3.3333333333333335,
+              "confidence": 0.85,
+              "justification": "Based on 3 identified growth drivers with average impact 3.3/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.45,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 3.5/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.7,
+              "justification": "MIND Inc. has moderate transformation potential, with some demonstrated flexibility in adapting its ..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0035741999999999996,
+          "processing_time": 21.966420888900757
+        },
+        {
+          "model_name": "llama-3.1-70b",
+          "composite_score": 2.5558011049723763,
+          "key_scores": {
+            "moat_barriers_to_entry": {
+              "score": 2.0,
+              "confidence": 0.5,
+              "justification": "The technology sector has relatively low barriers to entry, and new competitors can easily enter the..."
+            },
+            "moat_brand_monopoly": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has a recognized brand in the technology sector, but its customer loyalty and pricing powe..."
+            },
+            "moat_switching_costs": {
+              "score": 2.0,
+              "confidence": 0.5,
+              "justification": "MIND Inc.'s customers do not have high switching costs, as the company's products and services are n..."
+            },
+            "key_growth_drivers": {
+              "score": 3.5,
+              "confidence": 0.7999999999999999,
+              "justification": "Based on 2 identified growth drivers with average impact 3.5/5.0"
+            },
+            "competitive_positioning": {
+              "score": 2.1,
+              "confidence": 0.8,
+              "justification": "Analysis of 2 competitors, average threat level: 4.0/5.0"
+            },
+            "transformation_potential": {
+              "score": 3.0,
+              "confidence": 0.6,
+              "justification": "MIND Inc. has moderate transformation potential, as the company has some flexibility to adapt its bu..."
+            }
+          },
+          "analysis_quality": {
+            "completeness": 1.0,
+            "coherence": 0.0,
+            "source_quality": 1.0,
+            "overall": 1.0
+          },
+          "cost": 0.0044145,
+          "processing_time": 10.44121766090393
+        }
+      ],
+      "system_recommendation": {
+        "best_model": "llama-3-70b",
+        "consensus_score": 1.9051398337112624,
+        "consensus_confidence": 0.6952777777777779
+      }
+    },
+    "expert_feedback": {
+      "expert_id": "chenHX",
+      "selected_model": "llama-3-70b",
+      "model_rankings": null,
+      "quality_ratings": {
+        "llama-3.1-70b": 4,
+        "llama-3-70b": 4,
+        "mixtral-8x7b": 4
+      },
+      "score_adjustments": null,
+      "reasoning": "Selected system recommendation as best model"
+    },
+    "metadata": {
+      "comparison_type": "model_selection",
+      "expert_comments": "Automated feedback collection"
+    }
   }
 ]

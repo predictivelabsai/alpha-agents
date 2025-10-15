@@ -207,13 +207,20 @@ class LLMIntegration:
                  system_prompt: str = None, max_retries: int = 3) -> LLMResponse:
         """Call LLM with unified interface"""
 
+        # Handle dynamic model creation for raw model names
         if model_key not in self.models:
-            return LLMResponse(
-                content="",
-                model_used=model_key,
-                provider="unknown",
-                error=f"Model {model_key} not available"
-            )
+            dynamic_config = self._create_dynamic_model_config(model_key)
+            if dynamic_config:
+                # Temporarily add the dynamic config to models
+                self.models[model_key] = dynamic_config
+                logger.info(f"Created dynamic model config for: {model_key}")
+            else:
+                return LLMResponse(
+                    content="",
+                    model_used=model_key,
+                    provider="unknown",
+                    error=f"Model {model_key} not available and cannot create dynamic config"
+                )
 
         config = self.models[model_key]
         start_time = time.time()
@@ -649,6 +656,52 @@ Begin your comprehensive qualitative analysis now. Think systematically through 
             validation_results['openai'] = False
 
         return validation_results
+
+    def _create_dynamic_model_config(self, model_key: str) -> Optional[LLMConfig]:
+        """
+        Create a dynamic LLMConfig for models not in the configured list.
+        This allows the system to use models discovered during API testing.
+        """
+        # Check if this looks like a TogetherAI model path
+        if '/' in model_key and any(provider in model_key for provider in [
+            'meta-llama', 'mistralai', 'Qwen', 'deepseek-ai', 'google',
+            'codellama', 'NousResearch', 'moonshot-ai', 'THUDM', 'baichuan-inc',
+            '01-ai', 'alibaba', 'internlm', 'togethercomputer', 'teknium',
+            'upstage', 'garage-bAInd', 'openchat', 'Open-Orca', 'HuggingFaceH4'
+        ]):
+            # This is a raw TogetherAI model name
+            if not self.together_api_key:
+                logger.warning(f"Cannot create dynamic config for {model_key}: TogetherAI API key not available")
+                return None
+
+            return LLMConfig(
+                provider='together',
+                model_name=model_key,  # Use the raw model name
+                max_tokens=4000,
+                temperature=0.1,
+                api_endpoint='https://api.together.xyz/v1/chat/completions',
+                cost_per_1k_tokens=0.001,  # Default estimate
+                context_window=8192  # Default estimate
+            )
+
+        # Check if this is an OpenAI model
+        if model_key.startswith('gpt-') or model_key in ['o1-preview', 'o1-mini']:
+            if not self.openai_api_key:
+                logger.warning(f"Cannot create dynamic config for {model_key}: OpenAI API key not available")
+                return None
+
+            return LLMConfig(
+                provider='openai',
+                model_name=model_key,
+                max_tokens=4000,
+                temperature=0.1,
+                api_endpoint='https://api.openai.com/v1/chat/completions',
+                cost_per_1k_tokens=0.005,  # Default estimate
+                context_window=128000
+            )
+
+        logger.warning(f"Cannot create dynamic config for unknown model: {model_key}")
+        return None
 
 def main():
     """Test LLM integration"""

@@ -1,0 +1,17 @@
+company_ticker,score_component,score,confidence,category,justification
+ACFN,technology_moats,3.0714285714285716,0.642857142857143,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. does not possess significant technology moats, as ..."
+ACFN,competitive_positioning,2.50952380952381,0.8999999999999999,competitive,"Consensus from 3 models: llama-3.1-70b: Analysis of 3 competitors, average threat level: 3.7/5.0; ll..."
+ACFN,major_risk_factors,2.4404761904761907,0.817857142857143,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified risk factors with average impact 3.5/5...
+ACFN,moat_brand_monopoly,2.357142857142857,0.6357142857142857,competitive_moat,Consensus from 3 models: llama-3.1-70b: ACFN Inc. has a relatively weak brand presence in the techno...
+ACFN,red_flags,2.892857142857143,0.7678571428571429,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 1 identified red flags with average impact 4.0/5.0;...
+ACFN,transformation_potential,3.3571428571428577,0.6714285714285715,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. has moderate transformation potential, as the comp..."
+ACFN,market_timing,3.3571428571428577,0.7357142857142857,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. has moderate market timing, as the company has dem..."
+ACFN,management_quality,3.0000000000000004,0.6357142857142858,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ACFN Inc.'s management team has moderate quality, as the tea..."
+ACFN,key_growth_drivers,3.5595238095238098,0.817857142857143,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified growth drivers with average impact 3.5...
+ACFN,competitive_differentiation,3.0714285714285716,0.7428571428571429,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. has limited competitive differentiation, as the co..."
+ACFN,moat_barriers_to_entry,3.0000000000000004,0.7357142857142857,competitive_moat,"Consensus from 3 models: llama-3.1-70b: The technology sector has moderate barriers to entry, with s..."
+ACFN,platform_expansion,3.0714285714285716,0.6785714285714287,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. has limited platform expansion opportunities, as t..."
+ACFN,moat_network_effects,2.428571428571429,0.5785714285714286,competitive_moat,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. does not possess significant network effects, as t..."
+ACFN,moat_switching_costs,2.7142857142857144,0.6714285714285715,competitive_moat,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. has moderate switching costs, as the company's cus..."
+ACFN,moat_economies_of_scale,2.357142857142857,0.6071428571428572,competitive_moat,"Consensus from 3 models: llama-3.1-70b: ACFN Inc. has limited economies of scale, as the company's o..."
+ACFN,COMPOSITE_SCORE,1.8785430839002273,0.6982142857142858,composite,Weighted composite from 15 components

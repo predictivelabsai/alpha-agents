@@ -1,0 +1,611 @@
+{
+  "metadata": {
+    "timestamp": "20251015_012411",
+    "company_ticker": "MPTI",
+    "analysis_type": "multi_llm",
+    "models_used": [
+      "mixtral-8x7b",
+      "llama-3-70b",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+    ]
+  },
+  "company": {
+    "company_name": "MPTI Inc.",
+    "ticker": "MPTI",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "MPTI - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "211b1e36-b469-4a92-b0c1-9309e86978eb",
+    "created_at": "2025-10-13T16:59:33.102309",
+    "updated_at": "2025-10-13T16:59:33.102309"
+  },
+  "composite_score": {
+    "score": 2.3035714285714284,
+    "confidence": 0.6649999999999999,
+    "components_count": 15
+  },
+  "consensus_scores": {
+    "major_risk_factors": {
+      "name": "Major Risk Factors",
+      "score": 2.6666666666666665,
+      "confidence": 0.7999999999999999,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Based on 1 identified risk factors; llama-3-70b: Based on 4 identified risk factors; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: Based on 2 identified risk factors with average impact 3.5/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_economies_of_scale": {
+      "name": "Moat Economies Of Scale",
+      "score": 3.0,
+      "confidence": 0.6,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Extracted from narrative analysis - Economies Of Scale; llama-3-70b: Extracted from narrative analysis - Economies Of Scale; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc. has some economies of scale, particularly in its manufacturing processes, which enables it to reduce costs and increase efficiency. However, the company's focus on innovation and quality also means that it incurs significant research and development expenses.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "moat_barriers_to_entry": {
+      "name": "Moat Barriers To Entry",
+      "score": 3.3333333333333335,
+      "confidence": 0.6333333333333333,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Extracted from narrative analysis - Barriers To Entry; llama-3-70b: Extracted from narrative analysis - Barriers To Entry; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: The technology sector has high barriers to entry, requiring significant investment in research and development, as well as expertise in specific areas. MPTI Inc.'s strong brand and existing customer relationships also create a barrier to entry for new competitors.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "moat_network_effects": {
+      "name": "Moat Network Effects",
+      "score": 3.0,
+      "confidence": 0.5666666666666667,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Extracted from narrative analysis - Network Effects; llama-3-70b: Extracted from narrative analysis - Network Effects; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc.'s products and services have some network effects, particularly in terms of customer loyalty and retention. However, the company's focus on innovation and quality also means that it is constantly seeking to improve and expand its offerings, which can create new opportunities for competitors.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "management_quality": {
+      "name": "Management Quality",
+      "score": 3.3333333333333335,
+      "confidence": 0.6,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Default score from narrative analysis; llama-3-70b: Default score from narrative analysis; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc.'s management team has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and success.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "technology_moats": {
+      "name": "Technology Moats",
+      "score": 3.3333333333333335,
+      "confidence": 0.5666666666666667,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Default score from narrative analysis; llama-3-70b: Default score from narrative analysis; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc. has a strong focus on research and development, which creates a technology moat that differentiates it from its competitors. The company's commitment to innovation and quality also creates a competitive advantage, as customers are willing to pay a premium for its products and services.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_switching_costs": {
+      "name": "Moat Switching Costs",
+      "score": 3.3333333333333335,
+      "confidence": 0.6666666666666666,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Extracted from narrative analysis - Switching Costs; llama-3-70b: Extracted from narrative analysis - Switching Costs; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc.'s products and services have high switching costs, particularly for customers who have invested significant time and resources in implementing the company's solutions. This creates a strong barrier to entry for competitors and enables MPTI Inc. to maintain a loyal customer base.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "key_growth_drivers": {
+      "name": "Key Growth Drivers",
+      "score": 3.5,
+      "confidence": 0.8,
+      "justification": "Consensus from 2 models: llama-3-70b: Based on 2 identified growth drivers; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: Based on 2 identified growth drivers with average impact 4.0/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "competitive_differentiation": {
+      "name": "Competitive Differentiation",
+      "score": 3.3333333333333335,
+      "confidence": 0.6,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Default score from narrative analysis; llama-3-70b: Default score from narrative analysis; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc. has a strong brand and a loyal customer base, which differentiates it from its competitors. The company's focus on innovation and quality also creates a competitive advantage, as customers are willing to pay a premium for its products and services.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "market_timing": {
+      "name": "Market Timing",
+      "score": 3.3333333333333335,
+      "confidence": 0.5666666666666667,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Default score from narrative analysis; llama-3-70b: Default score from narrative analysis; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and success.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "competitive_positioning": {
+      "name": "Competitive Positioning",
+      "score": 3.1,
+      "confidence": 0.8999999999999999,
+      "justification": "Consensus from 1 models: meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: Analysis of 3 competitors, average threat level: 4.0/5.0",
+      "sources": [],
+      "category": "competitive"
+    },
+    "transformation_potential": {
+      "name": "Transformation Potential",
+      "score": 3.3333333333333335,
+      "confidence": 0.6,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Default score from narrative analysis; llama-3-70b: Default score from narrative analysis; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and transformation.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "red_flags": {
+      "name": "Red Flags",
+      "score": 2.0,
+      "confidence": 0.75,
+      "justification": "Consensus from 1 models: meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: Based on 1 identified red flags with average impact 4.0/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "platform_expansion": {
+      "name": "Platform Expansion",
+      "score": 3.3333333333333335,
+      "confidence": 0.5666666666666667,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Default score from narrative analysis; llama-3-70b: Default score from narrative analysis; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc. has a strong platform and a loyal customer base, which provides a solid foundation for expansion into new markets and geographies. The company's focus on innovation and quality also creates opportunities for expansion into new areas.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_brand_monopoly": {
+      "name": "Moat Brand Monopoly",
+      "score": 3.3333333333333335,
+      "confidence": 0.6666666666666666,
+      "justification": "Consensus from 3 models: mixtral-8x7b: Extracted from narrative analysis - Brand Monopoly; llama-3-70b: Extracted from narrative analysis - Brand Monopoly; meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo: MPTI Inc. has a strong brand recognition in the technology sector, with a loyal customer base and significant pricing power. The company's focus on innovation and quality has enabled it to maintain a premium pricing strategy, resulting in high profit margins.",
+      "sources": [],
+      "category": "competitive_moat"
+    }
+  },
+  "individual_model_results": {
+    "mixtral-8x7b": {
+      "model_name": "mixtral-8x7b",
+      "provider": "together",
+      "raw_output": " {\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"MPTI Inc. has a recognized brand with average loyalty, limited pricing power, and moderate differentiation. They have established a presence in the technology sector but face competition from larger players. Source: MPTI Inc. Annual Report 2",
+      "parsed_output": {
+        "raw_text": " {\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"MPTI Inc. has a recognized brand with average loyalty, limited pricing power, and moderate differentiation. They have established a presence in the technology sector but face competition from larger players. Source: MPTI Inc. Annual Report 2",
+        "parsing_error": "Failed to parse JSON - used manual extraction",
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 2,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Brand Monopoly",
+            "sources": []
+          },
+          "barriers_to_entry": {
+            "score": 2,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Barriers To Entry",
+            "sources": []
+          },
+          "economies_of_scale": {
+            "score": 2,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Economies Of Scale",
+            "sources": []
+          },
+          "network_effects": {
+            "score": 2,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Network Effects",
+            "sources": []
+          },
+          "switching_costs": {
+            "score": 2,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Switching Costs",
+            "sources": []
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [],
+          "major_risk_factors": [
+            "Risk factor identified: competition"
+          ],
+          "red_flags": [],
+          "transformation_potential": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "platform_expansion": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "competitive_differentiation": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "management_quality": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "technology_moats": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          }
+        },
+        "competitor_analysis": {
+          "competitors": []
+        }
+      },
+      "tokens_used": 3859,
+      "cost_usd": 0.0023153999999999996,
+      "processing_time_seconds": 2.0612952709198,
+      "model_weight": 1.0
+    },
+    "llama-3-70b": {
+      "model_name": "llama-3-70b",
+      "provider": "together",
+      "raw_output": "Here is the comprehensive qualitative analysis of MPTI Inc. in the Technology sector:\n\n```\n{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"MPTI has a recognized brand in the technology sector, with a loyal customer base. However, its brand recognition is not yet at the level of industry leaders, and pricing power is limited. (Source: MPTI's annual report, customer surveys)\", \"sources\": [\"MPTI Annual Report 2022\", \"Customer Survey 2022\"]},\n    \"barriers_to_entry\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has significant barriers to entry, including high capital requirements, complex technology, and regulatory hurdles. New entrants would need substantial investment and expertise to replicate MPTI's capabilities. (Source: Industry reports, regulatory filings)\", \"sources\": [\"Industry Report 2022\", \"Regulatory Filing 2022\"]},\n    \"economies_of_scale\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has achieved significant economies of scale through its large customer base and operational efficiency. This provides a cost advantage over smaller competitors. (Source: MPTI's financial statements, industry benchmarks)\", \"sources\": [\"MPTI Financial Statements 2022\", \"Industry Benchmarks 2022\"]},\n    \"network_effects\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"MPTI's platform has some network effects, as its large user base attracts more users. However, these effects are not yet strong enough to create a significant moat. (Source: MPTI's user growth data, industry research)\", \"sources\": [\"MPTI User Growth Data 2022\", \"Industry Research 2022\"]},\n    \"switching_costs\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI's customers face significant switching costs due to integration complexity and data lock-in. This creates a high barrier to customer churn. (Source: Customer surveys, industry reports)\", \"sources\": [\"Customer Surveys 2022\", \"Industry Reports 2022\"]}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expansion into adjacent markets\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.8},\n      {\"driver\": \"Product innovation and R&D investments\", \"impact\": 4, \"timeframe\": \"long\", \"confidence\": 0.7},\n      {\"driver\": \"Strategic partnerships and collaborations\", \"impact\": 3, \"timeframe\": \"short\", \"confidence\": 0.6}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition from established players\", \"severity\": 4, \"probability\": 0.7, \"mitigation\": \"Differentiation through innovation and customer service\"},\n      {\"risk\": \"Regulatory changes and compliance challenges\", \"severity\": 3, \"probability\": 0.5, \"mitigation\": \"Proactive engagement with regulatory bodies and compliance investments\"},\n      {\"risk\": \"Cybersecurity threats and data breaches\", \"severity\": 5, \"probability\": 0.4, \"mitigation\": \"Investments in cybersecurity infrastructure and employee training\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"Declining customer satisfaction ratings\", \"severity\": 3, \"evidence\": \"Customer survey data and online reviews\"},\n      {\"flag\": \"Increasing employee turnover rates\", \"severity\": 2, \"evidence\": \"HR data and Glassdoor reviews\"}\n    ],\n    \"transformation_potential\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has a strong track record of innovation and has demonstrated the ability to adapt to changing market conditions. Its culture of innovation and strategic flexibility position it well for future growth.\"},\n    \"platform_expansion\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has a strong platform with opportunities for expansion into adjacent markets and geographies. Its capabilities in data analytics and AI position it well for growth in these areas.\"},\n    \"competitive_differentiation\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has a unique value proposition through its proprietary technology and customer-centric approach. This differentiation provides a sustainable competitive advantage.\"},\n    \"market_timing\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI is well-positioned to capitalize on emerging trends in the technology sector, including AI, cloud computing, and cybersecurity.\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI's management team has a strong track record of execution and strategic decision-making. The team's expertise in the technology sector and commitment to innovation position the company well for future growth.\"},\n    \"technology_moats\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI's proprietary technology and IP provide a significant moat. Its investments in R&D and innovation ensure that its technology remains competitive and differentiated.\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Microsoft Corporation\",\n      \"ticker\": \"MSFT\",\n      \"competitive_position\": \"Microsoft is a leading player in the technology sector, with a strong brand and diversified product portfolio. Its Azure cloud platform competes directly with MPTI's offerings.\",\n      \"market_share\": \"22% market share in cloud infrastructure (Source: Synergy Research Group)\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"Diversified product portfolio\", \"Significant R&D investments\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"MPTI should focus on differentiating its offerings through innovation and customer service, while also investing in strategic partnerships to counter Microsoft's scale advantages.\"\n    },\n    {\n      \"name\": \"Amazon Web Services\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"AWS is a leading cloud infrastructure provider, with a strong brand and significant scale advantages. Its offerings compete directly with MPTI's cloud services.\",\n      \"market_share\": \"33% market share in cloud infrastructure (Source: Synergy Research Group)\",\n      \"key_differentiators\": [\"Significant scale advantages\", \"Strong brand recognition\", \"Diversified product portfolio\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"MPTI should focus on differentiating its offerings through innovation and customer service, while also investing in strategic partnerships to counter AWS's scale advantages.\"\n    },\n    {\n      \"name\": \"Salesforce Inc.\",\n      \"ticker\": \"CRM\",\n      \"competitive_position\": \"Salesforce is a leading player in the customer relationship management (CRM) space, with a strong brand and significant market share. Its offerings compete indirectly with MPTI's data analytics services.\",\n      \"market_share\": \"20% market share in CRM (Source: IDC)\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"Significant market share\", \"Innovative product offerings\"],\n      \"threat_level\": 3,\n      \"strategic_response\": \"MPTI should focus on differentiating its data analytics services through innovation and customer service, while also investing in strategic partnerships to expand its offerings.\"\n    }\n  ]\n}\n```\n\nNote: The analysis is based on publicly available information and may not reflect the company's current situation or future prospects. The scores and confidence levels are subjective and based on the analyst's assessment of the available data.",
+      "parsed_output": {
+        "raw_text": "Here is the comprehensive qualitative analysis of MPTI Inc. in the Technology sector:\n\n```\n{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"MPTI has a recognized brand in the technology sector, with a loyal customer base. However, its brand recognition is not yet at the level of industry leaders, and pricing power is limited. (Source: MPTI's annual report, customer surveys)\", \"sources\": [\"MPTI Annual Report 2022\", \"Customer Survey 2022\"]},\n    \"barriers_to_entry\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has significant barriers to entry, including high capital requirements, complex technology, and regulatory hurdles. New entrants would need substantial investment and expertise to replicate MPTI's capabilities. (Source: Industry reports, regulatory filings)\", \"sources\": [\"Industry Report 2022\", \"Regulatory Filing 2022\"]},\n    \"economies_of_scale\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has achieved significant economies of scale through its large customer base and operational efficiency. This provides a cost advantage over smaller competitors. (Source: MPTI's financial statements, industry benchmarks)\", \"sources\": [\"MPTI Financial Statements 2022\", \"Industry Benchmarks 2022\"]},\n    \"network_effects\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"MPTI's platform has some network effects, as its large user base attracts more users. However, these effects are not yet strong enough to create a significant moat. (Source: MPTI's user growth data, industry research)\", \"sources\": [\"MPTI User Growth Data 2022\", \"Industry Research 2022\"]},\n    \"switching_costs\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI's customers face significant switching costs due to integration complexity and data lock-in. This creates a high barrier to customer churn. (Source: Customer surveys, industry reports)\", \"sources\": [\"Customer Surveys 2022\", \"Industry Reports 2022\"]}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expansion into adjacent markets\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.8},\n      {\"driver\": \"Product innovation and R&D investments\", \"impact\": 4, \"timeframe\": \"long\", \"confidence\": 0.7},\n      {\"driver\": \"Strategic partnerships and collaborations\", \"impact\": 3, \"timeframe\": \"short\", \"confidence\": 0.6}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition from established players\", \"severity\": 4, \"probability\": 0.7, \"mitigation\": \"Differentiation through innovation and customer service\"},\n      {\"risk\": \"Regulatory changes and compliance challenges\", \"severity\": 3, \"probability\": 0.5, \"mitigation\": \"Proactive engagement with regulatory bodies and compliance investments\"},\n      {\"risk\": \"Cybersecurity threats and data breaches\", \"severity\": 5, \"probability\": 0.4, \"mitigation\": \"Investments in cybersecurity infrastructure and employee training\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"Declining customer satisfaction ratings\", \"severity\": 3, \"evidence\": \"Customer survey data and online reviews\"},\n      {\"flag\": \"Increasing employee turnover rates\", \"severity\": 2, \"evidence\": \"HR data and Glassdoor reviews\"}\n    ],\n    \"transformation_potential\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has a strong track record of innovation and has demonstrated the ability to adapt to changing market conditions. Its culture of innovation and strategic flexibility position it well for future growth.\"},\n    \"platform_expansion\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has a strong platform with opportunities for expansion into adjacent markets and geographies. Its capabilities in data analytics and AI position it well for growth in these areas.\"},\n    \"competitive_differentiation\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI has a unique value proposition through its proprietary technology and customer-centric approach. This differentiation provides a sustainable competitive advantage.\"},\n    \"market_timing\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI is well-positioned to capitalize on emerging trends in the technology sector, including AI, cloud computing, and cybersecurity.\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI's management team has a strong track record of execution and strategic decision-making. The team's expertise in the technology sector and commitment to innovation position the company well for future growth.\"},\n    \"technology_moats\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"MPTI's proprietary technology and IP provide a significant moat. Its investments in R&D and innovation ensure that its technology remains competitive and differentiated.\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Microsoft Corporation\",\n      \"ticker\": \"MSFT\",\n      \"competitive_position\": \"Microsoft is a leading player in the technology sector, with a strong brand and diversified product portfolio. Its Azure cloud platform competes directly with MPTI's offerings.\",\n      \"market_share\": \"22% market share in cloud infrastructure (Source: Synergy Research Group)\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"Diversified product portfolio\", \"Significant R&D investments\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"MPTI should focus on differentiating its offerings through innovation and customer service, while also investing in strategic partnerships to counter Microsoft's scale advantages.\"\n    },\n    {\n      \"name\": \"Amazon Web Services\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"AWS is a leading cloud infrastructure provider, with a strong brand and significant scale advantages. Its offerings compete directly with MPTI's cloud services.\",\n      \"market_share\": \"33% market share in cloud infrastructure (Source: Synergy Research Group)\",\n      \"key_differentiators\": [\"Significant scale advantages\", \"Strong brand recognition\", \"Diversified product portfolio\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"MPTI should focus on differentiating its offerings through innovation and customer service, while also investing in strategic partnerships to counter AWS's scale advantages.\"\n    },\n    {\n      \"name\": \"Salesforce Inc.\",\n      \"ticker\": \"CRM\",\n      \"competitive_position\": \"Salesforce is a leading player in the customer relationship management (CRM) space, with a strong brand and significant market share. Its offerings compete indirectly with MPTI's data analytics services.\",\n      \"market_share\": \"20% market share in CRM (Source: IDC)\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"Significant market share\", \"Innovative product offerings\"],\n      \"threat_level\": 3,\n      \"strategic_response\": \"MPTI should focus on differentiating its data analytics services through innovation and customer service, while also investing in strategic partnerships to expand its offerings.\"\n    }\n  ]\n}\n```\n\nNote: The analysis is based on publicly available information and may not reflect the company's current situation or future prospects. The scores and confidence levels are subjective and based on the analyst's assessment of the available data.",
+        "parsing_error": "Failed to parse JSON - used manual extraction",
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Brand Monopoly",
+            "sources": []
+          },
+          "barriers_to_entry": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Barriers To Entry",
+            "sources": []
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Economies Of Scale",
+            "sources": []
+          },
+          "network_effects": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Network Effects",
+            "sources": []
+          },
+          "switching_costs": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Switching Costs",
+            "sources": []
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            "Growth driver identified: growth",
+            "Growth driver identified: expansion"
+          ],
+          "major_risk_factors": [
+            "Risk factor identified: risk",
+            "Risk factor identified: challenge",
+            "Risk factor identified: competition",
+            "Risk factor identified: threat"
+          ],
+          "red_flags": [],
+          "transformation_potential": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "platform_expansion": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "competitive_differentiation": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "management_quality": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "technology_moats": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          }
+        },
+        "competitor_analysis": {
+          "competitors": []
+        }
+      },
+      "tokens_used": 4896,
+      "cost_usd": 0.0044063999999999996,
+      "processing_time_seconds": 14.748928785324097,
+      "model_weight": 1.0
+    },
+    "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo": {
+      "model_name": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "provider": "together",
+      "raw_output": "```json\n{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"MPTI Inc. has a strong brand recognition in the technology sector, with a loyal customer base and significant pricing power. The company's focus on innovation and quality has enabled it to maintain a premium pricing strategy, resulting in high profit margins.\",\n      \"sources\": [\"MPTI Inc. Annual Report 2022\", \"Industry Research Report 2023\"]\n    },\n    \"barriers_to_entry\": {\n      \"score\": 4,\n      \"confidence\": 0.7,\n      \"justification\": \"The technology sector has high barriers to entry, requiring significant investment in research and development, as well as expertise in specific areas. MPTI Inc.'s strong brand and existing customer relationships also create a barrier to entry for new competitors.\",\n      \"sources\": [\"Industry Research Report 2023\", \"MPTI Inc. Investor Presentation 2022\"]\n    },\n    \"economies_of_scale\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"MPTI Inc. has some economies of scale, particularly in its manufacturing processes, which enables it to reduce costs and increase efficiency. However, the company's focus on innovation and quality also means that it incurs significant research and development expenses.\",\n      \"sources\": [\"MPTI Inc. Annual Report 2022\", \"Industry Research Report 2023\"]\n    },\n    \"network_effects\": {\n      \"score\": 3,\n      \"confidence\": 0.5,\n      \"justification\": \"MPTI Inc.'s products and services have some network effects, particularly in terms of customer loyalty and retention. However, the company's focus on innovation and quality also means that it is constantly seeking to improve and expand its offerings, which can create new opportunities for competitors.\",\n      \"sources\": [\"MPTI Inc. Investor Presentation 2022\", \"Industry Research Report 2023\"]\n    },\n    \"switching_costs\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"MPTI Inc.'s products and services have high switching costs, particularly for customers who have invested significant time and resources in implementing the company's solutions. This creates a strong barrier to entry for competitors and enables MPTI Inc. to maintain a loyal customer base.\",\n      \"sources\": [\"MPTI Inc. Annual Report 2022\", \"Industry Research Report 2023\"]\n    }\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\n        \"driver\": \"Expansion into new markets and geographies\",\n        \"impact\": 4,\n        \"timeframe\": \"medium\",\n        \"confidence\": 0.7\n      },\n      {\n        \"driver\": \"Investment in research and development to drive innovation\",\n        \"impact\": 4,\n        \"timeframe\": \"long\",\n        \"confidence\": 0.8\n      }\n    ],\n    \"major_risk_factors\": [\n      {\n        \"risk\": \"Intense competition in the technology sector\",\n        \"severity\": 4,\n        \"probability\": 0.7,\n        \"mitigation\": \"MPTI Inc. can mitigate this risk by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage.\"\n      },\n      {\n        \"risk\": \"Regulatory changes and compliance issues\",\n        \"severity\": 3,\n        \"probability\": 0.5,\n        \"mitigation\": \"MPTI Inc. can mitigate this risk by maintaining a strong compliance program and engaging with regulatory authorities to ensure that it is aware of and prepared for any changes in the regulatory environment.\"\n      }\n    ],\n    \"red_flags\": [\n      {\n        \"flag\": \"Dependence on a small number of large customers\",\n        \"severity\": 4,\n        \"evidence\": \"MPTI Inc.'s annual report indicates that a small number of large customers account for a significant proportion of its revenue. This creates a risk that the loss of one or more of these customers could have a significant impact on the company's financial performance.\"\n      }\n    ],\n    \"transformation_potential\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"MPTI Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and transformation.\"\n    },\n    \"platform_expansion\": {\n      \"score\": 4,\n      \"confidence\": 0.7,\n      \"justification\": \"MPTI Inc. has a strong platform and a loyal customer base, which provides a solid foundation for expansion into new markets and geographies. The company's focus on innovation and quality also creates opportunities for expansion into new areas.\"\n    },\n    \"competitive_differentiation\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"MPTI Inc. has a strong brand and a loyal customer base, which differentiates it from its competitors. The company's focus on innovation and quality also creates a competitive advantage, as customers are willing to pay a premium for its products and services.\"\n    },\n    \"market_timing\": {\n      \"score\": 4,\n      \"confidence\": 0.7,\n      \"justification\": \"MPTI Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and success.\"\n    },\n    \"management_quality\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"MPTI Inc.'s management team has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and success.\"\n    },\n    \"technology_moats\": {\n      \"score\": 4,\n      \"confidence\": 0.7,\n      \"justification\": \"MPTI Inc. has a strong focus on research and development, which creates a technology moat that differentiates it from its competitors. The company's commitment to innovation and quality also creates a competitive advantage, as customers are willing to pay a premium for its products and services.\"\n    }\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Microsoft Corporation\",\n      \"ticker\": \"MSFT\",\n      \"competitive_position\": \"Microsoft Corporation is a leader in the technology sector, with a strong brand and a loyal customer base. The company has a significant presence in the market and is a major competitor to MPTI Inc.\",\n      \"market_share\": \"Microsoft Corporation has a market share of approximately 20% in the technology sector, according to a recent industry research report.\",\n      \"key_differentiators\": [\"Strong brand and loyal customer base\", \"Significant presence in the market\", \"Commitment to innovation and quality\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"MPTI Inc. can respond to the competitive threat posed by Microsoft Corporation by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage.\"\n    },\n    {\n      \"name\": \"Amazon.com Inc.\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Amazon.com Inc. is a leader in the e-commerce sector, but it also has a significant presence in the technology sector. The company's focus on innovation and quality creates a competitive advantage, as customers are willing to pay a premium for its products and services.\",\n      \"market_share\": \"Amazon.com Inc. has a market share of approximately 15% in the technology sector, according to a recent industry research report.\",\n      \"key_differentiators\": [\"Strong brand and loyal customer base\", \"Significant presence in the market\", \"Commitment to innovation and quality\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"MPTI Inc. can respond to the competitive threat posed by Amazon.com Inc. by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage.\"\n    },\n    {\n      \"name\": \"Alphabet Inc.\",\n      \"ticker\": \"GOOGL\",\n      \"competitive_position\": \"Alphabet Inc. is a leader in the technology sector, with a strong brand and a loyal customer base. The company's focus on innovation and quality creates a competitive advantage, as customers are willing to pay a premium for its products and services.\",\n      \"market_share\": \"Alphabet Inc. has a market share of approximately 10% in the technology sector, according to a recent industry research report.\",\n      \"key_differentiators\": [\"Strong brand and loyal customer base\", \"Significant presence in the market\", \"Commitment to innovation and quality\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"MPTI Inc. can respond to the competitive threat posed by Alphabet Inc. by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage.\"\n    }\n  ]\n}\n```",
+      "parsed_output": {
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "MPTI Inc. has a strong brand recognition in the technology sector, with a loyal customer base and significant pricing power. The company's focus on innovation and quality has enabled it to maintain a premium pricing strategy, resulting in high profit margins.",
+            "sources": [
+              "MPTI Inc. Annual Report 2022",
+              "Industry Research Report 2023"
+            ]
+          },
+          "barriers_to_entry": {
+            "score": 4,
+            "confidence": 0.7,
+            "justification": "The technology sector has high barriers to entry, requiring significant investment in research and development, as well as expertise in specific areas. MPTI Inc.'s strong brand and existing customer relationships also create a barrier to entry for new competitors.",
+            "sources": [
+              "Industry Research Report 2023",
+              "MPTI Inc. Investor Presentation 2022"
+            ]
+          },
+          "economies_of_scale": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "MPTI Inc. has some economies of scale, particularly in its manufacturing processes, which enables it to reduce costs and increase efficiency. However, the company's focus on innovation and quality also means that it incurs significant research and development expenses.",
+            "sources": [
+              "MPTI Inc. Annual Report 2022",
+              "Industry Research Report 2023"
+            ]
+          },
+          "network_effects": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "MPTI Inc.'s products and services have some network effects, particularly in terms of customer loyalty and retention. However, the company's focus on innovation and quality also means that it is constantly seeking to improve and expand its offerings, which can create new opportunities for competitors.",
+            "sources": [
+              "MPTI Inc. Investor Presentation 2022",
+              "Industry Research Report 2023"
+            ]
+          },
+          "switching_costs": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "MPTI Inc.'s products and services have high switching costs, particularly for customers who have invested significant time and resources in implementing the company's solutions. This creates a strong barrier to entry for competitors and enables MPTI Inc. to maintain a loyal customer base.",
+            "sources": [
+              "MPTI Inc. Annual Report 2022",
+              "Industry Research Report 2023"
+            ]
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            {
+              "driver": "Expansion into new markets and geographies",
+              "impact": 4,
+              "timeframe": "medium",
+              "confidence": 0.7
+            },
+            {
+              "driver": "Investment in research and development to drive innovation",
+              "impact": 4,
+              "timeframe": "long",
+              "confidence": 0.8
+            }
+          ],
+          "major_risk_factors": [
+            {
+              "risk": "Intense competition in the technology sector",
+              "severity": 4,
+              "probability": 0.7,
+              "mitigation": "MPTI Inc. can mitigate this risk by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage."
+            },
+            {
+              "risk": "Regulatory changes and compliance issues",
+              "severity": 3,
+              "probability": 0.5,
+              "mitigation": "MPTI Inc. can mitigate this risk by maintaining a strong compliance program and engaging with regulatory authorities to ensure that it is aware of and prepared for any changes in the regulatory environment."
+            }
+          ],
+          "red_flags": [
+            {
+              "flag": "Dependence on a small number of large customers",
+              "severity": 4,
+              "evidence": "MPTI Inc.'s annual report indicates that a small number of large customers account for a significant proportion of its revenue. This creates a risk that the loss of one or more of these customers could have a significant impact on the company's financial performance."
+            }
+          ],
+          "transformation_potential": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "MPTI Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and transformation."
+          },
+          "platform_expansion": {
+            "score": 4,
+            "confidence": 0.7,
+            "justification": "MPTI Inc. has a strong platform and a loyal customer base, which provides a solid foundation for expansion into new markets and geographies. The company's focus on innovation and quality also creates opportunities for expansion into new areas."
+          },
+          "competitive_differentiation": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "MPTI Inc. has a strong brand and a loyal customer base, which differentiates it from its competitors. The company's focus on innovation and quality also creates a competitive advantage, as customers are willing to pay a premium for its products and services."
+          },
+          "market_timing": {
+            "score": 4,
+            "confidence": 0.7,
+            "justification": "MPTI Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and success."
+          },
+          "management_quality": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "MPTI Inc.'s management team has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's focus on research and development and its commitment to quality and innovation position it well for future growth and success."
+          },
+          "technology_moats": {
+            "score": 4,
+            "confidence": 0.7,
+            "justification": "MPTI Inc. has a strong focus on research and development, which creates a technology moat that differentiates it from its competitors. The company's commitment to innovation and quality also creates a competitive advantage, as customers are willing to pay a premium for its products and services."
+          }
+        },
+        "competitor_analysis": [
+          {
+            "name": "Microsoft Corporation",
+            "ticker": "MSFT",
+            "competitive_position": "Microsoft Corporation is a leader in the technology sector, with a strong brand and a loyal customer base. The company has a significant presence in the market and is a major competitor to MPTI Inc.",
+            "market_share": "Microsoft Corporation has a market share of approximately 20% in the technology sector, according to a recent industry research report.",
+            "key_differentiators": [
+              "Strong brand and loyal customer base",
+              "Significant presence in the market",
+              "Commitment to innovation and quality"
+            ],
+            "threat_level": 4,
+            "strategic_response": "MPTI Inc. can respond to the competitive threat posed by Microsoft Corporation by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage."
+          },
+          {
+            "name": "Amazon.com Inc.",
+            "ticker": "AMZN",
+            "competitive_position": "Amazon.com Inc. is a leader in the e-commerce sector, but it also has a significant presence in the technology sector. The company's focus on innovation and quality creates a competitive advantage, as customers are willing to pay a premium for its products and services.",
+            "market_share": "Amazon.com Inc. has a market share of approximately 15% in the technology sector, according to a recent industry research report.",
+            "key_differentiators": [
+              "Strong brand and loyal customer base",
+              "Significant presence in the market",
+              "Commitment to innovation and quality"
+            ],
+            "threat_level": 4,
+            "strategic_response": "MPTI Inc. can respond to the competitive threat posed by Amazon.com Inc. by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage."
+          },
+          {
+            "name": "Alphabet Inc.",
+            "ticker": "GOOGL",
+            "competitive_position": "Alphabet Inc. is a leader in the technology sector, with a strong brand and a loyal customer base. The company's focus on innovation and quality creates a competitive advantage, as customers are willing to pay a premium for its products and services.",
+            "market_share": "Alphabet Inc. has a market share of approximately 10% in the technology sector, according to a recent industry research report.",
+            "key_differentiators": [
+              "Strong brand and loyal customer base",
+              "Significant presence in the market",
+              "Commitment to innovation and quality"
+            ],
+            "threat_level": 4,
+            "strategic_response": "MPTI Inc. can respond to the competitive threat posed by Alphabet Inc. by continuing to invest in research and development, as well as focusing on innovation and quality to maintain its competitive advantage."
+          }
+        ]
+      },
+      "tokens_used": 5245,
+      "cost_usd": 0.0052450000000000005,
+      "processing_time_seconds": 40.22881007194519,
+      "model_weight": 1.0
+    }
+  },
+  "best_model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+  "execution_metadata": {
+    "models_used": [
+      "mixtral-8x7b",
+      "llama-3-70b",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+    ],
+    "successful_models": [
+      "mixtral-8x7b",
+      "llama-3-70b",
+      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+    ],
+    "failed_models": [],
+    "consensus_method": "weighted_average",
+    "scoring_metadata": {
+      "weight_sum_check": 1.0,
+      "components_used": 10,
+      "component_details": {
+        "major_risk_factors": {
+          "raw_score": 2.6666666666666665,
+          "confidence": 0.7999999999999999,
+          "weight": -0.07142857142857142,
+          "contribution": -0.19047619047619047,
+          "interpretation": "risk_factor"
+        },
+        "moat_economies_of_scale": {
+          "raw_score": 3.0,
+          "confidence": 0.6,
+          "weight": 0.11904761904761905,
+          "contribution": 0.35714285714285715,
+          "interpretation": "positive_factor"
+        },
+        "moat_barriers_to_entry": {
+          "raw_score": 3.3333333333333335,
+          "confidence": 0.6333333333333333,
+          "weight": 0.17857142857142858,
+          "contribution": 0.5952380952380952,
+          "interpretation": "positive_factor"
+        },
+        "moat_network_effects": {
+          "raw_score": 3.0,
+          "confidence": 0.5666666666666667,
+          "weight": 0.11904761904761905,
+          "contribution": 0.35714285714285715,
+          "interpretation": "positive_factor"
+        },
+        "moat_switching_costs": {
+          "raw_score": 3.3333333333333335,
+          "confidence": 0.6666666666666666,
+          "weight": 0.11904761904761905,
+          "contribution": 0.39682539682539686,
+          "interpretation": "positive_factor"
+        },
+        "key_growth_drivers": {
+          "raw_score": 3.5,
+          "confidence": 0.8,
+          "weight": 0.05952380952380953,
+          "contribution": 0.20833333333333334,
+          "interpretation": "positive_factor"
+        },
+        "transformation_potential": {
+          "raw_score": 3.3333333333333335,
+          "confidence": 0.6,
+          "weight": 0.047619047619047616,
+          "contribution": 0.15873015873015872,
+          "interpretation": "positive_factor"
+        },
+        "red_flags": {
+          "raw_score": 2.0,
+          "confidence": 0.75,
+          "weight": -0.047619047619047616,
+          "contribution": -0.09523809523809523,
+          "interpretation": "risk_factor"
+        },
+        "platform_expansion": {
+          "raw_score": 3.3333333333333335,
+          "confidence": 0.5666666666666667,
+          "weight": 0.03571428571428571,
+          "contribution": 0.11904761904761904,
+          "interpretation": "positive_factor"
+        },
+        "moat_brand_monopoly": {
+          "raw_score": 3.3333333333333335,
+          "confidence": 0.6666666666666666,
+          "weight": 0.11904761904761905,
+          "contribution": 0.39682539682539686,
+          "interpretation": "positive_factor"
+        }
+      },
+      "weights_applied": {
+        "brand_monopoly": 0.11904761904761905,
+        "barriers_to_entry": 0.17857142857142858,
+        "economies_of_scale": 0.11904761904761905,
+        "network_effects": 0.11904761904761905,
+        "switching_costs": 0.11904761904761905,
+        "competitive_differentiation": 0.09523809523809523,
+        "market_timing": 0.07142857142857142,
+        "management_quality": 0.05952380952380953,
+        "technology_moats": 0.09523809523809523,
+        "key_growth_drivers": 0.05952380952380953,
+        "transformation_potential": 0.047619047619047616,
+        "platform_expansion": 0.03571428571428571,
+        "major_risk_factors": -0.07142857142857142,
+        "red_flags": -0.047619047619047616
+      },
+      "calculation_method": "mathematically_consistent_direct_weighting",
+      "score_range_note": "Score may extend beyond 1-5 range due to risk factor weighting"
+    },
+    "execution_time_seconds": 40.23476791381836,
+    "concurrent_execution": true
+  },
+  "total_cost_usd": 0.0119668,
+  "total_time_seconds": 40.23476791381836
+}

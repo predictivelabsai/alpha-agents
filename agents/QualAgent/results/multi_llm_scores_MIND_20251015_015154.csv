@@ -1,0 +1,17 @@
+company_ticker,score_component,score,confidence,category,justification
+MIND,technology_moats,3.0714285714285716,0.7142857142857143,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MIND Inc. has weak technology moats, as the company's produc..."
+MIND,competitive_positioning,2.379761904761905,0.8357142857142857,competitive,"Consensus from 3 models: llama-3.1-70b: Analysis of 2 competitors, average threat level: 4.0/5.0; ll..."
+MIND,major_risk_factors,2.5595238095238093,0.817857142857143,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified risk factors with average impact 3.5/5...
+MIND,moat_brand_monopoly,2.6428571428571432,0.6357142857142857,competitive_moat,"Consensus from 3 models: llama-3.1-70b: MIND Inc. has a recognized brand in the technology sector, b..."
+MIND,red_flags,3.2777777777777777,0.7777777777777777,strategic_insights,Consensus from 2 models: llama-3.1-70b: Based on 1 identified red flags with average impact 3.0/5.0;...
+MIND,transformation_potential,3.3571428571428577,0.7071428571428572,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MIND Inc. has moderate transformation potential, as the comp..."
+MIND,market_timing,3.3571428571428577,0.6714285714285715,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MIND Inc. has moderate market timing, as the company is posi..."
+MIND,management_quality,3.3571428571428577,0.7071428571428572,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MIND Inc.'s management team has moderate quality, as the tea..."
+MIND,key_growth_drivers,3.5000000000000004,0.8357142857142857,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified growth drivers with average impact 3.5...
+MIND,competitive_differentiation,3.0714285714285716,0.6785714285714287,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MIND Inc. has weak competitive differentiation, as the compa..."
+MIND,moat_barriers_to_entry,3.0714285714285716,0.6785714285714287,competitive_moat,"Consensus from 3 models: llama-3.1-70b: The technology sector has relatively low barriers to entry, ..."
+MIND,platform_expansion,3.3571428571428577,0.7428571428571429,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MIND Inc. has moderate platform expansion opportunities, as ..."
+MIND,moat_network_effects,1.7142857142857144,0.4714285714285715,competitive_moat,"Consensus from 3 models: llama-3.1-70b: MIND Inc. does not have significant network effects, as its ..."
+MIND,moat_switching_costs,2.7142857142857144,0.5714285714285715,competitive_moat,"Consensus from 3 models: llama-3.1-70b: MIND Inc.'s customers do not have high switching costs, as t..."
+MIND,moat_economies_of_scale,3.0714285714285716,0.7142857142857143,competitive_moat,Consensus from 3 models: llama-3.1-70b: MIND Inc. has some economies of scale due to its size and ma...
+MIND,COMPOSITE_SCORE,1.9051398337112624,0.6952777777777779,composite,Weighted composite from 15 components

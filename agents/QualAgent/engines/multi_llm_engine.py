@@ -77,6 +77,65 @@ class MultiLLMEngine:
         logger.info(f"Found {len(enabled_models)} enabled models: {[m.model_name for m in enabled_models]}")
         return enabled_models
 
+    def _resolve_requested_models(self, requested_models: List[str],
+                                 available_models: List[LLMModelConfig]) -> List[LLMModelConfig]:
+        """
+        Resolve requested models to available LLMModelConfig objects.
+        Handles both configured model keys (like 'llama-3.1-70b') and raw model names
+        (like 'meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo').
+        """
+        resolved_models = []
+
+        # Create mapping from raw model names to configured model keys
+        raw_to_config_map = self._create_raw_to_config_mapping()
+
+        for requested in requested_models:
+            logger.info(f"Resolving requested model: {requested}")
+
+            # Try 1: Direct match with configured model keys
+            direct_match = [m for m in available_models if m.model_name == requested]
+            if direct_match:
+                resolved_models.extend(direct_match)
+                logger.info(f"  ✅ Direct match found: {requested}")
+                continue
+
+            # Try 2: Match raw model name to configured key
+            if requested in raw_to_config_map:
+                config_key = raw_to_config_map[requested]
+                config_match = [m for m in available_models if m.model_name == config_key]
+                if config_match:
+                    resolved_models.extend(config_match)
+                    logger.info(f"  ✅ Raw-to-config match: {requested} -> {config_key}")
+                    continue
+
+            # Try 3: Create dynamic model config for additional models
+            # Now we can use the requested model name directly since LLM integration handles it
+            additional_model = LLMModelConfig(
+                model_name=requested,  # Use the raw model name directly
+                provider="together",   # Default to TogetherAI
+                weight_in_consensus=1.0,
+                enabled=True,
+                description=f"Additional model: {requested}"
+            )
+            resolved_models.append(additional_model)
+            logger.info(f"  ✅ Created additional model config: {requested}")
+
+        logger.info(f"Resolved {len(resolved_models)} models from {len(requested_models)} requested")
+        return resolved_models
+
+    def _create_raw_to_config_mapping(self) -> Dict[str, str]:
+        """Create mapping from raw model names to configured model keys"""
+        mapping = {}
+
+        # Get the model configurations from LLM integration
+        for config_key in self.llm.get_available_models():
+            model_info = self.llm.get_model_info(config_key)
+            if model_info:
+                mapping[model_info.model_name] = config_key
+
+        logger.info(f"Created raw-to-config mapping with {len(mapping)} entries")
+        return mapping
+
     def run_multi_llm_analysis(self, company: Company, analysis_config: Dict,
                               user_weights: WeightingScheme = None,
                               max_concurrent: int = 3) -> MultiLLMResult:
@@ -92,7 +151,7 @@ class MultiLLMEngine:
         if analysis_config.get('models_to_use'):
             # Filter to only use specified models
             requested_models = analysis_config['models_to_use']
-            models = [m for m in all_available_models if m.model_name in requested_models]
+            models = self._resolve_requested_models(requested_models, all_available_models)
             logger.info(f"Filtering to {len(models)} requested models: {[m.model_name for m in models]}")
 
             if not models:

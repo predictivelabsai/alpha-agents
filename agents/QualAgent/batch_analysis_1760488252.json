@@ -1,0 +1,67 @@
+{
+  "timestamp": "2025-10-15T01:30:52.420136",
+  "companies_analyzed": 10,
+  "total_cost": 0.1302528,
+  "results": [
+    {
+      "ticker": "SAGT",
+      "score": 2.5330687830687832,
+      "recommendation": "WEAK HOLD - Company faces challenges but may have turnaround potential",
+      "cost": 0.0132896
+    },
+    {
+      "ticker": "ACFN",
+      "score": 2.6613756613756614,
+      "recommendation": "WEAK HOLD - Company faces challenges but may have turnaround potential",
+      "cost": 0.0133332
+    },
+    {
+      "ticker": "SQNS",
+      "score": 2.1626984126984126,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.013081899999999999
+    },
+    {
+      "ticker": "HIT",
+      "score": 2.5555555555555554,
+      "recommendation": "WEAK HOLD - Company faces challenges but may have turnaround potential",
+      "cost": 0.012733099999999999
+    },
+    {
+      "ticker": "FATN",
+      "score": 2.3267195767195767,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.013045000000000001
+    },
+    {
+      "ticker": "CCRD",
+      "score": 2.6765873015873014,
+      "recommendation": "WEAK HOLD - Company faces challenges but may have turnaround potential",
+      "cost": 0.0130395
+    },
+    {
+      "ticker": "MPTI",
+      "score": 2.3035714285714284,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0119668
+    },
+    {
+      "ticker": "MAPS",
+      "score": 2.380952380952381,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0130667
+    },
+    {
+      "ticker": "VTSI",
+      "score": 2.505291005291005,
+      "recommendation": "WEAK HOLD - Company faces challenges but may have turnaround potential",
+      "cost": 0.0134564
+    },
+    {
+      "ticker": "MIND",
+      "score": 2.390873015873016,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.013240599999999998
+    }
+  ]
+}

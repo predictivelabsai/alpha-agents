@@ -1,0 +1,17 @@
+company_ticker,score_component,score,confidence,category,justification
+SAGT,technology_moats,3.3571428571428577,0.7428571428571429,strategic_insights,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has some technology advantages, but they are not s..."
+SAGT,competitive_positioning,2.373809523809524,0.8714285714285714,competitive,"Consensus from 3 models: llama-3.1-70b: Analysis of 2 competitors, average threat level: 4.0/5.0; ll..."
+SAGT,major_risk_factors,2.3214285714285716,0.7999999999999999,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified risk factors with average impact 3.5/5...
+SAGT,moat_brand_monopoly,3.0000000000000004,0.7,competitive_moat,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has a recognized brand in the technology sector, b..."
+SAGT,red_flags,3.0,0.75,strategic_insights,Consensus from 2 models: llama-3.1-70b: Based on 1 identified red flags with average impact 3.0/5.0;...
+SAGT,transformation_potential,3.642857142857143,0.7642857142857143,strategic_insights,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has a good transformation potential, with a proven..."
+SAGT,market_timing,3.642857142857143,0.7642857142857143,strategic_insights,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. is well-positioned for market trends, with good ti..."
+SAGT,management_quality,4.0,0.8357142857142859,strategic_insights,Consensus from 3 models: llama-3.1-70b: SAGT Inc.'s management team has a good track record of value...
+SAGT,key_growth_drivers,4.05952380952381,0.817857142857143,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified growth drivers with average impact 4.0...
+SAGT,competitive_differentiation,3.642857142857143,0.8000000000000002,strategic_insights,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has strong differentiation, with multiple competit..."
+SAGT,moat_barriers_to_entry,3.642857142857143,0.7285714285714286,competitive_moat,Consensus from 3 models: llama-3.1-70b: SAGT Inc. operates in a technology sector with high barriers...
+SAGT,platform_expansion,3.642857142857143,0.7642857142857143,strategic_insights,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has good expansion opportunities, with a clear pat..."
+SAGT,moat_network_effects,3.0000000000000004,0.6357142857142858,competitive_moat,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has some network benefits, but they are not critic..."
+SAGT,moat_switching_costs,3.642857142857143,0.7642857142857143,competitive_moat,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has high switching costs, creating strong customer..."
+SAGT,moat_economies_of_scale,3.0714285714285716,0.7142857142857143,competitive_moat,"Consensus from 3 models: llama-3.1-70b: SAGT Inc. has some scale advantages, but they are not signif..."
+SAGT,COMPOSITE_SCORE,2.4006519274376417,0.7439285714285715,composite,Weighted composite from 15 components

@@ -396,7 +396,7 @@ def explore_llm_results_section():
         # Display companies in same order as Results & Downloads
         for i, company_result in enumerate(batch_results):
             ticker = company_result.get('ticker', f'Company_{i+1}')
-            composite_score = company_result.get('composite_score', 0)
+            composite_score = company_result.get('average_composite_score', 0)
 
             score_fmt = safe_float_format(composite_score, 0.0, ".2f")
             with st.expander(f"🏢 {ticker} - Score: {score_fmt}/5.0", expanded=False):
