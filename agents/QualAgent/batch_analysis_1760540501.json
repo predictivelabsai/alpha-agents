@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-10-15T17:01:41.571028",
+  "companies_analyzed": 2,
+  "total_cost": 0.0254817,
+  "results": [
+    {
+      "ticker": "WDFC",
+      "score": 2.1234725371630137,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0129891
+    },
+    {
+      "ticker": "OR",
+      "score": 2.3007369614512476,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0124926
+    }
+  ]
+}

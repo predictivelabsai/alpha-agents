@@ -1,0 +1,621 @@
+{
+  "metadata": {
+    "timestamp": "20251015_203747",
+    "company_ticker": "TTD",
+    "analysis_type": "multi_llm",
+    "models_used": [
+      "llama-3.1-70b",
+      "llama-3-70b",
+      "mixtral-8x7b"
+    ]
+  },
+  "company": {
+    "company_name": "TTD Inc.",
+    "ticker": "TTD",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "TTD - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "7f695f19-b201-457a-8fc5-f2987bfb78b3",
+    "created_at": "2025-10-15T19:33:39.051961",
+    "updated_at": "2025-10-15T19:33:39.051961"
+  },
+  "composite_score": {
+    "score": 2.7103174603174605,
+    "confidence": 0.6907142857142856,
+    "components_count": 15
+  },
+  "consensus_scores": {
+    "platform_expansion": {
+      "name": "Platform Expansion",
+      "score": 3.2857142857142856,
+      "confidence": 0.5857142857142857,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD's Unified ID solution has created a platform effect, where the value of the solution increases as more users and publishers join the platform. The company's expansion into new markets and geographies also creates opportunities for platform expansion.; llama-3-70b: Default score from narrative analysis; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "competitive_positioning": {
+      "name": "Competitive Positioning",
+      "score": 2.533333333333333,
+      "confidence": 0.8999999999999999,
+      "justification": "Consensus from 1 models: llama-3.1-70b: Analysis of 3 competitors, average threat level: 3.7/5.0",
+      "sources": [],
+      "category": "competitive"
+    },
+    "moat_switching_costs": {
+      "name": "Moat Switching Costs",
+      "score": 3.714285714285715,
+      "confidence": 0.6285714285714286,
+      "justification": "Consensus from 3 models: llama-3.1-70b: While TTD's Unified ID solution has created some switching costs for its customers, the company's reliance on third-party data providers and its limited control over ad inventory create some limitations to its switching costs. Additionally, the ad-tech industry is highly competitive, and customers may be able to easily switch to alternative solutions. (Source: TTD Q2 2022 Earnings Report); llama-3-70b: Extracted from narrative analysis - Switching Costs; mixtral-8x7b: Extracted from narrative analysis - Switching Costs",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "moat_network_effects": {
+      "name": "Moat Network Effects",
+      "score": 4.0,
+      "confidence": 0.6571428571428573,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD's Unified ID solution has created a network effect, where the value of the solution increases as more users and publishers join the platform. The company's large customer base and high-volume ad transactions have also created a network effect, where the value of the platform increases as more advertisers and publishers participate. (Source: TTD Q2 2022 Earnings Report); llama-3-70b: Extracted from narrative analysis - Network Effects; mixtral-8x7b: Extracted from narrative analysis - Network Effects",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "competitive_differentiation": {
+      "name": "Competitive Differentiation",
+      "score": 3.2857142857142856,
+      "confidence": 0.5857142857142857,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD's Unified ID solution and its strong relationships with major publishers and advertisers create a unique value proposition that differentiates the company from its competitors.; llama-3-70b: Default score from narrative analysis; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "key_growth_drivers": {
+      "name": "Key Growth Drivers",
+      "score": 3.547619047619048,
+      "confidence": 0.8857142857142858,
+      "justification": "Consensus from 3 models: llama-3.1-70b: Based on 3 identified growth drivers with average impact 3.7/5.0; llama-3-70b: Based on 3 identified growth drivers; mixtral-8x7b: Based on 3 identified growth drivers",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_economies_of_scale": {
+      "name": "Moat Economies Of Scale",
+      "score": 4.0,
+      "confidence": 0.6571428571428573,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD has achieved significant economies of scale through its large customer base and high-volume ad transactions. The company's Unified ID solution has also enabled it to reduce costs and improve efficiency. However, the company's reliance on third-party data providers and its limited control over ad inventory create some limitations to its economies of scale. (Source: TTD Q2 2022 Earnings Report); llama-3-70b: Extracted from narrative analysis - Economies Of Scale; mixtral-8x7b: Extracted from narrative analysis - Economies Of Scale",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "moat_barriers_to_entry": {
+      "name": "Moat Barriers To Entry",
+      "score": 3.714285714285715,
+      "confidence": 0.6285714285714286,
+      "justification": "Consensus from 3 models: llama-3.1-70b: While TTD has established a strong presence in the ad-tech industry, the barriers to entry are relatively low. New entrants can easily replicate TTD's technology and business model, and the company's reliance on third-party data providers creates some vulnerability. However, TTD's strong relationships with major publishers and advertisers, as well as its significant investment in R&D, create some barriers to entry. (Source: TTD Q2 2022 Earnings Report); llama-3-70b: Extracted from narrative analysis - Barriers To Entry; mixtral-8x7b: Extracted from narrative analysis - Barriers To Entry",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "management_quality": {
+      "name": "Management Quality",
+      "score": 3.2857142857142856,
+      "confidence": 0.5857142857142857,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD's management team has demonstrated its ability to execute on the company's strategy and drive growth. The team's strong relationships with major publishers and advertisers also position the company well for future growth.; llama-3-70b: Default score from narrative analysis; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "technology_moats": {
+      "name": "Technology Moats",
+      "score": 3.2857142857142856,
+      "confidence": 0.5857142857142857,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD's Unified ID solution and its significant investment in R&D create technological barriers that make it difficult for competitors to replicate the company's technology and business model.; llama-3-70b: Default score from narrative analysis; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "red_flags": {
+      "name": "Red Flags",
+      "score": 3.0000000000000004,
+      "confidence": 0.7500000000000001,
+      "justification": "Consensus from 1 models: llama-3.1-70b: Based on 1 identified red flags with average impact 3.0/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_brand_monopoly": {
+      "name": "Moat Brand Monopoly",
+      "score": 4.0,
+      "confidence": 0.6571428571428573,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD has established a strong brand in the ad-tech industry, with a reputation for innovative solutions and high-quality customer service. The company's Unified ID solution has gained significant traction, with over 100 million monthly active users. However, the company still faces intense competition from other ad-tech players, which limits its pricing power and customer loyalty. (Source: TTD Q2 2022 Earnings Report); llama-3-70b: Extracted from narrative analysis - Brand Monopoly; mixtral-8x7b: Extracted from narrative analysis - Brand Monopoly",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "market_timing": {
+      "name": "Market Timing",
+      "score": 3.2857142857142856,
+      "confidence": 0.5857142857142857,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD's expansion into programmatic advertising and its development of new ad formats and technologies position the company well for future growth and market trends.; llama-3-70b: Default score from narrative analysis; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "major_risk_factors": {
+      "name": "Major Risk Factors",
+      "score": 2.3214285714285716,
+      "confidence": 0.8714285714285714,
+      "justification": "Consensus from 3 models: llama-3.1-70b: Based on 2 identified risk factors with average impact 3.5/5.0; llama-3-70b: Based on 3 identified risk factors; mixtral-8x7b: Based on 4 identified risk factors",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "transformation_potential": {
+      "name": "Transformation Potential",
+      "score": 3.2857142857142856,
+      "confidence": 0.5857142857142857,
+      "justification": "Consensus from 3 models: llama-3.1-70b: TTD has demonstrated its ability to adapt to changing market conditions and technological advancements. The company's investment in R&D and its strong relationships with major publishers and advertisers position it well for future growth and transformation.; llama-3-70b: Default score from narrative analysis; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    }
+  },
+  "individual_model_results": {
+    "llama-3.1-70b": {
+      "model_name": "llama-3.1-70b",
+      "provider": "together",
+      "raw_output": "{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD has established a strong brand in the ad-tech industry, with a reputation for innovative solutions and high-quality customer service. The company's Unified ID solution has gained significant traction, with over 100 million monthly active users. However, the company still faces intense competition from other ad-tech players, which limits its pricing power and customer loyalty. (Source: TTD Q2 2022 Earnings Report)\",\n      \"sources\": [\"TTD Q2 2022 Earnings Report\", \"AdExchanger: The Trade Desk's Unified ID Solution Gains Traction\"]\n    },\n    \"barriers_to_entry\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"While TTD has established a strong presence in the ad-tech industry, the barriers to entry are relatively low. New entrants can easily replicate TTD's technology and business model, and the company's reliance on third-party data providers creates some vulnerability. However, TTD's strong relationships with major publishers and advertisers, as well as its significant investment in R&D, create some barriers to entry. (Source: TTD Q2 2022 Earnings Report)\",\n      \"sources\": [\"TTD Q2 2022 Earnings Report\", \"eMarketer: Ad Tech Landscape\"]\n    },\n    \"economies_of_scale\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD has achieved significant economies of scale through its large customer base and high-volume ad transactions. The company's Unified ID solution has also enabled it to reduce costs and improve efficiency. However, the company's reliance on third-party data providers and its limited control over ad inventory create some limitations to its economies of scale. (Source: TTD Q2 2022 Earnings Report)\",\n      \"sources\": [\"TTD Q2 2022 Earnings Report\", \"AdExchanger: The Trade Desk's Unified ID Solution Gains Traction\"]\n    },\n    \"network_effects\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD's Unified ID solution has created a network effect, where the value of the solution increases as more users and publishers join the platform. The company's large customer base and high-volume ad transactions have also created a network effect, where the value of the platform increases as more advertisers and publishers participate. (Source: TTD Q2 2022 Earnings Report)\",\n      \"sources\": [\"TTD Q2 2022 Earnings Report\", \"AdExchanger: The Trade Desk's Unified ID Solution Gains Traction\"]\n    },\n    \"switching_costs\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"While TTD's Unified ID solution has created some switching costs for its customers, the company's reliance on third-party data providers and its limited control over ad inventory create some limitations to its switching costs. Additionally, the ad-tech industry is highly competitive, and customers may be able to easily switch to alternative solutions. (Source: TTD Q2 2022 Earnings Report)\",\n      \"sources\": [\"TTD Q2 2022 Earnings Report\", \"eMarketer: Ad Tech Landscape\"]\n    }\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\n        \"driver\": \"Expansion of Unified ID solution to new markets and geographies\",\n        \"impact\": 4,\n        \"timeframe\": \"medium\",\n        \"confidence\": 0.8\n      },\n      {\n        \"driver\": \"Increased adoption of programmatic advertising\",\n        \"impact\": 4,\n        \"timeframe\": \"short\",\n        \"confidence\": 0.8\n      },\n      {\n        \"driver\": \"Development of new ad formats and technologies\",\n        \"impact\": 3,\n        \"timeframe\": \"long\",\n        \"confidence\": 0.7\n      }\n    ],\n    \"major_risk_factors\": [\n      {\n        \"risk\": \"Intense competition from other ad-tech players\",\n        \"severity\": 4,\n        \"probability\": 0.8,\n        \"mitigation\": \"TTD's strong brand and reputation, as well as its significant investment in R&D, can help mitigate this risk.\"\n      },\n      {\n        \"risk\": \"Regulatory changes affecting the ad-tech industry\",\n        \"severity\": 3,\n        \"probability\": 0.7,\n        \"mitigation\": \"TTD's strong relationships with major publishers and advertisers, as well as its compliance with industry regulations, can help mitigate this risk.\"\n      }\n    ],\n    \"red_flags\": [\n      {\n        \"flag\": \"TTD's reliance on third-party data providers\",\n        \"severity\": 3,\n        \"evidence\": \"TTD's Q2 2022 Earnings Report highlights the company's reliance on third-party data providers, which creates some vulnerability.\"\n      }\n    ],\n    \"transformation_potential\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD has demonstrated its ability to adapt to changing market conditions and technological advancements. The company's investment in R&D and its strong relationships with major publishers and advertisers position it well for future growth and transformation.\"\n    },\n    \"platform_expansion\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD's Unified ID solution has created a platform effect, where the value of the solution increases as more users and publishers join the platform. The company's expansion into new markets and geographies also creates opportunities for platform expansion.\"\n    },\n    \"competitive_differentiation\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD's Unified ID solution and its strong relationships with major publishers and advertisers create a unique value proposition that differentiates the company from its competitors.\"\n    },\n    \"market_timing\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD's expansion into programmatic advertising and its development of new ad formats and technologies position the company well for future growth and market trends.\"\n    },\n    \"management_quality\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD's management team has demonstrated its ability to execute on the company's strategy and drive growth. The team's strong relationships with major publishers and advertisers also position the company well for future growth.\"\n    },\n    \"technology_moats\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD's Unified ID solution and its significant investment in R&D create technological barriers that make it difficult for competitors to replicate the company's technology and business model.\"\n    }\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Amazon.com Inc.\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Amazon is a major player in the ad-tech industry, with a strong presence in programmatic advertising and a large customer base.\",\n      \"market_share\": \"Amazon has a significant market share in the ad-tech industry, with estimates suggesting it accounts for around 10% of the market. (Source: eMarketer)\",\n      \"key_differentiators\": [\"Amazon's strong brand and reputation\", \"Amazon's large customer base and high-volume ad transactions\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"TTD can respond to Amazon's competitive threat by focusing on its unique value proposition and strong relationships with major publishers and advertisers.\"\n    },\n    {\n      \"name\": \"Google LLC\",\n      \"ticker\": \"GOOGL\",\n      \"competitive_position\": \"Google is a major player in the ad-tech industry, with a strong presence in programmatic advertising and a large customer base.\",\n      \"market_share\": \"Google has a significant market share in the ad-tech industry, with estimates suggesting it accounts for around 20% of the market. (Source: eMarketer)\",\n      \"key_differentiators\": [\"Google's strong brand and reputation\", \"Google's large customer base and high-volume ad transactions\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"TTD can respond to Google's competitive threat by focusing on its unique value proposition and strong relationships with major publishers and advertisers.\"\n    },\n    {\n      \"name\": \"Microsoft Corporation\",\n      \"ticker\": \"MSFT\",\n      \"competitive_position\": \"Microsoft is a major player in the ad-tech industry, with a strong presence in programmatic advertising and a large customer base.\",\n      \"market_share\": \"Microsoft has a significant market share in the ad-tech industry, with estimates suggesting it accounts for around 5% of the market. (Source: eMarketer)\",\n      \"key_differentiators\": [\"Microsoft's strong brand and reputation\", \"Microsoft's large customer base and high-volume ad transactions\"],\n      \"threat_level\": 3,\n      \"strategic_response\": \"TTD can respond to Microsoft's competitive threat by focusing on its unique value proposition and strong relationships with major publishers and advertisers.\"\n    }\n  ]\n}",
+      "parsed_output": {
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD has established a strong brand in the ad-tech industry, with a reputation for innovative solutions and high-quality customer service. The company's Unified ID solution has gained significant traction, with over 100 million monthly active users. However, the company still faces intense competition from other ad-tech players, which limits its pricing power and customer loyalty. (Source: TTD Q2 2022 Earnings Report)",
+            "sources": [
+              "TTD Q2 2022 Earnings Report",
+              "AdExchanger: The Trade Desk's Unified ID Solution Gains Traction"
+            ]
+          },
+          "barriers_to_entry": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "While TTD has established a strong presence in the ad-tech industry, the barriers to entry are relatively low. New entrants can easily replicate TTD's technology and business model, and the company's reliance on third-party data providers creates some vulnerability. However, TTD's strong relationships with major publishers and advertisers, as well as its significant investment in R&D, create some barriers to entry. (Source: TTD Q2 2022 Earnings Report)",
+            "sources": [
+              "TTD Q2 2022 Earnings Report",
+              "eMarketer: Ad Tech Landscape"
+            ]
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD has achieved significant economies of scale through its large customer base and high-volume ad transactions. The company's Unified ID solution has also enabled it to reduce costs and improve efficiency. However, the company's reliance on third-party data providers and its limited control over ad inventory create some limitations to its economies of scale. (Source: TTD Q2 2022 Earnings Report)",
+            "sources": [
+              "TTD Q2 2022 Earnings Report",
+              "AdExchanger: The Trade Desk's Unified ID Solution Gains Traction"
+            ]
+          },
+          "network_effects": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD's Unified ID solution has created a network effect, where the value of the solution increases as more users and publishers join the platform. The company's large customer base and high-volume ad transactions have also created a network effect, where the value of the platform increases as more advertisers and publishers participate. (Source: TTD Q2 2022 Earnings Report)",
+            "sources": [
+              "TTD Q2 2022 Earnings Report",
+              "AdExchanger: The Trade Desk's Unified ID Solution Gains Traction"
+            ]
+          },
+          "switching_costs": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "While TTD's Unified ID solution has created some switching costs for its customers, the company's reliance on third-party data providers and its limited control over ad inventory create some limitations to its switching costs. Additionally, the ad-tech industry is highly competitive, and customers may be able to easily switch to alternative solutions. (Source: TTD Q2 2022 Earnings Report)",
+            "sources": [
+              "TTD Q2 2022 Earnings Report",
+              "eMarketer: Ad Tech Landscape"
+            ]
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            {
+              "driver": "Expansion of Unified ID solution to new markets and geographies",
+              "impact": 4,
+              "timeframe": "medium",
+              "confidence": 0.8
+            },
+            {
+              "driver": "Increased adoption of programmatic advertising",
+              "impact": 4,
+              "timeframe": "short",
+              "confidence": 0.8
+            },
+            {
+              "driver": "Development of new ad formats and technologies",
+              "impact": 3,
+              "timeframe": "long",
+              "confidence": 0.7
+            }
+          ],
+          "major_risk_factors": [
+            {
+              "risk": "Intense competition from other ad-tech players",
+              "severity": 4,
+              "probability": 0.8,
+              "mitigation": "TTD's strong brand and reputation, as well as its significant investment in R&D, can help mitigate this risk."
+            },
+            {
+              "risk": "Regulatory changes affecting the ad-tech industry",
+              "severity": 3,
+              "probability": 0.7,
+              "mitigation": "TTD's strong relationships with major publishers and advertisers, as well as its compliance with industry regulations, can help mitigate this risk."
+            }
+          ],
+          "red_flags": [
+            {
+              "flag": "TTD's reliance on third-party data providers",
+              "severity": 3,
+              "evidence": "TTD's Q2 2022 Earnings Report highlights the company's reliance on third-party data providers, which creates some vulnerability."
+            }
+          ],
+          "transformation_potential": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD has demonstrated its ability to adapt to changing market conditions and technological advancements. The company's investment in R&D and its strong relationships with major publishers and advertisers position it well for future growth and transformation."
+          },
+          "platform_expansion": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD's Unified ID solution has created a platform effect, where the value of the solution increases as more users and publishers join the platform. The company's expansion into new markets and geographies also creates opportunities for platform expansion."
+          },
+          "competitive_differentiation": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD's Unified ID solution and its strong relationships with major publishers and advertisers create a unique value proposition that differentiates the company from its competitors."
+          },
+          "market_timing": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD's expansion into programmatic advertising and its development of new ad formats and technologies position the company well for future growth and market trends."
+          },
+          "management_quality": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD's management team has demonstrated its ability to execute on the company's strategy and drive growth. The team's strong relationships with major publishers and advertisers also position the company well for future growth."
+          },
+          "technology_moats": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TTD's Unified ID solution and its significant investment in R&D create technological barriers that make it difficult for competitors to replicate the company's technology and business model."
+          }
+        },
+        "competitor_analysis": [
+          {
+            "name": "Amazon.com Inc.",
+            "ticker": "AMZN",
+            "competitive_position": "Amazon is a major player in the ad-tech industry, with a strong presence in programmatic advertising and a large customer base.",
+            "market_share": "Amazon has a significant market share in the ad-tech industry, with estimates suggesting it accounts for around 10% of the market. (Source: eMarketer)",
+            "key_differentiators": [
+              "Amazon's strong brand and reputation",
+              "Amazon's large customer base and high-volume ad transactions"
+            ],
+            "threat_level": 4,
+            "strategic_response": "TTD can respond to Amazon's competitive threat by focusing on its unique value proposition and strong relationships with major publishers and advertisers."
+          },
+          {
+            "name": "Google LLC",
+            "ticker": "GOOGL",
+            "competitive_position": "Google is a major player in the ad-tech industry, with a strong presence in programmatic advertising and a large customer base.",
+            "market_share": "Google has a significant market share in the ad-tech industry, with estimates suggesting it accounts for around 20% of the market. (Source: eMarketer)",
+            "key_differentiators": [
+              "Google's strong brand and reputation",
+              "Google's large customer base and high-volume ad transactions"
+            ],
+            "threat_level": 4,
+            "strategic_response": "TTD can respond to Google's competitive threat by focusing on its unique value proposition and strong relationships with major publishers and advertisers."
+          },
+          {
+            "name": "Microsoft Corporation",
+            "ticker": "MSFT",
+            "competitive_position": "Microsoft is a major player in the ad-tech industry, with a strong presence in programmatic advertising and a large customer base.",
+            "market_share": "Microsoft has a significant market share in the ad-tech industry, with estimates suggesting it accounts for around 5% of the market. (Source: eMarketer)",
+            "key_differentiators": [
+              "Microsoft's strong brand and reputation",
+              "Microsoft's large customer base and high-volume ad transactions"
+            ],
+            "threat_level": 3,
+            "strategic_response": "TTD can respond to Microsoft's competitive threat by focusing on its unique value proposition and strong relationships with major publishers and advertisers."
+          }
+        ]
+      },
+      "tokens_used": 5231,
+      "cost_usd": 0.0047079,
+      "processing_time_seconds": 12.057244539260864,
+      "model_weight": 0.8
+    },
+    "llama-3-70b": {
+      "model_name": "llama-3-70b",
+      "provider": "together",
+      "raw_output": "Here is the comprehensive qualitative analysis of TTD Inc. (TTD) in the Technology sector:\n\n```\n{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD has established a strong brand in the adtech industry, with a high level of customer loyalty and recognition. Its proprietary data management platform (DMP) and demand-side platform (DSP) have created a significant moat, making it difficult for competitors to replicate. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"AdExchanger article on TTD's DMP\"]},\n    \"barriers_to_entry\": {\"score\": 4, \"confidence\": 0.7, \"justification\": \"The adtech industry has high barriers to entry, including significant capital requirements, complex technology, and regulatory hurdles. TTD's established relationships with major publishers and advertisers also create a barrier for new entrants. (Source: eMarketer report on adtech industry trends)\", \"sources\": [\"eMarketer report on adtech industry trends\", \"TTD's 2022 Annual Report\"]},\n    \"economies_of_scale\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"While TTD has achieved some economies of scale through its growth, the adtech industry is highly competitive, and smaller players can still achieve similar economics with focused efforts. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"Adweek article on adtech industry competition\"]},\n    \"network_effects\": {\"score\": 3, \"confidence\": 0.5, \"justification\": \"TTD's platform benefits from network effects, as more publishers and advertisers join the platform, increasing its value to all participants. However, these effects are not as strong as those in other industries, such as social media. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"Forrester report on adtech industry trends\"]},\n    \"switching_costs\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's customers face significant switching costs, including retraining and integration complexities, making it difficult for them to switch to competitors. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"AdExchanger article on TTD's customer retention\"]}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expansion into new markets, such as connected TV and audio\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.7},\n      {\"driver\": \"Increased adoption of TTD's DMP and DSP solutions\", \"impact\": 4, \"timeframe\": \"short\", \"confidence\": 0.8},\n      {\"driver\": \"Growing demand for data-driven advertising\", \"impact\": 5, \"timeframe\": \"long\", \"confidence\": 0.9}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition in the adtech industry\", \"severity\": 4, \"probability\": 0.6, \"mitigation\": \"Continued innovation and investment in TTD's platform\"},\n      {\"risk\": \"Regulatory changes affecting data privacy and advertising\", \"severity\": 5, \"probability\": 0.4, \"mitigation\": \"Active engagement with regulatory bodies and industry associations\"},\n      {\"risk\": \"Dependence on a few large customers\", \"severity\": 3, \"probability\": 0.3, \"mitigation\": \"Diversification of customer base and expansion into new markets\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"TTD's high customer concentration\", \"severity\": 3, \"evidence\": \"TTD's 2022 Annual Report\"},\n      {\"flag\": \"Increasing competition from large technology companies\", \"severity\": 4, \"evidence\": \"AdExchanger article on adtech industry competition\"}\n    ],\n    \"transformation_potential\": {\"score\": 4, \"confidence\": 0.7, \"justification\": \"TTD has demonstrated its ability to adapt to changing market conditions and invest in new technologies, such as artificial intelligence and machine learning.\"},\n    \"platform_expansion\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD has a strong track record of expanding its platform into new areas, such as connected TV and audio, and has a significant opportunity to leverage its existing capabilities for further growth.\"},\n    \"competitive_differentiation\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's proprietary DMP and DSP solutions, combined with its strong brand and customer relationships, create a unique value proposition that differentiates it from competitors.\"},\n    \"market_timing\": {\"score\": 4, \"confidence\": 0.7, \"justification\": \"TTD is well-positioned to benefit from the growing demand for data-driven advertising and the increasing importance of digital marketing.\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's management team has a strong track record of execution and strategic decision-making, with a deep understanding of the adtech industry.\"},\n    \"technology_moats\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's proprietary technology, including its DMP and DSP solutions, creates a significant moat that is difficult for competitors to replicate.\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"The Trade Desk Inc.\",\n      \"ticker\": \"TTD\",\n      \"competitive_position\": \"TTD is a leading independent adtech company, with a strong focus on data-driven advertising and a proprietary DMP and DSP solutions.\",\n      \"market_share\": \"12.3% of the US digital ad market (Source: eMarketer)\",\n      \"key_differentiators\": [\"Proprietary DMP and DSP solutions\", \"Strong brand and customer relationships\", \"Independent, unbiased platform\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"Continued innovation and investment in TTD's platform, expansion into new markets, and diversification of customer base.\"\n    },\n    {\n      \"name\": \"Amazon.com Inc.\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Amazon is a leading technology company with a significant presence in the adtech industry, through its Amazon Advertising division.\",\n      \"market_share\": \"10.3% of the US digital ad market (Source: eMarketer)\",\n      \"key_differentiators\": [\"Access to Amazon's vast customer data\", \"Strong brand and customer relationships\", \"Diversified business model\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"Focus on TTD's independence and unbiased platform, expansion into new markets, and continued innovation in data-driven advertising.\"\n    },\n    {\n      \"name\": \"Google LLC\",\n      \"ticker\": \"GOOGL\",\n      \"competitive_position\": \"Google is a leading technology company with a significant presence in the adtech industry, through its Google Ads division.\",\n      \"market_share\": \"31.6% of the US digital ad market (Source: eMarketer)\",\n      \"key_differentiators\": [\"Access to Google's vast customer data\", \"Strong brand and customer relationships\", \"Diversified business model\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"Focus on TTD's independence and unbiased platform, expansion into new markets, and continued innovation in data-driven advertising.\"\n    }\n  ]\n}\n```\n\nPlease note that this analysis is based on publicly available information and may not reflect the company's current situation or future prospects.",
+      "parsed_output": {
+        "raw_text": "Here is the comprehensive qualitative analysis of TTD Inc. (TTD) in the Technology sector:\n\n```\n{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD has established a strong brand in the adtech industry, with a high level of customer loyalty and recognition. Its proprietary data management platform (DMP) and demand-side platform (DSP) have created a significant moat, making it difficult for competitors to replicate. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"AdExchanger article on TTD's DMP\"]},\n    \"barriers_to_entry\": {\"score\": 4, \"confidence\": 0.7, \"justification\": \"The adtech industry has high barriers to entry, including significant capital requirements, complex technology, and regulatory hurdles. TTD's established relationships with major publishers and advertisers also create a barrier for new entrants. (Source: eMarketer report on adtech industry trends)\", \"sources\": [\"eMarketer report on adtech industry trends\", \"TTD's 2022 Annual Report\"]},\n    \"economies_of_scale\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"While TTD has achieved some economies of scale through its growth, the adtech industry is highly competitive, and smaller players can still achieve similar economics with focused efforts. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"Adweek article on adtech industry competition\"]},\n    \"network_effects\": {\"score\": 3, \"confidence\": 0.5, \"justification\": \"TTD's platform benefits from network effects, as more publishers and advertisers join the platform, increasing its value to all participants. However, these effects are not as strong as those in other industries, such as social media. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"Forrester report on adtech industry trends\"]},\n    \"switching_costs\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's customers face significant switching costs, including retraining and integration complexities, making it difficult for them to switch to competitors. (Source: TTD's 2022 Annual Report)\", \"sources\": [\"TTD's 2022 Annual Report\", \"AdExchanger article on TTD's customer retention\"]}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expansion into new markets, such as connected TV and audio\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.7},\n      {\"driver\": \"Increased adoption of TTD's DMP and DSP solutions\", \"impact\": 4, \"timeframe\": \"short\", \"confidence\": 0.8},\n      {\"driver\": \"Growing demand for data-driven advertising\", \"impact\": 5, \"timeframe\": \"long\", \"confidence\": 0.9}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition in the adtech industry\", \"severity\": 4, \"probability\": 0.6, \"mitigation\": \"Continued innovation and investment in TTD's platform\"},\n      {\"risk\": \"Regulatory changes affecting data privacy and advertising\", \"severity\": 5, \"probability\": 0.4, \"mitigation\": \"Active engagement with regulatory bodies and industry associations\"},\n      {\"risk\": \"Dependence on a few large customers\", \"severity\": 3, \"probability\": 0.3, \"mitigation\": \"Diversification of customer base and expansion into new markets\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"TTD's high customer concentration\", \"severity\": 3, \"evidence\": \"TTD's 2022 Annual Report\"},\n      {\"flag\": \"Increasing competition from large technology companies\", \"severity\": 4, \"evidence\": \"AdExchanger article on adtech industry competition\"}\n    ],\n    \"transformation_potential\": {\"score\": 4, \"confidence\": 0.7, \"justification\": \"TTD has demonstrated its ability to adapt to changing market conditions and invest in new technologies, such as artificial intelligence and machine learning.\"},\n    \"platform_expansion\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD has a strong track record of expanding its platform into new areas, such as connected TV and audio, and has a significant opportunity to leverage its existing capabilities for further growth.\"},\n    \"competitive_differentiation\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's proprietary DMP and DSP solutions, combined with its strong brand and customer relationships, create a unique value proposition that differentiates it from competitors.\"},\n    \"market_timing\": {\"score\": 4, \"confidence\": 0.7, \"justification\": \"TTD is well-positioned to benefit from the growing demand for data-driven advertising and the increasing importance of digital marketing.\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's management team has a strong track record of execution and strategic decision-making, with a deep understanding of the adtech industry.\"},\n    \"technology_moats\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TTD's proprietary technology, including its DMP and DSP solutions, creates a significant moat that is difficult for competitors to replicate.\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"The Trade Desk Inc.\",\n      \"ticker\": \"TTD\",\n      \"competitive_position\": \"TTD is a leading independent adtech company, with a strong focus on data-driven advertising and a proprietary DMP and DSP solutions.\",\n      \"market_share\": \"12.3% of the US digital ad market (Source: eMarketer)\",\n      \"key_differentiators\": [\"Proprietary DMP and DSP solutions\", \"Strong brand and customer relationships\", \"Independent, unbiased platform\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"Continued innovation and investment in TTD's platform, expansion into new markets, and diversification of customer base.\"\n    },\n    {\n      \"name\": \"Amazon.com Inc.\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Amazon is a leading technology company with a significant presence in the adtech industry, through its Amazon Advertising division.\",\n      \"market_share\": \"10.3% of the US digital ad market (Source: eMarketer)\",\n      \"key_differentiators\": [\"Access to Amazon's vast customer data\", \"Strong brand and customer relationships\", \"Diversified business model\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"Focus on TTD's independence and unbiased platform, expansion into new markets, and continued innovation in data-driven advertising.\"\n    },\n    {\n      \"name\": \"Google LLC\",\n      \"ticker\": \"GOOGL\",\n      \"competitive_position\": \"Google is a leading technology company with a significant presence in the adtech industry, through its Google Ads division.\",\n      \"market_share\": \"31.6% of the US digital ad market (Source: eMarketer)\",\n      \"key_differentiators\": [\"Access to Google's vast customer data\", \"Strong brand and customer relationships\", \"Diversified business model\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"Focus on TTD's independence and unbiased platform, expansion into new markets, and continued innovation in data-driven advertising.\"\n    }\n  ]\n}\n```\n\nPlease note that this analysis is based on publicly available information and may not reflect the company's current situation or future prospects.",
+        "parsing_error": "Failed to parse JSON - used manual extraction",
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Brand Monopoly",
+            "sources": []
+          },
+          "barriers_to_entry": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Barriers To Entry",
+            "sources": []
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Economies Of Scale",
+            "sources": []
+          },
+          "network_effects": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Network Effects",
+            "sources": []
+          },
+          "switching_costs": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Switching Costs",
+            "sources": []
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            "Growth driver identified: growth",
+            "Growth driver identified: expansion",
+            "Growth driver identified: opportunity"
+          ],
+          "major_risk_factors": [
+            "Risk factor identified: risk",
+            "Risk factor identified: competition",
+            "Risk factor identified: threat"
+          ],
+          "red_flags": [],
+          "transformation_potential": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "platform_expansion": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "competitive_differentiation": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "management_quality": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "technology_moats": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          }
+        },
+        "competitor_analysis": {
+          "competitors": []
+        }
+      },
+      "tokens_used": 4927,
+      "cost_usd": 0.0044342999999999995,
+      "processing_time_seconds": 15.258702516555786,
+      "model_weight": 1.0
+    },
+    "mixtral-8x7b": {
+      "model_name": "mixtral-8x7b",
+      "provider": "together",
+      "raw_output": " {\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\n      \"score\": 2,\n      \"confidence\": 0.6,\n      \"justification\": \"TTD Inc. has a weak brand differentiation with price-sensitive customers, as it operates in a highly competitive programmatic advertising industry. While TTD has established a presence in the market, it is not seen as an iconic brand with unmatched loyalty or significant pricing power. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"barriers_to_entry\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. faces moderate barriers to entry due to the need for significant investment in technology, expertise, and regulatory compliance. However, these barriers are not insurmountable, and new entrants can penetrate the market with substantial effort, capital, and time. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"economies_of_scale\": {\n      \"score\": 3,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD Inc. has some scale advantages due to its size and fixed cost leverage, but these benefits are not massive and can be matched by competitors with similar economies of scale. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"network_effects\": {\n      \"score\": 2,\n      \"confidence\": 0.5,\n      \"justification\": \"TTD Inc. has weak network effects, with limited impact on competitiveness or user retention. While user growth may increase value for participants, it does not create exponential value growth with user additions. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"switching_costs\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"TTD Inc. has moderate switching costs due to integration complexity and retraining costs. However, customers can still move to competitors with minimal friction, and there are no significant contractual obligations or data lock-in. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    }\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\n        \"driver\": \"Expanding total addressable market through product innovation and market expansion\",\n        \"impact\": \"4\",\n        \"timeframe\": \"medium\",\n        \"confidence\": 0.8\n      },\n      {\n        \"driver\": \"Strengthening market position through strategic partnerships and acquisitions\",\n        \"impact\": \"3\",\n        \"timeframe\": \"short\",\n        \"confidence\": 0.7\n      }\n    ],\n    \"major_risk_factors\": [\n      {\n        \"risk\": \"Intense competition and price wars in the programmatic advertising industry\",\n        \"severity\": \"4\",\n        \"probability\": \"0.7\",\n        \"mitigation\": \"Continuous innovation, differentiation, and strategic positioning\"\n      },\n      {\n        \"risk\": \"Regulatory changes and increased scrutiny in data privacy and advertising practices\",\n        \"severity\": \"3\",\n        \"probability\": \"0.6\",\n        \"mitigation\": \"Proactive compliance and risk management strategies\"\n      }\n    ],\n    \"red_flags\": [],\n    \"transformation_potential\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. has moderate transformation potential, with a demonstrated ability to adapt its business model and enter adjacent markets. However, execution uncertainty remains a concern. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"platform_expansion\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD Inc. has good platform expansion opportunities, with a clear path to execution in adjacent markets and cross-selling opportunities. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"competitive_differentiation\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. has some competitive differentiation, but advantages can be copied over time. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"market_timing\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"TTD Inc. is reasonably positioned for market trends, but timing advantages are unclear. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"management_quality\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD Inc. has a strong management team with good execution and strategic vision. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"technology_moats\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. has some technology advantages but not sustainable long-term. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    }\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"The Trade Desk, Inc.\",\n      \"ticker\": \"TTD\",\n      \"competitive_position\": \"TTD and The Trade Desk, Inc. are direct competitors in the programmatic advertising industry, offering similar technology platforms and services. The Trade Desk has a strong market position and a proven track record of growth.\",\n      \"market_share\": \"The Trade Desk holds a significant market share in the programmatic advertising industry, with estimated revenue of approximately $700 million in 2020. Sources: [1]\",\n      \"key_differentiators\": [\"Focus on self-service programmatic advertising\", \"Strong brand recognition\", \"Global presence\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"Continuous innovation, differentiation, and strategic positioning to maintain market share and competitive advantage.\"\n    },\n    {\n      \"name\": \"Google LLC\",\n      \"ticker\": \"Private\",\n      \"competitive_position\": \"Google, through its Google Marketing Platform, competes with TTD in the programmatic advertising space. Google's extensive data and technology resources provide a strong competitive position.\",\n      \"market_share\": \"Google holds a significant market share in the overall digital advertising industry, with estimated revenue of over $140 billion in 2020. Sources: [1]\",\n      \"key_differentiators\": [\"Massive data resources\", \"Integration with other Google services\", \"Brand recognition\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"Focus on niche markets, continuous innovation, and strategic partnerships to maintain competitiveness.\"\n    },\n    {\n      \"name\": \"Amazon Advertising\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Amazon Advertising competes with TTD in the programmatic advertising space, leveraging Amazon's extensive e-commerce data and platform. Amazon's growing advertising business provides a strong competitive position.\",\n      \"market_share\": \"Amazon Advertising's estimated net sales in 2020 were approximately $14 billion, representing a significant increase from previous years. Sources: [1]\",\n      \"key_differentiators\": [\"Access to extensive e-commerce data\", \"Integration with Amazon's e-commerce platform\", \"Brand recognition\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"Focus on niche markets, continuous innovation, and strategic partnerships to maintain competitiveness.\"\n    }\n  ]\n}\n\nSources:\n[1] Company Filings, Market Research Reports, Financial Reports, Securities and Exchange Commission (SEC) Filings, Press Releases, Analyst Reports, and Industry Reports.",
+      "parsed_output": {
+        "raw_text": " {\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\n      \"score\": 2,\n      \"confidence\": 0.6,\n      \"justification\": \"TTD Inc. has a weak brand differentiation with price-sensitive customers, as it operates in a highly competitive programmatic advertising industry. While TTD has established a presence in the market, it is not seen as an iconic brand with unmatched loyalty or significant pricing power. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"barriers_to_entry\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. faces moderate barriers to entry due to the need for significant investment in technology, expertise, and regulatory compliance. However, these barriers are not insurmountable, and new entrants can penetrate the market with substantial effort, capital, and time. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"economies_of_scale\": {\n      \"score\": 3,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD Inc. has some scale advantages due to its size and fixed cost leverage, but these benefits are not massive and can be matched by competitors with similar economies of scale. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"network_effects\": {\n      \"score\": 2,\n      \"confidence\": 0.5,\n      \"justification\": \"TTD Inc. has weak network effects, with limited impact on competitiveness or user retention. While user growth may increase value for participants, it does not create exponential value growth with user additions. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"switching_costs\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"TTD Inc. has moderate switching costs due to integration complexity and retraining costs. However, customers can still move to competitors with minimal friction, and there are no significant contractual obligations or data lock-in. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    }\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\n        \"driver\": \"Expanding total addressable market through product innovation and market expansion\",\n        \"impact\": \"4\",\n        \"timeframe\": \"medium\",\n        \"confidence\": 0.8\n      },\n      {\n        \"driver\": \"Strengthening market position through strategic partnerships and acquisitions\",\n        \"impact\": \"3\",\n        \"timeframe\": \"short\",\n        \"confidence\": 0.7\n      }\n    ],\n    \"major_risk_factors\": [\n      {\n        \"risk\": \"Intense competition and price wars in the programmatic advertising industry\",\n        \"severity\": \"4\",\n        \"probability\": \"0.7\",\n        \"mitigation\": \"Continuous innovation, differentiation, and strategic positioning\"\n      },\n      {\n        \"risk\": \"Regulatory changes and increased scrutiny in data privacy and advertising practices\",\n        \"severity\": \"3\",\n        \"probability\": \"0.6\",\n        \"mitigation\": \"Proactive compliance and risk management strategies\"\n      }\n    ],\n    \"red_flags\": [],\n    \"transformation_potential\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. has moderate transformation potential, with a demonstrated ability to adapt its business model and enter adjacent markets. However, execution uncertainty remains a concern. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"platform_expansion\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD Inc. has good platform expansion opportunities, with a clear path to execution in adjacent markets and cross-selling opportunities. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"competitive_differentiation\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. has some competitive differentiation, but advantages can be copied over time. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"market_timing\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"TTD Inc. is reasonably positioned for market trends, but timing advantages are unclear. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"management_quality\": {\n      \"score\": 4,\n      \"confidence\": 0.8,\n      \"justification\": \"TTD Inc. has a strong management team with good execution and strategic vision. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    },\n    \"technology_moats\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"TTD Inc. has some technology advantages but not sustainable long-term. Sources: [1]\",\n      \"sources\": [\"[1] Company Filings, Market Research Reports\"]\n    }\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"The Trade Desk, Inc.\",\n      \"ticker\": \"TTD\",\n      \"competitive_position\": \"TTD and The Trade Desk, Inc. are direct competitors in the programmatic advertising industry, offering similar technology platforms and services. The Trade Desk has a strong market position and a proven track record of growth.\",\n      \"market_share\": \"The Trade Desk holds a significant market share in the programmatic advertising industry, with estimated revenue of approximately $700 million in 2020. Sources: [1]\",\n      \"key_differentiators\": [\"Focus on self-service programmatic advertising\", \"Strong brand recognition\", \"Global presence\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"Continuous innovation, differentiation, and strategic positioning to maintain market share and competitive advantage.\"\n    },\n    {\n      \"name\": \"Google LLC\",\n      \"ticker\": \"Private\",\n      \"competitive_position\": \"Google, through its Google Marketing Platform, competes with TTD in the programmatic advertising space. Google's extensive data and technology resources provide a strong competitive position.\",\n      \"market_share\": \"Google holds a significant market share in the overall digital advertising industry, with estimated revenue of over $140 billion in 2020. Sources: [1]\",\n      \"key_differentiators\": [\"Massive data resources\", \"Integration with other Google services\", \"Brand recognition\"],\n      \"threat_level\": 5,\n      \"strategic_response\": \"Focus on niche markets, continuous innovation, and strategic partnerships to maintain competitiveness.\"\n    },\n    {\n      \"name\": \"Amazon Advertising\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Amazon Advertising competes with TTD in the programmatic advertising space, leveraging Amazon's extensive e-commerce data and platform. Amazon's growing advertising business provides a strong competitive position.\",\n      \"market_share\": \"Amazon Advertising's estimated net sales in 2020 were approximately $14 billion, representing a significant increase from previous years. Sources: [1]\",\n      \"key_differentiators\": [\"Access to extensive e-commerce data\", \"Integration with Amazon's e-commerce platform\", \"Brand recognition\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"Focus on niche markets, continuous innovation, and strategic partnerships to maintain competitiveness.\"\n    }\n  ]\n}\n\nSources:\n[1] Company Filings, Market Research Reports, Financial Reports, Securities and Exchange Commission (SEC) Filings, Press Releases, Analyst Reports, and Industry Reports.",
+        "parsing_error": "Failed to parse JSON - used manual extraction",
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Brand Monopoly",
+            "sources": []
+          },
+          "barriers_to_entry": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Barriers To Entry",
+            "sources": []
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Economies Of Scale",
+            "sources": []
+          },
+          "network_effects": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Network Effects",
+            "sources": []
+          },
+          "switching_costs": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Switching Costs",
+            "sources": []
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            "Growth driver identified: growth",
+            "Growth driver identified: expansion",
+            "Growth driver identified: market trends"
+          ],
+          "major_risk_factors": [
+            "Risk factor identified: risk",
+            "Risk factor identified: competition",
+            "Risk factor identified: threat",
+            "Risk factor identified: concern"
+          ],
+          "red_flags": [],
+          "transformation_potential": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "platform_expansion": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "competitive_differentiation": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "management_quality": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "technology_moats": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          }
+        },
+        "competitor_analysis": {
+          "competitors": []
+        }
+      },
+      "tokens_used": 5763,
+      "cost_usd": 0.0034577999999999996,
+      "processing_time_seconds": 27.097568035125732,
+      "model_weight": 1.0
+    }
+  },
+  "best_model": "llama-3.1-70b",
+  "execution_metadata": {
+    "models_used": [
+      "llama-3.1-70b",
+      "llama-3-70b",
+      "mixtral-8x7b"
+    ],
+    "successful_models": [
+      "llama-3.1-70b",
+      "llama-3-70b",
+      "mixtral-8x7b"
+    ],
+    "failed_models": [],
+    "consensus_method": "weighted_average",
+    "scoring_metadata": {
+      "weight_sum_check": 1.0,
+      "components_used": 10,
+      "component_details": {
+        "platform_expansion": {
+          "raw_score": 3.2857142857142856,
+          "confidence": 0.5857142857142857,
+          "weight": 0.03571428571428571,
+          "contribution": 0.1173469387755102,
+          "interpretation": "positive_factor"
+        },
+        "moat_switching_costs": {
+          "raw_score": 3.714285714285715,
+          "confidence": 0.6285714285714286,
+          "weight": 0.11904761904761905,
+          "contribution": 0.4421768707482994,
+          "interpretation": "positive_factor"
+        },
+        "moat_network_effects": {
+          "raw_score": 4.0,
+          "confidence": 0.6571428571428573,
+          "weight": 0.11904761904761905,
+          "contribution": 0.4761904761904762,
+          "interpretation": "positive_factor"
+        },
+        "key_growth_drivers": {
+          "raw_score": 3.547619047619048,
+          "confidence": 0.8857142857142858,
+          "weight": 0.05952380952380953,
+          "contribution": 0.21116780045351477,
+          "interpretation": "positive_factor"
+        },
+        "moat_economies_of_scale": {
+          "raw_score": 4.0,
+          "confidence": 0.6571428571428573,
+          "weight": 0.11904761904761905,
+          "contribution": 0.4761904761904762,
+          "interpretation": "positive_factor"
+        },
+        "moat_barriers_to_entry": {
+          "raw_score": 3.714285714285715,
+          "confidence": 0.6285714285714286,
+          "weight": 0.17857142857142858,
+          "contribution": 0.663265306122449,
+          "interpretation": "positive_factor"
+        },
+        "red_flags": {
+          "raw_score": 3.0000000000000004,
+          "confidence": 0.7500000000000001,
+          "weight": -0.047619047619047616,
+          "contribution": -0.14285714285714288,
+          "interpretation": "risk_factor"
+        },
+        "moat_brand_monopoly": {
+          "raw_score": 4.0,
+          "confidence": 0.6571428571428573,
+          "weight": 0.11904761904761905,
+          "contribution": 0.4761904761904762,
+          "interpretation": "positive_factor"
+        },
+        "major_risk_factors": {
+          "raw_score": 2.3214285714285716,
+          "confidence": 0.8714285714285714,
+          "weight": -0.07142857142857142,
+          "contribution": -0.16581632653061226,
+          "interpretation": "risk_factor"
+        },
+        "transformation_potential": {
+          "raw_score": 3.2857142857142856,
+          "confidence": 0.5857142857142857,
+          "weight": 0.047619047619047616,
+          "contribution": 0.15646258503401358,
+          "interpretation": "positive_factor"
+        }
+      },
+      "weights_applied": {
+        "brand_monopoly": 0.11904761904761905,
+        "barriers_to_entry": 0.17857142857142858,
+        "economies_of_scale": 0.11904761904761905,
+        "network_effects": 0.11904761904761905,
+        "switching_costs": 0.11904761904761905,
+        "competitive_differentiation": 0.09523809523809523,
+        "market_timing": 0.07142857142857142,
+        "management_quality": 0.05952380952380953,
+        "technology_moats": 0.09523809523809523,
+        "key_growth_drivers": 0.05952380952380953,
+        "transformation_potential": 0.047619047619047616,
+        "platform_expansion": 0.03571428571428571,
+        "major_risk_factors": -0.07142857142857142,
+        "red_flags": -0.047619047619047616
+      },
+      "calculation_method": "mathematically_consistent_direct_weighting",
+      "score_range_note": "Score may extend beyond 1-5 range due to risk factor weighting"
+    },
+    "execution_time_seconds": 27.106696128845215,
+    "concurrent_execution": true
+  },
+  "total_cost_usd": 0.0126,
+  "total_time_seconds": 27.106696128845215
+}

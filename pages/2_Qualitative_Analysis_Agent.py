@@ -722,19 +722,25 @@ def data_input_section():
                 with col3:
                     select_none = st.button("❌ Select None", key="screener_select_none")
                 
+                # Get ticker values based on whether it's a column or index
+                if ticker_col == 'index':
+                    ticker_values = df.index.tolist()
+                else:
+                    ticker_values = df[ticker_col].tolist()
+                
                 # Handle selection buttons
                 if select_all:
-                    st.session_state['screener_selected_tickers'] = df[ticker_col].tolist()
+                    st.session_state['screener_selected_tickers'] = ticker_values
                 elif select_top:
-                    st.session_state['screener_selected_tickers'] = df[ticker_col].tolist()[:5]
+                    st.session_state['screener_selected_tickers'] = ticker_values[:5]
                 elif select_none:
                     st.session_state['screener_selected_tickers'] = []
                 
                 # Multiselect with session state
-                default_selection = st.session_state.get('screener_selected_tickers', df[ticker_col].tolist()[:3])
+                default_selection = st.session_state.get('screener_selected_tickers', ticker_values[:3])
                 selected_tickers = st.multiselect(
                     "Select companies to analyze",
-                    df[ticker_col].tolist(),
+                    ticker_values,
                     default=default_selection,
                     key="screener_company_selection"
                 )
@@ -821,7 +827,7 @@ def data_input_section():
                     else:
                         sector_filter = None
                         st.info("No sector column found")
-                
+
                 with col2:
                     # Industry filter
                     if 'industry' in all_companies.columns:
@@ -960,7 +966,6 @@ def data_input_section():
             else:
                 st.warning("⚠️ No companies found in database")
                 st.info("💡 Run the Fundamental Screener first to populate the database")
-        
     
     elif data_source == "Upload CSV":
         uploaded_file = st.file_uploader("Upload CSV file", type=['csv'])
@@ -1668,8 +1673,10 @@ def run_analysis(company, user_id, analysis_type, max_concurrent, lookback_month
                     'status': 'completed'
                 }
 
-                # Switch to results tab
-                st.info("Check the Results & Downloads tab to view and download your analysis results")
+                # Analysis complete message
+                st.markdown("---")
+                st.success(f"✅ **Analysis Complete for {company}!**")
+                st.info("💡 Go to 'Results & Downloads' tab to view results and save to database")
 
             else:
                 st.error(f"[ERROR] Analysis failed with exit code {result.returncode}")
@@ -1856,6 +1863,7 @@ def parse_batch_results(companies):
                         'average_composite_score': composite_score,
                         'average_composite_confidence': composite_confidence,
                         'result_file': latest_file,
+                        'full_analysis_data': result_data,  # Store full JSON data for database saving
                         **llm_scores
                     }
 
@@ -1873,26 +1881,605 @@ def parse_batch_results(companies):
 
     st.success(f"✅ Successfully parsed {parsed_count} out of {len(companies)} companies")
 
+
+def save_qualitative_results_to_db(batch_results):
+    """Save qualitative analysis results to database"""
+    try:
+        import sys
+        import os
+        from pathlib import Path
+        import json
+        import glob
+        
+        # Add utils directory to path
+        utils_path = Path(__file__).parent.parent / "utils"
+        if str(utils_path) not in sys.path:
+            sys.path.append(str(utils_path))
+        
+        from db_util import save_qualitative_analysis
+        import time
+        
+        success_count = 0
+        error_count = 0
+        
+        # Generate a batch run_id
+        batch_run_id = f"qual_batch_{int(time.time())}"
+        
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        
+        # Handle different data structures
+        if isinstance(batch_results, dict):
+            # batch_results is a dictionary with company tickers as keys
+            companies = list(batch_results.keys())
+            total_companies = len(companies)
+            
+            for i, ticker in enumerate(companies):
+                status_text.text(f"💾 Saving {ticker} to database...")
+                
+                try:
+                    # Get the result for this company
+                    result = batch_results[ticker]
+                    
+                    # Check if result is a string (file path) or dict
+                    if isinstance(result, str):
+                        # result is a file path, load the JSON file
+                        try:
+                            with open(result, 'r', encoding='utf-8') as f:
+                                analysis_data = json.load(f)
+                        except Exception as e:
+                            error_count += 1
+                            st.error(f"❌ {ticker}: Error loading file {result} - {str(e)}")
+                            continue
+                    elif isinstance(result, dict):
+                        # result is already a dictionary
+                        analysis_data = result
+                    else:
+                        error_count += 1
+                        st.error(f"❌ {ticker}: Unknown result format")
+                        continue
+                    
+                    # Save to database with individual run_id
+                    individual_run_id = f"{batch_run_id}_{ticker}"
+                    success, message = save_qualitative_analysis(analysis_data, individual_run_id, ticker)
+                    if success:
+                        success_count += 1
+                        st.success(f"✅ {ticker}: {message}")
+                    else:
+                        error_count += 1
+                        st.error(f"❌ {ticker}: {message}")
+                        
+                except Exception as e:
+                    error_count += 1
+                    st.error(f"❌ {ticker}: Error saving to database - {str(e)}")
+                
+                # Update progress
+                progress_bar.progress((i + 1) / total_companies)
+                
+        elif isinstance(batch_results, list):
+            # batch_results is a list of parsed results
+            for i, result in enumerate(batch_results):
+                if isinstance(result, dict) and 'ticker' in result:
+                    ticker = result['ticker']
+                    status_text.text(f"💾 Saving {ticker} to database...")
+                    
+                    try:
+                        # Get the full analysis data
+                        analysis_data = result.get('full_analysis_data')
+                        
+                        if analysis_data:
+                            success, message = save_qualitative_analysis(analysis_data, batch_run_id)
+                            if success:
+                                success_count += 1
+                                st.success(f"✅ {ticker}: {message}")
+                            else:
+                                error_count += 1
+                                st.error(f"❌ {ticker}: {message}")
+                        else:
+                            error_count += 1
+                            st.error(f"❌ {ticker}: No analysis data found")
+                            
+                    except Exception as e:
+                        error_count += 1
+                        st.error(f"❌ {ticker}: Error saving to database - {str(e)}")
+                    
+                    # Update progress
+                    progress_bar.progress((i + 1) / len(batch_results))
+                else:
+                    error_count += 1
+                    st.error(f"❌ Invalid result format: {type(result)}")
+        else:
+            st.error(f"❌ Unknown batch_results format: {type(batch_results)}")
+            return
+        
+        # Final summary
+        status_text.text("✅ Database save completed!")
+        
+        if success_count > 0:
+            st.success(f"🎉 Successfully saved {success_count} analyses to database!")
+            st.info(f"📊 Batch Run ID: {batch_run_id}")
+        
+        if error_count > 0:
+            st.warning(f"⚠️ {error_count} analyses failed to save")
+            
+    except Exception as e:
+        st.error(f"❌ Error saving to database: {str(e)}")
+
+
+def load_qualitative_from_db(ticker=None, limit=10):
+    """Load qualitative analysis results from database and display them"""
+    try:
+        import sys
+        from pathlib import Path
+        
+        # Add utils directory to path
+        utils_path = Path(__file__).parent.parent / "utils"
+        if str(utils_path) not in sys.path:
+            sys.path.append(str(utils_path))
+        
+        from db_util import load_qualitative_analysis
+        
+        with st.spinner("Loading qualitative analyses from database..."):
+            df = load_qualitative_analysis(ticker=ticker, limit=limit)
+        
+        if df.empty:
+            st.warning("📋 No qualitative analyses found in database")
+            return
+        
+        st.success(f"✅ Loaded {len(df)} analyses from database")
+        
+        # Display summary table
+        st.subheader("📊 Database Analysis Results")
+        
+        # Select key columns for display
+        display_cols = [
+            'company_ticker', 'company_name', 'composite_score', 'composite_confidence',
+            'moat_brand_monopoly_score', 'moat_network_effects_score', 'technology_moats_score',
+            'management_quality_score', 'key_growth_drivers_score', 'major_risk_factors_score',
+            'analysis_timestamp', 'best_model', 'execution_time_seconds', 'total_cost_usd'
+        ]
+        
+        # Filter to only show columns that exist
+        available_cols = [col for col in display_cols if col in df.columns]
+        display_df = df[available_cols].copy()
+        
+        # Format the dataframe - only round numeric columns
+        if 'composite_score' in display_df.columns and pd.api.types.is_numeric_dtype(display_df['composite_score']):
+            display_df['composite_score'] = display_df['composite_score'].round(3)
+        if 'composite_confidence' in display_df.columns and pd.api.types.is_numeric_dtype(display_df['composite_confidence']):
+            display_df['composite_confidence'] = display_df['composite_confidence'].round(3)
+        
+        # Round score columns - only if numeric
+        score_cols = [col for col in display_df.columns if col.endswith('_score')]
+        for col in score_cols:
+            if pd.api.types.is_numeric_dtype(display_df[col]):
+                display_df[col] = display_df[col].round(3)
+        
+        # Format timestamp - handle potential timestamp issues
+        if 'analysis_timestamp' in display_df.columns:
+            try:
+                # Convert timestamp to datetime, handling potential issues
+                display_df['analysis_timestamp'] = pd.to_datetime(display_df['analysis_timestamp'], unit='s', errors='coerce').dt.strftime('%Y-%m-%d %H:%M')
+                # Replace any NaT values with original timestamp
+                display_df['analysis_timestamp'] = display_df['analysis_timestamp'].fillna(display_df['analysis_timestamp'].astype(str))
+            except Exception:
+                # If conversion fails, keep as string
+                display_df['analysis_timestamp'] = display_df['analysis_timestamp'].astype(str)
+        
+        # Rename columns for better display
+        column_rename = {
+            'company_ticker': 'Ticker',
+            'company_name': 'Company',
+            'composite_score': 'Composite Score',
+            'composite_confidence': 'Confidence',
+            'moat_brand_monopoly_score': 'Brand Moat',
+            'moat_network_effects_score': 'Network Effects',
+            'technology_moats_score': 'Tech Moats',
+            'management_quality_score': 'Management',
+            'key_growth_drivers_score': 'Growth Drivers',
+            'major_risk_factors_score': 'Risk Factors',
+            'analysis_timestamp': 'Analysis Date',
+            'best_model': 'Best Model',
+            'execution_time_seconds': 'Time (s)',
+            'total_cost_usd': 'Cost ($)'
+        }
+        
+        display_df = display_df.rename(columns=column_rename)
+        
+        # Display the table
+        st.dataframe(display_df, use_container_width=True, hide_index=True)
+        
+        # Show detailed analysis for selected companies
+        if len(df) > 0:
+            st.subheader("🔍 Detailed Analysis")
+            
+            # Company selection
+            company_options = df['company_ticker'].tolist()
+            selected_companies = st.multiselect(
+                "Select companies for detailed analysis",
+                company_options,
+                default=company_options[:3] if len(company_options) >= 3 else company_options,
+                help="Choose companies to view detailed LLM analysis"
+            )
+            
+            if selected_companies:
+                for ticker in selected_companies:
+                    company_data = df[df['company_ticker'] == ticker].iloc[0]
+                    
+                    with st.expander(f"🏢 {ticker} - Score: {company_data.get('composite_score', 'N/A'):.3f}", expanded=False):
+                        # Display key metrics
+                        col1, col2, col3, col4 = st.columns(4)
+                        
+                        with col1:
+                            st.metric("Composite Score", f"{company_data.get('composite_score', 0):.3f}/5.0")
+                        with col2:
+                            st.metric("Confidence", f"{company_data.get('composite_confidence', 0):.1%}")
+                        with col3:
+                            st.metric("Best Model", company_data.get('best_model', 'N/A'))
+                        with col4:
+                            st.metric("Cost", f"${company_data.get('total_cost_usd', 0):.4f}")
+                        
+                        # Display score breakdown
+                        st.markdown("#### 📊 Score Breakdown")
+                        score_breakdown = {
+                            'Brand Monopoly': company_data.get('moat_brand_monopoly_score'),
+                            'Barriers to Entry': company_data.get('moat_barriers_to_entry_score'),
+                            'Economies of Scale': company_data.get('moat_economies_of_scale_score'),
+                            'Network Effects': company_data.get('moat_network_effects_score'),
+                            'Switching Costs': company_data.get('moat_switching_costs_score'),
+                            'Competitive Differentiation': company_data.get('competitive_differentiation_score'),
+                            'Technology Moats': company_data.get('technology_moats_score'),
+                            'Market Timing': company_data.get('market_timing_score'),
+                            'Management Quality': company_data.get('management_quality_score'),
+                            'Key Growth Drivers': company_data.get('key_growth_drivers_score'),
+                            'Transformation Potential': company_data.get('transformation_potential_score'),
+                            'Platform Expansion': company_data.get('platform_expansion_score'),
+                            'Major Risk Factors': company_data.get('major_risk_factors_score'),
+                            'Red Flags': company_data.get('red_flags_score')
+                        }
+                        
+                        # Filter out None values and create DataFrame
+                        valid_scores = {k: v for k, v in score_breakdown.items() if v is not None}
+                        if valid_scores:
+                            score_df = pd.DataFrame(list(valid_scores.items()), columns=['Component', 'Score'])
+                            if pd.api.types.is_numeric_dtype(score_df['Score']):
+                                score_df['Score'] = score_df['Score'].round(3)
+                            score_df = score_df.sort_values('Score', ascending=False)
+                            
+                            st.dataframe(score_df, use_container_width=True, hide_index=True)
+                        
+                        # Show full analysis data if available
+                        if 'full_analysis_data' in company_data and company_data['full_analysis_data']:
+                            st.markdown("#### 📄 Full Analysis Data")
+                            st.json(company_data['full_analysis_data'])
+        
+    except Exception as e:
+        st.error(f"❌ Error loading from database: {str(e)}")
+
+
+def load_qualitative_from_db_by_timestamp(timestamp):
+    """Load qualitative analysis by specific timestamp"""
+    try:
+        import sys
+        from pathlib import Path
+        
+        # Add utils directory to path
+        utils_path = Path(__file__).parent.parent / "utils"
+        if str(utils_path) not in sys.path:
+            sys.path.append(str(utils_path))
+        
+        from db_util import load_qualitative_analysis
+        
+        with st.spinner(f"Loading analysis with timestamp {timestamp}..."):
+            df = load_qualitative_analysis(ticker=None, limit=100)
+        
+        if df.empty:
+            st.warning("📋 No qualitative analyses found in database")
+            return
+        
+        # Filter by timestamp
+        try:
+            timestamp_int = int(timestamp)
+            filtered_df = df[df['analysis_timestamp'] == timestamp_int]
+        except ValueError:
+            st.error("❌ Invalid timestamp format. Please use a number like 1760222470")
+            return
+        
+        if filtered_df.empty:
+            st.warning(f"📋 No analysis found with timestamp {timestamp}")
+            return
+        
+        st.success(f"✅ Found analysis with timestamp {timestamp}")
+        
+        # Display the specific analysis
+        company_data = filtered_df.iloc[0]
+        ticker = company_data['company_ticker']
+        
+        with st.expander(f"🏢 {ticker} - Timestamp: {timestamp}", expanded=True):
+            # Display key metrics
+            col1, col2, col3, col4 = st.columns(4)
+            
+            with col1:
+                st.metric("Composite Score", f"{company_data.get('composite_score', 0):.3f}/5.0")
+            with col2:
+                st.metric("Confidence", f"{company_data.get('composite_confidence', 0):.1%}")
+            with col3:
+                st.metric("Best Model", company_data.get('best_model', 'N/A'))
+            with col4:
+                st.metric("Cost", f"${company_data.get('total_cost_usd', 0):.4f}")
+            
+            # Display score breakdown
+            st.markdown("#### 📊 Score Breakdown")
+            score_breakdown = {
+                'Brand Monopoly': company_data.get('moat_brand_monopoly_score'),
+                'Barriers to Entry': company_data.get('moat_barriers_to_entry_score'),
+                'Economies of Scale': company_data.get('moat_economies_of_scale_score'),
+                'Network Effects': company_data.get('moat_network_effects_score'),
+                'Switching Costs': company_data.get('moat_switching_costs_score'),
+                'Competitive Differentiation': company_data.get('competitive_differentiation_score'),
+                'Technology Moats': company_data.get('technology_moats_score'),
+                'Market Timing': company_data.get('market_timing_score'),
+                'Management Quality': company_data.get('management_quality_score'),
+                'Key Growth Drivers': company_data.get('key_growth_drivers_score'),
+                'Transformation Potential': company_data.get('transformation_potential_score'),
+                'Platform Expansion': company_data.get('platform_expansion_score'),
+                'Major Risk Factors': company_data.get('major_risk_factors_score'),
+                'Red Flags': company_data.get('red_flags_score')
+            }
+            
+            # Filter out None values and create DataFrame
+            valid_scores = {k: v for k, v in score_breakdown.items() if v is not None}
+            if valid_scores:
+                score_df = pd.DataFrame(list(valid_scores.items()), columns=['Component', 'Score'])
+                if pd.api.types.is_numeric_dtype(score_df['Score']):
+                    score_df['Score'] = score_df['Score'].round(3)
+                score_df = score_df.sort_values('Score', ascending=False)
+                
+                st.dataframe(score_df, use_container_width=True, hide_index=True)
+            
+            # Show full analysis data if available
+            if 'full_analysis_data' in company_data and company_data['full_analysis_data']:
+                st.markdown("#### 📄 Full Analysis Data")
+                st.json(company_data['full_analysis_data'])
+        
+    except Exception as e:
+        st.error(f"❌ Error loading by timestamp: {str(e)}")
+
+
+# Database loading function removed - we only save to database, not load from it
+
+
+def save_immediate_result_to_db(company):
+    """Save analysis result immediately after completion"""
+    try:
+        import sys
+        import os
+        from pathlib import Path
+        
+        # Add utils directory to path
+        utils_path = Path(__file__).parent.parent / "utils"
+        if str(utils_path) not in sys.path:
+            sys.path.append(str(utils_path))
+        
+        from db_util import load_qualitative_analysis
+        
+        # Load all analyses
+        df = load_qualitative_analysis()
+        
+        if df.empty:
+            st.warning("📋 No qualitative analyses found in database")
+            return
+        
+        st.success(f"✅ Loaded {len(df)} analyses from database")
+        
+        # Filtering options
+        st.subheader("🔍 Filter Results")
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Ticker filter
+            unique_tickers = ['All Companies'] + sorted(df['company_ticker'].dropna().unique().tolist())
+            selected_ticker = st.selectbox("Filter by Company", unique_tickers)
+            ticker_filter = None if selected_ticker == "All Companies" else selected_ticker
+        
+        with col2:
+            # Score filter
+            min_score = st.number_input(
+                "Minimum Composite Score", 
+                min_value=0.0, 
+                max_value=5.0, 
+                value=0.0, 
+                step=0.1,
+                help="Filter analyses with score above this value"
+            )
+            score_filter = min_score if min_score > 0 else None
+        
+        # Apply filters
+        filtered_df = df.copy()
+        if ticker_filter:
+            filtered_df = filtered_df[filtered_df['company_ticker'] == ticker_filter]
+        if score_filter:
+            filtered_df = filtered_df[filtered_df['composite_score'] >= score_filter]
+        
+        st.info(f"📊 Showing {len(filtered_df)} analyses after filtering (from {len(df)} total)")
+        
+        if filtered_df.empty:
+            st.warning("📋 No analyses match the selected filters")
+            return
+        
+        # Display unified table
+        st.subheader("📊 Qualitative Analysis Results")
+        
+        # Select key columns for display (removed analysis_timestamp to avoid display issues)
+        display_cols = [
+            'company_ticker', 'company_name', 'composite_score', 'composite_confidence',
+            'moat_brand_monopoly_score', 'moat_network_effects_score', 'technology_moats_score',
+            'management_quality_score', 'key_growth_drivers_score', 'major_risk_factors_score',
+            'best_model', 'execution_time_seconds', 'total_cost_usd'
+        ]
+        
+        # Filter to only show columns that exist
+        available_cols = [col for col in display_cols if col in filtered_df.columns]
+        display_df = filtered_df[available_cols].copy()
+        
+        # Format the dataframe - only round numeric columns
+        if 'composite_score' in display_df.columns and pd.api.types.is_numeric_dtype(display_df['composite_score']):
+            display_df['composite_score'] = display_df['composite_score'].round(3)
+        if 'composite_confidence' in display_df.columns and pd.api.types.is_numeric_dtype(display_df['composite_confidence']):
+            display_df['composite_confidence'] = display_df['composite_confidence'].round(3)
+        
+        # Round score columns - only if numeric
+        score_cols = [col for col in display_df.columns if col.endswith('_score')]
+        for col in score_cols:
+            if pd.api.types.is_numeric_dtype(display_df[col]):
+                display_df[col] = display_df[col].round(3)
+        
+        # Format timestamp - handle potential timestamp issues
+        if 'analysis_timestamp' in display_df.columns:
+            try:
+                # Convert timestamp to datetime, handling potential issues
+                display_df['analysis_timestamp'] = pd.to_datetime(display_df['analysis_timestamp'], unit='s', errors='coerce').dt.strftime('%Y-%m-%d %H:%M')
+                # Replace any NaT values with original timestamp
+                display_df['analysis_timestamp'] = display_df['analysis_timestamp'].fillna(display_df['analysis_timestamp'].astype(str))
+            except Exception:
+                # If conversion fails, keep as string
+                display_df['analysis_timestamp'] = display_df['analysis_timestamp'].astype(str)
+        
+        # Rename columns for better display
+        column_rename = {
+            'company_ticker': 'Ticker',
+            'company_name': 'Company',
+            'composite_score': 'Composite Score',
+            'composite_confidence': 'Confidence',
+            'moat_brand_monopoly_score': 'Brand Moat',
+            'moat_network_effects_score': 'Network Effects',
+            'technology_moats_score': 'Tech Moats',
+            'management_quality_score': 'Management',
+            'key_growth_drivers_score': 'Growth Drivers',
+            'major_risk_factors_score': 'Risk Factors',
+            'analysis_timestamp': 'Analysis Date',
+            'best_model': 'Best Model',
+            'execution_time_seconds': 'Time (s)',
+            'total_cost_usd': 'Cost ($)'
+        }
+        
+        display_df = display_df.rename(columns=column_rename)
+        
+        # Display the unified table
+        st.dataframe(display_df, use_container_width=True, hide_index=True)
+        
+        # Detailed analysis for selected companies
+        if len(filtered_df) > 0:
+            st.subheader("🔍 Detailed Analysis")
+            
+            # Company selection for detailed view - create options with ticker and name
+            company_options = []
+            company_mapping = {}
+            
+            for _, row in filtered_df.iterrows():
+                ticker = row['company_ticker']
+                name = row.get('company_name', ticker)
+                display_name = f"{ticker} - {name}"
+                company_options.append(display_name)
+                company_mapping[display_name] = ticker
+            
+            # Initialize session state for company selection
+            if 'db_selected_companies' not in st.session_state:
+                st.session_state.db_selected_companies = company_options[:3] if len(company_options) >= 3 else company_options
+            
+            # Quick selection buttons
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                if st.button("✅ Select All", key="db_select_all"):
+                    st.session_state.db_selected_companies = company_options
+            with col2:
+                if st.button("🏆 Select Top 3", key="db_select_top3"):
+                    st.session_state.db_selected_companies = company_options[:3]
+            with col3:
+                if st.button("🥇 Select Top 5", key="db_select_top5"):
+                    st.session_state.db_selected_companies = company_options[:5]
+            with col4:
+                if st.button("❌ Select None", key="db_select_none"):
+                    st.session_state.db_selected_companies = []
+            
+            selected_companies_display = st.multiselect(
+                "Select companies for detailed analysis",
+                company_options,
+                default=st.session_state.db_selected_companies,
+                key="db_company_selection",
+                help="Choose companies to view detailed LLM analysis"
+            )
+            
+            # Update session state
+            st.session_state.db_selected_companies = selected_companies_display
+            
+            # Convert display names back to tickers
+            selected_companies = [company_mapping[name] for name in selected_companies_display]
+            
+            if selected_companies:
+                for ticker in selected_companies:
+                    company_data = filtered_df[filtered_df['company_ticker'] == ticker].iloc[0]
+                    company_name = company_data.get('company_name', ticker)
+                    score = company_data.get('composite_score', 0)
+                    
+                    with st.expander(f"🏢 {ticker} - {company_name} (Score: {score:.3f})", expanded=False):
+                        # Display key metrics
+                        col1, col2, col3, col4 = st.columns(4)
+                        
+                        with col1:
+                            st.metric("Composite Score", f"{company_data.get('composite_score', 0):.3f}/5.0")
+                        with col2:
+                            st.metric("Confidence", f"{company_data.get('composite_confidence', 0):.1%}")
+                        with col3:
+                            st.metric("Best Model", company_data.get('best_model', 'N/A'))
+                        with col4:
+                            st.metric("Cost", f"${company_data.get('total_cost_usd', 0):.4f}")
+                        
+                        # Display score breakdown
+                        st.markdown("#### 📊 Score Breakdown")
+                        score_breakdown = {
+                            'Brand Monopoly': company_data.get('moat_brand_monopoly_score'),
+                            'Barriers to Entry': company_data.get('moat_barriers_to_entry_score'),
+                            'Economies of Scale': company_data.get('moat_economies_of_scale_score'),
+                            'Network Effects': company_data.get('moat_network_effects_score'),
+                            'Switching Costs': company_data.get('moat_switching_costs_score'),
+                            'Competitive Differentiation': company_data.get('competitive_differentiation_score'),
+                            'Technology Moats': company_data.get('technology_moats_score'),
+                            'Market Timing': company_data.get('market_timing_score'),
+                            'Management Quality': company_data.get('management_quality_score'),
+                            'Key Growth Drivers': company_data.get('key_growth_drivers_score'),
+                            'Transformation Potential': company_data.get('transformation_potential_score'),
+                            'Platform Expansion': company_data.get('platform_expansion_score'),
+                            'Major Risk Factors': company_data.get('major_risk_factors_score'),
+                            'Red Flags': company_data.get('red_flags_score')
+                        }
+                        
+                        # Filter out None values and create DataFrame
+                        valid_scores = {k: v for k, v in score_breakdown.items() if v is not None}
+                        if valid_scores:
+                            score_df = pd.DataFrame(list(valid_scores.items()), columns=['Component', 'Score'])
+                            if pd.api.types.is_numeric_dtype(score_df['Score']):
+                                score_df['Score'] = score_df['Score'].round(3)
+                            score_df = score_df.sort_values('Score', ascending=False)
+                            
+                            st.dataframe(score_df, use_container_width=True, hide_index=True)
+                        
+                        # Show full analysis data if available
+                        if 'full_analysis_data' in company_data and company_data['full_analysis_data']:
+                            st.markdown("#### 📄 Full Analysis Data")
+                            st.json(company_data['full_analysis_data'])
+        
+    except Exception as e:
+        st.error(f"❌ Error loading from database: {str(e)}")
+
 def results_section():
-    """Enhanced results and downloads section with batch analysis support"""
+    """Simplified results section with table and save all functionality"""
     st.header("📊 Results & Downloads")
 
-    # Debug information
+    # Check for batch results
     show_batch = st.session_state.get('show_batch_results', False)
     parsed_results = st.session_state.get('parsed_batch_results', [])
     batch_results = st.session_state.get('batch_results', {})
-
-    # Show debug info in expandable section
-    with st.expander("🔍 Debug Information", expanded=False):
-        st.write(f"Show batch results flag: {show_batch}")
-        st.write(f"Parsed batch results count: {len(parsed_results)}")
-        st.write(f"Batch results status count: {len(batch_results)}")
-        if batch_results:
-            status_counts = {}
-            for company, result in batch_results.items():
-                status = result.get('status', 'unknown')
-                status_counts[status] = status_counts.get(status, 0) + 1
-            st.write(f"Status breakdown: {status_counts}")
 
     # Manual refresh button
     if st.button("🔄 Refresh Results", help="Manually reparse batch analysis results"):
@@ -1906,6 +2493,7 @@ def results_section():
     # Check for batch results
     if show_batch:
         if parsed_results:
+            st.success(f"🎉 **Batch Analysis Complete!** Found {len(parsed_results)} companies with results.")
             display_batch_results_table()
         else:
             st.warning("⚠️ Batch analysis completed but no results were parsed. Try the 'Refresh Results' button above.")
@@ -1917,10 +2505,24 @@ def results_section():
                 if st.session_state.get('parsed_batch_results'):
                     st.rerun()
 
+    # Database Save Section - Only Save All
+    st.subheader("💾 Database Operations")
+    
+    if st.button("💾 Save All Results to Database", type="primary"):
+        if 'batch_results' in st.session_state and st.session_state.batch_results:
+            try:
+                save_qualitative_results_to_db(st.session_state.batch_results)
+                st.success("✅ All results saved to database successfully!")
+            except Exception as e:
+                st.error(f"❌ Error saving to database: {str(e)}")
+        else:
+            st.warning("⚠️ No batch results to save. Run analysis first.")
+
     # Check for individual analysis results
     results_dir = qual_agent_path / "results"
     individual_results_exist = results_dir.exists() and list(results_dir.glob("*"))
     if individual_results_exist and not show_batch:
+        st.info("💡 **Individual Analysis Results Available!** Use 'Save All Results to Database' above to save.")
         display_individual_results()
     elif not show_batch and not individual_results_exist:
         st.info("📋 No analysis results found. Run an analysis first.")
@@ -1956,11 +2558,12 @@ def display_batch_results_table():
     # Format the DataFrame for display
     display_df = results_df[display_columns].copy()
 
-    # Format numeric columns
-    numeric_columns = [col for col in display_df.columns if col not in ['ticker', 'company_name']]
-    for col in numeric_columns:
-        if col in display_df.columns:
-            display_df[col] = display_df[col].round(3)
+    # Format numeric columns - only round actual numeric columns
+    for col in display_df.columns:
+        if col not in ['ticker', 'company_name', 'sector', 'industry']:
+            # Check if column is numeric before rounding
+            if pd.api.types.is_numeric_dtype(display_df[col]):
+                display_df[col] = display_df[col].round(3)
 
     # Rename columns for better display
     display_df = display_df.rename(columns={
@@ -2160,7 +2763,8 @@ def display_individual_results():
             st.markdown(f"**Timestamp**: {timestamp}")
             st.markdown(f"**Files**: {len(files)} result files")
 
-            # Simple file download
+            # Download options only
+            st.markdown("**📥 Download Files:**")
             for file_path in files:
                 with open(file_path, 'rb') as f:
                     file_content = f.read()
@@ -2171,6 +2775,102 @@ def display_individual_results():
                     file_name=file_path.name,
                     key=f"download_{file_path.name}_{timestamp}"
                 )
+
+
+def save_immediate_result_to_db(company):
+    """Save analysis result immediately after completion"""
+    try:
+        import sys
+        import os
+        from pathlib import Path
+        
+        # Add utils directory to path
+        utils_path = Path(__file__).parent.parent / "utils"
+        if str(utils_path) not in sys.path:
+            sys.path.append(str(utils_path))
+        
+        from db_util import save_qualitative_analysis
+        import json
+        import time
+        import glob
+        
+        # Find the most recent analysis JSON file for this company
+        results_pattern = qual_agent_path / "results" / f"multi_llm_analysis_{company}_*.json"
+        result_files = glob.glob(str(results_pattern))
+        
+        if not result_files:
+            st.error(f"❌ No analysis files found for {company}")
+            return
+        
+        # Get the most recent file
+        latest_file = max(result_files, key=os.path.getctime)
+        
+        # Load the JSON data
+        with open(latest_file, 'r') as f:
+            analysis_data = json.load(f)
+        
+        # Generate unique run_id
+        run_id = f"immediate_{company}_{int(time.time())}"
+        
+        # Save to database
+        success, message = save_qualitative_analysis(analysis_data, run_id)
+        
+        if success:
+            st.success(f"✅ {message}")
+            st.info(f"📊 Run ID: {run_id}")
+        else:
+            st.error(f"❌ {message}")
+            
+    except Exception as e:
+        st.error(f"❌ Error saving {company} to database: {str(e)}")
+
+
+def save_individual_result_to_db(company, files):
+    """Save individual analysis result to database"""
+    try:
+        import sys
+        import os
+        from pathlib import Path
+        
+        # Add utils directory to path
+        utils_path = Path(__file__).parent.parent / "utils"
+        if str(utils_path) not in sys.path:
+            sys.path.append(str(utils_path))
+        
+        from db_util import save_qualitative_analysis
+        import json
+        import time
+        
+        # Find the main analysis JSON file
+        json_file = None
+        for file_path in files:
+            if file_path.suffix == '.json' and 'multi_llm_analysis' in file_path.name:
+                json_file = file_path
+                break
+        
+        if not json_file:
+            st.error(f"❌ No JSON analysis file found for {company}")
+            return
+        
+        # Load the JSON data
+        with open(json_file, 'r') as f:
+            analysis_data = json.load(f)
+        
+        # Generate unique run_id
+        run_id = f"individual_{company}_{int(time.time())}"
+        
+        # Save to database
+        success, message = save_qualitative_analysis(analysis_data, run_id)
+        
+        if success:
+            st.success(f"✅ {message}")
+            st.info(f"📊 Run ID: {run_id}")
+        else:
+            st.error(f"❌ {message}")
+            
+    except Exception as e:
+        st.error(f"❌ Error saving {company} to database: {str(e)}")
+
 
 if __name__ == "__main__":
     main()

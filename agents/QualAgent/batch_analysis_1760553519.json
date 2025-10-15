@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-10-15T20:38:39.668215",
+  "companies_analyzed": 2,
+  "total_cost": 0.0253938,
+  "results": [
+    {
+      "ticker": "TTD",
+      "score": 2.7103174603174605,
+      "recommendation": "WEAK HOLD - Company faces challenges but may have turnaround potential",
+      "cost": 0.0126
+    },
+    {
+      "ticker": "IAS",
+      "score": 2.1382747543461833,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0127938
+    }
+  ]
+}

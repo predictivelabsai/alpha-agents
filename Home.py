@@ -33,11 +33,6 @@ def main():
             - 4-year CAGR and consistency metrics for revenue, net income, OCF
             - Liquidity and leverage ratios: current, debt/EBITDA, debt service
             - Scores each company by percentile rank across metrics
-            
-            **⚡ Fast Mode Features:**
-            - Parallel processing (10-15x faster)
-            - Smart caching to avoid repeated API calls
-            - Same calculations and accuracy as standard mode
             """
         )
 
