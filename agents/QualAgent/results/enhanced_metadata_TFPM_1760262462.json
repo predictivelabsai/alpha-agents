@@ -1,0 +1,69 @@
+{
+  "analysis_config": {
+    "user_id": "streamlit_user",
+    "company_ticker": "TFPM",
+    "analysis_type": "quick",
+    "models_to_use": null,
+    "focus_themes": null,
+    "geographies_of_interest": [
+      "US",
+      "Global"
+    ],
+    "lookback_window_months": 24,
+    "enable_weight_approval": true,
+    "enable_human_feedback": false,
+    "max_concurrent_models": 3,
+    "custom_weights": null,
+    "expert_id": null
+  },
+  "weight_approval_session": {
+    "session_id": "approval_1760262444",
+    "timestamp": "2025-10-12 11:47:24",
+    "user_id": "streamlit_user",
+    "company_ticker": "TFPM",
+    "original_weights": {
+      "brand_monopoly": 0.10638297872340426,
+      "barriers_to_entry": 0.15957446808510636,
+      "economies_of_scale": 0.10638297872340426,
+      "network_effects": 0.10638297872340426,
+      "switching_costs": 0.10638297872340426,
+      "competitive_differentiation": 0.0851063829787234,
+      "market_timing": 0.06382978723404255,
+      "management_quality": 0.05319148936170213,
+      "technology_moats": 0.0851063829787234,
+      "key_growth_drivers": 0.05319148936170213,
+      "transformation_potential": 0.0425531914893617,
+      "platform_expansion": 0.031914893617021274,
+      "major_risk_factors": -0.06,
+      "red_flags": -0.04
+    },
+    "modified_weights": {
+      "brand_monopoly": 0.10638297872340426,
+      "barriers_to_entry": 0.15957446808510636,
+      "economies_of_scale": 0.10638297872340426,
+      "network_effects": 0.10638297872340426,
+      "switching_costs": 0.10638297872340426,
+      "competitive_differentiation": 0.0851063829787234,
+      "market_timing": 0.06382978723404255,
+      "management_quality": 0.05319148936170213,
+      "technology_moats": 0.0851063829787234,
+      "key_growth_drivers": 0.05319148936170213,
+      "transformation_potential": 0.0425531914893617,
+      "platform_expansion": 0.031914893617021274,
+      "major_risk_factors": -0.06,
+      "red_flags": -0.04
+    },
+    "approval_status": "approved",
+    "user_modifications": {
+      "response_type": "approve_default"
+    },
+    "session_notes": "User approved default weights"
+  },
+  "execution_summary": {
+    "total_models_used": 5,
+    "successful_models": 3,
+    "best_model": "llama-3-70b",
+    "composite_score": 2.4208407847335174,
+    "confidence": 0.6936852821407795
+  }
+}

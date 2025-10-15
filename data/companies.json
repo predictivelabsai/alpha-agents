@@ -1,0 +1,17 @@
+[
+  {
+    "company_name": "MSB Inc.",
+    "ticker": "MSB",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "MSB - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "8b713886-ee89-4e62-90b1-c654d9aa8b29",
+    "created_at": "2025-10-12T12:04:48.366600",
+    "updated_at": "2025-10-12T12:04:48.366600"
+  }
+]

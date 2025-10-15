@@ -1,0 +1,706 @@
+{
+  "metadata": {
+    "timestamp": 1760289820,
+    "company_ticker": "TFPM",
+    "analysis_type": "multi_llm",
+    "models_used": [
+      "qwen2-72b",
+      "llama-3-70b",
+      "llama-3.1-70b",
+      "deepseek-coder-33b",
+      "mixtral-8x7b"
+    ]
+  },
+  "company": {
+    "company_name": "TFPM Inc.",
+    "ticker": "TFPM",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "TFPM - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "4f10229c-7b0d-4aa0-b3c8-f0f60ff93167",
+    "created_at": "2025-10-12T00:41:16.079659",
+    "updated_at": "2025-10-12T00:41:16.079659"
+  },
+  "composite_score": {
+    "score": 2.51937514840142,
+    "confidence": 0.7015594614809274,
+    "components_count": 15
+  },
+  "consensus_scores": {
+    "major_risk_factors": {
+      "name": "Major Risk Factors",
+      "score": 2.273809523809524,
+      "confidence": 0.8678571428571428,
+      "justification": "Consensus from 3 models: llama-3-70b: Based on 3 identified risk factors with average impact 4.0/5.0; llama-3.1-70b: Based on 3 identified risk factors with average impact 3.7/5.0; mixtral-8x7b: Based on 3 identified risk factors",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_barriers_to_entry": {
+      "name": "Moat Barriers To Entry",
+      "score": 3.714285714285715,
+      "confidence": 0.7357142857142858,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM has significant barriers to entry, including high R&D costs, complex technology, and established distribution networks. New entrants would struggle to replicate its capabilities.; llama-3.1-70b: The technology sector has moderate barriers to entry, with significant capital requirements and regulatory hurdles. However, TFPM Inc. has not established significant barriers to entry that would prevent new competitors from entering the market.; mixtral-8x7b: Extracted from narrative analysis - Barriers To Entry",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "technology_moats": {
+      "name": "Technology Moats",
+      "score": 3.3571428571428577,
+      "confidence": 0.6357142857142858,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM has a strong technology moat, with significant investments in R&D and a focus on emerging technologies.; llama-3.1-70b: TFPM Inc. has some technology moats, with a strong intellectual property portfolio and a well-established technology platform. However, the company's technology moats are not as strong as those of its competitors.; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "red_flags": {
+      "name": "Red Flags",
+      "score": 3.0555555555555554,
+      "confidence": 0.7999999999999999,
+      "justification": "Consensus from 2 models: llama-3-70b: Based on 2 identified red flags with average impact 2.5/5.0; llama-3.1-70b: Based on 2 identified red flags with average impact 3.5/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "platform_expansion": {
+      "name": "Platform Expansion",
+      "score": 3.2857142857142856,
+      "confidence": 0.6285714285714286,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM has a solid platform, but it needs to continue to invest in expansion and improvement to stay competitive.; llama-3.1-70b: TFPM Inc. has a strong platform that can be expanded into new markets and product areas. The company has a well-established distribution network and a large customer base.; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "key_growth_drivers": {
+      "name": "Key Growth Drivers",
+      "score": 3.428571428571429,
+      "confidence": 0.8321428571428572,
+      "justification": "Consensus from 3 models: llama-3-70b: Based on 3 identified growth drivers with average impact 3.7/5.0; llama-3.1-70b: Based on 3 identified growth drivers with average impact 3.7/5.0; mixtral-8x7b: Based on 2 identified growth drivers",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_switching_costs": {
+      "name": "Moat Switching Costs",
+      "score": 3.0714285714285716,
+      "confidence": 0.6071428571428572,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM's customers face moderate switching costs, as they have invested in its products and services. However, they can still switch to competitors with some effort.; llama-3.1-70b: TFPM Inc. has relatively low switching costs, with customers able to easily switch to competitors' products or services. This makes it difficult for the company to retain customers and maintain its market share.; mixtral-8x7b: Extracted from narrative analysis - Switching Costs",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "moat_network_effects": {
+      "name": "Moat Network Effects",
+      "score": 3.0000000000000004,
+      "confidence": 0.6,
+      "justification": "Consensus from 3 models: llama-3-70b: While TFPM's products have some network effects, they are not as strong as those of its competitors. Its user base is significant, but not yet critical to its success.; llama-3.1-70b: TFPM Inc. has some network effects in its business, with a large customer base and a platform that facilitates interactions between customers. However, the company's network effects are not as strong as those of its competitors, and it has not established a dominant position in the market.; mixtral-8x7b: Extracted from narrative analysis - Network Effects",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "moat_brand_monopoly": {
+      "name": "Moat Brand Monopoly",
+      "score": 3.0714285714285716,
+      "confidence": 0.6714285714285715,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM's brand is well-established in the technology sector, but it faces intense competition from established players. While it has a strong reputation, it doesn't have a monopoly on its offerings.; llama-3.1-70b: TFPM Inc. has a relatively weak brand presence in the technology sector, with limited brand recognition and customer loyalty. While the company has made efforts to establish its brand, it still lags behind its competitors in terms of brand awareness and reputation.; mixtral-8x7b: Extracted from narrative analysis - Brand Monopoly",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "moat_economies_of_scale": {
+      "name": "Moat Economies Of Scale",
+      "score": 4.0,
+      "confidence": 0.7285714285714286,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM's large scale of operations allows it to negotiate better prices with suppliers, invest in R&D, and spread fixed costs over a larger revenue base.; llama-3.1-70b: TFPM Inc. has achieved significant economies of scale in its operations, with a large customer base and a well-established distribution network. This has enabled the company to reduce its costs and improve its profitability.; mixtral-8x7b: Extracted from narrative analysis - Economies Of Scale",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "market_timing": {
+      "name": "Market Timing",
+      "score": 3.0000000000000004,
+      "confidence": 0.5642857142857144,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM has a good understanding of market trends, but it needs to improve its ability to anticipate and respond to changes.; llama-3.1-70b: TFPM Inc. has a moderate market timing, with some opportunities to capitalize on trends and market shifts. However, the company's ability to execute on its market timing plans is uncertain.; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "management_quality": {
+      "name": "Management Quality",
+      "score": 3.3571428571428577,
+      "confidence": 0.6357142857142858,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM's management team has a strong track record of execution and has made significant investments in talent acquisition and development.; llama-3.1-70b: TFPM Inc. has a moderate management quality, with some experienced executives and a well-established organizational structure. However, the company's management quality is not as strong as that of its competitors.; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "transformation_potential": {
+      "name": "Transformation Potential",
+      "score": 3.3571428571428577,
+      "confidence": 0.6357142857142858,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM has a strong track record of innovation and has made significant investments in emerging technologies.; llama-3.1-70b: TFPM Inc. has some transformation potential, with opportunities to improve its operations and expand into new markets. However, the company's ability to execute on its transformation plans is uncertain.; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "competitive_differentiation": {
+      "name": "Competitive Differentiation",
+      "score": 3.3571428571428577,
+      "confidence": 0.6357142857142858,
+      "justification": "Consensus from 3 models: llama-3-70b: TFPM's products and services are highly differentiated, with a strong focus on innovation and customer needs.; llama-3.1-70b: TFPM Inc. has some competitive differentiation, with a unique value proposition and a strong brand presence in certain markets. However, the company's competitive differentiation is not as strong as that of its competitors.; mixtral-8x7b: Default score from narrative analysis",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "competitive_positioning": {
+      "name": "Competitive Positioning",
+      "score": 1.0,
+      "confidence": 0.8444444444444444,
+      "justification": "Consensus from 2 models: llama-3-70b: Analysis of 2 key competitors; llama-3.1-70b: Analysis of 3 key competitors",
+      "sources": [],
+      "category": "competitive"
+    }
+  },
+  "individual_model_results": {
+    "qwen2-72b": {
+      "error": "400 Client Error: Bad Request for url: https://api.together.xyz/v1/chat/completions"
+    },
+    "llama-3-70b": {
+      "model_name": "llama-3-70b",
+      "provider": "together",
+      "raw_output": "{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM's brand is well-established in the technology sector, but it faces intense competition from established players. While it has a strong reputation, it doesn't have a monopoly on its offerings.\", \"sources\": [\"Company reports\", \"Industry research\"]},\n    \"barriers_to_entry\": {\"score\": 4, \"confidence\": 0.9, \"justification\": \"TFPM has significant barriers to entry, including high R&D costs, complex technology, and established distribution networks. New entrants would struggle to replicate its capabilities.\", \"sources\": [\"Company reports\", \"Industry experts\"]},\n    \"economies_of_scale\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TFPM's large scale of operations allows it to negotiate better prices with suppliers, invest in R&D, and spread fixed costs over a larger revenue base.\", \"sources\": [\"Company reports\", \"Financial data\"]},\n    \"network_effects\": {\"score\": 2, \"confidence\": 0.6, \"justification\": \"While TFPM's products have some network effects, they are not as strong as those of its competitors. Its user base is significant, but not yet critical to its success.\", \"sources\": [\"Company reports\", \"Industry research\"]},\n    \"switching_costs\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"TFPM's customers face moderate switching costs, as they have invested in its products and services. However, they can still switch to competitors with some effort.\", \"sources\": [\"Company reports\", \"Customer surveys\"]}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Increasing adoption of cloud computing\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.8},\n      {\"driver\": \"Growing demand for cybersecurity solutions\", \"impact\": 4, \"timeframe\": \"short\", \"confidence\": 0.9},\n      {\"driver\": \"Expansion into new markets\", \"impact\": 3, \"timeframe\": \"long\", \"confidence\": 0.6}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition\", \"severity\": 4, \"probability\": 0.8, \"mitigation\": \"Continued innovation and investment in R&D\"},\n      {\"risk\": \"Regulatory changes\", \"severity\": 3, \"probability\": 0.5, \"mitigation\": \"Active engagement with regulatory bodies\"},\n      {\"risk\": \"Cybersecurity threats\", \"severity\": 5, \"probability\": 0.9, \"mitigation\": \"Investment in robust cybersecurity measures\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"High customer concentration\", \"severity\": 3, \"evidence\": \"Company reports\"},\n      {\"flag\": \"Dependence on a few key products\", \"severity\": 2, \"evidence\": \"Company reports\"}\n    ],\n    \"transformation_potential\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TFPM has a strong track record of innovation and has made significant investments in emerging technologies.\"},\n    \"platform_expansion\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"TFPM has a solid platform, but it needs to continue to invest in expansion and improvement to stay competitive.\"},\n    \"competitive_differentiation\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TFPM's products and services are highly differentiated, with a strong focus on innovation and customer needs.\"},\n    \"market_timing\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"TFPM has a good understanding of market trends, but it needs to improve its ability to anticipate and respond to changes.\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TFPM's management team has a strong track record of execution and has made significant investments in talent acquisition and development.\"},\n    \"technology_moats\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TFPM has a strong technology moat, with significant investments in R&D and a focus on emerging technologies.\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"ABC Inc.\",\n      \"ticker\": \"ABC\",\n      \"competitive_position\": \"Strong competitor with a large market share\",\n      \"market_share\": \"25%\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"Large distribution network\"],\n      \"threat_level\": 4\n    },\n    {\n      \"name\": \"XYZ Corp.\",\n      \"ticker\": \"XYZ\",\n      \"competitive_position\": \"Niche player with a strong focus on innovation\",\n      \"market_share\": \"5%\",\n      \"key_differentiators\": [\"Innovative products\", \"Strong customer relationships\"],\n      \"threat_level\": 2\n    }\n  ]\n}",
+      "parsed_output": {
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 3,
+            "confidence": 0.8,
+            "justification": "TFPM's brand is well-established in the technology sector, but it faces intense competition from established players. While it has a strong reputation, it doesn't have a monopoly on its offerings.",
+            "sources": [
+              "Company reports",
+              "Industry research"
+            ]
+          },
+          "barriers_to_entry": {
+            "score": 4,
+            "confidence": 0.9,
+            "justification": "TFPM has significant barriers to entry, including high R&D costs, complex technology, and established distribution networks. New entrants would struggle to replicate its capabilities.",
+            "sources": [
+              "Company reports",
+              "Industry experts"
+            ]
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TFPM's large scale of operations allows it to negotiate better prices with suppliers, invest in R&D, and spread fixed costs over a larger revenue base.",
+            "sources": [
+              "Company reports",
+              "Financial data"
+            ]
+          },
+          "network_effects": {
+            "score": 2,
+            "confidence": 0.6,
+            "justification": "While TFPM's products have some network effects, they are not as strong as those of its competitors. Its user base is significant, but not yet critical to its success.",
+            "sources": [
+              "Company reports",
+              "Industry research"
+            ]
+          },
+          "switching_costs": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "TFPM's customers face moderate switching costs, as they have invested in its products and services. However, they can still switch to competitors with some effort.",
+            "sources": [
+              "Company reports",
+              "Customer surveys"
+            ]
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            {
+              "driver": "Increasing adoption of cloud computing",
+              "impact": 4,
+              "timeframe": "medium",
+              "confidence": 0.8
+            },
+            {
+              "driver": "Growing demand for cybersecurity solutions",
+              "impact": 4,
+              "timeframe": "short",
+              "confidence": 0.9
+            },
+            {
+              "driver": "Expansion into new markets",
+              "impact": 3,
+              "timeframe": "long",
+              "confidence": 0.6
+            }
+          ],
+          "major_risk_factors": [
+            {
+              "risk": "Intense competition",
+              "severity": 4,
+              "probability": 0.8,
+              "mitigation": "Continued innovation and investment in R&D"
+            },
+            {
+              "risk": "Regulatory changes",
+              "severity": 3,
+              "probability": 0.5,
+              "mitigation": "Active engagement with regulatory bodies"
+            },
+            {
+              "risk": "Cybersecurity threats",
+              "severity": 5,
+              "probability": 0.9,
+              "mitigation": "Investment in robust cybersecurity measures"
+            }
+          ],
+          "red_flags": [
+            {
+              "flag": "High customer concentration",
+              "severity": 3,
+              "evidence": "Company reports"
+            },
+            {
+              "flag": "Dependence on a few key products",
+              "severity": 2,
+              "evidence": "Company reports"
+            }
+          ],
+          "transformation_potential": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TFPM has a strong track record of innovation and has made significant investments in emerging technologies."
+          },
+          "platform_expansion": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "TFPM has a solid platform, but it needs to continue to invest in expansion and improvement to stay competitive."
+          },
+          "competitive_differentiation": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TFPM's products and services are highly differentiated, with a strong focus on innovation and customer needs."
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "TFPM has a good understanding of market trends, but it needs to improve its ability to anticipate and respond to changes."
+          },
+          "management_quality": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TFPM's management team has a strong track record of execution and has made significant investments in talent acquisition and development."
+          },
+          "technology_moats": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TFPM has a strong technology moat, with significant investments in R&D and a focus on emerging technologies."
+          }
+        },
+        "competitor_analysis": [
+          {
+            "name": "ABC Inc.",
+            "ticker": "ABC",
+            "competitive_position": "Strong competitor with a large market share",
+            "market_share": "25%",
+            "key_differentiators": [
+              "Strong brand recognition",
+              "Large distribution network"
+            ],
+            "threat_level": 4
+          },
+          {
+            "name": "XYZ Corp.",
+            "ticker": "XYZ",
+            "competitive_position": "Niche player with a strong focus on innovation",
+            "market_share": "5%",
+            "key_differentiators": [
+              "Innovative products",
+              "Strong customer relationships"
+            ],
+            "threat_level": 2
+          }
+        ]
+      },
+      "tokens_used": 1914,
+      "cost_usd": 0.0017226,
+      "processing_time_seconds": 11.261959314346313,
+      "model_weight": 1.0
+    },
+    "llama-3.1-70b": {
+      "model_name": "llama-3.1-70b",
+      "provider": "together",
+      "raw_output": "{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 2, \"confidence\": 0.6, \"justification\": \"TFPM Inc. has a relatively weak brand presence in the technology sector, with limited brand recognition and customer loyalty. While the company has made efforts to establish its brand, it still lags behind its competitors in terms of brand awareness and reputation.\", \"sources\": [\"TFPM Inc. Annual Report 2022\", \"Market research reports\"]},\n    \"barriers_to_entry\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"The technology sector has moderate barriers to entry, with significant capital requirements and regulatory hurdles. However, TFPM Inc. has not established significant barriers to entry that would prevent new competitors from entering the market.\", \"sources\": [\"TFPM Inc. Annual Report 2022\", \"Industry reports\"]},\n    \"economies_of_scale\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"TFPM Inc. has achieved significant economies of scale in its operations, with a large customer base and a well-established distribution network. This has enabled the company to reduce its costs and improve its profitability.\", \"sources\": [\"TFPM Inc. Annual Report 2022\", \"Financial statements\"]},\n    \"network_effects\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"TFPM Inc. has some network effects in its business, with a large customer base and a platform that facilitates interactions between customers. However, the company's network effects are not as strong as those of its competitors, and it has not established a dominant position in the market.\", \"sources\": [\"TFPM Inc. Annual Report 2022\", \"Market research reports\"]},\n    \"switching_costs\": {\"score\": 2, \"confidence\": 0.5, \"justification\": \"TFPM Inc. has relatively low switching costs, with customers able to easily switch to competitors' products or services. This makes it difficult for the company to retain customers and maintain its market share.\", \"sources\": [\"TFPM Inc. Annual Report 2022\", \"Market research reports\"]}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expansion into new markets\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.7},\n      {\"driver\": \"Development of new products and services\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.7},\n      {\"driver\": \"Investment in digital transformation\", \"impact\": 3, \"timeframe\": \"short\", \"confidence\": 0.6}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition\", \"severity\": 4, \"probability\": 0.8, \"mitigation\": \"Investment in marketing and product development\"},\n      {\"risk\": \"Regulatory changes\", \"severity\": 3, \"probability\": 0.6, \"mitigation\": \"Engagement with regulatory bodies and lobbying efforts\"},\n      {\"risk\": \"Cybersecurity threats\", \"severity\": 4, \"probability\": 0.7, \"mitigation\": \"Investment in cybersecurity measures and employee training\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"High debt levels\", \"severity\": 4, \"evidence\": \"TFPM Inc. Annual Report 2022\"},\n      {\"flag\": \"Dependence on a few large customers\", \"severity\": 3, \"evidence\": \"TFPM Inc. Annual Report 2022\"}\n    ],\n    \"transformation_potential\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"TFPM Inc. has some transformation potential, with opportunities to improve its operations and expand into new markets. However, the company's ability to execute on its transformation plans is uncertain.\"},\n    \"platform_expansion\": {\"score\": 4, \"confidence\": 0.7, \"justification\": \"TFPM Inc. has a strong platform that can be expanded into new markets and product areas. The company has a well-established distribution network and a large customer base.\"},\n    \"competitive_differentiation\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"TFPM Inc. has some competitive differentiation, with a unique value proposition and a strong brand presence in certain markets. However, the company's competitive differentiation is not as strong as that of its competitors.\"},\n    \"market_timing\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"TFPM Inc. has a moderate market timing, with some opportunities to capitalize on trends and market shifts. However, the company's ability to execute on its market timing plans is uncertain.\"},\n    \"management_quality\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"TFPM Inc. has a moderate management quality, with some experienced executives and a well-established organizational structure. However, the company's management quality is not as strong as that of its competitors.\"},\n    \"technology_moats\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"TFPM Inc. has some technology moats, with a strong intellectual property portfolio and a well-established technology platform. However, the company's technology moats are not as strong as those of its competitors.\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Microsoft Corporation\",\n      \"ticker\": \"MSFT\",\n      \"competitive_position\": \"Leader in the technology sector\",\n      \"market_share\": \"Significant market share in multiple product areas\",\n      \"key_differentiators\": [\"Strong brand presence\", \"Well-established distribution network\", \"Large customer base\"],\n      \"threat_level\": 5\n    },\n    {\n      \"name\": \"Amazon.com, Inc.\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Leader in the technology sector\",\n      \"market_share\": \"Significant market share in multiple product areas\",\n      \"key_differentiators\": [\"Strong brand presence\", \"Well-established distribution network\", \"Large customer base\"],\n      \"threat_level\": 5\n    },\n    {\n      \"name\": \"Alphabet Inc.\",\n      \"ticker\": \"GOOGL\",\n      \"competitive_position\": \"Leader in the technology sector\",\n      \"market_share\": \"Significant market share in multiple product areas\",\n      \"key_differentiators\": [\"Strong brand presence\", \"Well-established distribution network\", \"Large customer base\"],\n      \"threat_level\": 5\n    }\n  ]\n}",
+      "parsed_output": {
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 2,
+            "confidence": 0.6,
+            "justification": "TFPM Inc. has a relatively weak brand presence in the technology sector, with limited brand recognition and customer loyalty. While the company has made efforts to establish its brand, it still lags behind its competitors in terms of brand awareness and reputation.",
+            "sources": [
+              "TFPM Inc. Annual Report 2022",
+              "Market research reports"
+            ]
+          },
+          "barriers_to_entry": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "The technology sector has moderate barriers to entry, with significant capital requirements and regulatory hurdles. However, TFPM Inc. has not established significant barriers to entry that would prevent new competitors from entering the market.",
+            "sources": [
+              "TFPM Inc. Annual Report 2022",
+              "Industry reports"
+            ]
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "TFPM Inc. has achieved significant economies of scale in its operations, with a large customer base and a well-established distribution network. This has enabled the company to reduce its costs and improve its profitability.",
+            "sources": [
+              "TFPM Inc. Annual Report 2022",
+              "Financial statements"
+            ]
+          },
+          "network_effects": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "TFPM Inc. has some network effects in its business, with a large customer base and a platform that facilitates interactions between customers. However, the company's network effects are not as strong as those of its competitors, and it has not established a dominant position in the market.",
+            "sources": [
+              "TFPM Inc. Annual Report 2022",
+              "Market research reports"
+            ]
+          },
+          "switching_costs": {
+            "score": 2,
+            "confidence": 0.5,
+            "justification": "TFPM Inc. has relatively low switching costs, with customers able to easily switch to competitors' products or services. This makes it difficult for the company to retain customers and maintain its market share.",
+            "sources": [
+              "TFPM Inc. Annual Report 2022",
+              "Market research reports"
+            ]
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            {
+              "driver": "Expansion into new markets",
+              "impact": 4,
+              "timeframe": "medium",
+              "confidence": 0.7
+            },
+            {
+              "driver": "Development of new products and services",
+              "impact": 4,
+              "timeframe": "medium",
+              "confidence": 0.7
+            },
+            {
+              "driver": "Investment in digital transformation",
+              "impact": 3,
+              "timeframe": "short",
+              "confidence": 0.6
+            }
+          ],
+          "major_risk_factors": [
+            {
+              "risk": "Intense competition",
+              "severity": 4,
+              "probability": 0.8,
+              "mitigation": "Investment in marketing and product development"
+            },
+            {
+              "risk": "Regulatory changes",
+              "severity": 3,
+              "probability": 0.6,
+              "mitigation": "Engagement with regulatory bodies and lobbying efforts"
+            },
+            {
+              "risk": "Cybersecurity threats",
+              "severity": 4,
+              "probability": 0.7,
+              "mitigation": "Investment in cybersecurity measures and employee training"
+            }
+          ],
+          "red_flags": [
+            {
+              "flag": "High debt levels",
+              "severity": 4,
+              "evidence": "TFPM Inc. Annual Report 2022"
+            },
+            {
+              "flag": "Dependence on a few large customers",
+              "severity": 3,
+              "evidence": "TFPM Inc. Annual Report 2022"
+            }
+          ],
+          "transformation_potential": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "TFPM Inc. has some transformation potential, with opportunities to improve its operations and expand into new markets. However, the company's ability to execute on its transformation plans is uncertain."
+          },
+          "platform_expansion": {
+            "score": 4,
+            "confidence": 0.7,
+            "justification": "TFPM Inc. has a strong platform that can be expanded into new markets and product areas. The company has a well-established distribution network and a large customer base."
+          },
+          "competitive_differentiation": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "TFPM Inc. has some competitive differentiation, with a unique value proposition and a strong brand presence in certain markets. However, the company's competitive differentiation is not as strong as that of its competitors."
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "TFPM Inc. has a moderate market timing, with some opportunities to capitalize on trends and market shifts. However, the company's ability to execute on its market timing plans is uncertain."
+          },
+          "management_quality": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "TFPM Inc. has a moderate management quality, with some experienced executives and a well-established organizational structure. However, the company's management quality is not as strong as that of its competitors."
+          },
+          "technology_moats": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "TFPM Inc. has some technology moats, with a strong intellectual property portfolio and a well-established technology platform. However, the company's technology moats are not as strong as those of its competitors."
+          }
+        },
+        "competitor_analysis": [
+          {
+            "name": "Microsoft Corporation",
+            "ticker": "MSFT",
+            "competitive_position": "Leader in the technology sector",
+            "market_share": "Significant market share in multiple product areas",
+            "key_differentiators": [
+              "Strong brand presence",
+              "Well-established distribution network",
+              "Large customer base"
+            ],
+            "threat_level": 5
+          },
+          {
+            "name": "Amazon.com, Inc.",
+            "ticker": "AMZN",
+            "competitive_position": "Leader in the technology sector",
+            "market_share": "Significant market share in multiple product areas",
+            "key_differentiators": [
+              "Strong brand presence",
+              "Well-established distribution network",
+              "Large customer base"
+            ],
+            "threat_level": 5
+          },
+          {
+            "name": "Alphabet Inc.",
+            "ticker": "GOOGL",
+            "competitive_position": "Leader in the technology sector",
+            "market_share": "Significant market share in multiple product areas",
+            "key_differentiators": [
+              "Strong brand presence",
+              "Well-established distribution network",
+              "Large customer base"
+            ],
+            "threat_level": 5
+          }
+        ]
+      },
+      "tokens_used": 2245,
+      "cost_usd": 0.0020205,
+      "processing_time_seconds": 7.827510356903076,
+      "model_weight": 0.8
+    },
+    "deepseek-coder-33b": {
+      "error": "400 Client Error: Bad Request for url: https://api.together.xyz/v1/chat/completions"
+    },
+    "mixtral-8x7b": {
+      "model_name": "mixtral-8x7b",
+      "provider": "together",
+      "raw_output": " {\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 2, \"confidence\": 0.6, \"justification\": \"TFPM has a recognizable brand in the technology sector, but it doesn't have a dominant market position. Sources: [1, 2]\"},\n    \"barriers_to_entry\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM benefits from moderate barriers to entry due to its established customer base and technology investments. Sources: [1, 3]\"},\n    \"economies_of_scale\": {\"score\": 3, \"confidence\": 0.9, \"justification\": \"TFPM shows signs of economies of scale through its operational efficiency and cost management. Sources: [2, 3]\"},\n    \"network_effects\": {\"score\": 2, \"confidence\": 0.7, \"justification\": \"Limited network effects are present in TFPM's business model, as customer growth doesn't significantly increase the value proposition. Sources: [1, 2]\"},\n    \"switching_costs\": {\"score\": 2, \"confidence\": 0.6, \"justification\": \"Low switching costs for customers make it easy to transition to alternative solutions. Sources: [1, 2]\"}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expanding product portfolio\", \"impact\": \"4\", \"timeframe\": \"medium\", \"confidence\": 0.8},\n      {\"driver\": \"Global market penetration\", \"impact\": \"3\", \"timeframe\": \"long\", \"confidence\": 0.7}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition\", \"severity\": \"4\", \"probability\": 0.9, \"mitigation\": \"Continuous innovation and customer focus\"},\n      {\"risk\": \"Regulatory changes\", \"severity\": \"3\", \"probability\": 0.6, \"mitigation\": \"Proactive compliance and legal advisory\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"Recent decline in market share\", \"severity\": \"3\", \"evidence\": \"Q2 2022 earnings report\"}\n    ],\n    \"transformation_potential\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"TFPM has the potential for transformation through strategic acquisitions and partnerships. Sources: [1, 3]\"},\n    \"platform_expansion\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM is actively expanding its platform to capture new opportunities. Sources: [2, 3]\"},\n    \"competitive_differentiation\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM differentiates itself through its user-friendly interface and customizable solutions. Sources: [1, 2]\"},\n    \"market_timing\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM's market timing is neutral, as it has already established itself in the technology sector. Sources: [1, 2]\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.9, \"justification\": \"Strong management team with a proven track record of delivering results. Sources: [1, 2]\"},\n    \"technology_moats\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM's technology moats are moderate due to its continuous innovation and R&D investments. Sources: [1, 2]\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Competitor A\",\n      \"ticker\": \"CA\",\n      \"competitive_position\": \"Strong market position and extensive product offering\",\n      \"market_share\": \"35%\",\n      \"key_differentiators\": [\"Advanced AI capabilities\", \"Broader customer base\"],\n      \"threat_level\": 4\n    },\n    {\n      \"name\": \"Competitor B\",\n      \"ticker\": \"CB\",\n      \"competitive_position\": \"Innovative solutions and competitive pricing\",\n      \"market_share\": \"20%\",\n      \"key_differentiators\": [\"Innovative business models\", \"Strong brand recognition\"],\n      \"threat_level\": 3\n    }\n  ]\n}\n\nSources:\n[1] TFPM Inc. Annual Report 2021\n[2] TFPM Inc. Investor Presentation Q2 2022\n[3] Market research reports and analyst coverage",
+      "parsed_output": {
+        "raw_text": " {\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 2, \"confidence\": 0.6, \"justification\": \"TFPM has a recognizable brand in the technology sector, but it doesn't have a dominant market position. Sources: [1, 2]\"},\n    \"barriers_to_entry\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM benefits from moderate barriers to entry due to its established customer base and technology investments. Sources: [1, 3]\"},\n    \"economies_of_scale\": {\"score\": 3, \"confidence\": 0.9, \"justification\": \"TFPM shows signs of economies of scale through its operational efficiency and cost management. Sources: [2, 3]\"},\n    \"network_effects\": {\"score\": 2, \"confidence\": 0.7, \"justification\": \"Limited network effects are present in TFPM's business model, as customer growth doesn't significantly increase the value proposition. Sources: [1, 2]\"},\n    \"switching_costs\": {\"score\": 2, \"confidence\": 0.6, \"justification\": \"Low switching costs for customers make it easy to transition to alternative solutions. Sources: [1, 2]\"}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expanding product portfolio\", \"impact\": \"4\", \"timeframe\": \"medium\", \"confidence\": 0.8},\n      {\"driver\": \"Global market penetration\", \"impact\": \"3\", \"timeframe\": \"long\", \"confidence\": 0.7}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition\", \"severity\": \"4\", \"probability\": 0.9, \"mitigation\": \"Continuous innovation and customer focus\"},\n      {\"risk\": \"Regulatory changes\", \"severity\": \"3\", \"probability\": 0.6, \"mitigation\": \"Proactive compliance and legal advisory\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"Recent decline in market share\", \"severity\": \"3\", \"evidence\": \"Q2 2022 earnings report\"}\n    ],\n    \"transformation_potential\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"TFPM has the potential for transformation through strategic acquisitions and partnerships. Sources: [1, 3]\"},\n    \"platform_expansion\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM is actively expanding its platform to capture new opportunities. Sources: [2, 3]\"},\n    \"competitive_differentiation\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM differentiates itself through its user-friendly interface and customizable solutions. Sources: [1, 2]\"},\n    \"market_timing\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM's market timing is neutral, as it has already established itself in the technology sector. Sources: [1, 2]\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.9, \"justification\": \"Strong management team with a proven track record of delivering results. Sources: [1, 2]\"},\n    \"technology_moats\": {\"score\": 3, \"confidence\": 0.8, \"justification\": \"TFPM's technology moats are moderate due to its continuous innovation and R&D investments. Sources: [1, 2]\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Competitor A\",\n      \"ticker\": \"CA\",\n      \"competitive_position\": \"Strong market position and extensive product offering\",\n      \"market_share\": \"35%\",\n      \"key_differentiators\": [\"Advanced AI capabilities\", \"Broader customer base\"],\n      \"threat_level\": 4\n    },\n    {\n      \"name\": \"Competitor B\",\n      \"ticker\": \"CB\",\n      \"competitive_position\": \"Innovative solutions and competitive pricing\",\n      \"market_share\": \"20%\",\n      \"key_differentiators\": [\"Innovative business models\", \"Strong brand recognition\"],\n      \"threat_level\": 3\n    }\n  ]\n}\n\nSources:\n[1] TFPM Inc. Annual Report 2021\n[2] TFPM Inc. Investor Presentation Q2 2022\n[3] Market research reports and analyst coverage",
+        "parsing_error": "Failed to parse JSON - used manual extraction",
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Brand Monopoly",
+            "sources": []
+          },
+          "barriers_to_entry": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Barriers To Entry",
+            "sources": []
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Economies Of Scale",
+            "sources": []
+          },
+          "network_effects": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Network Effects",
+            "sources": []
+          },
+          "switching_costs": {
+            "score": 4,
+            "confidence": 0.6,
+            "justification": "Extracted from narrative analysis - Switching Costs",
+            "sources": []
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            "Growth driver identified: growth",
+            "Growth driver identified: expansion"
+          ],
+          "major_risk_factors": [
+            "Risk factor identified: risk",
+            "Risk factor identified: competition",
+            "Risk factor identified: threat"
+          ],
+          "red_flags": [],
+          "transformation_potential": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "platform_expansion": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "competitive_differentiation": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "management_quality": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          },
+          "technology_moats": {
+            "score": 3,
+            "confidence": 0.5,
+            "justification": "Default score from narrative analysis"
+          }
+        },
+        "competitor_analysis": {
+          "competitors": []
+        }
+      },
+      "tokens_used": 2093,
+      "cost_usd": 0.0012557999999999998,
+      "processing_time_seconds": 22.721251010894775,
+      "model_weight": 1.0
+    }
+  },
+  "best_model": "llama-3-70b",
+  "execution_metadata": {
+    "models_used": [
+      "qwen2-72b",
+      "llama-3-70b",
+      "llama-3.1-70b",
+      "deepseek-coder-33b",
+      "mixtral-8x7b"
+    ],
+    "successful_models": [
+      "llama-3-70b",
+      "llama-3.1-70b",
+      "mixtral-8x7b"
+    ],
+    "failed_models": [
+      "qwen2-72b",
+      "deepseek-coder-33b"
+    ],
+    "consensus_method": "weighted_average",
+    "scoring_metadata": {
+      "total_weight_used": 0.8127659574468086,
+      "components_used": 10,
+      "component_details": {
+        "major_risk_factors": {
+          "score": 2.273809523809524,
+          "confidence": 0.8678571428571428,
+          "weight": -0.06,
+          "contribution": 0.2415994897959184
+        },
+        "moat_barriers_to_entry": {
+          "score": 3.714285714285715,
+          "confidence": 0.7357142857142858,
+          "weight": 0.15957446808510636,
+          "contribution": 0.43606165870603564
+        },
+        "red_flags": {
+          "score": 3.0555555555555554,
+          "confidence": 0.7999999999999999,
+          "weight": -0.04,
+          "contribution": 0.14222222222222222
+        },
+        "platform_expansion": {
+          "score": 3.2857142857142856,
+          "confidence": 0.6285714285714286,
+          "weight": 0.031914893617021274,
+          "contribution": 0.0659140251845419
+        },
+        "key_growth_drivers": {
+          "score": 3.428571428571429,
+          "confidence": 0.8321428571428572,
+          "weight": 0.05319148936170213,
+          "contribution": 0.15175857577073384
+        },
+        "moat_switching_costs": {
+          "score": 3.0714285714285716,
+          "confidence": 0.6071428571428572,
+          "weight": 0.10638297872340426,
+          "contribution": 0.1983825445071646
+        },
+        "moat_network_effects": {
+          "score": 3.0000000000000004,
+          "confidence": 0.6,
+          "weight": 0.10638297872340426,
+          "contribution": 0.1914893617021277
+        },
+        "moat_brand_monopoly": {
+          "score": 3.0714285714285716,
+          "confidence": 0.6714285714285715,
+          "weight": 0.10638297872340426,
+          "contribution": 0.21938775510204087
+        },
+        "moat_economies_of_scale": {
+          "score": 4.0,
+          "confidence": 0.7285714285714286,
+          "weight": 0.10638297872340426,
+          "contribution": 0.31003039513677816
+        },
+        "transformation_potential": {
+          "score": 3.3571428571428577,
+          "confidence": 0.6357142857142858,
+          "weight": 0.0425531914893617,
+          "contribution": 0.09081632653061227
+        }
+      },
+      "weights_applied": {
+        "brand_monopoly": 0.10638297872340426,
+        "barriers_to_entry": 0.15957446808510636,
+        "economies_of_scale": 0.10638297872340426,
+        "network_effects": 0.10638297872340426,
+        "switching_costs": 0.10638297872340426,
+        "competitive_differentiation": 0.0851063829787234,
+        "market_timing": 0.06382978723404255,
+        "management_quality": 0.05319148936170213,
+        "technology_moats": 0.0851063829787234,
+        "key_growth_drivers": 0.05319148936170213,
+        "transformation_potential": 0.0425531914893617,
+        "platform_expansion": 0.031914893617021274,
+        "major_risk_factors": -0.06,
+        "red_flags": -0.04
+      }
+    },
+    "execution_time_seconds": 22.730241775512695,
+    "concurrent_execution": true
+  },
+  "total_cost_usd": 0.0049989,
+  "total_time_seconds": 22.730241775512695
+}

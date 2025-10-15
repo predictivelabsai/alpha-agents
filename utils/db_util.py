@@ -74,6 +74,23 @@ def save_fundamental_screen(df: pd.DataFrame, run_id: Optional[str] = None) -> s
     ]
     existing = [c for c in allowed_cols if c in df_to_save.columns]
     df_to_save = df_to_save[existing]
+    # Convert numpy types to Python native types to avoid PostgreSQL schema errors
+    import numpy as np
+    
+    for col in df_to_save.columns:
+        if df_to_save[col].dtype.name.startswith('float'):
+            # Convert numpy float to Python float
+            df_to_save[col] = df_to_save[col].apply(lambda x: float(x) if pd.notnull(x) else None)
+        elif df_to_save[col].dtype.name.startswith('int'):
+            # Convert numpy int to Python int
+            df_to_save[col] = df_to_save[col].apply(lambda x: int(x) if pd.notnull(x) else None)
+        elif 'object' in str(df_to_save[col].dtype):
+            # Handle object columns that might contain numpy types
+            df_to_save[col] = df_to_save[col].apply(lambda x: float(x) if isinstance(x, np.floating) else int(x) if isinstance(x, np.integer) else x)
+    
+    # Final cleanup - ensure no numpy types remain
+    df_to_save = df_to_save.where(pd.notnull(df_to_save), None)
+    
     # Insert
     df_to_save.to_sql(
         "fundamental_screen",
