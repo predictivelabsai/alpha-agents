@@ -1,0 +1,17 @@
+company_ticker,score_component,score,confidence,category,justification
+ENLT,competitive_differentiation,2.7142857142857144,0.5714285714285715,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ENLT Inc.'s competitive differentiation is moderate, and the..."
+ENLT,competitive_positioning,2.4962962962962965,0.8999999999999999,competitive,"Consensus from 2 models: llama-3.1-70b: Analysis of 3 competitors, average threat level: 3.7/5.0; mi..."
+ENLT,transformation_potential,3.0000000000000004,0.5642857142857144,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ENLT Inc. has some transformation potential, but its busines..."
+ENLT,market_timing,3.0000000000000004,0.6,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ENLT Inc.'s market timing is reasonable, and the company is ..."
+ENLT,moat_brand_monopoly,3.3571428571428577,0.6357142857142857,competitive_moat,"Consensus from 3 models: llama-3.1-70b: ENLT Inc. has a recognized brand in the technology sector, b..."
+ENLT,management_quality,3.3571428571428577,0.6357142857142858,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ENLT Inc.'s management quality is reasonable, and the compan..."
+ENLT,moat_switching_costs,3.0714285714285716,0.5714285714285715,competitive_moat,Consensus from 3 models: llama-3.1-70b: ENLT Inc.'s customers do not have significant switching cost...
+ENLT,moat_barriers_to_entry,3.0714285714285716,0.5714285714285715,competitive_moat,"Consensus from 3 models: llama-3.1-70b: The technology sector has relatively low barriers to entry, ..."
+ENLT,moat_network_effects,2.428571428571429,0.5071428571428571,competitive_moat,Consensus from 3 models: llama-3.1-70b: ENLT Inc. does not have significant network effects that wou...
+ENLT,technology_moats,2.7142857142857144,0.5714285714285715,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ENLT Inc.'s technology moats are moderate, and the company's..."
+ENLT,major_risk_factors,2.5,0.8357142857142857,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified risk factors with average impact 3.5/5...
+ENLT,moat_economies_of_scale,3.0714285714285716,0.6071428571428572,competitive_moat,Consensus from 3 models: llama-3.1-70b: ENLT Inc. has some economies of scale advantages due to its ...
+ENLT,key_growth_drivers,3.6785714285714293,0.8000000000000002,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified growth drivers with average impact 3.5...
+ENLT,platform_expansion,2.7142857142857144,0.5714285714285715,strategic_insights,"Consensus from 3 models: llama-3.1-70b: ENLT Inc.'s platform expansion opportunities are limited, an..."
+ENLT,red_flags,3.0000000000000004,0.7500000000000001,strategic_insights,Consensus from 1 models: llama-3.1-70b: Based on 1 identified red flags with average impact 3.0/5.0
+ENLT,COMPOSITE_SCORE,2.105867346938776,0.6414285714285715,composite,Weighted composite from 15 components

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-10-15T17:20:50.471329",
+  "companies_analyzed": 2,
+  "total_cost": 0.024915299999999998,
+  "results": [
+    {
+      "ticker": "NEU",
+      "score": 2.3517573696145124,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0125802
+    },
+    {
+      "ticker": "SQM",
+      "score": 2.126700680272109,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.012335099999999998
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-10-15T20:05:57.699127",
+  "companies_analyzed": 2,
+  "total_cost": 0.0258414,
+  "results": [
+    {
+      "ticker": "CRTO",
+      "score": 2.0827191987906275,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.012894
+    },
+    {
+      "ticker": "ZD",
+      "score": 2.4522392290249435,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0129474
+    }
+  ]
+}

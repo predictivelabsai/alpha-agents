@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-10-15T18:15:41.970620",
+  "companies_analyzed": 2,
+  "total_cost": 0.0216243,
+  "results": [
+    {
+      "ticker": "WTRG",
+      "score": 2.0926870748299327,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0124038
+    },
+    {
+      "ticker": "ENLT",
+      "score": 1.9634038800705467,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0092205
+    }
+  ]
+}

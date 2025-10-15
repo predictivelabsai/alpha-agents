@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-10-15T19:35:07.266559",
+  "companies_analyzed": 3,
+  "total_cost": 0.038226899999999994,
+  "results": [
+    {
+      "ticker": "APP",
+      "score": 2.559382086167801,
+      "recommendation": "WEAK HOLD - Company faces challenges but may have turnaround potential",
+      "cost": 0.012530699999999999
+    },
+    {
+      "ticker": "TTD",
+      "score": 2.3307823129251704,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0123699
+    },
+    {
+      "ticker": "IAS",
+      "score": 2.3219954648526078,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0133263
+    }
+  ]
+}
