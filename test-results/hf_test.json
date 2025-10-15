@@ -1,0 +1,22 @@
+{
+  "status": "ok",
+  "run_id": "hf-20251012-114740",
+  "prompt": "### Instruction:\nSay 'Hello, world!' and identify your model in one short sentence.\n### Response:\n",
+  "results": [
+    {
+      "model": "deepseek-ai/deepseek-coder-7b-instruct-v1.5",
+      "status": "error",
+      "error": ""
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "status": "error",
+      "error": "Model Qwen/Qwen2.5-7B-Instruct is not supported for task text-generation and provider together. Supported task: conversational."
+    },
+    {
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "status": "error",
+      "error": "Task 'text-generation' not supported for provider 'fireworks-ai'. Available tasks: ['conversational']"
+    }
+  ]
+}

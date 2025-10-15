@@ -1,0 +1,27 @@
+{
+  "status": "ok",
+  "run_id": "openrouter-20251012-113326",
+  "prompt": "Say 'Hello, world!' and identify your model in one short sentence.",
+  "results": [
+    {
+      "model": "deepseek/deepseek-chat",
+      "status": "ok",
+      "output": "Hello, world! I'm an AI language model based on OpenAI's GPT architecture."
+    },
+    {
+      "model": "moonshotai/moonshot-v1-8k",
+      "status": "error",
+      "error": "Error code: 400 - {'error': {'message': 'moonshotai/moonshot-v1-8k is not a valid model ID', 'code': 400}, 'user_id': 'user_2u4hDLkJ80c0p9Go8SAziYVmBAU'}"
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "status": "ok",
+      "output": "<think>\nOkay, the user wants me to say \"Hello, world!\" and identify my model in one short sentence. Let me start with the greeting. Then, I need to mention my model name. I should keep it concise. Maybe something like, \"Hello, world! I am Qwen, a large language"
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "status": "ok",
+      "output": "Hello, world! I'm a conversational AI model, specifically a variant of the GPT model."
+    }
+  ]
+}

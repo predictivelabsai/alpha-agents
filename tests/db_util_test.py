@@ -7,6 +7,10 @@ import uuid
 
 import pandas as pd
 from sqlalchemy import text
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Ensure repo root on path
 REPO_ROOT = Path(__file__).resolve().parents[1]

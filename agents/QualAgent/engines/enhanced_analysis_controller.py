@@ -37,6 +37,7 @@ class EnhancedAnalysisConfig:
     max_concurrent_models: int = 3
     custom_weights: Optional[WeightingScheme] = None
     expert_id: Optional[str] = None
+    batch_timestamp: Optional[str] = None  # For grouping analyses from the same batch run (format: YYYYMMDD_HHMMSS)
 
 @dataclass
 class EnhancedAnalysisResult:
@@ -196,6 +197,7 @@ class EnhancedAnalysisController:
             'focus_themes': config.focus_themes or [],
             'geographies_of_interest': config.geographies_of_interest or ['US', 'Global'],
             'lookback_window_months': config.lookback_window_months,
+            'models_to_use': config.models_to_use,  # FIX: Pass through selected models
             'enable_multi_model_consensus': True,
             'save_intermediate_results': True,
             'requested_by': f"EnhancedAnalysis-{config.user_id}",
@@ -286,11 +288,11 @@ class EnhancedAnalysisController:
 
         # Save multi-LLM results
         saved_files = self.multi_llm_engine.save_multi_format_results(
-            multi_llm_result, str(self.results_dir)
+            multi_llm_result, str(self.results_dir), config.batch_timestamp
         )
 
         # Save enhanced metadata
-        timestamp = int(time.time())
+        timestamp = config.batch_timestamp if config.batch_timestamp is not None else datetime.now().strftime("%Y%m%d_%H%M%S")
         metadata_file = self.results_dir / f"enhanced_metadata_{config.company_ticker}_{timestamp}.json"
 
         metadata = {
@@ -305,7 +307,7 @@ class EnhancedAnalysisController:
             }
         }
 
-        with open(metadata_file, 'w') as f:
+        with open(metadata_file, 'w', encoding='utf-8') as f:
             json.dump(metadata, f, indent=2, default=str)
 
         saved_files['metadata'] = str(metadata_file)

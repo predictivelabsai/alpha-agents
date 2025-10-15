@@ -49,10 +49,11 @@ logger = logging.getLogger(__name__)
 class EnhancedQualAgentDemo:
     """Enhanced demonstration runner for QualAgent analysis system"""
 
-    def __init__(self):
+    def __init__(self, auto_approve: bool = False):
         """Initialize the enhanced demo system"""
         self.controller = EnhancedAnalysisController()
         self.db = JSONDataManager()
+        self.auto_approve = auto_approve
 
         logger.info("Enhanced QualAgent Demo initialized")
 
@@ -71,9 +72,12 @@ class EnhancedQualAgentDemo:
             print(f"   - Processing overhead: ${cost_estimate['overhead_cost']:.4f}")
             print(f"   - Models included: {cost_estimate['models_included']}")
 
-            if input("Proceed with analysis? (y/N): ").lower() != 'y':
-                logger.info("Analysis cancelled by user")
-                return None
+            if self.auto_approve:
+                print("   - Auto-approving cost (running from Streamlit)")
+            else:
+                if input("Proceed with analysis? (y/N): ").lower() != 'y':
+                    logger.info("Analysis cancelled by user")
+                    return None
 
         # Run the analysis
         result = self.controller.run_enhanced_analysis(config)
@@ -90,9 +94,13 @@ class EnhancedQualAgentDemo:
         results = []
         total_estimated_cost = 0.0
 
+        # Generate single human-readable timestamp for the entire batch
+        batch_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        logger.info(f"Batch timestamp: {batch_timestamp} - all companies will use this timestamp for grouping")
+
         # Estimate total cost
         for ticker in companies:
-            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker})
+            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker, 'batch_timestamp': batch_timestamp})
             cost_estimate = self.controller.estimate_analysis_cost(config)
             total_estimated_cost += cost_estimate['total_estimated_cost']
 
@@ -101,15 +109,18 @@ class EnhancedQualAgentDemo:
         print(f"   - Average per company: ${total_estimated_cost/len(companies):.4f}")
 
         if total_estimated_cost > 2.00:  # Higher threshold for batch
-            if input("Proceed with batch analysis? (y/N): ").lower() != 'y':
-                logger.info("Batch analysis cancelled by user")
-                return []
+            if self.auto_approve:
+                print("   - Auto-approving batch cost (running from Streamlit)")
+            else:
+                if input("Proceed with batch analysis? (y/N): ").lower() != 'y':
+                    logger.info("Batch analysis cancelled by user")
+                    return []
 
         # Run analyses
         for i, ticker in enumerate(companies, 1):
             print(f"\nREFRESH Analyzing {ticker} ({i}/{len(companies)})")
 
-            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker})
+            config = EnhancedAnalysisConfig(**{**base_config.__dict__, 'company_ticker': ticker, 'batch_timestamp': batch_timestamp})
 
             try:
                 result = self.controller.run_enhanced_analysis(config)
@@ -302,6 +313,11 @@ class EnhancedQualAgentDemo:
 
     def create_analysis_config_from_args(self, args) -> EnhancedAnalysisConfig:
         """Create analysis config from command line arguments"""
+        # Load custom weights if provided
+        custom_weights = None
+        if hasattr(args, 'custom_weights') and args.custom_weights:
+            custom_weights = self._load_custom_weights(args.custom_weights)
+
         return EnhancedAnalysisConfig(
             user_id=args.user_id,
             company_ticker=args.company,
@@ -313,8 +329,43 @@ class EnhancedQualAgentDemo:
             enable_weight_approval=args.enable_weights,
             enable_human_feedback=args.enable_feedback,
             max_concurrent_models=args.max_concurrent,
-            expert_id=args.expert_id
+            expert_id=args.expert_id,
+            custom_weights=custom_weights
         )
+
+    def _load_custom_weights(self, weights_file: str) -> WeightingScheme:
+        """Load custom weights from JSON file"""
+        try:
+            with open(weights_file, 'r') as f:
+                weight_data = json.load(f)
+
+            if 'weights' in weight_data:
+                weights_dict = weight_data['weights']
+            else:
+                weights_dict = weight_data
+
+            # Create WeightingScheme object
+            weights = WeightingScheme()
+
+            # Load weights from file
+            for attr, value in weights_dict.items():
+                if hasattr(weights, attr):
+                    setattr(weights, attr, float(value))
+
+            print(f"[SUCCESS] Loaded custom weights from {weights_file}")
+            if 'approved_by' in weight_data:
+                print(f"   Approved by: {weight_data['approved_by']}")
+
+            return weights.normalize_weights()
+
+        except FileNotFoundError:
+            print(f"[ERROR] Custom weights file not found: {weights_file}")
+            print("   Using default weights instead")
+            return None
+        except Exception as e:
+            print(f"[ERROR] Error loading custom weights: {e}")
+            print("   Using default weights instead")
+            return None
 
 def main():
     """Main entry point"""
@@ -348,8 +399,12 @@ def main():
     # Interactive features
     parser.add_argument('--interactive-weights', action='store_true',
                        help='Use interactive weight configuration')
+    parser.add_argument('--custom-weights', type=str,
+                       help='Path to custom weight configuration JSON file')
     parser.add_argument('--cost-estimate-only', action='store_true',
                        help='Only show cost estimate, do not run analysis')
+    parser.add_argument('--auto-approve', action='store_true',
+                       help='Automatically approve cost estimates without user input')
 
     args = parser.parse_args()
 
@@ -381,7 +436,7 @@ def main():
         print(f"   NOTE: Expert feedback will be collected as: {args.expert_id}")
 
     # Initialize demo
-    demo = EnhancedQualAgentDemo()
+    demo = EnhancedQualAgentDemo(auto_approve=args.auto_approve)
 
     try:
         if args.company:
@@ -407,7 +462,7 @@ def main():
                 # Generate report
                 report = demo.controller.create_analysis_report(result, "markdown")
                 report_file = f"analysis_report_{args.company}_{int(time.time())}.md"
-                with open(report_file, 'w') as f:
+                with open(report_file, 'w', encoding='utf-8') as f:
                     f.write(report)
                 print(f"\n[REPORT] Full report saved to: {report_file}")
 
@@ -443,9 +498,9 @@ def main():
                     ]
                 }
 
-                with open(batch_file, 'w') as f:
+                with open(batch_file, 'w', encoding='utf-8') as f:
                     json.dump(batch_data, f, indent=2)
-                print(f"\n[BATCH] Batch summary saved to: {batch_file}")
+                print(f"\n[REPORT] Batch summary saved to: {batch_file}")
 
     except KeyboardInterrupt:
         print("\n\nAnalysis interrupted by user")

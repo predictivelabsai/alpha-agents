@@ -13,6 +13,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass, asdict
 from pathlib import Path
+from datetime import datetime
 import numpy as np
 
 from engines.llm_integration import LLMIntegration, LLMResponse
@@ -76,6 +77,65 @@ class MultiLLMEngine:
         logger.info(f"Found {len(enabled_models)} enabled models: {[m.model_name for m in enabled_models]}")
         return enabled_models
 
+    def _resolve_requested_models(self, requested_models: List[str],
+                                 available_models: List[LLMModelConfig]) -> List[LLMModelConfig]:
+        """
+        Resolve requested models to available LLMModelConfig objects.
+        Handles both configured model keys (like 'llama-3.1-70b') and raw model names
+        (like 'meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo').
+        """
+        resolved_models = []
+
+        # Create mapping from raw model names to configured model keys
+        raw_to_config_map = self._create_raw_to_config_mapping()
+
+        for requested in requested_models:
+            logger.info(f"Resolving requested model: {requested}")
+
+            # Try 1: Direct match with configured model keys
+            direct_match = [m for m in available_models if m.model_name == requested]
+            if direct_match:
+                resolved_models.extend(direct_match)
+                logger.info(f"  ✅ Direct match found: {requested}")
+                continue
+
+            # Try 2: Match raw model name to configured key
+            if requested in raw_to_config_map:
+                config_key = raw_to_config_map[requested]
+                config_match = [m for m in available_models if m.model_name == config_key]
+                if config_match:
+                    resolved_models.extend(config_match)
+                    logger.info(f"  ✅ Raw-to-config match: {requested} -> {config_key}")
+                    continue
+
+            # Try 3: Create dynamic model config for additional models
+            # Now we can use the requested model name directly since LLM integration handles it
+            additional_model = LLMModelConfig(
+                model_name=requested,  # Use the raw model name directly
+                provider="together",   # Default to TogetherAI
+                weight_in_consensus=1.0,
+                enabled=True,
+                description=f"Additional model: {requested}"
+            )
+            resolved_models.append(additional_model)
+            logger.info(f"  ✅ Created additional model config: {requested}")
+
+        logger.info(f"Resolved {len(resolved_models)} models from {len(requested_models)} requested")
+        return resolved_models
+
+    def _create_raw_to_config_mapping(self) -> Dict[str, str]:
+        """Create mapping from raw model names to configured model keys"""
+        mapping = {}
+
+        # Get the model configurations from LLM integration
+        for config_key in self.llm.get_available_models():
+            model_info = self.llm.get_model_info(config_key)
+            if model_info:
+                mapping[model_info.model_name] = config_key
+
+        logger.info(f"Created raw-to-config mapping with {len(mapping)} entries")
+        return mapping
+
     def run_multi_llm_analysis(self, company: Company, analysis_config: Dict,
                               user_weights: WeightingScheme = None,
                               max_concurrent: int = 3) -> MultiLLMResult:
@@ -85,8 +145,22 @@ class MultiLLMEngine:
 
         logger.info(f"Starting multi-LLM analysis for {company.ticker}")
 
-        # Get available models
-        models = self.get_available_models()
+        # Get available models (filter by models_to_use if specified)
+        all_available_models = self.get_available_models()
+
+        if analysis_config.get('models_to_use'):
+            # Filter to only use specified models
+            requested_models = analysis_config['models_to_use']
+            models = self._resolve_requested_models(requested_models, all_available_models)
+            logger.info(f"Filtering to {len(models)} requested models: {[m.model_name for m in models]}")
+
+            if not models:
+                logger.warning(f"None of requested models {requested_models} are available. Using all available.")
+                models = all_available_models
+        else:
+            # Use all available models
+            models = all_available_models
+
         if not models:
             raise ValueError("No LLM models available for analysis")
 
@@ -414,10 +488,16 @@ class MultiLLMEngine:
         best_model = max(model_quality_scores.items(), key=lambda x: x[1])
         return best_model[0]
 
-    def save_multi_format_results(self, result: MultiLLMResult, output_dir: str = None) -> Dict[str, str]:
-        """Save results in JSON, CSV, and PKL formats"""
+    def save_multi_format_results(self, result: MultiLLMResult, output_dir: str = None, batch_timestamp: str = None) -> Dict[str, str]:
+        """Save results in JSON, CSV, and PKL formats
+
+        Args:
+            result: MultiLLM analysis result
+            output_dir: Output directory path
+            batch_timestamp: Optional batch timestamp for grouping related analyses (format: YYYYMMDD_HHMMSS)
+        """
         output_dir = Path(output_dir) if output_dir else Path.cwd()
-        timestamp = int(time.time())
+        timestamp = batch_timestamp if batch_timestamp is not None else datetime.now().strftime("%Y%m%d_%H%M%S")
         ticker = result.company.ticker
 
         saved_files = {}
@@ -445,7 +525,7 @@ class MultiLLMEngine:
             'total_time_seconds': result.total_time_seconds
         }
 
-        with open(json_file, 'w') as f:
+        with open(json_file, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=2, default=str)
         saved_files['json'] = str(json_file)
 

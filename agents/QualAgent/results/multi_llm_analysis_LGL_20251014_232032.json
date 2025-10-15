@@ -1,0 +1,639 @@
+{
+  "metadata": {
+    "timestamp": "20251014_232032",
+    "company_ticker": "LGL",
+    "analysis_type": "multi_llm",
+    "models_used": [
+      "llama-3-70b",
+      "mixtral-8x7b"
+    ]
+  },
+  "company": {
+    "company_name": "LGL Inc.",
+    "ticker": "LGL",
+    "subsector": "Technology",
+    "market_cap_usd": null,
+    "employees": null,
+    "founded_year": null,
+    "headquarters": null,
+    "description": "LGL - Technology company",
+    "website": null,
+    "status": "active",
+    "id": "122ab463-64ff-4e1c-b9ed-262679541330",
+    "created_at": "2025-10-13T17:08:42.550011",
+    "updated_at": "2025-10-13T17:08:42.550011"
+  },
+  "composite_score": {
+    "score": 2.225198412698413,
+    "confidence": 0.7225,
+    "components_count": 15
+  },
+  "consensus_scores": {
+    "moat_network_effects": {
+      "name": "Moat Network Effects",
+      "score": 2.0,
+      "confidence": 0.5,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc.'s products do not exhibit strong network effects. While the company's products are designed to work together seamlessly, customers can still use alternative products without significant switching costs. The company's lack of a dominant platform or ecosystem limits its ability to create strong network effects. (Source: LGL Inc. Product Roadmap 2022, Customer Feedback Survey 2022); mixtral-8x7b: LGL Inc. does not benefit from strong network effects. Its products and services do not inherently increase in value as more users join the platform. As a result, LGL's user growth does not automatically translate into exponential value growth or increased switching costs for its customers.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "competitive_differentiation": {
+      "name": "Competitive Differentiation",
+      "score": 3.5,
+      "confidence": 0.8,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. has a unique value proposition based on its high-quality products, strong customer relationships, and innovative approach. While competitors can replicate some of these advantages, LGL's sustained investment in research and development and its commitment to customer satisfaction create a durable competitive moat.; mixtral-8x7b: LGL Inc. demonstrates some competitive differentiation through its specialized technology and customer service. However, its advantages are not unique or defensible in the long term. LGL must continuously invest in research and development to maintain its competitive position and develop sustainable advantages.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "red_flags": {
+      "name": "Red Flags",
+      "score": 3.25,
+      "confidence": 0.7749999999999999,
+      "justification": "Consensus from 2 models: llama-3-70b: Based on 2 identified red flags with average impact 2.5/5.0; mixtral-8x7b: Based on 1 identified red flags with average impact 3.0/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_economies_of_scale": {
+      "name": "Moat Economies Of Scale",
+      "score": 3.5,
+      "confidence": 0.8,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. has achieved significant economies of scale through its large production volumes and efficient manufacturing processes. The company's scale advantages enable it to negotiate better prices with suppliers and reduce its cost structure. However, the company's scale is not insurmountable, and competitors can still achieve similar economies with sufficient investment. (Source: LGL Inc. Annual Report 2022, Industry Benchmarking Study 2022); mixtral-8x7b: LGL Inc. demonstrates some economies of scale due to its size and operational efficiency. However, its cost advantages are not significantly greater than those of its closest competitors. As a result, LGL's pricing power remains limited, and competitors can match its cost structure with similar efforts.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "key_growth_drivers": {
+      "name": "Key Growth Drivers",
+      "score": 4.083333333333333,
+      "confidence": 0.825,
+      "justification": "Consensus from 2 models: llama-3-70b: Based on 3 identified growth drivers with average impact 3.7/5.0; mixtral-8x7b: Based on 2 identified growth drivers with average impact 4.5/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "platform_expansion": {
+      "name": "Platform Expansion",
+      "score": 3.5,
+      "confidence": 0.75,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. has a solid platform for growth, with opportunities to expand into adjacent markets and leverage its existing capabilities. The company's products are designed to be scalable and adaptable, enabling it to enter new markets with relative ease.; mixtral-8x7b: LGL Inc. has limited platform expansion opportunities due to its focus on specific technology niches. However, it can potentially leverage its core capabilities to create new revenue streams and enter adjacent markets. LGL's success in platform expansion will depend on its ability to identify and capitalize on growth opportunities while mitigating execution risks.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "transformation_potential": {
+      "name": "Transformation Potential",
+      "score": 3.5,
+      "confidence": 0.7,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's culture of innovation and its significant research and development investments position it well for future growth and transformation.; mixtral-8x7b: LGL Inc. has demonstrated some transformation potential through strategic acquisitions and product innovations. However, its ability to adapt its business model and enter adjacent markets remains uncertain due to its size and organizational structure. LGL must invest in a culture of innovation and strategic flexibility to fully leverage its transformation potential.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_switching_costs": {
+      "name": "Moat Switching Costs",
+      "score": 3.0,
+      "confidence": 0.6499999999999999,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc.'s products have moderate switching costs. While customers may incur some costs when switching to alternative products, these costs are not prohibitively high. The company's products are designed to be compatible with industry standards, making it easier for customers to switch. (Source: LGL Inc. Customer Support Documentation 2022, Industry Analyst Report 2022); mixtral-8x7b: LGL Inc. has moderate switching costs due to its specialized technology and customer training requirements. However, these costs are not prohibitively high, and competitors can potentially lure LGL's customers with attractive offers or innovative solutions. LGL must continuously invest in customer satisfaction and retention to maintain its market position.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "market_timing": {
+      "name": "Market Timing",
+      "score": 3.5,
+      "confidence": 0.75,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. is well-positioned to capitalize on emerging trends in the technology sector, including the growth of cloud computing and the Internet of Things. The company's products are designed to address these trends, and its early mover advantage enables it to establish a strong market presence.; mixtral-8x7b: LGL Inc. is reasonably positioned in the technology market, but its timing advantages are unclear due to the rapidly changing competitive landscape and evolving market trends. LGL must stay abreast of industry developments and adapt its strategy accordingly to maintain its market position.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_barriers_to_entry": {
+      "name": "Moat Barriers To Entry",
+      "score": 3.5,
+      "confidence": 0.7,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. operates in a sector with moderate barriers to entry. While the company has significant research and development capabilities, new entrants can still access the market with substantial investment. However, LGL's established relationships with suppliers, distributors, and customers create some obstacles for new competitors. (Source: IBISWorld Industry Report 2022, LGL Inc. 10-K Filing 2022); mixtral-8x7b: LGL Inc. faces moderate barriers to entry due to its established market position and technology investments. However, new entrants with fresh approaches or innovative solutions could potentially disrupt LGL's market share. Regulatory requirements and capital investments present some challenges, but they are not insurmountable for well-funded and strategic competitors.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "management_quality": {
+      "name": "Management Quality",
+      "score": 3.5,
+      "confidence": 0.7,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc.'s management team has a strong track record of execution and strategic decision-making. The team's experience and expertise in the technology sector enable it to navigate complex market dynamics and make informed decisions about the company's direction.; mixtral-8x7b: LGL Inc.'s management team has demonstrated mixed results in terms of strategic execution and value creation. While it has achieved some successes, it has also experienced setbacks, such as recent executive turnover. LGL's management quality remains a concern due to its impact on the company's long-term success.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "moat_brand_monopoly": {
+      "name": "Moat Brand Monopoly",
+      "score": 3.0,
+      "confidence": 0.7,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. has a recognized brand in the technology sector, with a moderate level of customer loyalty. While the company's products are not necessarily iconic, they have a strong reputation for quality and reliability. However, the brand is not immune to competition, and customers may be willing to switch to alternative products if prices or features become more attractive. (Source: LGL Inc. Annual Report 2022, Customer Satisfaction Survey 2022); mixtral-8x7b: LGL Inc. has a recognized brand in the technology sector, but it does not exhibit strong customer loyalty or pricing power compared to top-tier competitors. Customers generally consider LGL as one of several options when choosing technology products, rather than a clear first choice.",
+      "sources": [],
+      "category": "competitive_moat"
+    },
+    "technology_moats": {
+      "name": "Technology Moats",
+      "score": 3.5,
+      "confidence": 0.8,
+      "justification": "Consensus from 2 models: llama-3-70b: LGL Inc. has a strong technology moat based on its proprietary products and processes. The company's significant research and development investments enable it to stay ahead of competitors and maintain its technological leadership position.; mixtral-8x7b: LGL Inc. has some technological barriers and innovation capabilities, but its intellectual property protection and technical complexity are not significantly greater than those of its competitors. As a result, LGL's technology moats are not insurmountable, and it must continuously invest in research and development to maintain its competitive position.",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "major_risk_factors": {
+      "name": "Major Risk Factors",
+      "score": 2.083333333333333,
+      "confidence": 0.825,
+      "justification": "Consensus from 2 models: llama-3-70b: Based on 3 identified risk factors with average impact 3.3/5.0; mixtral-8x7b: Based on 2 identified risk factors with average impact 4.5/5.0",
+      "sources": [],
+      "category": "strategic_insights"
+    },
+    "competitive_positioning": {
+      "name": "Competitive Positioning",
+      "score": 2.441666666666667,
+      "confidence": 0.8999999999999999,
+      "justification": "Consensus from 2 models: llama-3-70b: Analysis of 3 competitors, average threat level: 3.3/5.0; mixtral-8x7b: Analysis of 3 competitors, average threat level: 4.3/5.0",
+      "sources": [],
+      "category": "competitive"
+    }
+  },
+  "individual_model_results": {
+    "llama-3-70b": {
+      "model_name": "llama-3-70b",
+      "provider": "together",
+      "raw_output": "{\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\"score\": 3, \"confidence\": 0.7, \"justification\": \"LGL Inc. has a recognized brand in the technology sector, with a moderate level of customer loyalty. While the company's products are not necessarily iconic, they have a strong reputation for quality and reliability. However, the brand is not immune to competition, and customers may be willing to switch to alternative products if prices or features become more attractive. (Source: LGL Inc. Annual Report 2022, Customer Satisfaction Survey 2022)\", \"sources\": [\"LGL Inc. Annual Report 2022\", \"Customer Satisfaction Survey 2022\"]},\n    \"barriers_to_entry\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc. operates in a sector with moderate barriers to entry. While the company has significant research and development capabilities, new entrants can still access the market with substantial investment. However, LGL's established relationships with suppliers, distributors, and customers create some obstacles for new competitors. (Source: IBISWorld Industry Report 2022, LGL Inc. 10-K Filing 2022)\", \"sources\": [\"IBISWorld Industry Report 2022\", \"LGL Inc. 10-K Filing 2022\"]},\n    \"economies_of_scale\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc. has achieved significant economies of scale through its large production volumes and efficient manufacturing processes. The company's scale advantages enable it to negotiate better prices with suppliers and reduce its cost structure. However, the company's scale is not insurmountable, and competitors can still achieve similar economies with sufficient investment. (Source: LGL Inc. Annual Report 2022, Industry Benchmarking Study 2022)\", \"sources\": [\"LGL Inc. Annual Report 2022\", \"Industry Benchmarking Study 2022\"]},\n    \"network_effects\": {\"score\": 2, \"confidence\": 0.5, \"justification\": \"LGL Inc.'s products do not exhibit strong network effects. While the company's products are designed to work together seamlessly, customers can still use alternative products without significant switching costs. The company's lack of a dominant platform or ecosystem limits its ability to create strong network effects. (Source: LGL Inc. Product Roadmap 2022, Customer Feedback Survey 2022)\", \"sources\": [\"LGL Inc. Product Roadmap 2022\", \"Customer Feedback Survey 2022\"]},\n    \"switching_costs\": {\"score\": 3, \"confidence\": 0.6, \"justification\": \"LGL Inc.'s products have moderate switching costs. While customers may incur some costs when switching to alternative products, these costs are not prohibitively high. The company's products are designed to be compatible with industry standards, making it easier for customers to switch. (Source: LGL Inc. Customer Support Documentation 2022, Industry Analyst Report 2022)\", \"sources\": [\"LGL Inc. Customer Support Documentation 2022\", \"Industry Analyst Report 2022\"]}\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\"driver\": \"Expansion into adjacent markets\", \"impact\": 4, \"timeframe\": \"medium\", \"confidence\": 0.8},\n      {\"driver\": \"Product innovation and refresh\", \"impact\": 4, \"timeframe\": \"short\", \"confidence\": 0.9},\n      {\"driver\": \"Operational efficiency improvements\", \"impact\": 3, \"timeframe\": \"short\", \"confidence\": 0.7}\n    ],\n    \"major_risk_factors\": [\n      {\"risk\": \"Intense competition in the technology sector\", \"severity\": 4, \"probability\": 0.8, \"mitigation\": \"Differentiation through innovation and customer relationships\"},\n      {\"risk\": \"Supply chain disruptions\", \"severity\": 3, \"probability\": 0.6, \"mitigation\": \"Diversification of suppliers and inventory management\"},\n      {\"risk\": \"Regulatory changes affecting the industry\", \"severity\": 3, \"probability\": 0.5, \"mitigation\": \"Active engagement with regulatory bodies and industry associations\"}\n    ],\n    \"red_flags\": [\n      {\"flag\": \"Declining market share in a key product category\", \"severity\": 3, \"evidence\": \"LGL Inc. Quarterly Earnings Report 2022, Industry Research Report 2022\"},\n      {\"flag\": \"Increasing research and development expenses without corresponding revenue growth\", \"severity\": 2, \"evidence\": \"LGL Inc. Annual Report 2022, Industry Benchmarking Study 2022\"}\n    ],\n    \"transformation_potential\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's culture of innovation and its significant research and development investments position it well for future growth and transformation.\"},\n    \"platform_expansion\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc. has a solid platform for growth, with opportunities to expand into adjacent markets and leverage its existing capabilities. The company's products are designed to be scalable and adaptable, enabling it to enter new markets with relative ease.\"},\n    \"competitive_differentiation\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc. has a unique value proposition based on its high-quality products, strong customer relationships, and innovative approach. While competitors can replicate some of these advantages, LGL's sustained investment in research and development and its commitment to customer satisfaction create a durable competitive moat.\"},\n    \"market_timing\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc. is well-positioned to capitalize on emerging trends in the technology sector, including the growth of cloud computing and the Internet of Things. The company's products are designed to address these trends, and its early mover advantage enables it to establish a strong market presence.\"},\n    \"management_quality\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc.'s management team has a strong track record of execution and strategic decision-making. The team's experience and expertise in the technology sector enable it to navigate complex market dynamics and make informed decisions about the company's direction.\"},\n    \"technology_moats\": {\"score\": 4, \"confidence\": 0.8, \"justification\": \"LGL Inc. has a strong technology moat based on its proprietary products and processes. The company's significant research and development investments enable it to stay ahead of competitors and maintain its technological leadership position.\"}\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Cisco Systems, Inc.\",\n      \"ticker\": \"CSCO\",\n      \"competitive_position\": \"Cisco is a leading provider of networking equipment and has a strong presence in the technology sector. The company's products are highly regarded for their quality and reliability, and its strong brand recognition enables it to command a premium price.\",\n      \"market_share\": \"25% market share in the networking equipment market (Source: IDC Market Research 2022)\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"High-quality products\", \"Large installed base of customers\"],\n      \"threat_level\": 4,\n      \"strategic_response\": \"LGL Inc. can respond to Cisco's competitive threat by focusing on its own strengths, such as its innovative approach and strong customer relationships. The company can also invest in research and development to stay ahead of Cisco's technological advancements.\"\n    },\n    {\n      \"name\": \"Hewlett Packard Enterprise Company\",\n      \"ticker\": \"HPE\",\n      \"competitive_position\": \"HPE is a leading provider of enterprise technology solutions and has a strong presence in the technology sector. The company's products are highly regarded for their quality and reliability, and its strong brand recognition enables it to command a premium price.\",\n      \"market_share\": \"20% market share in the enterprise technology solutions market (Source: Gartner Market Research 2022)\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"High-quality products\", \"Large installed base of customers\"],\n      \"threat_level\": 3,\n      \"strategic_response\": \"LGL Inc. can respond to HPE's competitive threat by focusing on its own strengths, such as its innovative approach and strong customer relationships. The company can also invest in research and development to stay ahead of HPE's technological advancements.\"\n    },\n    {\n      \"name\": \"Juniper Networks, Inc.\",\n      \"ticker\": \"JNPR\",\n      \"competitive_position\": \"Juniper is a leading provider of networking equipment and has a strong presence in the technology sector. The company's products are highly regarded for their quality and reliability, and its strong brand recognition enables it to command a premium price.\",\n      \"market_share\": \"15% market share in the networking equipment market (Source: IDC Market Research 2022)\",\n      \"key_differentiators\": [\"Strong brand recognition\", \"High-quality products\", \"Innovative approach to networking solutions\"],\n      \"threat_level\": 3,\n      \"strategic_response\": \"LGL Inc. can respond to Juniper's competitive threat by focusing on its own strengths, such as its innovative approach and strong customer relationships. The company can also invest in research and development to stay ahead of Juniper's technological advancements.\"\n    }\n  ]\n}",
+      "parsed_output": {
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "LGL Inc. has a recognized brand in the technology sector, with a moderate level of customer loyalty. While the company's products are not necessarily iconic, they have a strong reputation for quality and reliability. However, the brand is not immune to competition, and customers may be willing to switch to alternative products if prices or features become more attractive. (Source: LGL Inc. Annual Report 2022, Customer Satisfaction Survey 2022)",
+            "sources": [
+              "LGL Inc. Annual Report 2022",
+              "Customer Satisfaction Survey 2022"
+            ]
+          },
+          "barriers_to_entry": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc. operates in a sector with moderate barriers to entry. While the company has significant research and development capabilities, new entrants can still access the market with substantial investment. However, LGL's established relationships with suppliers, distributors, and customers create some obstacles for new competitors. (Source: IBISWorld Industry Report 2022, LGL Inc. 10-K Filing 2022)",
+            "sources": [
+              "IBISWorld Industry Report 2022",
+              "LGL Inc. 10-K Filing 2022"
+            ]
+          },
+          "economies_of_scale": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc. has achieved significant economies of scale through its large production volumes and efficient manufacturing processes. The company's scale advantages enable it to negotiate better prices with suppliers and reduce its cost structure. However, the company's scale is not insurmountable, and competitors can still achieve similar economies with sufficient investment. (Source: LGL Inc. Annual Report 2022, Industry Benchmarking Study 2022)",
+            "sources": [
+              "LGL Inc. Annual Report 2022",
+              "Industry Benchmarking Study 2022"
+            ]
+          },
+          "network_effects": {
+            "score": 2,
+            "confidence": 0.5,
+            "justification": "LGL Inc.'s products do not exhibit strong network effects. While the company's products are designed to work together seamlessly, customers can still use alternative products without significant switching costs. The company's lack of a dominant platform or ecosystem limits its ability to create strong network effects. (Source: LGL Inc. Product Roadmap 2022, Customer Feedback Survey 2022)",
+            "sources": [
+              "LGL Inc. Product Roadmap 2022",
+              "Customer Feedback Survey 2022"
+            ]
+          },
+          "switching_costs": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "LGL Inc.'s products have moderate switching costs. While customers may incur some costs when switching to alternative products, these costs are not prohibitively high. The company's products are designed to be compatible with industry standards, making it easier for customers to switch. (Source: LGL Inc. Customer Support Documentation 2022, Industry Analyst Report 2022)",
+            "sources": [
+              "LGL Inc. Customer Support Documentation 2022",
+              "Industry Analyst Report 2022"
+            ]
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            {
+              "driver": "Expansion into adjacent markets",
+              "impact": 4,
+              "timeframe": "medium",
+              "confidence": 0.8
+            },
+            {
+              "driver": "Product innovation and refresh",
+              "impact": 4,
+              "timeframe": "short",
+              "confidence": 0.9
+            },
+            {
+              "driver": "Operational efficiency improvements",
+              "impact": 3,
+              "timeframe": "short",
+              "confidence": 0.7
+            }
+          ],
+          "major_risk_factors": [
+            {
+              "risk": "Intense competition in the technology sector",
+              "severity": 4,
+              "probability": 0.8,
+              "mitigation": "Differentiation through innovation and customer relationships"
+            },
+            {
+              "risk": "Supply chain disruptions",
+              "severity": 3,
+              "probability": 0.6,
+              "mitigation": "Diversification of suppliers and inventory management"
+            },
+            {
+              "risk": "Regulatory changes affecting the industry",
+              "severity": 3,
+              "probability": 0.5,
+              "mitigation": "Active engagement with regulatory bodies and industry associations"
+            }
+          ],
+          "red_flags": [
+            {
+              "flag": "Declining market share in a key product category",
+              "severity": 3,
+              "evidence": "LGL Inc. Quarterly Earnings Report 2022, Industry Research Report 2022"
+            },
+            {
+              "flag": "Increasing research and development expenses without corresponding revenue growth",
+              "severity": 2,
+              "evidence": "LGL Inc. Annual Report 2022, Industry Benchmarking Study 2022"
+            }
+          ],
+          "transformation_potential": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc. has a strong track record of innovation and has demonstrated its ability to adapt to changing market conditions. The company's culture of innovation and its significant research and development investments position it well for future growth and transformation."
+          },
+          "platform_expansion": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc. has a solid platform for growth, with opportunities to expand into adjacent markets and leverage its existing capabilities. The company's products are designed to be scalable and adaptable, enabling it to enter new markets with relative ease."
+          },
+          "competitive_differentiation": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc. has a unique value proposition based on its high-quality products, strong customer relationships, and innovative approach. While competitors can replicate some of these advantages, LGL's sustained investment in research and development and its commitment to customer satisfaction create a durable competitive moat."
+          },
+          "market_timing": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc. is well-positioned to capitalize on emerging trends in the technology sector, including the growth of cloud computing and the Internet of Things. The company's products are designed to address these trends, and its early mover advantage enables it to establish a strong market presence."
+          },
+          "management_quality": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc.'s management team has a strong track record of execution and strategic decision-making. The team's experience and expertise in the technology sector enable it to navigate complex market dynamics and make informed decisions about the company's direction."
+          },
+          "technology_moats": {
+            "score": 4,
+            "confidence": 0.8,
+            "justification": "LGL Inc. has a strong technology moat based on its proprietary products and processes. The company's significant research and development investments enable it to stay ahead of competitors and maintain its technological leadership position."
+          }
+        },
+        "competitor_analysis": [
+          {
+            "name": "Cisco Systems, Inc.",
+            "ticker": "CSCO",
+            "competitive_position": "Cisco is a leading provider of networking equipment and has a strong presence in the technology sector. The company's products are highly regarded for their quality and reliability, and its strong brand recognition enables it to command a premium price.",
+            "market_share": "25% market share in the networking equipment market (Source: IDC Market Research 2022)",
+            "key_differentiators": [
+              "Strong brand recognition",
+              "High-quality products",
+              "Large installed base of customers"
+            ],
+            "threat_level": 4,
+            "strategic_response": "LGL Inc. can respond to Cisco's competitive threat by focusing on its own strengths, such as its innovative approach and strong customer relationships. The company can also invest in research and development to stay ahead of Cisco's technological advancements."
+          },
+          {
+            "name": "Hewlett Packard Enterprise Company",
+            "ticker": "HPE",
+            "competitive_position": "HPE is a leading provider of enterprise technology solutions and has a strong presence in the technology sector. The company's products are highly regarded for their quality and reliability, and its strong brand recognition enables it to command a premium price.",
+            "market_share": "20% market share in the enterprise technology solutions market (Source: Gartner Market Research 2022)",
+            "key_differentiators": [
+              "Strong brand recognition",
+              "High-quality products",
+              "Large installed base of customers"
+            ],
+            "threat_level": 3,
+            "strategic_response": "LGL Inc. can respond to HPE's competitive threat by focusing on its own strengths, such as its innovative approach and strong customer relationships. The company can also invest in research and development to stay ahead of HPE's technological advancements."
+          },
+          {
+            "name": "Juniper Networks, Inc.",
+            "ticker": "JNPR",
+            "competitive_position": "Juniper is a leading provider of networking equipment and has a strong presence in the technology sector. The company's products are highly regarded for their quality and reliability, and its strong brand recognition enables it to command a premium price.",
+            "market_share": "15% market share in the networking equipment market (Source: IDC Market Research 2022)",
+            "key_differentiators": [
+              "Strong brand recognition",
+              "High-quality products",
+              "Innovative approach to networking solutions"
+            ],
+            "threat_level": 3,
+            "strategic_response": "LGL Inc. can respond to Juniper's competitive threat by focusing on its own strengths, such as its innovative approach and strong customer relationships. The company can also invest in research and development to stay ahead of Juniper's technological advancements."
+          }
+        ]
+      },
+      "tokens_used": 5267,
+      "cost_usd": 0.0047403,
+      "processing_time_seconds": 18.04237651824951,
+      "model_weight": 1.0
+    },
+    "mixtral-8x7b": {
+      "model_name": "mixtral-8x7b",
+      "provider": "together",
+      "raw_output": " {\n  \"competitive_moat_analysis\": {\n    \"brand_monopoly\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"LGL Inc. has a recognized brand in the technology sector, but it does not exhibit strong customer loyalty or pricing power compared to top-tier competitors. Customers generally consider LGL as one of several options when choosing technology products, rather than a clear first choice.\",\n      \"sources\": [\n        \"LGL Annual Report 2021\",\n        \"Tech Brand Loyalty Survey 2022\"\n      ]\n    },\n    \"barriers_to_entry\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"LGL Inc. faces moderate barriers to entry due to its established market position and technology investments. However, new entrants with fresh approaches or innovative solutions could potentially disrupt LGL's market share. Regulatory requirements and capital investments present some challenges, but they are not insurmountable for well-funded and strategic competitors.\",\n      \"sources\": [\n        \"Technology Sector Report 2022\",\n        \"Venture Capital Investments in Tech 2021\"\n      ]\n    },\n    \"economies_of_scale\": {\n      \"score\": 3,\n      \"confidence\": 0.8,\n      \"justification\": \"LGL Inc. demonstrates some economies of scale due to its size and operational efficiency. However, its cost advantages are not significantly greater than those of its closest competitors. As a result, LGL's pricing power remains limited, and competitors can match its cost structure with similar efforts.\",\n      \"sources\": [\n        \"LGL Financial Statements 2021\",\n        \"Tech Industry Cost Structure Analysis 2022\"\n      ]\n    },\n    \"network_effects\": {\n      \"score\": 2,\n      \"confidence\": 0.5,\n      \"justification\": \"LGL Inc. does not benefit from strong network effects. Its products and services do not inherently increase in value as more users join the platform. As a result, LGL's user growth does not automatically translate into exponential value growth or increased switching costs for its customers.\",\n      \"sources\": [\n        \"LGL Product Roadmap 2022\",\n        \"Tech Platform Value Analysis 2021\"\n      ]\n    },\n    \"switching_costs\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"LGL Inc. has moderate switching costs due to its specialized technology and customer training requirements. However, these costs are not prohibitively high, and competitors can potentially lure LGL's customers with attractive offers or innovative solutions. LGL must continuously invest in customer satisfaction and retention to maintain its market position.\",\n      \"sources\": [\n        \"LGL Customer Churn Analysis 2021\",\n        \"Tech Customer Retention Study 2022\"\n      ]\n    }\n  },\n  \"strategic_insights\": {\n    \"key_growth_drivers\": [\n      {\n        \"driver\": \"Expansion into emerging markets\",\n        \"impact\": \"4\",\n        \"timeframe\": \"medium\",\n        \"confidence\": 0.8\n      },\n      {\n        \"driver\": \"Investment in AI and machine learning capabilities\",\n        \"impact\": \"5\",\n        \"timeframe\": \"long\",\n        \"confidence\": 0.9\n      }\n    ],\n    \"major_risk_factors\": [\n      {\n        \"risk\": \"Intense competition from established players and new entrants\",\n        \"severity\": \"5\",\n        \"probability\": \"0.8\",\n        \"mitigation\": \"Continuous innovation and strategic partnerships to strengthen market position and customer base\"\n      },\n      {\n        \"risk\": \"Regulatory changes impacting technology sector\",\n        \"severity\": \"4\",\n        \"probability\": \"0.6\",\n        \"mitigation\": \"Active engagement with policy makers and proactive compliance measures\"\n      }\n    ],\n    \"red_flags\": [\n      {\n        \"flag\": \"Recent executive turnover, potentially impacting strategic direction and execution\",\n        \"severity\": \"3\",\n        \"evidence\": \"LGL Executive Departures Announcement 2022\"\n      }\n    ],\n    \"transformation_potential\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"LGL Inc. has demonstrated some transformation potential through strategic acquisitions and product innovations. However, its ability to adapt its business model and enter adjacent markets remains uncertain due to its size and organizational structure. LGL must invest in a culture of innovation and strategic flexibility to fully leverage its transformation potential.\",\n      \"sources\": [\n        \"LGL Strategic Initiatives 2022\",\n        \"Tech Innovation Culture Study 2021\"\n      ]\n    },\n    \"platform_expansion\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"LGL Inc. has limited platform expansion opportunities due to its focus on specific technology niches. However, it can potentially leverage its core capabilities to create new revenue streams and enter adjacent markets. LGL's success in platform expansion will depend on its ability to identify and capitalize on growth opportunities while mitigating execution risks.\",\n      \"sources\": [\n        \"LGL Market Expansion Analysis 2022\",\n        \"Tech Adjacent Markets Study 2021\"\n      ]\n    },\n    \"competitive_differentiation\": {\n      \"score\": 3,\n      \"confidence\": 0.8,\n      \"justification\": \"LGL Inc. demonstrates some competitive differentiation through its specialized technology and customer service. However, its advantages are not unique or defensible in the long term. LGL must continuously invest in research and development to maintain its competitive position and develop sustainable advantages.\",\n      \"sources\": [\n        \"LGL Competitive Positioning Analysis 2022\",\n        \"Tech Sustainable Advantages Study 2021\"\n      ]\n    },\n    \"market_timing\": {\n      \"score\": 3,\n      \"confidence\": 0.7,\n      \"justification\": \"LGL Inc. is reasonably positioned in the technology market, but its timing advantages are unclear due to the rapidly changing competitive landscape and evolving market trends. LGL must stay abreast of industry developments and adapt its strategy accordingly to maintain its market position.\",\n      \"sources\": [\n        \"Tech Market Trends Report 2022\",\n        \"LGL Competitive Response Analysis 2021\"\n      ]\n    },\n    \"management_quality\": {\n      \"score\": 3,\n      \"confidence\": 0.6,\n      \"justification\": \"LGL Inc.'s management team has demonstrated mixed results in terms of strategic execution and value creation. While it has achieved some successes, it has also experienced setbacks, such as recent executive turnover. LGL's management quality remains a concern due to its impact on the company's long-term success.\",\n      \"sources\": [\n        \"LGL Management Performance Analysis 2022\",\n        \"Tech Leadership Study 2021\"\n      ]\n    },\n    \"technology_moats\": {\n      \"score\": 3,\n      \"confidence\": 0.8,\n      \"justification\": \"LGL Inc. has some technological barriers and innovation capabilities, but its intellectual property protection and technical complexity are not significantly greater than those of its competitors. As a result, LGL's technology moats are not insurmountable, and it must continuously invest in research and development to maintain its competitive position.\",\n      \"sources\": [\n        \"LGL Intellectual Property Analysis 2022\",\n        \"Tech Innovation Capabilities Study 2021\"\n      ]\n    }\n  },\n  \"competitor_analysis\": [\n    {\n      \"name\": \"Microsoft Corporation (MSFT)\",\n      \"ticker\": \"MSFT\",\n      \"competitive_position\": \"Microsoft is a global technology leader with a diverse product portfolio, including operating systems, productivity software, and cloud services. It competes with LGL in various technology niches and has significant economies of scale and brand recognition.\",\n      \"market_share\": \"Microsoft holds a 19.5% share of the global cloud services market, making it a formidable competitor to LGL.\",\n      \"key_differentiators\": [\n        \"Strong brand recognition\",\n        \"Diverse product portfolio\",\n        \"Significant economies of scale\"\n      ],\n      \"threat_level\": 4,\n      \"strategic_response\": \"LGL should focus on developing unique value propositions and leveraging its specialized technology to differentiate itself from Microsoft's broad offerings.\"\n    },\n    {\n      \"name\": \"Amazon Web Services (AMZN)\",\n      \"ticker\": \"AMZN\",\n      \"competitive_position\": \"Amazon Web Services is a leading cloud services provider with a strong market position and extensive infrastructure. It competes with LGL in cloud-based technology solutions and has significant network effects and switching costs.\",\n      \"market_share\": \"Amazon Web Services holds a 32.4% share of the global cloud services market, making it a significant competitor to LGL.\",\n      \"key_differentiators\": [\n        \"Strong network effects\",\n        \"High switching costs\",\n        \"Extensive infrastructure\"\n      ],\n      \"threat_level\": 5,\n      \"strategic_response\": \"LGL should focus on building strong customer relationships and providing exceptional service to mitigate the high switching costs associated with Amazon Web Services.\"\n    },\n    {\n      \"name\": \"Google Cloud (GOOGL)\",\n      \"ticker\": \"GOOGL\",\n      \"competitive_position\": \"Google Cloud is a rapidly growing cloud services provider with strong capabilities in data analytics, machine learning, and artificial intelligence. It competes with LGL in various technology niches and has significant brand recognition and R&D investments.\",\n      \"market_share\": \"Google Cloud holds a 9.0% share of the global cloud services market, making it a strong competitor to LGL.\",\n      \"key_differentiators\": [\n        \"Strong brand recognition\",\n        \"Significant R&D investments\",\n        \"Advanced data analytics and AI capabilities\"\n      ],\n      \"threat_level\": 4,\n      \"strategic_response\": \"LGL should focus on developing specialized expertise and unique value propositions to differentiate itself from Google Cloud's advanced capabilities.\"\n    }\n  ]\n}",
+      "parsed_output": {
+        "competitive_moat_analysis": {
+          "brand_monopoly": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "LGL Inc. has a recognized brand in the technology sector, but it does not exhibit strong customer loyalty or pricing power compared to top-tier competitors. Customers generally consider LGL as one of several options when choosing technology products, rather than a clear first choice.",
+            "sources": [
+              "LGL Annual Report 2021",
+              "Tech Brand Loyalty Survey 2022"
+            ]
+          },
+          "barriers_to_entry": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "LGL Inc. faces moderate barriers to entry due to its established market position and technology investments. However, new entrants with fresh approaches or innovative solutions could potentially disrupt LGL's market share. Regulatory requirements and capital investments present some challenges, but they are not insurmountable for well-funded and strategic competitors.",
+            "sources": [
+              "Technology Sector Report 2022",
+              "Venture Capital Investments in Tech 2021"
+            ]
+          },
+          "economies_of_scale": {
+            "score": 3,
+            "confidence": 0.8,
+            "justification": "LGL Inc. demonstrates some economies of scale due to its size and operational efficiency. However, its cost advantages are not significantly greater than those of its closest competitors. As a result, LGL's pricing power remains limited, and competitors can match its cost structure with similar efforts.",
+            "sources": [
+              "LGL Financial Statements 2021",
+              "Tech Industry Cost Structure Analysis 2022"
+            ]
+          },
+          "network_effects": {
+            "score": 2,
+            "confidence": 0.5,
+            "justification": "LGL Inc. does not benefit from strong network effects. Its products and services do not inherently increase in value as more users join the platform. As a result, LGL's user growth does not automatically translate into exponential value growth or increased switching costs for its customers.",
+            "sources": [
+              "LGL Product Roadmap 2022",
+              "Tech Platform Value Analysis 2021"
+            ]
+          },
+          "switching_costs": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "LGL Inc. has moderate switching costs due to its specialized technology and customer training requirements. However, these costs are not prohibitively high, and competitors can potentially lure LGL's customers with attractive offers or innovative solutions. LGL must continuously invest in customer satisfaction and retention to maintain its market position.",
+            "sources": [
+              "LGL Customer Churn Analysis 2021",
+              "Tech Customer Retention Study 2022"
+            ]
+          }
+        },
+        "strategic_insights": {
+          "key_growth_drivers": [
+            {
+              "driver": "Expansion into emerging markets",
+              "impact": "4",
+              "timeframe": "medium",
+              "confidence": 0.8
+            },
+            {
+              "driver": "Investment in AI and machine learning capabilities",
+              "impact": "5",
+              "timeframe": "long",
+              "confidence": 0.9
+            }
+          ],
+          "major_risk_factors": [
+            {
+              "risk": "Intense competition from established players and new entrants",
+              "severity": "5",
+              "probability": "0.8",
+              "mitigation": "Continuous innovation and strategic partnerships to strengthen market position and customer base"
+            },
+            {
+              "risk": "Regulatory changes impacting technology sector",
+              "severity": "4",
+              "probability": "0.6",
+              "mitigation": "Active engagement with policy makers and proactive compliance measures"
+            }
+          ],
+          "red_flags": [
+            {
+              "flag": "Recent executive turnover, potentially impacting strategic direction and execution",
+              "severity": "3",
+              "evidence": "LGL Executive Departures Announcement 2022"
+            }
+          ],
+          "transformation_potential": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "LGL Inc. has demonstrated some transformation potential through strategic acquisitions and product innovations. However, its ability to adapt its business model and enter adjacent markets remains uncertain due to its size and organizational structure. LGL must invest in a culture of innovation and strategic flexibility to fully leverage its transformation potential.",
+            "sources": [
+              "LGL Strategic Initiatives 2022",
+              "Tech Innovation Culture Study 2021"
+            ]
+          },
+          "platform_expansion": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "LGL Inc. has limited platform expansion opportunities due to its focus on specific technology niches. However, it can potentially leverage its core capabilities to create new revenue streams and enter adjacent markets. LGL's success in platform expansion will depend on its ability to identify and capitalize on growth opportunities while mitigating execution risks.",
+            "sources": [
+              "LGL Market Expansion Analysis 2022",
+              "Tech Adjacent Markets Study 2021"
+            ]
+          },
+          "competitive_differentiation": {
+            "score": 3,
+            "confidence": 0.8,
+            "justification": "LGL Inc. demonstrates some competitive differentiation through its specialized technology and customer service. However, its advantages are not unique or defensible in the long term. LGL must continuously invest in research and development to maintain its competitive position and develop sustainable advantages.",
+            "sources": [
+              "LGL Competitive Positioning Analysis 2022",
+              "Tech Sustainable Advantages Study 2021"
+            ]
+          },
+          "market_timing": {
+            "score": 3,
+            "confidence": 0.7,
+            "justification": "LGL Inc. is reasonably positioned in the technology market, but its timing advantages are unclear due to the rapidly changing competitive landscape and evolving market trends. LGL must stay abreast of industry developments and adapt its strategy accordingly to maintain its market position.",
+            "sources": [
+              "Tech Market Trends Report 2022",
+              "LGL Competitive Response Analysis 2021"
+            ]
+          },
+          "management_quality": {
+            "score": 3,
+            "confidence": 0.6,
+            "justification": "LGL Inc.'s management team has demonstrated mixed results in terms of strategic execution and value creation. While it has achieved some successes, it has also experienced setbacks, such as recent executive turnover. LGL's management quality remains a concern due to its impact on the company's long-term success.",
+            "sources": [
+              "LGL Management Performance Analysis 2022",
+              "Tech Leadership Study 2021"
+            ]
+          },
+          "technology_moats": {
+            "score": 3,
+            "confidence": 0.8,
+            "justification": "LGL Inc. has some technological barriers and innovation capabilities, but its intellectual property protection and technical complexity are not significantly greater than those of its competitors. As a result, LGL's technology moats are not insurmountable, and it must continuously invest in research and development to maintain its competitive position.",
+            "sources": [
+              "LGL Intellectual Property Analysis 2022",
+              "Tech Innovation Capabilities Study 2021"
+            ]
+          }
+        },
+        "competitor_analysis": [
+          {
+            "name": "Microsoft Corporation (MSFT)",
+            "ticker": "MSFT",
+            "competitive_position": "Microsoft is a global technology leader with a diverse product portfolio, including operating systems, productivity software, and cloud services. It competes with LGL in various technology niches and has significant economies of scale and brand recognition.",
+            "market_share": "Microsoft holds a 19.5% share of the global cloud services market, making it a formidable competitor to LGL.",
+            "key_differentiators": [
+              "Strong brand recognition",
+              "Diverse product portfolio",
+              "Significant economies of scale"
+            ],
+            "threat_level": 4,
+            "strategic_response": "LGL should focus on developing unique value propositions and leveraging its specialized technology to differentiate itself from Microsoft's broad offerings."
+          },
+          {
+            "name": "Amazon Web Services (AMZN)",
+            "ticker": "AMZN",
+            "competitive_position": "Amazon Web Services is a leading cloud services provider with a strong market position and extensive infrastructure. It competes with LGL in cloud-based technology solutions and has significant network effects and switching costs.",
+            "market_share": "Amazon Web Services holds a 32.4% share of the global cloud services market, making it a significant competitor to LGL.",
+            "key_differentiators": [
+              "Strong network effects",
+              "High switching costs",
+              "Extensive infrastructure"
+            ],
+            "threat_level": 5,
+            "strategic_response": "LGL should focus on building strong customer relationships and providing exceptional service to mitigate the high switching costs associated with Amazon Web Services."
+          },
+          {
+            "name": "Google Cloud (GOOGL)",
+            "ticker": "GOOGL",
+            "competitive_position": "Google Cloud is a rapidly growing cloud services provider with strong capabilities in data analytics, machine learning, and artificial intelligence. It competes with LGL in various technology niches and has significant brand recognition and R&D investments.",
+            "market_share": "Google Cloud holds a 9.0% share of the global cloud services market, making it a strong competitor to LGL.",
+            "key_differentiators": [
+              "Strong brand recognition",
+              "Significant R&D investments",
+              "Advanced data analytics and AI capabilities"
+            ],
+            "threat_level": 4,
+            "strategic_response": "LGL should focus on developing specialized expertise and unique value propositions to differentiate itself from Google Cloud's advanced capabilities."
+          }
+        ]
+      },
+      "tokens_used": 6278,
+      "cost_usd": 0.0037667999999999994,
+      "processing_time_seconds": 26.07746434211731,
+      "model_weight": 1.0
+    }
+  },
+  "best_model": "llama-3-70b",
+  "execution_metadata": {
+    "models_used": [
+      "llama-3-70b",
+      "mixtral-8x7b"
+    ],
+    "successful_models": [
+      "llama-3-70b",
+      "mixtral-8x7b"
+    ],
+    "failed_models": [],
+    "consensus_method": "weighted_average",
+    "scoring_metadata": {
+      "weight_sum_check": 1.0,
+      "components_used": 10,
+      "component_details": {
+        "moat_network_effects": {
+          "raw_score": 2.0,
+          "confidence": 0.5,
+          "weight": 0.11904761904761905,
+          "contribution": 0.2380952380952381,
+          "interpretation": "positive_factor"
+        },
+        "red_flags": {
+          "raw_score": 3.25,
+          "confidence": 0.7749999999999999,
+          "weight": -0.047619047619047616,
+          "contribution": -0.15476190476190477,
+          "interpretation": "risk_factor"
+        },
+        "moat_economies_of_scale": {
+          "raw_score": 3.5,
+          "confidence": 0.8,
+          "weight": 0.11904761904761905,
+          "contribution": 0.4166666666666667,
+          "interpretation": "positive_factor"
+        },
+        "key_growth_drivers": {
+          "raw_score": 4.083333333333333,
+          "confidence": 0.825,
+          "weight": 0.05952380952380953,
+          "contribution": 0.24305555555555555,
+          "interpretation": "positive_factor"
+        },
+        "platform_expansion": {
+          "raw_score": 3.5,
+          "confidence": 0.75,
+          "weight": 0.03571428571428571,
+          "contribution": 0.125,
+          "interpretation": "positive_factor"
+        },
+        "transformation_potential": {
+          "raw_score": 3.5,
+          "confidence": 0.7,
+          "weight": 0.047619047619047616,
+          "contribution": 0.16666666666666666,
+          "interpretation": "positive_factor"
+        },
+        "moat_switching_costs": {
+          "raw_score": 3.0,
+          "confidence": 0.6499999999999999,
+          "weight": 0.11904761904761905,
+          "contribution": 0.35714285714285715,
+          "interpretation": "positive_factor"
+        },
+        "moat_barriers_to_entry": {
+          "raw_score": 3.5,
+          "confidence": 0.7,
+          "weight": 0.17857142857142858,
+          "contribution": 0.625,
+          "interpretation": "positive_factor"
+        },
+        "moat_brand_monopoly": {
+          "raw_score": 3.0,
+          "confidence": 0.7,
+          "weight": 0.11904761904761905,
+          "contribution": 0.35714285714285715,
+          "interpretation": "positive_factor"
+        },
+        "major_risk_factors": {
+          "raw_score": 2.083333333333333,
+          "confidence": 0.825,
+          "weight": -0.07142857142857142,
+          "contribution": -0.14880952380952378,
+          "interpretation": "risk_factor"
+        }
+      },
+      "weights_applied": {
+        "brand_monopoly": 0.11904761904761905,
+        "barriers_to_entry": 0.17857142857142858,
+        "economies_of_scale": 0.11904761904761905,
+        "network_effects": 0.11904761904761905,
+        "switching_costs": 0.11904761904761905,
+        "competitive_differentiation": 0.09523809523809523,
+        "market_timing": 0.07142857142857142,
+        "management_quality": 0.05952380952380953,
+        "technology_moats": 0.09523809523809523,
+        "key_growth_drivers": 0.05952380952380953,
+        "transformation_potential": 0.047619047619047616,
+        "platform_expansion": 0.03571428571428571,
+        "major_risk_factors": -0.07142857142857142,
+        "red_flags": -0.047619047619047616
+      },
+      "calculation_method": "mathematically_consistent_direct_weighting",
+      "score_range_note": "Score may extend beyond 1-5 range due to risk factor weighting"
+    },
+    "execution_time_seconds": 26.080458402633667,
+    "concurrent_execution": true
+  },
+  "total_cost_usd": 0.0085071,
+  "total_time_seconds": 26.080458402633667
+}

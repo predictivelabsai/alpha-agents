@@ -6,6 +6,10 @@ import uuid
 
 import pandas as pd
 from sqlalchemy import create_engine, text
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DDL_PATH = REPO_ROOT / "sql" / "create_table.sql"
@@ -14,51 +18,14 @@ DDL_PATH = REPO_ROOT / "sql" / "create_table.sql"
 def get_engine():
     db_url = os.getenv("DATABASE_URL")
     if not db_url:
-        db_file = REPO_ROOT / "db" / "alpha_agents.db"
-        db_file.parent.mkdir(exist_ok=True)
-        db_url = f"sqlite:///{db_file}"
+        raise ValueError("DATABASE_URL environment variable must be set for PostgreSQL connection")
     return create_engine(db_url)
 
 
 def ensure_table_exists() -> None:
     engine = get_engine()
-    # Robust dialect detection to avoid running PostgreSQL DDL on SQLite
-    dialect = (getattr(engine.url, "get_backend_name", lambda: engine.dialect.name)()).lower()
-    if "sqlite" in dialect:
-        sql = (
-            "CREATE TABLE IF NOT EXISTS fundamental_screen (\n"
-            "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-            "    run_id TEXT NOT NULL,\n"
-            "    ticker TEXT NOT NULL,\n"
-            "    company_name TEXT,\n"
-            "    sector TEXT,\n"
-            "    industry TEXT,\n"
-            "    market_cap REAL,\n"
-            "    gross_profit_margin_ttm REAL,\n"
-            "    operating_profit_margin_ttm REAL,\n"
-            "    net_profit_margin_ttm REAL,\n"
-            "    ebit_margin_ttm REAL,\n"
-            "    ebitda_margin_ttm REAL,\n"
-            "    roa_ttm REAL,\n"
-            "    roe_ttm REAL,\n"
-            "    roic_ttm REAL,\n"
-            "    total_revenue_4y_cagr REAL,\n"
-            "    net_income_4y_cagr REAL,\n"
-            "    operating_cash_flow_4y_cagr REAL,\n"
-            "    total_revenue_4y_consistency REAL,\n"
-            "    net_income_4y_consistency REAL,\n"
-            "    operating_cash_flow_4y_consistency REAL,\n"
-            "    current_ratio REAL,\n"
-            "    debt_to_ebitda_ratio REAL,\n"
-            "    debt_servicing_ratio REAL,\n"
-            "    score REAL,\n"
-            "    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\n"
-            "    UNIQUE (run_id, ticker)\n"
-            ");"
-        )
-    else:
-        # Default to PostgreSQL DDL
-        sql = DDL_PATH.read_text(encoding="utf-8")
+    # Use PostgreSQL DDL
+    sql = DDL_PATH.read_text(encoding="utf-8")
     with engine.begin() as conn:
         conn.execute(text(sql))
 

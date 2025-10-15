@@ -1,0 +1,67 @@
+{
+  "timestamp": "2025-10-15T01:57:28.950423",
+  "companies_analyzed": 10,
+  "total_cost": 0.12497129999999998,
+  "results": [
+    {
+      "ticker": "SAGT",
+      "score": 2.4006519274376417,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0122745
+    },
+    {
+      "ticker": "ACFN",
+      "score": 1.8785430839002273,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.012475799999999999
+    },
+    {
+      "ticker": "SQNS",
+      "score": 2.0642951625094486,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.012576
+    },
+    {
+      "ticker": "HIT",
+      "score": 2.4502551020408165,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0125469
+    },
+    {
+      "ticker": "FATN",
+      "score": 2.3198696145124718,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0128487
+    },
+    {
+      "ticker": "CCRD",
+      "score": 2.077050264550265,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.012506999999999999
+    },
+    {
+      "ticker": "MPTI",
+      "score": 2.053240740740741,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0119613
+    },
+    {
+      "ticker": "MAPS",
+      "score": 2.4073129251700682,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0128103
+    },
+    {
+      "ticker": "VTSI",
+      "score": 2.3262471655328802,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.012596399999999999
+    },
+    {
+      "ticker": "MIND",
+      "score": 1.9051398337112624,
+      "recommendation": "SELL - Company demonstrates weak fundamentals and significant risks",
+      "cost": 0.0123744
+    }
+  ]
+}

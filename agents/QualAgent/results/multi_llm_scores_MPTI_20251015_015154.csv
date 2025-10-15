@@ -1,0 +1,17 @@
+company_ticker,score_component,score,confidence,category,justification
+MPTI,technology_moats,3.428571428571429,0.7500000000000001,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. has limited technology moats, as its products and ..."
+MPTI,competitive_positioning,2.433333333333334,0.8357142857142857,competitive,"Consensus from 3 models: llama-3.1-70b: Analysis of 2 competitors, average threat level: 4.0/5.0; ll..."
+MPTI,major_risk_factors,2.4404761904761907,0.817857142857143,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified risk factors with average impact 3.5/5...
+MPTI,moat_brand_monopoly,3.0000000000000004,0.6714285714285715,competitive_moat,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. has a recognized brand in the technology sector, b..."
+MPTI,red_flags,3.2777777777777777,0.7777777777777777,strategic_insights,Consensus from 2 models: llama-3.1-70b: Based on 1 identified red flags with average impact 3.0/5.0;...
+MPTI,transformation_potential,3.714285714285715,0.7428571428571429,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. has moderate transformation potential, as it has a..."
+MPTI,market_timing,3.714285714285715,0.7428571428571429,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. has moderate market timing, as it has entered the ..."
+MPTI,management_quality,3.714285714285715,0.7785714285714287,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MPTI Inc.'s management team has moderate quality, as it has ..."
+MPTI,key_growth_drivers,3.916666666666667,0.817857142857143,strategic_insights,Consensus from 3 models: llama-3.1-70b: Based on 2 identified growth drivers with average impact 3.5...
+MPTI,competitive_differentiation,3.428571428571429,0.7500000000000001,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. has limited competitive differentiation, as its pr..."
+MPTI,moat_barriers_to_entry,3.0714285714285716,0.642857142857143,competitive_moat,"Consensus from 3 models: llama-3.1-70b: The technology sector has relatively low barriers to entry, ..."
+MPTI,platform_expansion,3.714285714285715,0.7428571428571429,strategic_insights,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. has moderate platform expansion potential, as it c..."
+MPTI,moat_network_effects,1.7142857142857144,0.4428571428571429,competitive_moat,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. does not have significant network effects, as its ..."
+MPTI,moat_switching_costs,2.7142857142857144,0.6071428571428572,competitive_moat,"Consensus from 3 models: llama-3.1-70b: MPTI Inc. has moderate switching costs, as its customers can..."
+MPTI,moat_economies_of_scale,3.428571428571429,0.7142857142857143,competitive_moat,Consensus from 3 models: llama-3.1-70b: MPTI Inc. has some economies of scale due to its size and ma...
+MPTI,COMPOSITE_SCORE,2.053240740740741,0.6977777777777778,composite,Weighted composite from 15 components
