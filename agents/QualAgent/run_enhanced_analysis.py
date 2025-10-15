@@ -409,7 +409,7 @@ def main():
                 report_file = f"analysis_report_{args.company}_{int(time.time())}.md"
                 with open(report_file, 'w') as f:
                     f.write(report)
-                print(f"\n📄 Full report saved to: {report_file}")
+                print(f"\n[REPORT] Full report saved to: {report_file}")
 
         elif args.companies or args.batch:
             # Batch analysis
@@ -445,7 +445,7 @@ def main():
 
                 with open(batch_file, 'w') as f:
                     json.dump(batch_data, f, indent=2)
-                print(f"\n📄 Batch summary saved to: {batch_file}")
+                print(f"\n[BATCH] Batch summary saved to: {batch_file}")
 
     except KeyboardInterrupt:
         print("\n\nAnalysis interrupted by user")

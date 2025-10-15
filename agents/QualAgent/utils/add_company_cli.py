@@ -60,11 +60,11 @@ Examples:
     )
 
     if success:
-        print(f"\n✅ Successfully added {args.name} ({args.ticker.upper()})")
+        print(f"\n[SUCCESS] Successfully added {args.name} ({args.ticker.upper()})")
         print("\nTo run analysis on this company:")
         print(f"python run_enhanced_analysis.py --user-id analyst1 --company {args.ticker.upper()}")
     else:
-        print(f"\n❌ Failed to add {args.name} ({args.ticker.upper()})")
+        print(f"\n[ERROR] Failed to add {args.name} ({args.ticker.upper()})")
         sys.exit(1)
 
 if __name__ == "__main__":
